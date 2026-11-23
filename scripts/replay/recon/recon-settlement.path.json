@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "name": "recon-settlement",
+  "description": "I-0097 tranche 5 (D-0213): reconnaissance at Beta's Undead Settlement bonfire (m31): a standing sweep (L, 8 steps, a picture each) then a 3 s walk out and back twice, pictures at each end; with chr-positions.flag. Not a measured path.",
+  "save": {
+    "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-beta-m31-20261013-044305/DS30000.sl2",
+    "sha256": "93D3A76E8C8CC4EA5D6CB4FE76EBFBF23AA30F2A114422EF355968F651CEB0C0"
+  },
+  "settle_seconds": 40,
+  "segments": [
+    {
+      "name": "look",
+      "cycles": 8,
+      "cycle_ms": 2500,
+      "events": [
+        {
+          "t": 0,
+          "down": true,
+          "key": "L"
+        },
+        {
+          "t": 1500,
+          "down": false,
+          "key": "L"
+        },
+        {
+          "t": 1900,
+          "shot": "look"
+        }
+      ]
+    },
+    {
+      "name": "probe",
+      "cycles": 2,
+      "cycle_ms": 9000,
+      "events": [
+        {
+          "t": 0,
+          "down": true,
+          "key": "Z"
+        },
+        {
+          "t": 3000,
+          "down": false,
+          "key": "Z"
+        },
+        {
+          "t": 3400,
+          "shot": "probe-out"
+        },
+        {
+          "t": 4500,
+          "down": true,
+          "key": "S"
+        },
+        {
+          "t": 7500,
+          "down": false,
+          "key": "S"
+        },
+        {
+          "t": 7900,
+          "shot": "probe-back"
+        }
+      ]
+    }
+  ]
+}

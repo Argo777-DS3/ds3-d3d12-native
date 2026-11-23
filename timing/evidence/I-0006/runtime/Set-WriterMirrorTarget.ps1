@@ -1,0 +1,41 @@
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [ValidateSet(60, 165)]
+    [int]$Target
+)
+
+$ErrorActionPreference = 'Stop'
+$Here = Split-Path -Parent $MyInvocation.MyCommand.Path
+$PassC = Resolve-Path -LiteralPath (Join-Path $Here 'instrumentation')
+$Source = Join-Path $Here "configs/writer-mirror-$Target.txt"
+$Destination = Join-Path $PassC 'pass_c_config.txt'
+$Dll = Join-Path $PassC 'bin/I0006WriterInputMirror.dll'
+$Injector = Join-Path $PassC 'bin/I0006WriterInputMirrorInjector.exe'
+
+if (-not (Test-Path -LiteralPath $Dll -PathType Leaf)) {
+    throw "Mirror DLL not found: $Dll"
+}
+if (-not (Test-Path -LiteralPath $Injector -PathType Leaf)) {
+    throw "Injector not found: $Injector"
+}
+
+Copy-Item -LiteralPath $Source -Destination $Destination -Force
+$Config = Get-Content -LiteralPath $Destination -Raw
+$Required = @(
+    "target_fps=$Target",
+    'enable_timing_override=1',
+    'locomotion_trials=1',
+    'locomotion_phase_rca=1',
+    'locomotion_write_watch=0',
+    'locomotion_writer_mirror=1'
+)
+foreach ($Line in $Required) {
+    if ($Config -notmatch "(?m)^$([regex]::Escape($Line))$") {
+        throw "Active configuration is missing: $Line"
+    }
+}
+
+Get-FileHash -Algorithm SHA256 -LiteralPath $Dll, $Injector |
+    Select-Object Path, Hash
+Write-Output "Prepared the unchanged writer mirror for target $Target. DS3 was not launched."

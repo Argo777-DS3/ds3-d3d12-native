@@ -1,0 +1,25 @@
+# I-0140 tranche 16: the arts-melee.txt weapons not in thomas-alpha-cape-20261111-124806 (its slot read by Read-SaveSlot.py's decryption,
+# every weapon value of the slot): the batches give these (F7) before their casts.
+2160000
+6280000
+6290000
+6340000
+6170000
+6270000
+6300000
+6200000
+6180000
+6260000
+4080000
+7120000
+7110000
+6230000
+8190000
+8170000
+9160000
+9030000
+10100000
+10070000
+12040000
+11030000
+16040000

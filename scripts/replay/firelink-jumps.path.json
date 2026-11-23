@@ -1,0 +1,61 @@
+{
+ "schema": 1,
+ "name": "firelink-jumps",
+ "description": "I-0114 tranche 3 (Thomas, 2026-11-01 00:27: the jump, roll and sprint distances above 60): at Firelink with Eta (the firelink path's save): jumps from a sprint (Space held with Z for 1.5 s, Space released, then tapped while still running), out and back, four times; then rolls while walking (Space tapped, as the mechanics path) and a 2 s sprint stopped, out and back. Read with locomotion-observe.flag and mechanics-observe.flag (the player's position every 1/30 s of the logic's time) and Get-Mechanics.py. Times in ms from the motion start; each segment's events in time order.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-eta-m40-20261014-095203/DS30000.sl2",
+  "sha256": "1E905EF8842655C605E175F574BCA5D2B46D1011E8E473142E1577A09FE24EB4"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "jump",
+   "cycles": 4,
+   "cycle_ms": 6000,
+   "events": [
+    {"t": 0, "key": "Space", "down": true},
+    {"t": 50, "key": "Z", "down": true},
+    {"t": 1550, "key": "Space", "down": false},
+    {"t": 1600, "key": "Space", "down": true},
+    {"t": 1680, "key": "Space", "down": false},
+    {"t": 2600, "key": "Z", "down": false},
+    {"t": 3000, "key": "Space", "down": true},
+    {"t": 3050, "key": "S", "down": true},
+    {"t": 4550, "key": "Space", "down": false},
+    {"t": 4600, "key": "Space", "down": true},
+    {"t": 4680, "key": "Space", "down": false},
+    {"t": 5600, "key": "S", "down": false}
+   ]
+  },
+  {
+   "name": "roll",
+   "cycles": 2,
+   "cycle_ms": 5000,
+   "events": [
+    {"t": 0, "key": "Z", "down": true},
+    {"t": 800, "key": "Space", "down": true},
+    {"t": 880, "key": "Space", "down": false},
+    {"t": 2000, "key": "Z", "down": false},
+    {"t": 2500, "key": "S", "down": true},
+    {"t": 3300, "key": "Space", "down": true},
+    {"t": 3380, "key": "Space", "down": false},
+    {"t": 4500, "key": "S", "down": false}
+   ]
+  },
+  {
+   "name": "sprint",
+   "cycles": 2,
+   "cycle_ms": 5000,
+   "events": [
+    {"t": 0, "key": "Space", "down": true},
+    {"t": 50, "key": "Z", "down": true},
+    {"t": 2050, "key": "Z", "down": false},
+    {"t": 2100, "key": "Space", "down": false},
+    {"t": 2500, "key": "Space", "down": true},
+    {"t": 2550, "key": "S", "down": true},
+    {"t": 4550, "key": "S", "down": false},
+    {"t": 4600, "key": "Space", "down": false}
+   ]
+  }
+ ]
+}

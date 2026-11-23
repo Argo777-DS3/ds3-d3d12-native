@@ -1,0 +1,118 @@
+﻿{
+    "schema_version":  1,
+    "investigation_id":  "I-0009",
+    "subject":  "Visible 165 FPS locomotion prototype",
+    "game_build":  {
+                       "label":  "Steam AppID 374320 / BuildID 10167187 / DarkSoulsIII.exe 1.15.2.0",
+                       "executable_sha256":  "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+                   },
+    "artifacts":  [
+                      {
+                          "kind":  "prototype_source",
+                          "location":  "evidence/I-0009/prototype/prototype.cpp",
+                          "sha256":  "95BB4AD7081355925F9A0BE6A67699AD1DE501F711293578907E643D43D5924A",
+                          "size":  42006,
+                          "note":  "Minimal STANDBY/OFF/ON 165-FPS runtime using accepted I-0007 correction and I-0008 controls."
+                      },
+                      {
+                          "kind":  "prototype_core",
+                          "location":  "evidence/I-0009/prototype/prototype_core.hpp",
+                          "sha256":  "9F0408576DBC6CC1F689FDEBE06AC4D99D5D68989251B0A4D47F4D4DA178F534",
+                          "size":  4307,
+                          "note":  "State machine, interval/identity guards and unchanged normalization law."
+                      },
+                      {
+                          "kind":  "prototype_binary",
+                          "location":  "evidence/I-0009/prototype/bin/I0009VisibleLocomotionPrototype.dll",
+                          "sha256":  "ACC30A9B0F712A51B8F555A9805B3819A5F04CEE0E381034DE01C1D4B32A04B6",
+                          "size":  193024,
+                          "note":  "Cycle-5 release DLL; inert until explicit prepare/enable controls."
+                      },
+                      {
+                          "kind":  "prototype_controller",
+                          "location":  "evidence/I-0009/prototype/bin/I0009PrototypeController.exe",
+                          "sha256":  "076D1BE470C2184CB8273C19596555B490A3DFB21DFD1E7FB6DDB81DB2398B30",
+                          "size":  163328,
+                          "note":  "Exact-build-gated inject/prepare/enable/disable/status/stop controller."
+                      },
+                      {
+                          "kind":  "build_validation",
+                          "location":  "evidence/I-0009/prototype/BUILD-VALIDATION.json",
+                          "sha256":  "D4082C5A354B6AACDB283332326CF77E4F0A35CE3C11DFC93186C2392029B9E6",
+                          "size":  4460
+                      },
+                      {
+                          "kind":  "exact_build_validation",
+                          "location":  "evidence/I-0009/prototype/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "521E25FDF43242CAB2F62253C4B85DC119C8FD0A85F0FB7F1FB1E2B59E70C871",
+                          "size":  1598
+                      },
+                      {
+                          "kind":  "native_test_output",
+                          "location":  "evidence/I-0009/prototype/native-test-output.txt",
+                          "sha256":  "FB52805B75CC2D5D0D725FC8CD1CF4ECB5C51D87C92E251C3E98D61D74DA03BC",
+                          "size":  159
+                      },
+                      {
+                          "kind":  "prototype_guide",
+                          "location":  "evidence/I-0009/prototype/README.md",
+                          "sha256":  "AF34113B5D3F0B5CB84CD263C2B7CA6DF751A9036973039E3018149C110A439B",
+                          "size":  1904
+                      },
+                      {
+                          "kind":  "live_protocol",
+                          "location":  "evidence/I-0009/prototype/LIVE-PROTOCOL.md",
+                          "sha256":  "D37224DFDFAFFE5B8CE853C7A5728E97446D6E539976C5350189D9681A5A987C",
+                          "size":  2484
+                      },
+                      {
+                          "kind":  "prototype_wrapper",
+                          "location":  "evidence/I-0009/prototype/Invoke-Prototype.ps1",
+                          "sha256":  "AD495842F30E2428C18538CC9238401B8030A61C5319EA2E837862561B4C0166",
+                          "size":  1835,
+                          "note":  "Final live wrapper with the pre-injection PowerShell interpolation fix."
+                      },
+                      {
+                          "kind":  "live_result",
+                          "location":  "evidence/I-0009/LIVE-RESULT.md",
+                          "sha256":  "E828FAC9E40448B12AF0CEB815906717D2039B803D3192A5352B228AE61DE700",
+                          "size":  3310
+                      },
+                      {
+                          "kind":  "live_analysis",
+                          "location":  "evidence/I-0009/analysis/live-summary.json",
+                          "sha256":  "4E5A92BBFA886968427A76CD9F3D9A036B59D7C168B67ADA680BEADD25CC815E",
+                          "size":  2712
+                      },
+                      {
+                          "kind":  "live_session_ready",
+                          "location":  "evidence/I-0009/sessions/20260920T130445Z-pid6400/READY",
+                          "sha256":  "BB4625AD0207621F4F73D40F3D05E829AB09CBD170E0A1C2B4859A7A9688DE0C",
+                          "size":  56
+                      },
+                      {
+                          "kind":  "live_session_info",
+                          "location":  "evidence/I-0009/sessions/20260920T130445Z-pid6400/session-info.txt",
+                          "sha256":  "817EA5077D57AA396AACC6ABA0AA604125E9559C0B256D382AA5446D296DCC5C",
+                          "size":  395
+                      },
+                      {
+                          "kind":  "live_session_events",
+                          "location":  "evidence/I-0009/sessions/20260920T130445Z-pid6400/events.csv",
+                          "sha256":  "3CBF9833E7E6424E0F7DE09DBD716B6669C11EDC3E00A50AEF38F83961CCFD8B",
+                          "size":  1303
+                      },
+                      {
+                          "kind":  "live_timing_restore",
+                          "location":  "evidence/I-0009/sessions/20260920T130445Z-pid6400/override.csv",
+                          "sha256":  "A6C51B33AC73F8E2894816EA3D2A4F1271F9DD30242C13E9AF0DE73861B39A64",
+                          "size":  180
+                      },
+                      {
+                          "kind":  "live_session_complete",
+                          "location":  "evidence/I-0009/sessions/20260920T130445Z-pid6400/COMPLETE",
+                          "sha256":  "CF9F1B56906C95D84EC8C4AEE489811ADCE8916C295DF7E3BE2CCDBDA328D465",
+                          "size":  68
+                      }
+                  ]
+}

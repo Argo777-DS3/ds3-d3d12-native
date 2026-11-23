@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0085",
+  "title": "Endurance de nuit",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-21T20:55:46Z",
+  "updated_at": "2026-10-22T01:45:00Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 5
+  },
+  "stop_reason": "success: the 94-minute loop run before and after the fix (a model-layout leak of 151 MB a visit found and fixed, 2.7 MB a visit after, no drift, no fault); the gate's memory leg and the nightly endurance (D-0204); GPU-based validation at m31 only"
+}

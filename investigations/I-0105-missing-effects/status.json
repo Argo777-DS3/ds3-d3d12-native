@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0105",
+  "title": "Les effets manquants",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 (pilot)",
+  "created_at": "2026-10-28T18:45:52Z",
+  "updated_at": "2026-10-30T05:40:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 12
+  },
+  "stop_reason": "complete: tranche 10 (the snow textures t47..t51) the last; open points recorded in RESULT's conclusion"
+}

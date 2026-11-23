@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0069",
+  "title": "Static map of the menu audio path (music, cursor and confirm sounds, volumes) and its independence from D3D11",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-11T06:27:07Z",
+  "updated_at": "2026-10-11T11:40:00Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 6
+  },
+  "stop_reason": null
+}

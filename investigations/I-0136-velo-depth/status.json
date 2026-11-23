@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0136",
+  "title": "La précision de profondeur des lignes Velo",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "the Velo depth thread",
+  "created_at": "2026-11-12T07:01:33Z",
+  "updated_at": "2026-11-12T10:45:00Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 5
+  },
+  "stop_reason": "success: merged f559ce6e, start check passed"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0091",
+  "title": "Stockage de la collecte",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T18:05:10Z",
+  "updated_at": "2026-10-22T21:10:23Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: the collect at m45 3.99 to 3.58 ms (storage kept between frames, places built once, per-frame heap removed), 128 to 137 frames/s; gate i91-final PASS"
+}

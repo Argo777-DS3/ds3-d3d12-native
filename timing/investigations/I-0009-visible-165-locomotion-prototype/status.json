@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0009",
+    "title":  "Visible 165 FPS locomotion prototype",
+    "capability":  "C4",
+    "state":  "complete",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-20T12:22:49Z",
+    "updated_at":  "2026-09-20T13:12:00Z",
+    "budget":  {
+                   "iterations_max":  9,
+                   "iterations_used":  9
+               },
+    "stop_reason":  "Bounded exact-build target-165 OFF/ON witness passed for visible sprint and forward-roll distance; runtime state restored exactly."
+}

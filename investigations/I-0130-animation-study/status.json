@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0130",
+  "title": "Étude : les animations de DS3 (Havok, TAE, behaviors) et ce que Claude pourrait en écrire",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "study thread",
+  "created_at": "2026-11-08T09:58:31Z",
+  "updated_at": "2026-11-08T10:40:00Z",
+  "budget": {
+    "iterations_max": 4,
+    "iterations_used": 2
+  },
+  "stop_reason": "success: formats, engine path and community tools mapped; reading and writing of the clips shown without the Havok SDK; the in-game play of a written clip proposed, not run"
+}

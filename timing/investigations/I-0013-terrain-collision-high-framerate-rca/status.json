@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0013",
+    "title":  "Terrain Hopping/Jitter High-Framerate RCA",
+    "capability":  "C4",
+    "state":  "complete",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-21T01:32:57Z",
+    "updated_at":  "2026-09-21T07:16:06Z",
+    "budget":  {
+                   "iterations_max":  21,
+                   "iterations_used":  21
+               },
+    "stop_reason":  "Thomas accepted the general live-delta producer correction after exact native60 no-write identity, 712/712 exact high-rate formula rows, disappearance of the reproduced hopping, and exact cleanup."
+}

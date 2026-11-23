@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "investigation_id": "I-0007",
+  "subject": "RCA-to-fix locomotion at 165 FPS",
+  "game_build": {
+    "label": "Steam AppID 374320 / BuildID 10167187 / executable 1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "scope": "Upstream causal trace from the confirmed selected A8 candidate, reversible causal patch, sprint 60/165 validation, then unchanged-patch roll validation; final writer, 240, unlimited and distributable patch remain excluded",
+  "canonical_inputs": [
+    "K-0032",
+    "K-0033",
+    "K-0034",
+    "D-0010",
+    "investigations/I-0006-writer-input-mirror/RESULT.md",
+    "evidence/I-0005/runtime/pass-c/PASS-C-SPRINT-WRITER-ALGEBRA-BRIDGE.md"
+  ],
+  "artifacts": [
+    {
+      "kind": "continuous_elapsed_recurrence_candidate",
+      "location": "evidence/I-0007/runtime/transient-capture/ELAPSED-BUILD-VALIDATION.json",
+      "note": "Cycles22-24; guarded experimental producer recurrence only, never injected. Continuous-native-validation report: 1800 exact native/JS rows,480 reference60 outputs unchanged. Candidate25-27 live controls pending; original distance patch remains accepted."
+    },
+    {
+      "kind": "qualified_transient_165_and_elapsed_candidate",
+      "location": "evidence/I-0007/runtime/TRANSIENT-PROTOCOL.md",
+      "note": "Cycles19-21: stopped session20260920T013846Z-pid6976 and raw hashes; K-0040 local recovery/source response; offline candidate only. No gameplay acceptance."
+    },
+    {
+      "kind": "recurrence_clock_and_consumer_boundary",
+      "location": "evidence/I-0007/runtime/TRANSIENT-PROTOCOL.md",
+      "note": "Cycles16-18: selected recurrence-callers exports; offline response model; CLOCK-BUILD-VALIDATION.json for disabled uninjected caller observer. No new gameplay claim. Existing60 reused; next165 needs human stimulus."
+    },
+    {
+      "kind": "transient_eligibility_instrument_and_live_checkpoint",
+      "location": "evidence/I-0007/runtime/TRANSIENT-PROTOCOL.md",
+      "note": "Routes cycle13 build identities and cycle14 target60 session20260920T011956Z-pid19144 plus interim analysis. Exact interval checks pass; input deviation and matched165 remain unresolved; session stopped with exact timing/debug restoration; raw hashes in final transient summary. No165 trial."
+    },
+    {
+      "kind": "recurrence_interval_audit",
+      "location": "evidence/I-0007/runtime/FEEDBACK-TRANSIENT-AUDIT.md",
+      "note": "Cycle 12 reads retained patched captures only: 3278 exits, 1911 compared input/prior-exit matches. Outer eligibility is not directly captured and no non-unit target-60 reference exists. Insufficient information for a new correction; historical proposed replan subsequently authorized on 2026-09-20 under D-0014. Reproducer analyze_recurrence_intervals.mjs and report reconciliation-20260920/recurrence-interval-audit.json."
+    },
+    {
+      "kind": "checkpoint_recovery_and_offline_continuation",
+      "location": "evidence/I-0007/runtime/RECOVERY-20260920.md",
+      "note": "Recovered 23 existing commits through 92c2b79; 367 raw hash comparisons pass. Offline replay reconciles all five selected summaries, with only explicit V2 schema additions. Related FEEDBACK-TRANSIENT-AUDIT.md records cycle 11, not a new gameplay failure or patch. Original ignored binaries absent. No live run. Reproducers and outputs are routed from these records."
+    },
+    {
+      "kind": "roll_motion_60_165_final",
+      "location": "evidence/I-0007/runtime/sessions/20260919T185858Z-pid3804",
+      "patch_trace_sha256": "646957C5E58F9EA40E103961B47A7E26627AF63736AAA7B88E29C8045B2157B0",
+      "note": "Same correction,300/824 exact commits, scalar1. Release-anchored net ratio0.998880992, bounded sample-edge range within2%; late idle second-screen click retained. Operator confirmation and exact restoration. Motion accepted; i-frames deferred. See runtime/ROLL-VALIDATION.md and final analysis folder. User-requested pause after this checkpoint."
+    },
+    {
+      "kind": "roll_validation_interim",
+      "location": "evidence/I-0007/runtime/ROLL-VALIDATION.md",
+      "note": "Live session20260919T185858Z-pid3804 trial1 at60: one impulse/idle endpoints,300 exact commits, scalar1. Same DLL switched165 awaiting trial2. Preceding movement excluded from any naive full-window roll verdict; final hashes/restoration pending."
+    },
+    {
+      "kind": "full_input_sprint_165_accepted",
+      "location": "evidence/I-0007/runtime/sessions/20260919T185120Z-pid3804",
+      "patch_trace_sha256": "0265596F5E7CC33AA814AE0750E3D4B9F3EDF4A17BB2A373A99F0AE8582A31A6",
+      "note": "494 measured exact commits, 601 tail rows,1260 total exact windows. Distance/delta +0.639177% from patched60, animation -0.460101%; tail scalars1 through depletion, explicit operator confirmation and exact restoration. Sprint accepted, not all high-framerate defects."
+    },
+    {
+      "kind": "same_correction_roll_capture",
+      "location": "evidence/I-0007/runtime/roll-capture",
+      "probe_binary_sha256": "4AEBCC181C2920AA1E5A6FFE4EFD4AA4048C50487A44975E0689886C9E0C38F7",
+      "injector_binary_sha256": "4BBFF4C687BDDC138D9EC005F4AE496C212C62ED06ED38A4A03378D4CA034863",
+      "note": "Same handler/shared normalization as accepted sprint; only F4 five-second impulse-action acquisition differs. Build/self-tests pass, configured disabled, roll unvalidated. runtime/ROLL-SAME-PATCH-PROTOCOL.md."
+    },
+    {
+      "kind": "causal_patch_sprint_session_final",
+      "location": "evidence/I-0007/runtime/sessions/20260919T184047Z-pid3804",
+      "patch_trace_sha256": "F86C823E257E9E880830CC6B66C0DAE9DA3EC0190A68E92A38145A7670F270E1",
+      "note": "Same V2 patch at60/165, measured distance/delta ratio1.000619898, 180/488 exact commits. Exact final restoration. User reported late bug return; existing capture puts this outside V2 correction lifetime. Full-action sprint and roll not accepted; see PATCH-SPRINT-VALIDATION.md."
+    },
+    {
+      "kind": "causal_patch_extended_capture_v3",
+      "location": "evidence/I-0007/runtime/causal-patch",
+      "probe_binary_sha256": "CA88261ACF9441651EB887A28E570DF91CB94EFADA71F6153C8A30B913BE2766",
+      "injector_binary_sha256": "EE05EE9DB88CBD11082875E3AD3BAEE83D3F177ECCAE2E8D31A6E8855EA5FEFE",
+      "note": "Same correction/observation handler as V2, capture extended after measure_end through input release. Build and native lifetime/shared-log/operand/DR tests pass. Prepared disabled, live full-tail validation pending."
+    },
+    {
+      "kind": "causal_patch_sprint_validation_interim",
+      "location": "evidence/I-0007/runtime/PATCH-SPRINT-VALIDATION.md",
+      "note": "Live session 20260919T184047Z-pid3804, current verified shared-readable V2. Trial 1 target60 passes bounded reference metrics and 180 exact measured commits. Same session switched live to165 awaiting trial2. Raw/analysis mutable until stop; final hashes/restoration pending."
+    },
+    {
+      "kind": "causal_patch_shared_read_ready_build",
+      "location": "evidence/I-0007/runtime/causal-patch",
+      "probe_binary_sha256": "6F15BAA80026379083A2D8461328973DAC629DE88F6142419EB8F3D3C41354BE",
+      "injector_binary_sha256": "F5AD808791374F1C76D69ECC57FBA036F55A40D665C1F27DC20E3F6A491BC4E6",
+      "note": "Current V2 rebuild after verified PID 20840 exit. Shared-read lock reproduction/fix, native patch-context/debug restoration and analyzer tests pass. Config disabled, no current live patch. Await announced new launch and sprint 60/165 validation; causal formula unchanged."
+    },
+    {
+      "kind": "causal_patch_live_log_source_correction",
+      "location": "evidence/I-0007/runtime/causal-patch/shared_log.hpp",
+      "note": "Native test reproduces legacy exclusive-read lock and proves concurrent reads across successive flushes with writer exclusion. Source corrected, production DLL rebuild pending PID 20840 exit. Preparation-only V2 session 20260919T183329Z-pid20840 stopped before F4, exact restoration; zero causal interventions."
+    },
+    {
+      "kind": "causal_patch_control_revision_v2",
+      "location": "evidence/I-0007/runtime/causal-patch",
+      "probe_binary_sha256": "B82B44C6715FDA0D66AEFFFD1B35F842C82883DD4021A74BF6FE82F2E9F08A31",
+      "injector_binary_sha256": "09BCBA4B9DCAD6244B0D7655AFF78FE4B489B38B956EB599C40DAC364C6EE0AF",
+      "note": "900-second valid deadline, distinct V2 DLL/control names, unchanged causal formula/sites. Prior preparation-only session 20260919T183147Z-pid20840 stopped before stimulus with exact restoration; zero trial events. See CAUSAL-PATCH-PROTOCOL.md."
+    },
+    {
+      "kind": "scalar_feedback_session_165",
+      "location": "evidence/I-0007/runtime/sessions/20260919T181015Z-pid20840",
+      "mirror_sha256": "6C12BDD5D77DA3D276A087A0F0CBE507063351455157B88B6E28773385F4C763",
+      "note": "494 exact decisions/recurrences and delta N-1 pairing. Clean stop/restoration. See runtime/FEEDBACK-MIRROR-165.md and corresponding analysis folder."
+    },
+    {
+      "kind": "causal_distance_patch_prototype",
+      "location": "evidence/I-0007/runtime/causal-patch",
+      "probe_binary_sha256": "F546C2F64B1F40D2044A457C3838DC72DA362022A50CCD332E49B2687D3C2C6E",
+      "injector_binary_sha256": "C52404384CB8AF57ADC3AE112526CD8C0EB12A3485A9647342EF006439045CBB",
+      "note": "Prepared disabled. Build, native operand/time-pair/DR-restoration tests pass. Live effect pending. Same correction at 60/165 with idle-only controls and incremental flush; runtime/CAUSAL-PATCH-PROTOCOL.md."
+    },
+    {
+      "kind": "builder_mirror_session_165",
+      "location": "evidence/I-0007/runtime/sessions/20260919T175749Z-pid20840",
+      "mirror_sha256": "0F161E5C0CD5A5F7C487018CC5379457A3D27A3A1F85AC2C7C072A925C878775",
+      "note": "494 complete four-site windows: virtual output reference-compatible, modifier unchanged, final exactly scaled by 0.5. Timing/debug state restored. All hashes/derived evidence in runtime/analysis/20260919T175749Z-pid20840."
+    },
+    {
+      "kind": "scalar_feedback_reconstruction",
+      "location": "evidence/I-0007/static/source-scale",
+      "note": "Exact scalar-offset search leads, read-only selected Ghidra exports and constant bits. 005C72B0 fixed-distance feedback reconstructed; activation/time pairing remains to be qualified. Interpretation: runtime/BUILDER-MIRROR-165.md."
+    },
+    {
+      "kind": "feedback_instrumentation",
+      "location": "evidence/I-0007/runtime/feedback-instrumentation",
+      "probe_binary_sha256": "AAF7B09D58CC24633B55F2D003A2A1E93F8A51901B3DEA3F13AC2E3B090B3A56",
+      "injector_binary_sha256": "11806F0921335DC548B20277F558249176B0C2FB1715C84E78CCEF7721B08F48",
+      "note": "Two exact execution sites, existing transition/three hooks. W4/WX build, two-slot RF/restoration and recurrence tests pass; disabled, not live validated. Protocol: runtime/FEEDBACK-PROTOCOL.md."
+    },
+    {
+      "kind": "velocity_mirror_session_165",
+      "location": "evidence/I-0007/runtime/sessions/20260919T174451Z-pid23064",
+      "mirror_sha256": "EA8C4236768C78B1FB3836B95FF43F9C723F282EEAA56327A36701C748B66D5C",
+      "note": "494 exact source copies, rotations and horizontal inverse-delta conversions. Input already reduced. Timing/debug state restored. Analysis and all raw hashes in runtime/analysis/20260919T174451Z-pid23064; interpretation runtime/VELOCITY-MIRROR-165.md."
+    },
+    {
+      "kind": "source_writer_reconstruction",
+      "location": "evidence/I-0007/static/source-writer",
+      "note": "Read-only Ghidra exact-build exports of observed 009DB980, its sole direct caller 005CA570 and two direct calls implicated in source preparation. 009C8E80 disk export is opaque, not a usable decompilation. No old Evidence Store changed."
+    },
+    {
+      "kind": "source_builder_instrumentation",
+      "location": "evidence/I-0007/runtime/builder-instrumentation",
+      "probe_binary_sha256": "3E7DDEB09B245EF531390786609405F282540244DC8A613795BF12467F386390",
+      "injector_binary_sha256": "A8D0C01A351ECC2AD783809B42BD6B5E59F38AE3F7210F0448D9230485321764",
+      "note": "Accepted target-165 session 20260919T175749Z-pid20840 locates scalar-created half amplitude. Exact restoration, configuration disabled. Protocol: runtime/BUILDER-PROTOCOL.md."
+    },
+    {
+      "kind": "increment_mirror_session_165",
+      "location": "evidence/I-0007/runtime/sessions/20260919T172639Z-pid1696",
+      "mirror_sha256": "84963C6ACB3E72A90CA5C2C72264EFCFEAC94F37D699124A99F376009DDE4797",
+      "note": "494 ordered four-hit windows, unchanged input/output, zero record count, exact products and copies. Timing/debug state restored. Analysis and all raw hashes in runtime/analysis/20260919T172639Z-pid1696."
+    },
+    {
+      "kind": "velocity_source_reconstruction",
+      "location": "evidence/I-0007/static/velocity-producer",
+      "note": "Selected exact-build setter/caller/rotation decompilation, references and rotation constant; original I-0005 exports reused read-only. Live source/rotation/flags now qualified in runtime/VELOCITY-MIRROR-165.md."
+    },
+    {
+      "kind": "velocity_source_instrumentation",
+      "location": "evidence/I-0007/runtime/velocity-instrumentation",
+      "probe_binary_sha256": "DDE468F93CDD7E6D466A006AF331C039AA10742AE7D0319EA50B6C78A773F442",
+      "injector_binary_sha256": "9471CC71B1914202A893CA9CB592DD1472AD7FE9C46366B277203614187C1063",
+      "note": "Three exact execution observations plus owner+E0 write watch. Accepted target-165 session 20260919T174451Z-pid23064; input already reduced. Exact restoration, configuration disabled. Protocol: runtime/VELOCITY-PROTOCOL.md."
+    },
+    {
+      "kind": "runtime_session_165",
+      "location": "evidence/I-0007/runtime/sessions/20260919T170924Z-pid8088",
+      "watch_sha256": "F0B5D46498E7273B2ADE2BE623CBB2D7F8AC4F656622B615192E4F895E45E296",
+      "note": "494 exact triplets, additions, time products and endpoint matches; original DLL unchanged; exact timing restoration, COMPLETE reports debug-state restoration. Not a causal fix."
+    },
+    {
+      "kind": "runtime_comparison",
+      "location": "evidence/I-0007/runtime/analysis/candidate-watch-60-vs-165.json",
+      "note": "Returned vector norm ratio 0.49984325; local product and add exact; time discrepancy on 15 rows explicitly retained. Interpretation: runtime/CANDIDATE-WATCH-COMPARISON.md."
+    },
+    {
+      "kind": "increment_producer_static",
+      "location": "evidence/I-0007/static/increment-producer",
+      "note": "Read-only exact-build export of 02064FF0 reached by the active candidate producer; inputs/outputs and local integration reconstructed, not causally qualified."
+    },
+    {
+      "kind": "increment_producer_instrumentation",
+      "location": "evidence/I-0007/runtime/increment-instrumentation",
+      "probe_binary_sha256": "D00C39A4D83B13C0727557386373B19CA8343F2FEA357E524C3B4A532C23E60D",
+      "injector_binary_sha256": "6D25D99BF441BD6125371706EC05594F8C30C6A6B1B61814825D302D87A24647",
+      "note": "Two exact call-site execution observations plus one nested+A0 data-write watch. Target-165 session accepted at 20260919T172639Z-pid1696; input/output unchanged on 494 calls. Config disabled. Protocol: runtime/INCREMENT-PROTOCOL.md."
+    },
+    {
+      "kind": "runtime_session_60",
+      "location": "evidence/I-0007/runtime/sessions/20260919T170034Z-pid9748",
+      "watch_sha256": "A0E1EFDDC208CD7321188C548B14464E554CBAB1A3C473906D82A8B29BF8E52D",
+      "note": "Accepted for writer localization: 180 ordered triplets, exact local add and next-update endpoint matches; timing restored 60/1 to 30/0, COMPLETE reports debug-state restoration. Not a patch validation."
+    },
+    {
+      "kind": "runtime_analysis_60",
+      "location": "evidence/I-0007/runtime/analysis/20260919T170034Z-pid9748",
+      "note": "Raw hashes, cadence, locomotion and exact candidate sequence checks; interpretation in runtime/CANDIDATE-WATCH-60.md"
+    },
+    {
+      "kind": "static_boundary",
+      "location": "evidence/I-0007/static/CANDIDATE-PRODUCER-BOUNDARY.md",
+      "note": "Reconstructs the nested module dispatch, refutes the active transient path and its local 1/60 constants as demonstrated persistent-candidate writers, and defines the runtime alias-boundary discriminator"
+    },
+    {
+      "kind": "selected_static_exports",
+      "location": "evidence/I-0007/static/candidate-producer",
+      "note": "Exact-build selected listings, decompilations, bounded vtable dumps, attachment xrefs, and field-user inventory"
+    },
+    {
+      "kind": "runtime_protocol",
+      "location": "evidence/I-0007/runtime/PROTOCOL.md"
+    },
+    {
+      "kind": "runtime_instrumentation",
+      "location": "evidence/I-0007/runtime/instrumentation",
+      "probe_binary_sha256": "6E24EAE12953F3D95FF3D3C64FA6FF9918C6A617515AD077A4FC9498D4BF6680",
+      "injector_binary_sha256": "E5D6F8292FD96F6CACC6EE5AFCC1A0F6050D29675D8DC5429429DC496B1B62E9",
+      "note": "Observation-only exact selected-candidate write watch; offline three-slot write-only hit and exact debug-register restoration test passed; checked-in configuration disabled"
+    },
+    {
+      "kind": "elapsed_candidate_pair",
+      "location": "evidence/I-0007/runtime/analysis/elapsed-20260920-paired",
+      "note": "Stopped2428;1799 exact intervals; recovery clock and327 usable nonunit source ratios qualify bounded local causal response K-0041. Full world-motion equivalence unproved. SOURCE-VALIDATION.md and candidate-source-evaluation.json, reproducer runtime/evaluate_candidate_source.mjs."
+    },
+    {
+      "kind": "bounded_velocity_accumulator_audit",
+      "location": "evidence/I-0007/static/velocity-threshold",
+      "note": "Cycles28-31; hypothesis only, disk factor0.65, epsilon2^-23,1976 zero-state snapshots, bounded activation setters; no new acquisition or patch. See ASSESSMENT.md.",
+      "sha256_files": {
+        "activation-headless.txt": "FBF1CDE469232A1C22F7B8AC8B8098E17075A4ED0746DF3392E2DB9FAFDBEE6E",
+        "activation-math-headless.txt": "964EE56CBEBE6083E59593B6CF26EB06FFDE6CBAF95971D61FA189EE685CDAED",
+        "activation-math-targets-headless.txt": "1F0E3DD1846FC2C87D597A2AA006F47BF6D89FB14ACB051E9F04F62EBCBAC1EB",
+        "activation-qualification.json": "D1991194AAD9EAB702DB93F70EB54B349D700C7E7035038817905A026A4C15C6",
+        "ASSESSMENT.md": "83D78D7A4AE64A4B061D4D5A5B7019B7EFA914CADD1365F116558701F69D6C71",
+        "audit_existing.mjs": "176293A7A8EC53887FCAEF2F66EAE2371FBCE63BD87002A49DA5C1640ED92DD0",
+        "constant-values.json": "A0FF9E375F637A863D080AB5C0ED19F13A20C51D1B32E59F870AE6BF9B7D27C4",
+        "DS3-1152-F-009DBEE0.asm.txt": "4DE7F514FB9D61EBAFB4C6FF1F785B8181712BB37701DE06BA13063E789E6551",
+        "DS3-1152-F-009DBEE0.c": "36D37DE524F63E80755B2E0D2D57B13D719D1B6998F7A8C202C14B2412AA8495",
+        "DS3-1152-F-009DC6B0.asm.txt": "2AC1DED33C076184FAC66384577C84958D862282B87E334A67A2A6326805ED38",
+        "DS3-1152-F-009DC6B0.c": "B8F9F40DBA03B5E753CED7D7FBBF7D7BC3070C8C5DEB2B932F7F11C5A6C3CE85",
+        "DS3-1152-F-009DEDD0.asm.txt": "96150A5106BBAB8A906CD7203B7DFF803A0C3E9BE97EA1DE2C358C00EB03B13C",
+        "DS3-1152-F-009DEDD0.c": "5A119E3CF2891317885A0185157924A35C6E9CBDE28C3811C85FB8DEADDAC538",
+        "DS3-1152-F-009DF460.asm.txt": "CF1ACBFB0B3F84280E7A9DC4EC726AE5A49E2A0411AF953207995F529070BBBB",
+        "DS3-1152-F-009DF460.c": "1082DD6DC557DA7636D6110EDAA69879BB25D27B3D9554662C20F9D4F8E273A1",
+        "DS3-1152-F-009DF840.asm.txt": "66FEC25E2AAD1DF12A46B0C573363E94A6C7BED80F5F7FE694AE749031100A71",
+        "DS3-1152-F-009DF840.c": "45EE0AC3BEB3B534741835E751390EC5DEBCF52C31FA1515CE1B4607B028CDEB",
+        "DS3-1152-F-01777FB0.asm.txt": "E56690BC22F8496B19FDB2B7446CE1206140A9024D8102AFBB01AC68AFD71784",
+        "DS3-1152-F-01777FB0.c": "F3E87AD04FAC9BBDCEFBC7A2CCE5E6C6D4906E21EA81177A3B08096EC87A2B5D",
+        "DS3-1152-F-01777FD0.asm.txt": "60B742A74294DAE10681C4D7526F4D90BC0D7D27EF2815C9A34366B337CE35D4",
+        "DS3-1152-F-01777FD0.c": "CBC4301DF29D6802EA7F4DE25CAD6FEEBBFB51E68A9C61F5B0C8726BA6A5AD8A",
+        "DS3-1152-F-01778090.asm.txt": "A4EFCE8A8E9F28F6D9F8B7D6C499C5C777859A6C98C06C107E0FE06A45A860F5",
+        "DS3-1152-F-01778090.c": "6FAA8D3CC34DDA082B6FF157E23C1AB0B0149FE89EAC6C977D76C8D03BC84AAF",
+        "DS3-1152-F-01778150.asm.txt": "B119E1E5DF38ECB2856F0D990BA7802F1D6B2289334BD3581CA9C7494EE9350E",
+        "DS3-1152-F-01778150.c": "52AED046EC5FF3E955F730455E12D4A5A1E7A63716E2830B5F8285646A7246C3",
+        "DS3-1152-F-01778230.asm.txt": "5A3F6DD2B7242B1742601414C9F2EB0098F9EA0635D7A5C67FEB92ED6CB5E7CE",
+        "DS3-1152-F-01778230.c": "2D08EE5EEAE10824981BB3F24A9C80CF0B07C217A8A8229DA2A1A857E6AFEB46",
+        "DS3-1152-F-01FD3430.asm.txt": "4FDCE00BA79F987558D4481C9CA2492DA94C84E25EFF12F0372EED96D5BD840C",
+        "DS3-1152-F-01FD3430.c": "D1D09EADFF10568780817BCCFFCC5B7A09EAA643DB613AC448F3D59DC7388154",
+        "elapsed-damping-headless.txt": "08692EFA6C010098D865D04E082338650E496E5518FEC8C0E2DCEB3084F47547",
+        "elapsed-damping-target-headless.txt": "0A99E9B129F446E110B1DF0206B5158236A1413A84ECE978FC004DC4408EF9B1",
+        "existing-capture-audit.json": "2D518017DC3745400362453D28C6D0FF3448FB15A86A8D0329FF0E2AB735C702",
+        "export-headless.txt": "F59B42EF0497BDBC874756CB78E28DE9E2FBFD591685376FD390E124CA8C2229",
+        "field-users-headless.txt": "E56E52A86CB27048606A3C7B66525FA4C001484814DA82E5BDA4644CCD6EB990",
+        "field-users.csv": "BDFCD858ECAA4F66CD294FEC739A9CF295B1647291DDFB00BDD06E9E258CB015",
+        "isolated-power-build.txt": "4885434007CD4884654AAD27FF07298DD87F2E0FBCA2CD446FE0FA6490309A62",
+        "isolated-power-identity.json": "83D1448D1D87C91E784BE86664409B1361CD1DAA6309B6F7FB37F53B6272870D",
+        "isolated-power.csv": "A1CA448D0C94CB2C7EE42FACFA3FD7F9F1FE07C744FB557ADB4AD361FFB274A1",
+        "OFFLINE-CLOSURE.md": "B51A83066F8866507078714C7AA34EAF21F285884A2914B28F0E5935A28D27BB",
+        "qualify_activation.mjs": "7C414802B4EEB1A8144B6EAB234E182E15E16C37741CAA2C754B69B785DB3847",
+        "read_constants.mjs": "7AEDB39C0B097EE88660ED26C11F4E997EF08D7809A09A42342C81F6055A08D5",
+        "references-headless.txt": "1491C1710D4FBA43E73587CC8B76310AA0CB99FC7915E0E534213D21C44F35A7",
+        "references.csv": "0384C0899C91AE2121EC926EDC6599EE12B12923A65980FA0F3134601DD6DF16",
+        "setters-headless.txt": "5765638E2FBF080EFBAEEDA4013DA8C9E08F1D2AF4590DEAF2A8FCC201079D05",
+        "test_isolated_power.cpp": "AA8265F466DFCF9E1132678A78D4552682FA28E8A4D4062B5718AFDE0DC0E93D",
+        "CONVERGENCE.md": "185D3C32684CFB5A76725509942E5A961265B10193E403C0EFB040EDCA5D479E"
+      }
+    },
+    {
+      "kind": "accumulator_activation_observer",
+      "location": "evidence/I-0007/runtime/accumulator-observer",
+      "note": "Observer completed24724 at60/12; native strict-duration/four-execute tests pass. BUILD-VALIDATION preserves acquisition identity; analyzer later extended to gate statistics. No movement patch. Config disabled."
+    },
+    {
+      "kind": "accumulator_setup_rejected",
+      "location": "evidence/I-0007/runtime/sessions/20260920T023649Z-pid18340",
+      "note": "No trial: effective3s instead of12 detected before go; stopped/restored60/1 to30/0; events header only. Old build identity retained. Parser and strict gate corrected for next fresh process.",
+      "raw_sha256": {
+        "override-transitions.csv": "A6066B48A3153E7E677A4E2C462896C0276885DA44469B5F84FE2FFA0697D9EF",
+        "accumulator-observer.csv": "416CB42BC42837195FA86DDB16C01E25E47C75D31D7584D5F81542E73AADF2A8",
+        "central-state.csv": "DED9C7962CF71D3599BC48469E6C0082022ADD104A33AD51D514B34AA3F837DF",
+        "probe-overhead.csv": "B77E5D288D75463660F075090061A9ACD93837CD2C653B3512BCD5960B5F6080",
+        "semantic-state.csv": "2A1432317853ABC8ECF61FD86C1504A8BA51E007BB6381250FAADA8AB0252667",
+        "hook-status.csv": "E93679F5E3095B1FFB1E91821F141398F6B5048EE73218925EA7763C99799BA8",
+        "call-sequence.csv": "FD4CD95DF9C9C5E975ECE2A0A142D8EE7DC582177C08BA17AAB715EA87AFFDBD",
+        "COMPLETE": "E28888FA318DCEC7E05F7F1A23E78BB6183B0D5653547368B08D9973EBF879AC",
+        "markers.csv": "0C47C7B5F34EBE6726F1D3BD0AECAEF5C452725A9319914D9DA9D4FE85697E9B",
+        "locomotion-updates.csv": "79F9C7259126773689CB3C6C64BE587FD5AA933AA71484810C79DCBDA59CE54D",
+        "locomotion-phases.csv": "5561DADE9A3E7316BB430388CA7297417A5B490DBB6945807DB9F92A43F80959",
+        "locomotion-events.csv": "56E3D8D267A6611C561BACC5D5AAFDDBDA4A093E8AE2EB9132BCDB812CD379AA",
+        "callbacks.csv": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4",
+        "modules-stop.csv": "D1E4532DE2FEB592862FC021E3AB35E86FD6DB9DD3FCDB0DBABABC762E2E8729",
+        "READY": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962",
+        "observer-build-identity.json": "A1EE7E5C10B2F49E3E3F06ACBDD491205D78F925C1F5BF679BC1A7F4C32EFEBA",
+        "session-info.txt": "79CF0F0975088F815037024A4684424742C6B8E35699A77A431418290CAF3B2E",
+        "locomotion-writer-mirror.csv": "0C3B0CD9B41929DE150E111EBAC321E1D6633E2059412263A6CE41E7F546F61E",
+        "presentation-pacing.csv": "29B1FAC577A8FAE1AE22AD8EC0E27A3968C33F4DF9DBE83AB6015537CFC58471",
+        "present.csv": "A27778B25DA34B88B230855F23B8EFF67DE8CCE6AF05B29209A7242DB0B88CD6",
+        "consumer-summary.csv": "27E6BE9826E43D1A920E114CECDB47D557C07F0118B209161D669BAA62195C62",
+        "modules-start.csv": "D1E4532DE2FEB592862FC021E3AB35E86FD6DB9DD3FCDB0DBABABC762E2E8729",
+        "selector.csv": "D68F2FC1812BA1104C7994837D0412C8E3BB03EF733C37F068AC10E329198DCA"
+      }
+    },
+    {
+      "kind": "accumulator_activation_session",
+      "location": "evidence/I-0007/runtime/sessions/20260920T024008Z-pid24724",
+      "note": "Completed718 exact zero-only fallback intervals; stopped/restored60/1 to30/0, disabled. Immutable raw hashes and interpretation in analysis/accumulator-20260920-60. No harmful decay claim."
+    },
+    {
+      "kind": "accumulator_activation_analysis",
+      "location": "evidence/I-0007/runtime/analysis/accumulator-20260920-60",
+      "note": "718 exact intervals, zero state throughout; live factor0.65, gates and disk35-degree conditional analysis. ASSESSMENT.md gives limits. No repeat route or165 pair."
+    },
+    {
+      "kind": "accepted_fixed_point_replay",
+      "location": "evidence/I-0007/runtime/analysis/accepted-fixed-point",
+      "note": "2625 conditional scalar1 rows, native/JS agreement; not live acceptance. Reproducer runtime/replay_accepted_fixed_point.mjs; build provenance retained."
+    },
+    {
+      "kind": "single_write_offline_assessment",
+      "location": "evidence/I-0007/runtime/analysis/single-write",
+      "note": "1799 JS and native exact outputs,81 counterfactual raw-native branch differences;324 synthetic JS cases and20 native rejection checks. Reproducers runtime/replay_single_write.mjs and test_single_write_native.mjs. Native identities in native-validation.json. No game instrumentation or concurrency proof."
+    },
+    {
+      "kind": "placement_visibility_decision",
+      "location": "evidence/I-0007/runtime/analysis/single-write/placement-visibility.json",
+      "note": "Cycles49-51:23 raw hashes,81 modeled intermediate differences, bypass ingress and two enclosed calls; defer consolidation. Reproducer runtime/audit_placement_visibility.mjs. continuation-artifact-reconciliation.json verifies all12 candidate artifacts and recovers exact ignored binaries; no rebuild."
+    },
+    {
+      "kind": "candidate_movement_matching_audit",
+      "location": "evidence/I-0007/runtime/analysis/elapsed-20260920-paired/movement-matching-audit.json",
+      "note": "Retained23 raw hashes; mismatched heading, animation phase and source rates prevent movement acceptance. Sampled path brackets are not sub-frame physical bounds. Reproducer runtime/audit_movement_matching.mjs."
+    },
+    {
+      "kind": "release_control60",
+      "location": "evidence/I-0007/runtime/sessions/20260920T033000Z-pid23800",
+      "note": "Stopped/restored;480 exact/native-equal outputs. Release after8s capture, insufficient release gate. Immutable23 raw hashes in analysis/release-control-20260920-60/transient-summary.json; interpretation release-assessment.json; reproducer audit_release_control.mjs."
+    },
+    {
+      "kind": "release_retry60_qualified_tail",
+      "location": "evidence/I-0007/runtime/sessions/20260920T033403Z-pid13732",
+      "note": "Single authorized10s retry; stopped/restored.600 exact/native-equal outputs and5.533s stationary released suffix.23 immutable raw hashes under analysis/release-retry-20260920-60/transient-summary.json; evaluate_release_tail.mjs compares retained165 only within limits. No further identical maneuver."
+    },
+    {
+      "kind": "prefactor_source_temporal_contract",
+      "location": "evidence/I-0007/static/source-temporal/CONTRACT.md",
+      "note": "Cycles58-63: targeted decompilation and bounded searches reconstruct module28 lifecycle, exact00DD3850→009A3910 writer and companion00DD3B50 bidirectional exchange. Exact C1/call/site bytes pass; protected caller, exchange ordering and source cadence remain unknown. No full-trajectory or additional defect claim."
+    },
+    {
+      "kind": "spatial_exchange_observer",
+      "location": "evidence/I-0007/runtime/spatial-exchange-observer",
+      "note": "Cycles64-84: four-site schema and strict pairing; the original binary produced an accepted target60 control then a rejected target165 crash capture. The hardened predecessor stopped/restored exactly in fresh session27644 but overflowed before trial_end. The current offline-only build adds guarded entry caller RVA and passes two 4x1024 rearm/caller-read/restoration cycles. Config disabled; current build not injected."
+    },
+    {
+      "kind": "spatial_exchange_60_control_and_165_crash_session",
+      "location": "evidence/I-0007/runtime/sessions/20260920T091359Z-pid4128",
+      "note": "Target60:528 strict forward and528 strict reverse pairs, no rejection/overflow. Conditional target165 crashed2.8892191s after arm near visible movement stop; no trial_end/COMPLETE, so165 is rejected. SHA256SUMS.txt binds retained raw files and WER evidence."
+    },
+    {
+      "kind": "spatial_exchange_control_and_crash_analysis",
+      "location": "evidence/I-0007/runtime/analysis/20260920T091359Z-pid4128-spatial-crash",
+      "note": "Accepted60 topology: all528 exchanges are strictly ordered. Stable selected/current blocks have a transform-consistent three-float4 layout. In124 active player-slot rows, derived translation predicts selected-to-current displacement after negated quaternion rotation; norm/delta median4.01140065. Crash audit rejects165; phase comparison bounds its final partial row and caller history."
+    },
+    {
+      "kind": "spatial_crash_boundary_static_review",
+      "location": "evidence/I-0007/static/crash-boundary",
+      "note": "Cycles76-78 exact-build export: ECA94C immediately follows the direct call to02344730; the callee contains eight indirect object-table calls. WER lacks faulting instruction/register/stack state, so no call or corruption source is selected. ASSESSMENT.md records hashes and limits."
+    },
+    {
+      "kind": "spatial_exchange_165_short_overflow_session",
+      "location": "evidence/I-0007/runtime/sessions/20260920T095812Z-pid27644",
+      "note": "Fresh hardened target165 run with a1.5s requested window. It reached the4096-hit limit after about1.16s before trial_end and is rejected. COMPLETE, exact165/1 to30/0 timing restoration, debug-register restoration and SHA256SUMS.txt preserve the clean-stop evidence; no crash occurred."
+    },
+    {
+      "kind": "spatial_exchange_165_short_analysis",
+      "location": "evidence/I-0007/runtime/analysis/20260920T095812Z-pid27644-spatial-165-short",
+      "note": "Complete rejected prefix:1025 forward and1023 reverse pairs, no pairing rejection, six selected slots. XMM1 lane0 is delta or30x delta only; RTTI maps SprjBehaviorCharacterProxyDriver owners. Stable transform invariants hold192/192; local derived translation predicts world displacement65/65 active rows with norm/delta median4.00818600. K-0044/K-0045/K-0047/K-0048 preserve the rejection limits."
+    },
+    {
+      "kind": "spatial_owner_virtual_context",
+      "location": "evidence/I-0007/static/spatial-owner-context",
+      "note": "Cycles82-84 exact-build RTTI/vtable reconstruction:00DD3850/00DD3B50 are slots6/7 of SprjBehaviorCharacterProxyDriver;009A2F00 constructs it, writes PlayerIns/EnemyIns at+90 and attaches it at SprjChrBehaviorModule+50. Generic slot-offset search is nonselective. K-0046 records the map; guarded entry caller RVA is the offline-qualified next discriminator."
+    }
+  ]
+}

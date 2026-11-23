@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0088",
+  "title": "Fil moteur vers 120 images/s, tranche 3",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T03:33:02Z",
+  "updated_at": "2026-10-22T06:40:00Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: 120 frames/s unlocked at m45 (125) and on the Firelink walk (157); the UI display and the effect record off the engine thread"
+}

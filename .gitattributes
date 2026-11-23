@@ -1,0 +1,4 @@
+# Native sources are stored byte for byte (no line-ending conversion): their hashes and byte pins describe the files as
+# written (I-0036). The other historical rules (evidence and investigations I-0005 to I-0038) were removed by the 2026-10-25
+# repository audit: they no longer matched any tracked file (git tag archive/pre-cleanup-2026-10-21 keeps them).
+native/** -text whitespace=cr-at-eol

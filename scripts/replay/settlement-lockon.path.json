@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "name": "settlement-lockon",
+ "description": "I-0114 tranche 3 (UNLOCK-READY §5, the camera with a target; the first final review's M5): Beta at the Undead Settlement bonfire (m31, the settlement path's save; with test-no-ai.flag the hollows stand still): the walk out of the shelter into the street (Z 3 s), lock-on (the middle button), a strafe right and left around the target (D, Q 1.5 s), a target switch (one mouse move right while locked), a strafe right and a strafe left, once (series 25: the middle click that released the lock lost the window's foreground in both runs, so the lock stays on to the end). Read with locomotion-observe.flag and mechanics-observe.flag (the follow camera's yaw and the player's position every 1/30 s of the logic's time). Times in ms from the motion start; each segment's events in time order.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-beta-m31-20261013-044305/DS30000.sl2",
+  "sha256": "93D3A76E8C8CC4EA5D6CB4FE76EBFBF23AA30F2A114422EF355968F651CEB0C0"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "lockon",
+   "cycles": 1,
+   "cycle_ms": 14000,
+   "events": [
+    {
+     "t": 0,
+     "key": "Z",
+     "down": true
+    },
+    {
+     "t": 3000,
+     "key": "Z",
+     "down": false
+    },
+    {
+     "t": 3300,
+     "button": 3,
+     "down": true
+    },
+    {
+     "t": 3380,
+     "button": 3,
+     "down": false
+    },
+    {
+     "t": 4000,
+     "key": "D",
+     "down": true
+    },
+    {
+     "t": 5500,
+     "key": "D",
+     "down": false
+    },
+    {
+     "t": 6000,
+     "key": "Q",
+     "down": true
+    },
+    {
+     "t": 7500,
+     "key": "Q",
+     "down": false
+    },
+    {
+     "t": 8000,
+     "move": [
+      300,
+      0
+     ]
+    },
+    {
+     "t": 9000,
+     "key": "D",
+     "down": true
+    },
+    {
+     "t": 10500,
+     "key": "D",
+     "down": false
+    },
+    {
+     "t": 11000,
+     "key": "Q",
+     "down": true
+    },
+    {
+     "t": 12500,
+     "key": "Q",
+     "down": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "schema": 1,
+ "name": "anorlondo-stairs-hall",
+ "description": "I-0115 (Thomas, 2026-11-02: the flesh masses gone and back within half a second in series 39, whose climb held Z 30 s into the cathedral's hall): Gamma at the Anor Londo bonfire, facing the great stairs (as anorlondo-stairs-top), Z held 30 s (the stairs, then into the hall, as series 39), then still 5 s. Run with the enemies frozen; it ends in a death in both renderers (the flesh mass on the hall's ceiling drops on the player, a grab, i115-hall-*). Filmed by Run-I115Steered.ps1 (video start/stop around the path). Times in ms from the motion start.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-gamma-m37-anorlondo-20261026-123818/DS30000.sl2",
+  "sha256": "E96236897D815D1B1339FD49D3AA8D7308C185AA64AC9224A6F72A4638703411"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "climb",
+   "cycles": 1,
+   "cycle_ms": 35000,
+   "events": [
+    {
+     "t": 0,
+     "key": "Z",
+     "down": true
+    },
+    {
+     "t": 30000,
+     "key": "Z",
+     "down": false
+    }
+   ]
+  }
+ ]
+}

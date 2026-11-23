@@ -1,0 +1,98 @@
+﻿{
+    "schema_version":  1,
+    "investigation_id":  "I-0006",
+    "subject":  "Final-writer input mirror at 60 and 165 FPS",
+    "game_build":  {
+                       "label":  "Steam AppID 374320 / BuildID 10167187 / executable 1.15.2.0",
+                       "executable_sha256":  "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+                   },
+    "runtime":  {
+                    "game_launched":  true,
+                    "installation_modified":  false,
+                    "state":  "Completed successfully: 60 and 165 mirrors accepted, all 180 and 494 qualified rows reconstructed bit-exactly, and the effective candidate offset is the first confirmed carrier of the approximately 0.5 amplitude ratio",
+                    "sessions":  [
+                                     "20260919T155913Z-pid17172",
+                                     "20260919T160534Z-pid8520"
+                                 ],
+                    "observation_rva":  "009DC559",
+                    "scope":  "One neutral same-invocation 60/165 input mirror under D-0009; semantic Pass 2, roll, correction, and 240 remain closed"
+                },
+    "artifacts":  [
+                      {
+                          "kind":  "runtime_protocol",
+                          "location":  "evidence/I-0006/runtime/PROTOCOL.md",
+                          "sha256":  "85164626BDEDD15394DD03E8FB841C9B657CE029F3D13666422B34E3423D41A3"
+                      },
+                      {
+                          "kind":  "runtime_instrumentation",
+                          "location":  "evidence/I-0006/runtime/instrumentation",
+                          "probe_source_sha256":  "3995C51701410E576924898699A732A376E4BD4C2ABB565445FBAE82266E37F0",
+                          "probe_binary_sha256":  "1C69E5211E9AB29763C254723C43B776153ED95782E635F4A7FBCFE268BD3556",
+                          "injector_binary_sha256":  "80AE3A263E337AFE4EC2F1798A5303AA10F389CFF224D0D15AC1B6C2FCEA6A4C",
+                          "note":  "Observation-only mirror with reversible timing override; synthetic execute-breakpoint capture and exact debug-register restoration passed"
+                      },
+                      {
+                          "kind":  "bit_exact_reconstructor",
+                          "location":  "evidence/I-0006/runtime/reconstruct_writer_mirror.cpp",
+                          "binary":  "evidence/I-0006/runtime/bin/reconstruct_writer_mirror.exe",
+                          "source_sha256":  "1E4A02D09D57660462CA17341CE6F89FB270D2384F12655B1943DDEF372D6CDC",
+                          "binary_sha256":  "D70CE81F036F0AE7EFCE7923C899DE888F540DEDE939FC2CACAEF8DEA47E4F3D",
+                          "note":  "Sequential SSE float32 reconstruction under each captured MXCSR; synthetic bit-exact test passed"
+                      },
+                      {
+                          "kind":  "ordered_comparator",
+                          "location":  "evidence/I-0006/runtime/compare_writer_mirror.mjs",
+                          "sha256":  "F0A3F16F297F33395553E2ECFFFAEDF1A1B33DBED3B0D99E9B2FFED4F3D2D38E",
+                          "test_sha256":  "016597B0FE2CCF87A07241E771FC178DC69F9724C1E0606A95B38628986A6BF8",
+                          "note":  "Applies D-0009 categorical, candidate, scalar, joint, then invalid/local-calculation decision order; validates the deterministic writer-after-N to snapshot-at-N+1 pairing; candidate-first and scalar-first synthetic cases passed"
+                      },
+                      {
+                          "kind":  "runtime_session_60",
+                          "location":  "evidence/I-0006/runtime/sessions/20260919T155913Z-pid17172",
+                          "file_count":  22,
+                          "size":  7391937,
+                          "mirror_sha256":  "40F2871A048C29190F1C02D42A130D8014D73ACF513255978EA025429C22F310",
+                          "override_transitions_sha256":  "B14BD8DC7E0B780827D1DEEA11DABBC7FB2573671B15E5600A240194938FC17A",
+                          "note":  "Accepted target-60 session; 59.918699 Hz updates, 59.918988 Hz Presents, one complete deterministic sprint trial, exact 60/1 to 30/0 restoration, no overflow or inhibition"
+                      },
+                      {
+                          "kind":  "runtime_analysis_60",
+                          "location":  "evidence/I-0006/runtime/analysis/20260919T155913Z-pid17172-writer-mirror-60",
+                          "file_count":  7,
+                          "size":  6650801,
+                          "cadence_summary_sha256":  "1BE84FF6C0911CA25FE3936D7205112FA08527B43F1CD604B562B15B506AB900",
+                          "locomotion_summary_sha256":  "9A7B78E2898657431421547D7C9097B3B61FB761C385A9682C776B93BD1337C5",
+                          "reconstruction_sha256":  "F027297B861C69511610CEBF9571784BA95A0B3CA9FF942BF551DC3B96D19F6A",
+                          "reconstruction_summary_sha256":  "5EFA5707FABB6EF27FEFD0FB51902AFF56C09A06E6DB0E6D3188F1903B764393",
+                          "note":  "All 180 qualified mobile commits have unique deterministic pairing and bit-exact sequential float32 reconstruction under captured MXCSR"
+                      },
+                      {
+                          "kind":  "runtime_session_165",
+                          "location":  "evidence/I-0006/runtime/sessions/20260919T160534Z-pid8520",
+                          "file_count":  22,
+                          "size":  18255054,
+                          "mirror_sha256":  "802010E1E98ADA752F1805BFE7C2CC171625FB008A12A24C29BC9C2F073615FF",
+                          "override_transitions_sha256":  "36330F011F132429528102823A32EAF35A0C55F6571EA29C01FA2E6FD52EF90A",
+                          "note":  "Accepted target-165 session; 163.795279 Hz updates, 163.542529 Hz Presents, one complete deterministic sprint trial, exact 165/1 to 30/0 restoration, no overflow or inhibition"
+                      },
+                      {
+                          "kind":  "runtime_analysis_165",
+                          "location":  "evidence/I-0006/runtime/analysis/20260919T160534Z-pid8520-writer-mirror-165",
+                          "file_count":  7,
+                          "size":  18252043,
+                          "cadence_summary_sha256":  "B50D6A3EAE2309507C72BC7AF809118A41AB1D18A0D7C0E349E7A892A60A526A",
+                          "locomotion_summary_sha256":  "4C916C640BDADFA9757B790EAA450A06DD6EB0FFB79334E92857A2867C21A4B8",
+                          "reconstruction_sha256":  "227DA2BB743952DC25BEBD69DD432C51A0BF1F9AEFFCCEB44BADF0EE7F700938",
+                          "reconstruction_summary_sha256":  "7AC6E49A8B0865936810E30EF2960C51027ACAC97DBADD8325782700A51A9F97",
+                          "note":  "All 494 qualified mobile commits have unique deterministic pairing and bit-exact sequential float32 reconstruction under captured MXCSR"
+                      },
+                      {
+                          "kind":  "cross_condition_comparison",
+                          "location":  "evidence/I-0006/runtime/analysis/20260919T155913Z-pid17172-vs-20260919T160534Z-pid8520/writer-mirror-comparison.json",
+                          "file_count":  1,
+                          "size":  4478,
+                          "sha256":  "EA60ABE180461014E9BBE3F9EE0C2A2192C7B2D8CE77A2E4F78978F6C5A41A9C",
+                          "note":  "Valid ordered comparison: source A8, inhibition 0, scalar 1.0 at both targets; candidate and final ratios match at 0.499474 projected and 0.502032 path norm, selecting candidate-first"
+                      }
+                  ]
+}

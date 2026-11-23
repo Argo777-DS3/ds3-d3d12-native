@@ -1,0 +1,1959 @@
+{
+  "schema_version": 1,
+  "investigation_id": "I-0008",
+  "subject": "Player animation temporal path",
+  "game_build": {
+    "label": "Steam AppID 374320 / BuildID 10167187 / executable 1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "artifacts": [
+    {
+      "kind": "retained_runtime_analysis",
+      "location": "evidence/I-0008/artifacts/retained-clock-audit/animation-clock-audit.json",
+      "sha256": "AC08C2EE8B8EC856B1C76862F796079ED2E8ABCFD03A4399C53D8C16DF08D176",
+      "size": 52536,
+      "note": "Row-level 60/90/120/165 classification and variable-delta versus fixed60 model comparison."
+    },
+    {
+      "kind": "retained_runtime_partitions",
+      "location": "evidence/I-0008/artifacts/retained-clock-audit/animation-clock-partitions.csv",
+      "sha256": "D4E4176A690A342CFCBC06BDFAF4023ED59E7A37797401AA99FA9852F375D69A",
+      "size": 9690,
+      "note": "Forward rows partitioned by target, animation ID, max and play speed."
+    },
+    {
+      "kind": "exact_build_rtti_inventory",
+      "location": "evidence/I-0008/artifacts/static-rtti/animation-rtti.json",
+      "sha256": "C3E6038D7728A1AE7225B48E372CE6F4D503552051535A881677D9E774771C92",
+      "size": 288784,
+      "note": "Exact-build MSVC RTTI/vtables and RIP-relative constructor LEA references for animation/behavior classes."
+    },
+    {
+      "kind": "static_reference_negative_result",
+      "location": "evidence/I-0008/artifacts/static-rtti/vtable-references.csv",
+      "sha256": "9269CE67D1AE87001FA2A4F51C5EB3BC8F604DCA2B8FC8940003DA34C3DEBC38",
+      "size": 69,
+      "note": "Canonical Ghidra data-reference query returned zero rows; deterministic raw RIP-relative LEA recovery in animation-rtti.json supplies the constructor leads."
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/.gitkeep",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "size": 0
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/retained-ring-audit/exceptions.json",
+      "sha256": "B8F92A15BEBF52A8AD1ADA8508FC2D99F627281BB688C5C86145D6ABD98A2F39",
+      "size": 43095
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/retained-ring-audit/ring-audit.json",
+      "sha256": "F2FA157F1499BCF2F51864D1DBDBA13953716D083B4BD7998B93A64C1F4CAC62",
+      "size": 4811
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-callback/DS3-1152-F-00DD2710.asm.txt",
+      "sha256": "FB66F6C410E00ADAA1BF2454A115F5F4457A40D69ED25B020097035BACF01CD7",
+      "size": 11432
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-callback/DS3-1152-F-00DD2710.c",
+      "sha256": "D8B1A6E7AD332757D3FD3968B4D04347E1B2F00649F154A0580B21C3C7996FB7",
+      "size": 3483
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-callback/DS3-1152-F-00DD2710.xrefs.txt",
+      "sha256": "7450626DBFE004EA40C96B7A8C5655AFCF2DD5D331BE3DD8D7A9BFCEA2F6EF8A",
+      "size": 102
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-callback/export-console.txt",
+      "sha256": "D29B3FF853D8B369E4E17EF22E448B2655196BE922E82E601B462853B37226F4",
+      "size": 4330
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-caller/DS3-1152-F-005C7DB0.asm.txt",
+      "sha256": "F7F3E0610BF0989147DAD70BB7B5098E9849A995C5F5B4B89BF4EC2969574625",
+      "size": 6238
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-caller/DS3-1152-F-005C7DB0.c",
+      "sha256": "7B61E5E561FA0847A4BA933A7623752FE0BF3D1146ACE583376046CD76F2BD7F",
+      "size": 3099
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-caller/DS3-1152-F-005C7DB0.xrefs.txt",
+      "sha256": "6FC8AD751937EC90B66DEB0E5B1EB578F822F8888E2CDD08172A150D504C2468",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-caller/export-console.txt",
+      "sha256": "85115AB46577A77AE565241827A223178B10D06DCBE7379D140CC0F58A7A40B6",
+      "size": 4328
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-constructor/DS3-1152-F-009B4750.asm.txt",
+      "sha256": "64DE907C3BD4BDF08625DFDDF735EFA3331A74E5477095EBE42981573D8392A4",
+      "size": 1211
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-constructor/DS3-1152-F-009B4750.c",
+      "sha256": "B54E4A740148D917D4FB6252E24F6D0D67000EDF962F2CC617E816789BDC2CD4",
+      "size": 463
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-constructor/DS3-1152-F-009B4750.xrefs.txt",
+      "sha256": "F4D095BCA10B1882E80AD69C8F61B8EC1F4146DF01FD54E0FF1977218EA5ED06",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-constructor/export-console.txt",
+      "sha256": "C64C06B39798F76BFBBD3167A66E4B8C068662837A5A76396BEE091B7ED86E9E",
+      "size": 4333
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-constructor/owner-rtti.json",
+      "sha256": "431D6B7C8DC3E5FE777D8E2BDD518AE933FBD1ACBAFE5232F3BC726F8785D59C",
+      "size": 274
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/dispatch-references.json",
+      "sha256": "82CE4B37FCF39A1FEEFE21599354A11896EC07F9E64D932FEB75B11EB9F6627C",
+      "size": 360
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3EA0.asm.txt",
+      "sha256": "4399F20FB23DCEA8A8250301D1920478C2FB4F338C80EE5D24642A9CBA66053D",
+      "size": 1812
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3EA0.c",
+      "sha256": "593CC7348699F94A3FF36CBD069300A6A79831C5FFCD8BB0660066EA40CA8D16",
+      "size": 600
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3EA0.xrefs.txt",
+      "sha256": "F9899BEA4FBEEA86BAD5F073EDAEF7854EA86A7D3F251A64FB4CE1B05FE6ECD6",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3F30.asm.txt",
+      "sha256": "D7FDB3CBB57FD5C2FE09B3B18A3E194A6F6AB45752114B62BA1561AC778E119B",
+      "size": 1407
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3F30.c",
+      "sha256": "E9E67C0D440CCEE9AE6C472D451EC81B0F33CDCC2BA6132964B12B8995395CA6",
+      "size": 747
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/DS3-1152-F-00DB3F30.xrefs.txt",
+      "sha256": "B532E2A6061AB4B416ED82EB779C7216697A9F2761E0049D3E82E70739E097A3",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-dispatch/export-console.txt",
+      "sha256": "762594945080034ED0223AB4CD23F8A903B3D23E6AD2C0F4BD2DB6465BF79DB6",
+      "size": 4342
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-input/DS3-1152-F-00F14FE0.asm.txt",
+      "sha256": "81D1B1B5E9D3D9708F170CE140EB4C92B52A45B8801D1E39D79A3C21B62E6832",
+      "size": 2775
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-input/DS3-1152-F-00F14FE0.c",
+      "sha256": "F1F2BBD92620179DA9E4B684CF4CCC739A65B34B3AAC73DAAA70F5C3F6CEB7C8",
+      "size": 1073
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-input/DS3-1152-F-00F14FE0.xrefs.txt",
+      "sha256": "CB70543B823D8A85904A7E24A5A65BF52D568ADEC1225EB9D63376B23E6938B0",
+      "size": 102
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-input/export-console.txt",
+      "sha256": "89E2DD24C5AFCE88D7313169BA8BEA070664E57C5C5347024028CB71051E3F35",
+      "size": 4327
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-00F1B070.asm.txt",
+      "sha256": "873BFF5CF1BEC4562404DAF38FEE1D886F262FDB0C1F59711B5BE2F5E9766FFB",
+      "size": 178
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-00F1B070.c",
+      "sha256": "C6C3A96163316FA5A5006B4A97C395A73641C5570099C2C7BA81559CEF68CDC7",
+      "size": 197
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-00F1B070.xrefs.txt",
+      "sha256": "A61030D16CB6C1EA37504341604886F86AD51F33751BDB9FB2D1CD0848F5D16B",
+      "size": 29
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-01078330.asm.txt",
+      "sha256": "67760792C4DC39AD0E052302C7990C61970F7DA5A8BFBDC9DC60A7D13F69E2A8",
+      "size": 178
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-01078330.c",
+      "sha256": "E498EA11F6CF2742800678079E56E848647719FC4767359658E7152E0F0EE3E2",
+      "size": 197
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/DS3-1152-F-01078330.xrefs.txt",
+      "sha256": "0AFB4D0F5377A5F5ED19354A2AC7CACAA2443A3D34DEFEC977B66AC6C0A27BCF",
+      "size": 87
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-leaf/export-console.txt",
+      "sha256": "2514AFC9A7B53CC8689462A427A6C0FF814DA4700E0C8447639F93632947C6E5",
+      "size": 4338
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-009E6A10.asm.txt",
+      "sha256": "B1E34CB7828787BD86019A65084E1675813A1111E48160CBA77AD2A55771EE61",
+      "size": 1019
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-009E6A10.c",
+      "sha256": "0F1CD7976EDFBEDE0DEBDC07B565A5C0FC7BEB50D9364263CBC30F59C5819BEA",
+      "size": 538
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-009E6A10.xrefs.txt",
+      "sha256": "D1B4B88FC97CEBF37DE53AEED32DA536D9D4CF9D8A8F74652064B4556135E20C",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-00A082D0.asm.txt",
+      "sha256": "88404FDE34F5BD04FB46EA501705F781742D153A509878ECECA257FDFAA0161D",
+      "size": 1704
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-00A082D0.c",
+      "sha256": "23D510443728A71ED2FC44FB607EC0A69589677EAE4398AC822C97CE0A9D6895",
+      "size": 696
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/DS3-1152-F-00A082D0.xrefs.txt",
+      "sha256": "FDCDE40A16DB7BD115A56F7A3E95E05CE0E6332844A59772EABF8C16B1C82DA0",
+      "size": 74
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-owner/export-console.txt",
+      "sha256": "7EE8EA7FDE94CD14D71D924170975F17632AC61D6FFF2260DA0A73E9EA0C7FCE",
+      "size": 4339
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F15EF0.asm.txt",
+      "sha256": "D39E259A07DF554CD33B9F428ABA44DD67E0B6C906574347AA8290AD9BF26E1A",
+      "size": 17013
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F15EF0.c",
+      "sha256": "3B2FB63491A7053163A95B5ECD1A36B853C147DB059E9DA46B7A7CB3964C92F8",
+      "size": 7998
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F15EF0.xrefs.txt",
+      "sha256": "6CA8D8868E98895DA0E378E3D9DD9EF4C62A6E5170559EF578AF127616E21811",
+      "size": 45
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C2B0.asm.txt",
+      "sha256": "7DFB0D2376856826E63C776587257BDEBD5B1443DD4837E777C8B0A0E6608A21",
+      "size": 2655
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C2B0.c",
+      "sha256": "C02F5BBEE088BE7676FF0705FA7CCABBA3A7A56C08B91851E3C20F5424E3FBE6",
+      "size": 1196
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C2B0.xrefs.txt",
+      "sha256": "C62ED9F51A9551A310B868F61C41E5351CB4614A9CA7920417CA4AD867390EE0",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C940.asm.txt",
+      "sha256": "FB1AE4E9336C801B4BF940ACFA73749D31A4C8ADA75FC7DAB5C7D6516467D252",
+      "size": 1663
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C940.c",
+      "sha256": "C55144873CDDD928379E86C1940652A1859A10BE17836D0E56073F6991054710",
+      "size": 722
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/DS3-1152-F-00F1C940.xrefs.txt",
+      "sha256": "91221CA40735AC4BA5F21835CDE827F38A41DA01C2CDF17E943786845AEC2419",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-producers/export-console.txt",
+      "sha256": "654CCF02412C12088E4F97BD52539540B7815976F21F573AFBD880615C6B6BB8",
+      "size": 4355
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider/DS3-1152-F-00DB3E10.asm.txt",
+      "sha256": "5A8BFEC9E4661375EC60607337D4D3C6E619BDD30D23F2EFE33D3C92B08D4608",
+      "size": 808
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider/DS3-1152-F-00DB3E10.c",
+      "sha256": "E8F424E31CADC20E9786664A2BA591DB56C4896BF08DB862221877C27A6FBED5",
+      "size": 336
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider/DS3-1152-F-00DB3E10.xrefs.txt",
+      "sha256": "988ADA1D0F75EBF5CF79488EB7C8FA23761AAEC234E133933F270B05919F2D32",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider/export-console.txt",
+      "sha256": "E5B808E49FC9A86CA8F9B700176D9C177FC45ABD70376E91D6ACE301D4527E57",
+      "size": 4330
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F14F90.asm.txt",
+      "sha256": "FEBC2D1FCA845A700F2C1F93AE6697624E010E8F3BDA1C32B192C171BEC56D74",
+      "size": 454
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F14F90.c",
+      "sha256": "C658CBEC20C57F8E52C869FD415B1845142A7FAD4D342EB2F84A94924E116F0E",
+      "size": 405
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F14F90.xrefs.txt",
+      "sha256": "9F20DD56291E5622882E62B5AC2889EC6CD175842CB9D03E5271EF96FE40AF7E",
+      "size": 29
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F151C0.asm.txt",
+      "sha256": "289AB9E7DAB564A5A9A1F018DC3412DAE2672E329054B6CF2CC1C0E1F667497C",
+      "size": 454
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F151C0.c",
+      "sha256": "0EC073D610721B943A844976E66C4BB26B4017698CE9FD8328EC7BEB31AAD977",
+      "size": 405
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/DS3-1152-F-00F151C0.xrefs.txt",
+      "sha256": "FD77CF51569C5BAF6FF52AB599309ACCA6513A54DF0D071EFF46E667E67014C9",
+      "size": 29
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/export-console.txt",
+      "sha256": "3593FCD9A6261BA3B67A6A855CBDDBF8C9968DAD7672B5BC98DC2E16AC9E8433",
+      "size": 4348
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/provider-global-refs.csv",
+      "sha256": "885A4683225933B112154D0F2562C25D312B63182D720A1C53C2DCA2ACC5DAF0",
+      "size": 399
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-provider-slots/refs-console.txt",
+      "sha256": "4A0BF16FBE47B237D4EC446F66E8209C39C01F4F002E8681643722A568EEDFEF",
+      "size": 4426
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/callback-global-refs.csv",
+      "sha256": "516AC30EA0030667B104B765BCE4BC3525202DDC67535BE0AA41C7C997FCF645",
+      "size": 1055
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/DS3-1152-F-00DB1EB0.asm.txt",
+      "sha256": "11BE9EE2BBDE911DD853A2284204FB577EC5D9051372808E33B625FE6CBF059B",
+      "size": 1119
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/DS3-1152-F-00DB1EB0.c",
+      "sha256": "3287AC2F3D65D76EDAFC87AEB436E68B36E1452BCF92C70C0E950B8963CF6AEE",
+      "size": 480
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/DS3-1152-F-00DB1EB0.xrefs.txt",
+      "sha256": "FB4B5727B1381CE53F380F83C104EA99E471A2F6D1A683E80BD0E14C4D5F3344",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/export-console.txt",
+      "sha256": "B721872A251E152613ACAAC8F54DA366F12E31548BAEF5FE926F887B6AF8285C",
+      "size": 4334
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-registration/refs-console.txt",
+      "sha256": "C399D291C5B91EEC2218456CD087DEE2B9C4897DC286E266F2B7D7AFE7D85DD5",
+      "size": 4425
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-reset/DS3-1152-F-009B4D00.asm.txt",
+      "sha256": "DCC193310C1911553864C712D4099E1FEE81C0EE2CD6744C054AA9E79DD886C4",
+      "size": 3441
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-reset/DS3-1152-F-009B4D00.c",
+      "sha256": "9C0E39AF4A1846F43B7965AAC8917E21D83EF6E2117FB14FA37FF2CDAE4D3B6F",
+      "size": 1857
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-reset/DS3-1152-F-009B4D00.xrefs.txt",
+      "sha256": "E78E643B38400C4C24756DB10035D4E781C4B055898BD28BF1A0E8966C2494E4",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-reset/export-console.txt",
+      "sha256": "209E64FA19276F0AC4019BEEFD66372EE5E52EC8B50E59882343BB1A4851300E",
+      "size": 4327
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F15EA0.asm.txt",
+      "sha256": "8831F5C2B7F03DB29F790B32FE314C66CFDF939D0E9EA20F2D7AE49A906FE30A",
+      "size": 990
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F15EA0.c",
+      "sha256": "4B7FF5AE90FB2F648F573C3910A0719C9B01C65F33BBC6FEC0D83AB431A04F52",
+      "size": 450
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F15EA0.xrefs.txt",
+      "sha256": "5F47CC5CFBA19648DEE96F8E41FE6C3B11B6F33B6D15EB19901D8C65A33D95D9",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19230.asm.txt",
+      "sha256": "1AA494AD3444C6A6DB03472A77CDF558DB01DACE76686C7BA62E9D1389D17B58",
+      "size": 5670
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19230.c",
+      "sha256": "A8207B7449EF1810ED0C5916AACE716791B11AD60B0066E6D9EB20AAA9D815C7",
+      "size": 2494
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19230.xrefs.txt",
+      "sha256": "71628EDDE8B22D2418F30FFDCE6223A29EF7B76A80C6D371D848D3B460C6EBF6",
+      "size": 118
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19420.asm.txt",
+      "sha256": "B379578C6128E9E346A036183F45DFEAD6E1673D40FD62BE5F7EB58BCEA1194F",
+      "size": 6118
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19420.c",
+      "sha256": "040FD7A1D338B053A38F31DDC374285966A5804224BDB9A659078CDF1BFC7C51",
+      "size": 2670
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F19420.xrefs.txt",
+      "sha256": "3D07C5D058695CA6BAB42C07EB21B34038601F2FD7274B5E8A21C706CDAEBA45",
+      "size": 118
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C200.asm.txt",
+      "sha256": "63091DC43ADA86B748B89E5116810D954754177D43C10FCDD404CEFA47614FDF",
+      "size": 755
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C200.c",
+      "sha256": "382958FF8EB05B250F26015A0C523833CDB3D5824DC509CDA7B8D25BF8C91EA6",
+      "size": 376
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C200.xrefs.txt",
+      "sha256": "68AFA0DC6ACE428E776747F69088CD4D5503ADF2AD43C10028F3AA3378068B9A",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C900.asm.txt",
+      "sha256": "0C681028223BD6973A63FCE3B2E99DF3685326B7BBA9B004314C5FB7DAF83AEC",
+      "size": 648
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C900.c",
+      "sha256": "E5BC5019640E1DE33562B6BE403D5A03D764F46BFC729543B9DAD470691C9CD2",
+      "size": 335
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/DS3-1152-F-00F1C900.xrefs.txt",
+      "sha256": "32C3C847D6CD4C96A36D4E577FE133A743B2602EA3E45A6D23FB0D8F0FA99E7B",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-source/export-console.txt",
+      "sha256": "2C0F580A5419F91D9D84D10ACBE78D7930C8449AF63605C77C8342DF3B9C2DD0",
+      "size": 4381
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F19200.asm.txt",
+      "sha256": "090853CF76EA8ABD29014B26372E3CF59C59203A440316A5949E6418481423A4",
+      "size": 492
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F19200.c",
+      "sha256": "FCAD917713897C5BE8BCAC98FA379E9806B60EA8B72F906D104435546E015404",
+      "size": 325
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F19200.xrefs.txt",
+      "sha256": "E192631EF02AF771C3BC5594C834FA103F4269FB64EEF783C675CC1357621985",
+      "size": 189
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F193E0.asm.txt",
+      "sha256": "CF9DEF172C7C7F2D5C32FF7F42D22FC8076767C7724998E17F2D551A15A68E90",
+      "size": 604
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F193E0.c",
+      "sha256": "CFCFB86A9662805A19A580A4B936CAD27A9C34DBC3C3D1FF0F5E761BBD52F7E8",
+      "size": 348
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/DS3-1152-F-00F193E0.xrefs.txt",
+      "sha256": "0F777BD4B6A8CE6FD9740A7F88167975F88AA90D5080EA25377F445C12ADFE42",
+      "size": 102
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-clock-time-values/export-console.txt",
+      "sha256": "B4BEA3A343ED64DD254940A55711BC29079852A3E8B68050A30C4589603E3F19",
+      "size": 4345
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826520.asm.txt",
+      "sha256": "A54EC841AF8582BEB63E200CD8DABBF2508EC97EF8FFC832B1805B143B34A040",
+      "size": 630
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826520.c",
+      "sha256": "74C03AAE58C588A228B3F2864E057CEF754A0A51D8A26750E7443E42B15024AE",
+      "size": 254
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826560.asm.txt",
+      "sha256": "A1954FB89EB3B70F3D06C671220A79E1D7D6AB7DF792D037461D278D21862157",
+      "size": 1239
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826560.c",
+      "sha256": "CCF6DC9DA566C75B98C068B1D066CECFC4EDC84E748DFA89ABC0DF43D469C27A",
+      "size": 801
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826D20.asm.txt",
+      "sha256": "AAEA8DC4CE0D87B533761D887DAC52F7BA137EBDE358CE4134D01CAE2A468739",
+      "size": 1830
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826D20.c",
+      "sha256": "7052AB6CF47EB146FB3615E193A4636DB597C0A61C51A4927880A6ADFBB25CE7",
+      "size": 891
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826EE0.asm.txt",
+      "sha256": "BB15FD4040F04882F91F4D8E118145206B6FC8C54FA760E47A0969D385EE2C23",
+      "size": 3697
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/DS3-1152-F-00826EE0.c",
+      "sha256": "FD12BECF95ABB7023F4A6CE14BB41489049CC6CE263A2C8FC0C9E69AF027DD5E",
+      "size": 1733
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-constructors/export-console.txt",
+      "sha256": "CBEA4B40D15ADE33F18D5DA0F5C7C602DB4541DF0D0CBA725D967569A38F4690",
+      "size": 4362
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826520.asm.txt",
+      "sha256": "D97E53CD10EA369440CCF50C057FBBE5713E39BBD5B93574C065F59B7A5E29CA",
+      "size": 774
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826520.c",
+      "sha256": "9B2A5F8E155CD1AE260B935BE45CC183CB8B266CFB52E361373439A70175CA5A",
+      "size": 254
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826520.xrefs.txt",
+      "sha256": "6C2DD2972B457E39D9175575E5057158DAEA23514161E595A5E13F90F33A0C55",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008265E0.asm.txt",
+      "sha256": "C471EEBF075B7CA296FB7EC690C115D1E7928AABE0A57A326AA39EBCF33A713B",
+      "size": 1499
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008265E0.c",
+      "sha256": "5A8CFDD169EF6A4A6DCACD241123C910BBB4F6EF4820FA4E85F39B6A1FB8251D",
+      "size": 751
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008265E0.xrefs.txt",
+      "sha256": "73994A41FAACABF047A983E6D73D9718BAD60954CC50CB70B30C7B44EBFC1020",
+      "size": 74
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826D20.asm.txt",
+      "sha256": "E19E0D260E8B7127892445B078EF08704235CF786B40C5F91D4161AD91CF633D",
+      "size": 2214
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826D20.c",
+      "sha256": "76311F8845C9AEF5D01C25AB1857A363720640F0EB9FCB470943B855842C9FEA",
+      "size": 891
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-00826D20.xrefs.txt",
+      "sha256": "8909CE2B44AE4B4AFFC29AC8AB8FE05E9A92EF2B98468441DD27CA50BC3863A7",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008275E0.asm.txt",
+      "sha256": "B4530B75BF8F973CB384A768CD4DD1D6C1747DCA4777F889B52AE361FD99323F",
+      "size": 35412
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008275E0.c",
+      "sha256": "23021E149A27A240567CEC9F9FDFF71817BBB17521B78E0FADBD1F194BE70225",
+      "size": 16812
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-008275E0.xrefs.txt",
+      "sha256": "43750A335ABB48EDB8A46AFC9B0A901A4B95BB6F29EE18726E233E472E8C4779",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099CA00.asm.txt",
+      "sha256": "2312E20EB6BFD9F4006904D196A8490F45A55E28257962A829DB7A6733435F3B",
+      "size": 9016
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099CA00.c",
+      "sha256": "7E8287C30DA318F8DCB7C6B2E4DF98EAA055E576EF1A3EF7C4FF9F3C8AD80D64",
+      "size": 3678
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099CA00.xrefs.txt",
+      "sha256": "B26C687A51CE6EAC7E3B989263E5CF503345C3005F3214B582515773418BD926",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099F940.asm.txt",
+      "sha256": "C47A70C3D7F32F077BE8012EBB2F2C17BB63999707BC8DCBA9FAD63B896DF893",
+      "size": 11903
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099F940.c",
+      "sha256": "25CEF048B6D6ADFDE0898A9A2CD93C1EE514E95067E9DD838971A3909B82C2BA",
+      "size": 4929
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-0099F940.xrefs.txt",
+      "sha256": "694D8FD65021A8E7DC955B2F726180C1FB15EF3190B6F2D7C52817AC9EFA0D75",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-012846E0.asm.txt",
+      "sha256": "CBAFA73E33C0FAE7CC98560B22C2BEDE1E993C5A81D77FE2B1186F014D254578",
+      "size": 4191
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-012846E0.c",
+      "sha256": "5E63188A90B355CAD9EA1597798D5334BC425D5B7186D2A70BCB151DF74512D7",
+      "size": 2294
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/DS3-1152-F-012846E0.xrefs.txt",
+      "sha256": "F7349A543187130C8BA95D2C00075243E427F18A29981C56295F153024130F94",
+      "size": 247
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-layout/export-console.txt",
+      "sha256": "0E9D1535A7528A9F094B9F296BE8D34DA8D5FCC368FF71A4945C745B571D4F6A",
+      "size": 4494
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00825130.asm.txt",
+      "sha256": "1F5B831F8B964DBAD268790ECA7976DA9A59AB57254C05EBFC7053EDCD00BAED",
+      "size": 5472
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00825130.c",
+      "sha256": "0D7A5C0D9DD27573E9C706BC75827A4387D8D21CBE51FAB00E1C2BE8A50AE3F9",
+      "size": 3364
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00825130.xrefs.txt",
+      "sha256": "CA318530CC8F1314A24E15BCF6DFEB9608BC1703C8A01D276E5087AC07763ED7",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-009E5F20.asm.txt",
+      "sha256": "A2DBE8C6C65B972620F3B3D521B20874D8007BB7D2F93B56A4B874347369CD2D",
+      "size": 1021
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-009E5F20.c",
+      "sha256": "FD1D7D79422AF679B7EBD571806A6A3E303EE9A163050A015BACFA71F59576A6",
+      "size": 542
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-009E5F20.xrefs.txt",
+      "sha256": "B8716F29C6DF79FB20F91BB3484A0ADC2B3E84EAE9779BAD67A860E2D874DFBE",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00E04D80.asm.txt",
+      "sha256": "309F6E023A8896FCE44ACCEB66278B23878374FB8CE7EF77620FDBC99CD73C55",
+      "size": 24000
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00E04D80.c",
+      "sha256": "AF1FFA4FF1656D605A910205ABCF824460BAFD6D455FB7E3C0AF74B124350FC1",
+      "size": 11264
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-00E04D80.xrefs.txt",
+      "sha256": "189893C7C5A129925E133E394C7FBD4720583DFEBA423BDEDE8509DCBA4A9A3B",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-01283F00.asm.txt",
+      "sha256": "47C689FEEE32A0C9F63DBDC61FDDAC591316098857FBB0A08548A55BB8545F81",
+      "size": 2161
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-01283F00.c",
+      "sha256": "68015AFA7DD2FF87A4ABF8055FC65B851EEEFC5017519A9F83F41E85D416C6D1",
+      "size": 1162
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/DS3-1152-F-01283F00.xrefs.txt",
+      "sha256": "6B03B04CEE10457B1B521C7B0C10F4F82FBF41456FA1166E53E7C46DA9071076",
+      "size": 73
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module/export-console.txt",
+      "sha256": "669280B967A4A44AA63CC8CFB1495C7E718B222BACE655693AFD933CBC118262",
+      "size": 4358
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module-chain/DS3-1152-F-008995F0.asm.txt",
+      "sha256": "F423D56C95C272545A7A3718011C08AD837F4D95F989C2B531EC3D28D894B515",
+      "size": 19425
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module-chain/DS3-1152-F-008995F0.c",
+      "sha256": "AFB9BFCDD9E0D9876E600A88B620E5C300002FEDA3AD1FD7C1643793C1D38900",
+      "size": 6362
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module-chain/DS3-1152-F-008995F0.xrefs.txt",
+      "sha256": "C3420E063C3C57D64AD5CD7FA2C63F013883996D94E35021F82FB363C91CAF6E",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-module-chain/export-console.txt",
+      "sha256": "767CE668D75A30D47CDAD938F9B767B971E678DD1D75B3F4ADC3AFE751886BE8",
+      "size": 4328
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/clock-call-references.json",
+      "sha256": "B3C0EB396CAC162E4553402AD3EC56854F2A7119977CE741D1518D23A7ABC8E4",
+      "size": 491
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47B0.asm.txt",
+      "sha256": "8117F7CE70386F9FBCB1FDE96AC073918DD29886ACE8C76449D4DBB20883230F",
+      "size": 853
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47B0.c",
+      "sha256": "BCD2B22CC3F8CDA3E2AD53E485DDAC974CC56C03E3D5E4F7358503499A83A934",
+      "size": 276
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47B0.xrefs.txt",
+      "sha256": "28BC34DA39BB53FAF989B5CBD01BBEAB03489AE0E073B30AA857CE922CA5009D",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47F0.asm.txt",
+      "sha256": "5F12AA9CE46F808888AFA36CBDAFF94A73D4F94B08412901CDB2B8C60EE33A34",
+      "size": 219
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47F0.c",
+      "sha256": "629DF553BFBA5EA60EEBB444170A5497401B6D57383FF5BCC723039C3BB91687",
+      "size": 704
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B47F0.xrefs.txt",
+      "sha256": "2CAD55D20ACB9E90B81CBE60B694B6DEDA8AEE0237FCD74B80B651040C016849",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4830.asm.txt",
+      "sha256": "AC1ED91D71E703BC0BB2BFD96B04B9B9FAEFB2EF1F7DCBACBF2B4417A4F011C2",
+      "size": 1163
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4830.c",
+      "sha256": "FBA7A9E91D68671CEA27919169A31B36046B4CA4FE48E1FF36C80F3AD906629C",
+      "size": 1180
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4830.xrefs.txt",
+      "sha256": "3A5D1229D244B19D7A3BCEA96E720E73B22D04F1F6E44FCC526E6808E388CDAB",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4870.asm.txt",
+      "sha256": "76BABE75D1704951681D9FC1AEEA45DA123C90A754CAE1FFE20618C8B5410814",
+      "size": 1080
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4870.c",
+      "sha256": "DEC2134C70DBB65F71BA4C1436651574B5012DF6269C553F154644BA64546BB2",
+      "size": 336
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4870.xrefs.txt",
+      "sha256": "9CFEEE15D68206101D5DA350D78C9EE02F7980F6C364BD11794E8517681E1400",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48D0.asm.txt",
+      "sha256": "2685ED9F4139CF5F9B791594CDD64E1CA0F1A90D39B74FF5F2BB118FD122A686",
+      "size": 235
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48D0.c",
+      "sha256": "A37A49B6E9E900F5C5455F83D5518A9970E81098DEFE59531B24FBE79469EB2F",
+      "size": 228
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48D0.xrefs.txt",
+      "sha256": "EB119AF3F873B48F4993240341ECAFA0D46465B318C2D8180BDE7345A38A9379",
+      "size": 29
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48E0.asm.txt",
+      "sha256": "9436B9F89FC0DD8E2761AA4E88B08DE0EB4F5C58C45188C15D8FCB816198CC6C",
+      "size": 1502
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48E0.c",
+      "sha256": "8FA0F59E64082F73E346DEF660FF7A689AC35CA5F19C927C61C07AA4E252E7D0",
+      "size": 531
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B48E0.xrefs.txt",
+      "sha256": "FF32FF2E74170DE2B9826938C89EB75A3B906F54C3583BBB3C02EA0D70F47D80",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4970.asm.txt",
+      "sha256": "12AE65CC077BC4709D5E089EB4BA3DF5EF99B6A79EC19420742BD5BF89F0E4DB",
+      "size": 1508
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4970.c",
+      "sha256": "B693487D4DB8A3E8E940735437DC7264F15CAE4FB922063CC068A1B446C52BCE",
+      "size": 616
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4970.xrefs.txt",
+      "sha256": "3CC4590E09534BA390BA833344302D716EA470ACB45E8E757FFB4355BD703698",
+      "size": 74
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4A00.asm.txt",
+      "sha256": "C17056FB342BAA621865A95AE2744530F9EA73A5240F9580467732D3523AA1D4",
+      "size": 3671
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4A00.c",
+      "sha256": "ACF8867DCB873B22A5DF5D66F5E3516999EF99D17ADE23D451F1FC50E46FD64A",
+      "size": 1275
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4A00.xrefs.txt",
+      "sha256": "D7FB9DE8B2F3A9746BBF75523A6BE21A9EFE8594C4B55E244291076E22DBFF18",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B10.asm.txt",
+      "sha256": "9456474F3D0160F02C74FC47422E955EA0EE638F050C381EFF709C9EBB40D474",
+      "size": 1466
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B10.c",
+      "sha256": "1B6F60B153DB56DE620A51937AD85C6000B67099110B61984BB8A1E357821A91",
+      "size": 820
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B10.xrefs.txt",
+      "sha256": "06969A59D7640FD859D1ABB995CEAC3565B0080A73FC481E85E1DD2B758692DC",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B90.asm.txt",
+      "sha256": "EB4BCCABBB67F6D67F83413662F8A8EED916293E3C374FC981BAA6C194AA15F6",
+      "size": 1135
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B90.c",
+      "sha256": "38242BEA1158DCE3C895483CF001E00B7B470A48B8588186F40914846510F45C",
+      "size": 976
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4B90.xrefs.txt",
+      "sha256": "BE5AAB957947F5F7A49F675BD76F4738E845826577FB804564DE2EE2BF659194",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4C30.asm.txt",
+      "sha256": "A70EAF1732580748C52C5565C615F91838343FCCE36E0051EC4EF1A9BA9C37C7",
+      "size": 77
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4C30.c",
+      "sha256": "7324C0A4988953ADFE6B22DF32BF61D6AFBE1F40C7867C9CCCDE98DF1DE77A12",
+      "size": 301
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4C30.xrefs.txt",
+      "sha256": "B65450B219FEF8038A50D86641FEA4DA7B24F147B68137D0DC180F49888EED05",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4D00.asm.txt",
+      "sha256": "DCC193310C1911553864C712D4099E1FEE81C0EE2CD6744C054AA9E79DD886C4",
+      "size": 3441
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4D00.c",
+      "sha256": "9C0E39AF4A1846F43B7965AAC8917E21D83EF6E2117FB14FA37FF2CDAE4D3B6F",
+      "size": 1857
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4D00.xrefs.txt",
+      "sha256": "E78E643B38400C4C24756DB10035D4E781C4B055898BD28BF1A0E8966C2494E4",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4E40.asm.txt",
+      "sha256": "47BDF4418A7225A94B2C068ED13B1B93B53404C8B9BC98D796079F67CD3733B8",
+      "size": 1297
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4E40.c",
+      "sha256": "D344628ED78E5ABF0C7D1333A941B54CEA88F64BCE2733B39FE31B3DFEE78BF3",
+      "size": 671
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4E40.xrefs.txt",
+      "sha256": "866A9864384AF5BD607A0F8C8C7C2B2CDF7CADF61EFC481D10E149684371BCD4",
+      "size": 29
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4EB0.asm.txt",
+      "sha256": "6C31442EC4C906485E544CAC7F129E8F4A432286511C3C373AF2906F5C6E6BCD",
+      "size": 3980
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4EB0.c",
+      "sha256": "FA7F0ECEFA2B711562EF9DFDDA55A0704F33382F29AE9324A939C317F5F78C19",
+      "size": 1260
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4EB0.xrefs.txt",
+      "sha256": "6E04A603F04FF47431AFB573DBA8E230653B670B25868738986142A88D89CBD8",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4FF0.asm.txt",
+      "sha256": "F9983B65F764C63A741E135FF3B7092433D0101173A8406C5C3CACC7D5627F7B",
+      "size": 3380
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4FF0.c",
+      "sha256": "7CBCDD3FD20F1E5ED3A59865EB5BE0325C0B714FD5F402640160732535196A0F",
+      "size": 1276
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B4FF0.xrefs.txt",
+      "sha256": "41C7F213624F599F81BBF52213F3D9AFF8FF64B8E590BA657BD0BB60290F375D",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5130.asm.txt",
+      "sha256": "A4471C04358C5D6BDADF22F6F828952AE6E49555A46817117EE2EABEA9A10B66",
+      "size": 788
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5130.c",
+      "sha256": "422141EDD56A00F0FFE75A47EACD7539B86CFDE7D6B7189EA109425AE6AC1358",
+      "size": 400
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5130.xrefs.txt",
+      "sha256": "8D798A911830B33CE626F5C88D815B3097A95242B6C23545A33C9DC5B5DAFB28",
+      "size": 44
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B51E0.asm.txt",
+      "sha256": "A94B8B5FC6DD27AC7E0371C9918573FD5F8E597B8CEF58DED2F6FFF799A67478",
+      "size": 1751
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B51E0.c",
+      "sha256": "96DED0CDFF6CBFC67F124047B54C6AAD27DF47EFA8DADD1A5275A878B0CB04E8",
+      "size": 540
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B51E0.xrefs.txt",
+      "sha256": "ECEF2B4A49E16B8B568CF5616D531FBC035A82C7316C2D83B9A2AAFEA61126C5",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5260.asm.txt",
+      "sha256": "3A664435149DAF918430FD6009C70ABA64AABA80C0D407C8F57A0CCC21A2E13E",
+      "size": 510
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5260.c",
+      "sha256": "4D682C13740F4F90A39F885F3DC4E3400693EFAC9E2AAF73D3400CECCA42C90C",
+      "size": 768
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5260.xrefs.txt",
+      "sha256": "4A58F86B0FC431F98EA79C6A841A3E2EB873B442BC033FC937287C5BB7970547",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B52D0.asm.txt",
+      "sha256": "DF80AF65FE3773D953DD6B7F547D798D498A01EE958F6AB42FCD59C456874C41",
+      "size": 373
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B52D0.c",
+      "sha256": "6EFAFC205E202253474DC0766AF428826A284108F0742D2C414DA4CAD553F087",
+      "size": 647
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B52D0.xrefs.txt",
+      "sha256": "03AF44E26E57141C3E1698B97CD3CE7702DB1ACAA3D5BC00C75F61F78222A230",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B55A0.asm.txt",
+      "sha256": "20501194658602B3E2C375AD9691D00CD1308B3AFE0F5D7D6FDA03B1A6B45BE5",
+      "size": 1998
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B55A0.c",
+      "sha256": "E08883A06D0B967D5947CE47938BD1BEED49BA4B879D5E02824828E2F40B06CB",
+      "size": 824
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B55A0.xrefs.txt",
+      "sha256": "E3EFEF4DE666684251285E57D2EAB12CBBC7107EF0ED3ED720143A2340E7F5D9",
+      "size": 45
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5630.asm.txt",
+      "sha256": "BB982117437601805F40EE3247992EF18D513EA76D611D410D26BAE5F83614F9",
+      "size": 572
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5630.c",
+      "sha256": "CE1F7B61D1F3A3F9B62D93CC86A8EEE97D977BDFF7DF3CED142D808902E34735",
+      "size": 352
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5630.xrefs.txt",
+      "sha256": "94AA1AFC135D0823B2450AADA6CD5D9B154432726BFC78E05874863C212954AE",
+      "size": 102
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5680.asm.txt",
+      "sha256": "90D53E6C8895369A6B749133F2D67A8EAB3C3EEC52F0D54493093304044B807B",
+      "size": 675
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5680.c",
+      "sha256": "6A8457030986B7050587A28FF1E68EF26A836438AF6BB2235BF2FE9777A4FBD8",
+      "size": 1519
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B5680.xrefs.txt",
+      "sha256": "A909CD4E6CABFD09AE1B372F54C22CD80ADD4F95631A399465654BA024578098",
+      "size": 15
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B58A0.asm.txt",
+      "sha256": "B06E0A3EE16E7886551B8791316FF6B84B831662EC662F09D0F388A723EEE23B",
+      "size": 1491
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B58A0.c",
+      "sha256": "C6C7300CCB428F2BAD46CE66A00ACA5C65E57628AB0CDD8ABCB1FCC23B40C89A",
+      "size": 605
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/DS3-1152-F-009B58A0.xrefs.txt",
+      "sha256": "0FC1CF349B7210B6D7B9AF1C68F613FBBF608F9FAF7A006FB47E88030962A25B",
+      "size": 74
+    },
+    {
+      "kind": "offline_static_or_retained_evidence",
+      "location": "evidence/I-0008/artifacts/static-timeact/export-console.txt",
+      "sha256": "9441428A4113EE726E609A5A229D28AAF58C630EAA5ECC5B1A003174BD062FC6",
+      "size": 5098
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/capture_test.exe",
+      "sha256": "F9471E16E3F23613A8F569B44B5968F437084AEB0BE73C35ED6E83F516737060",
+      "size": 146432
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/capture_test.obj",
+      "sha256": "F69BDD26398D119B3EC6CA6EFC4CE89AFBAC52D9AB67A4E5B364C5E1E202F6FE",
+      "size": 15699
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/controller.exe",
+      "sha256": "26301B289AC5A2B0E21B21CD77B4554391B21BDCEF145F45499D1EAAE9D96694",
+      "size": 143360
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/controller.obj",
+      "sha256": "5A0443A9380A22D0FF7CAF52D7833DD4356B1A5BBD39806A730151B345127852",
+      "size": 9480
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/execute_test.exe",
+      "sha256": "230BB1B4692C0FF8BB543E97D942BDAAB7544E487DDD4093DF8519224CDD727D",
+      "size": 121344
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/execute_test.obj",
+      "sha256": "83A7FBC8F193E03815F887BC2AB4C873491F9769A2301954F6D6D493ABCD3FEC",
+      "size": 69265
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/observer.dll",
+      "sha256": "02A689FB6E4BE4FACD6BD484A68F1B5BE313237E5EDDAF7CA51D30D6ACC6362C",
+      "size": 160768
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/observer.obj",
+      "sha256": "0DF3AE1B4733C26E33C08D97350A2AF922D541F58A28164F22A4A5E0AB2AA398",
+      "size": 64784
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/test-console.txt",
+      "sha256": "4AA597E76D07D8A15FA7B08A44BA817B5A52E6ADC480CCC7AA86B3FAF45F3C52",
+      "size": 497
+    },
+    {
+      "kind": "offline_observer_validation",
+      "location": "evidence/I-0008/artifacts/observer-build/validation.json",
+      "sha256": "65880C44D7BA6DBC131394D31BC82B994A40E51A869AD988C4C44CC58C779CF8",
+      "size": 3339
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/export-byte-validation.json",
+      "sha256": "9D5608F022406A8454D703EED997E63090B6ECE479FEDA091096C2CFFA97A98C",
+      "size": 270
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/live-20260920T111831Z-pid24896/analysis.json",
+      "sha256": "B203D09953C1AD8FD02266A90F438EF8F446C5557968B2D72834CA12166C6A01",
+      "size": 1860
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/live-20260920T111831Z-pid24896/capture.bin",
+      "sha256": "90656AAAD1288207177E02A1DB529CFD7F666D2BB174C3B64E1ABD6B546EC411",
+      "size": 544392
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/live-20260920T111831Z-pid24896/source-candidates.json",
+      "sha256": "01E320074A53ECA59C2B3A1B57C23E72C01CDE8FB3D6196FF207A8CB5E18E1A2",
+      "size": 4602
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/live-20260920T111831Z-pid24896/source-rtti.json",
+      "sha256": "49EA8CB9EC93B19109055392FBEECCF7073BDEA6CD675882D5810983FEB3A1AE",
+      "size": 8438
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/clip-rtti.json",
+      "sha256": "9002EDD5C5B61FE43A9CE4A2A57E1642A1CEF6BEE80C2EDDF2E89AC387511E6B",
+      "size": 730
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076510.asm.txt",
+      "sha256": "6CCF0D195F36F48EE03BD035E7F27542E2A06ED13E6362D90E3B319851B9A4EF",
+      "size": 12651
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076510.c",
+      "sha256": "D511B732BD2250C7F4EC1986A454DAF97C7640D7ECD8177257B36F642BDE7FD6",
+      "size": 18519
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076510.xrefs.txt",
+      "sha256": "FF18F762CE5F75DE22686FC07061786B0F26B9AE3EB3467F3FE05FB11BCFE7B3",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010768C0.asm.txt",
+      "sha256": "56E66246FACB17BA661735869913CE395390270C264F70DE5A9BB03A3D27C5B5",
+      "size": 11115
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010768C0.c",
+      "sha256": "B37A4A7EA57036B76091D0D883DEF7B004B25FFFF12AF2C7EDA38587045FDDE9",
+      "size": 5341
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010768C0.xrefs.txt",
+      "sha256": "45875C6B76733F1C149328A0AA54D4C602BA58AB119E3AD942D667CECD6D52F2",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076C80.asm.txt",
+      "sha256": "0BF6BF511DD62B9ED7CDDD464BA0AC177E42BBC2C673FB17597651081A30A58C",
+      "size": 7070
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076C80.c",
+      "sha256": "CF2794E7AC96175DBC660B0EF905033F01D56741CF9CA0F4F2B953B3BB2690CA",
+      "size": 3755
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076C80.xrefs.txt",
+      "sha256": "C22A2E93304198B56758DCB9D01082E98982513B0BE0AD0C87CB845B9F3B84C7",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076EB0.asm.txt",
+      "sha256": "1E4020E0021F63F726361469757949BCFF9CBE2A325EF9220B16ABCFE842EFD8",
+      "size": 5367
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076EB0.c",
+      "sha256": "BF2D1A34016213AEC3D0FD723A2D4EFF8617A1766C74A72F75A7F94436086540",
+      "size": 2429
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01076EB0.xrefs.txt",
+      "sha256": "EFB3B5DB7BED48CBC6DF198CF921884C2A11F0C4F0238F208ACE6A8A2C88BCC5",
+      "size": 60
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077060.asm.txt",
+      "sha256": "601381801B39BF191252079FE677F91A2F221171B3A97B4A2A272D7CD81E0D76",
+      "size": 926
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077060.c",
+      "sha256": "B2F98EEE065CA73977D6E51EC81A62F077B715A083BDDC993BE022AAC926408C",
+      "size": 4170
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077060.xrefs.txt",
+      "sha256": "BBAD2A72F5A57BDF9D80D6482527618506CC76DA3C124FED29E2702F03D04675",
+      "size": 15
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010770B0.asm.txt",
+      "sha256": "BFBD9879EF8EB0165D5FF6DD93D36488ADEC010A9434B856C5461F42E8454A05",
+      "size": 5205
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010770B0.c",
+      "sha256": "13F04FCA66DC9A4FF3138907949C28A903D1C82D8CC16149B9AA597D0F70AFB0",
+      "size": 2158
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-010770B0.xrefs.txt",
+      "sha256": "A63CEA30BFE705B114743B783B50945ABF1688C25423F8DDAC3AEA9DCB8A8A50",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077240.asm.txt",
+      "sha256": "CEAE515D242BF6C75E2108746A22B156E8DB5FFFD29255FE6E23360FDAAADB1E",
+      "size": 10931
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077240.c",
+      "sha256": "1F2458656D199CFFE51CF6BE9CA1581A18FD1863A59BFC61ED5F8F4055071DA6",
+      "size": 4861
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077240.xrefs.txt",
+      "sha256": "7F8F59A2C08293B033884237F75EC8B3304C645583E87BC0027CFD4E46546DA6",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077610.asm.txt",
+      "sha256": "BB9F5947956C153283A190A22B5F2D8BD2FEFAF70D177DA1AEAE6DD3C5A33563",
+      "size": 5982
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077610.c",
+      "sha256": "142B047ECB9F5158475F3DB005D94210C632F38F2CF2F431E9CB9933253BAAC5",
+      "size": 2443
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077610.xrefs.txt",
+      "sha256": "3582F96C90133E29CC2CD1043D6C687C258D764086A0412352F68E442E713A00",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077810.asm.txt",
+      "sha256": "1A7005EE7C3C46014BBD2B4BF17C70668C2851BA95EA4104C1782B453EAECBB7",
+      "size": 11323
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077810.c",
+      "sha256": "093A6440D52218CA1A60E6490CD4B6290BFAECE1D3B9254B42707D4E49B6B9AE",
+      "size": 5305
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077810.xrefs.txt",
+      "sha256": "7978C039F7F7DCFF6EB094E8FBF4344F8F49AA08336FD3C4D597C2EA420E1060",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077BC0.asm.txt",
+      "sha256": "A6FE78213EBF70E15DFCF470D8D613EDBCE96E8F3F3FAF55E3BBA96133ED6DDF",
+      "size": 7717
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077BC0.c",
+      "sha256": "D4DD5F23461839412F2257A456E4F2FF1AC2D91D1B741DAF612B9BEB72DDC4FB",
+      "size": 3401
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01077BC0.xrefs.txt",
+      "sha256": "FE71BD6FBF1B50971A8F4DACE4CE59BA587578A84185F0E4AC5EF6023D2D5C62",
+      "size": 45
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01079E10.asm.txt",
+      "sha256": "37E042453695837DBAB1D49D3C59AE3631C0664ACCDE482387C5FA96E1C898EA",
+      "size": 1281
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01079E10.c",
+      "sha256": "7CC9CA5A662023C140D1B21172A19BB3A1BBF5FAC90AA26022B6E66565C580DE",
+      "size": 624
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/DS3-1152-F-01079E10.xrefs.txt",
+      "sha256": "C0B0B3FF4E519C98259E7DC7350ADBFDE46DFBA1810B007F5D810924C17E1DA9",
+      "size": 15
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-generator/export-console.txt",
+      "sha256": "826603E9550C6BE04AFB0310E5AEA1226E80BC2EC4F677F9D0479AAE8C372A77",
+      "size": 4550
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078960.asm.txt",
+      "sha256": "D6E77810560BDB61E1AB68395194065B41BF9B601242A531F8CC8B55D6AB1FF8",
+      "size": 7673
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078960.c",
+      "sha256": "60E7556FB780FAB6FF3E3FA76AB79EA72F912DAB67F98EB32E4280A525660CFE",
+      "size": 2801
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078960.xrefs.txt",
+      "sha256": "E2B202CDA3AF793242223EE1E6A92DBFCFE6D1E4721B1601E5AF0ACFC06959F5",
+      "size": 148
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078DD0.asm.txt",
+      "sha256": "D346FCA2FBF7E487F7DA3C552E0505115D226142A4A73C80A4C877956FA19D25",
+      "size": 1159
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078DD0.c",
+      "sha256": "D832637DD92559D666A4203499A6FB9554113F9C7E50187026A648B3C96FB47C",
+      "size": 824
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078DD0.xrefs.txt",
+      "sha256": "E55AE72B882B1940C8D7774AD0385E5B87B8D8AA438FA7C28C5C5395C994D374",
+      "size": 218
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078E30.asm.txt",
+      "sha256": "2C9AD63F7E08609C46C9C4D73CB2BD0C704403D9DDA703FF66ED00E784ADE008",
+      "size": 891
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078E30.c",
+      "sha256": "C77C2D7D8C8E7FD035B1D886BAAA8DBE32A21F4CF57F642A89A27702AC095AB4",
+      "size": 501
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/DS3-1152-F-01078E30.xrefs.txt",
+      "sha256": "8F22DEE6303433A20B82D647AF0858FF84968F8E737127A37479AAF00B6F22E1",
+      "size": 131
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-clip-step/export-console.txt",
+      "sha256": "105344A5B6512B5203F451FB1BAD4D2A029504422078A759206B4E3FADB84A17",
+      "size": 4349
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/control_formula_test.exe",
+      "sha256": "6771514334B130DE7BB65A0E440596526EF8D7B687C5F86D815044D87BE07F8A",
+      "size": 157184
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/control_formula_test.obj",
+      "sha256": "2461F0389E15ED41441582224E64FE680219F5112EB043832FC4BAEF0E659C5B",
+      "size": 16099
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/control-kernel.bin",
+      "sha256": "8679887380B3FE71F7B3147DECF7DA4561BC9A2F65637961E2D5C6A85A7B39DD",
+      "size": 313
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-00826650.asm.txt",
+      "sha256": "FBE50AFBCCEA624E2F15F16E4C85923ABE760EEACA2732B8BB925E2B067C1113",
+      "size": 131
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-00826650.c",
+      "sha256": "220B7DA9086431E49E9FA67D7628518E39791549CFB0BD6DB67C121DEBAC425C",
+      "size": 1634
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-00826650.xrefs.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "size": 0
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01077ED0.asm.txt",
+      "sha256": "F69BB530F8535A9130807F2D3D596681FE4BC2B25469A03445568B5D155434D3",
+      "size": 1007
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01077ED0.c",
+      "sha256": "33543D21AA03E3438123B3AA0E4BC2BF82465C1B250659D8DB7EE7B86A76AC80",
+      "size": 541
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01077ED0.xrefs.txt",
+      "sha256": "549B6568A40C59BE18C25A977B8F8BA71DE6B711E6AA0797131038A4BE4F490C",
+      "size": 551
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01284D70.asm.txt",
+      "sha256": "1B5B4F84C71512E7373D26C2F3EB5B508B084B425534DCC4340D52552D85713F",
+      "size": 4285
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01284D70.c",
+      "sha256": "17126AF6BD6BE75EF222B3EADB48AF119D481A9104A0CA2F5D27163621E76BE4",
+      "size": 1622
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/DS3-1152-F-01284D70.xrefs.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "size": 0
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/explicit-vtable-console.txt",
+      "sha256": "65E7D99C81BCDC773028138EBC5BCF196E7FB749BFB3FC5BFE9AAE8431F076A5",
+      "size": 4450
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/export-console.txt",
+      "sha256": "3D5922661DC513D8C4B75A83777DBB23645EBCD694926EDAB05D10B195E79A0C",
+      "size": 4428
+    },
+    {
+      "kind": "live_capture_or_native_formula_evidence",
+      "location": "evidence/I-0008/artifacts/static-control-step/kernel-test-result.txt",
+      "sha256": "666BEEC0202AD0057E0283413F6438C1AA1B5956CB922FD6B5EB37151DD17CD2",
+      "size": 153
+    },
+    {
+      "kind": "control_observer_protocol",
+      "location": "evidence/I-0008/CONTROL-OBSERVER-PROTOCOL.md",
+      "sha256": "3E1B4651A37EC64527AFFD60A6423D2ED3EAF1386F552A4A49D949F006297186",
+      "size": 4895,
+      "note": "Announced target-165 generator/control delta discriminator, restoration gates and bounded interpretation."
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/analyze_capture.mjs",
+      "sha256": "D64E27F3695DEC4FC4C49D80D0E0FC52BB23996F061B7555B1B6DE4AEC0BBC92",
+      "size": 6960
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/analyzer_test.mjs",
+      "sha256": "3E004FCC1C10ADC4F374EBDDCABA7AA1F919C2E518AD1EE29A5E3686D5BC4B23",
+      "size": 3040
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/build.ps1",
+      "sha256": "42C8A6B0D6D3426D7F8BD6DDA90CD14567F03C92F17ED5C69A1042C09EA861D1",
+      "size": 2008
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/capture_test.cpp",
+      "sha256": "B2E00EBAE0F18F2883AB8F4FDCD2A5570FCF7A21BB0F9F9324422B0CBAD48F70",
+      "size": 3131
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/capture.hpp",
+      "sha256": "A0D4247D1FB27F21BADA2CEB3AE8FF19D8B66431885AAAD4929246986A1BACB2",
+      "size": 3829
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/controller.cpp",
+      "sha256": "E02430E4CEF3126DD3232CACFC94F12F190782198D1F66BBEE6C2BF2A3C3EDFE",
+      "size": 1999
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/execute_test.cpp",
+      "sha256": "F84D53F3F6C123073A5BE8B5CE327C235C7D593A08056865F4D32D66C980C03E",
+      "size": 2774
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/Invoke-Observer.ps1",
+      "sha256": "92AB0ECA6889D2A520D9D078C45BB247C09F970283B5E0B4866D1EFE6DD659EA",
+      "size": 2775
+    },
+    {
+      "kind": "control_observer_source",
+      "location": "evidence/I-0008/control-observer/observer.cpp",
+      "sha256": "9DADC0E5822EBE81B003A069CA0BB24ADE11496C7C0BE81511E6B56BEDD7EB2A",
+      "size": 9371
+    },
+    {
+      "kind": "control_observer_native_binary",
+      "location": "evidence/I-0008/artifacts/control-observer-build/capture_test.exe",
+      "sha256": "733086DB6FD4F48CEBC9B0FA34A378909C30E6CE8E6CF479C7869C445C8DC539",
+      "size": 115712
+    },
+    {
+      "kind": "control_observer_native_binary",
+      "location": "evidence/I-0008/artifacts/control-observer-build/execute_test.exe",
+      "sha256": "C29B982685752541330C91CECDF31EC6D66695916535D89AF25198D06C9C5601",
+      "size": 123904
+    },
+    {
+      "kind": "control_observer_native_binary",
+      "location": "evidence/I-0008/artifacts/control-observer-build/observer.dll",
+      "sha256": "79077965DCA877BBAF697B9191506881B276E27AC2B068207AD6A83BAEB12B76",
+      "size": 162816
+    },
+    {
+      "kind": "control_observer_native_binary",
+      "location": "evidence/I-0008/artifacts/control-observer-build/controller.exe",
+      "sha256": "A115BE216BD6EC3B9BE9AEA6D2C8773BA9D03893A6474AFB62501182B61B42E4",
+      "size": 143360
+    },
+    {
+      "kind": "control_observer_validation",
+      "location": "evidence/I-0008/artifacts/control-observer-build/validation.json",
+      "sha256": "EFF23C65135FD335C7C8F31569BDA4C5155257F284248A422672E6360D2EF089",
+      "size": 3298,
+      "note": "Binary/source identities and three passing offline validation layers; live status explicitly not run."
+    },
+    {
+      "kind": "control_observer_validation_log",
+      "location": "evidence/I-0008/artifacts/control-observer-build/test-console.txt",
+      "sha256": "AD204C39B9182FC73406A16937C4FFA21282C8F9DC7D3CD9FF8273CF1B4D038E",
+      "size": 452
+    },
+    {
+      "kind": "post_capture_process_inventory",
+      "location": "evidence/I-0008/artifacts/process-closed.json",
+      "sha256": "99FB28CD5B877E4B20A2D90B573B77FB492895DC22916DAFA9CF46FF1BB182C7",
+      "size": 203
+    },
+    {
+      "kind": "control_live_analysis_source",
+      "location": "evidence/I-0008/analyze_control_live.mjs",
+      "sha256": "37F9954AFD549CD212E05E3F3A9EBA9C893F28C1692351C2F8DA555B51A6E1DD",
+      "size": 5058,
+      "note": "Joins the qualified target-165 live chain with the retained residual audit."
+    },
+    {
+      "kind": "control_live_result",
+      "location": "evidence/I-0008/CONTROL-LIVE-RESULT.md",
+      "sha256": "5C8FA815338234E76EC876195954B9A73F331C0BC023109D9CDFED2F94D0A5D1",
+      "size": 4183,
+      "note": "Canonical bounded conclusion, provenance, restoration gates and epistemic limits."
+    },
+    {
+      "kind": "live_formula_result",
+      "location": "evidence/I-0008/LIVE-AND-FORMULA.md",
+      "sha256": "133FD298D0D5F2EB90EFE97360B055B7CB1085F4C80F159F85B8519A4E109DB7",
+      "size": 6766,
+      "note": "Initial ring capture and native formula, with cycles 10-12 resolution pointer."
+    },
+    {
+      "kind": "control_live_raw_capture",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/capture.bin",
+      "sha256": "E9A605E173B300D694A951601AA4E48B8A6451211D8BF91DB55770F34FC2E242",
+      "size": 829976,
+      "note": "Raw four-site target-165 observer records."
+    },
+    {
+      "kind": "control_live_analysis",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/analysis.json",
+      "sha256": "F5C1C76F4BDB3938DCDCEBED97C5AB78438C7AFDA12A3B39BAA02827DFB6ED16",
+      "size": 250958,
+      "note": "495 qualified generator/control/ring chains and bounded capture gates."
+    },
+    {
+      "kind": "control_live_session",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/session.json",
+      "sha256": "5D26C557DF108BFF7F97B008C3D1A61C8B31BF2719CD7B6D8638A1385EF2A751",
+      "size": 736,
+      "note": "Exact build, observer and raw/analysis identities."
+    },
+    {
+      "kind": "control_live_validation",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/validation.json",
+      "sha256": "EFF23C65135FD335C7C8F31569BDA4C5155257F284248A422672E6360D2EF089",
+      "size": 3298,
+      "note": "Observer build and offline validation record used by the live session."
+    },
+    {
+      "kind": "control_live_summary",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/summary.json",
+      "sha256": "785DE3783BB3E9936CFF3321A4BD855C51CE5D14E1F2DA3B8C0C2A83E2A22322",
+      "size": 5943,
+      "note": "Machine-readable live result and comparison of all 47 retained target-165 residuals."
+    },
+    {
+      "kind": "post_control_capture_process_inventory",
+      "location": "evidence/I-0008/artifacts/control-live-20260920T120006Z-pid20676/process-closed.json",
+      "sha256": "F0A4FA31D1EC6E8D7C8B417758A8D8D3524DE1EA1E8C5AB8863C0054A9E49F48",
+      "size": 272,
+      "note": "Read-only confirmation that captured PID 20676 and all DarkSoulsIII processes are closed."
+    }
+  ],
+  "artifact_root": "C:/Users/User/.codex/worktrees/e9ec/DS3 Decompilation"
+}

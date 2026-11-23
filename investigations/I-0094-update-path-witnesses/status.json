@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0094",
+  "title": "Travail de DS3 sous le rendu natif",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-23T02:01:17Z",
+  "updated_at": "2026-10-23T03:19:08Z",
+  "budget": {
+    "iterations_max": 4,
+    "iterations_used": 2
+  },
+  "stop_reason": "success (diagnostics cleanup): the witnesses behind their flag; no measurable gain at m45 (DS3 3.50 to 3.48 ms); gate i94-final PASS"
+}

@@ -1,0 +1,720 @@
+{
+  "schema": "I-0005-pass-b-manifest-v1",
+  "investigation": "I-0005",
+  "build": {
+    "appid": 374320,
+    "buildid": 10167187,
+    "executable_version": "1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "runtime": {
+    "offline": true,
+    "game_directory_modified": false,
+    "intervention": "central +0x354 requested FPS float and +0x358 enable byte, memory only",
+    "present_override_used": false,
+    "original_state_restored": true,
+    "display_context": "G-Sync enabled per operator; process-side Present evidence only"
+  },
+  "primary_sessions": [
+    "20260919T094057Z-pid12600",
+    "20260919T094304Z-pid19080",
+    "20260919T094516Z-pid27388"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 13,
+      "sha256": "32DAE3052F331EE34D628EF535709B301259A45DF7C7522C4D35DCF49873F00B"
+    },
+    {
+      "path": "analyze_pass_b.py",
+      "size": 13819,
+      "sha256": "4F7CAA2939D1AB3F93D4C59C886D32802DE346321E92B882E18A1A18B4C1FA19"
+    },
+    {
+      "path": "compare_pass_b.py",
+      "size": 5844,
+      "sha256": "A1383B7577B05FD03A76E0CAE4EEB6BA8FF09D04346DCCBB3EFB0D90B9926AD8"
+    },
+    {
+      "path": "comparison/comparison.json",
+      "size": 7644,
+      "sha256": "CAC88F914B68920BE7F50EB482359AF7342072925A54A1DB6B0BDE702A327317"
+    },
+    {
+      "path": "comparison/condition-summary.csv",
+      "size": 1183,
+      "sha256": "E154D2284554A71392B70CDE36CA041854F5427F30703B985E466DA72AD8C1B1"
+    },
+    {
+      "path": "comparison/consumer-site-summary.csv",
+      "size": 1531,
+      "sha256": "276D39CBAA28F387D54118536C143909F95C82968CD457EC87D143E653D976E8"
+    },
+    {
+      "path": "instrumentation/.gitignore",
+      "size": 15,
+      "sha256": "7F7B192103AAD3F7DAEE9B63A92197504C14AB830DFE04336DCB2ED0D1FB9952"
+    },
+    {
+      "path": "instrumentation/bin/I0005PassB.dll",
+      "size": 220672,
+      "sha256": "7F394A1214205337400BADA433106311D1914A3A34FF7D0FE88B5580F40145FE"
+    },
+    {
+      "path": "instrumentation/bin/I0005PassBInjector.exe",
+      "size": 152064,
+      "sha256": "876B14B11A280280B24726A5AF679046DBF6ECE2058E3C124864865BEAB4B8FC"
+    },
+    {
+      "path": "instrumentation/build.ps1",
+      "size": 2413,
+      "sha256": "FFBA0CC5ED898CC3E2B4963BC6AF3E9C135AD0475EC8BE059E48E53937E1D4AB"
+    },
+    {
+      "path": "instrumentation/injector.cpp",
+      "size": 4771,
+      "sha256": "4C24BBEC06279B6167923458F27099CA2FE6C37F8FEE1BD3C5A4A6FEED2A02F4"
+    },
+    {
+      "path": "instrumentation/pass_b_config.txt",
+      "size": 135,
+      "sha256": "BEB0F14AB935528CA3966A741E6828D146CD530BD23D9764E2F059F84FDE1122"
+    },
+    {
+      "path": "instrumentation/pass_b_probe.cpp",
+      "size": 38410,
+      "sha256": "DD7844896C81F06B65D56EFF03E47C1865B889F774CDA0DC34062A25BC57C2B2"
+    },
+    {
+      "path": "instrumentation/README.md",
+      "size": 1629,
+      "sha256": "A3BD9E20EC966D57383DC529D6710BFBB0BBDC5A403651AC73D5B7E862D2EC21"
+    },
+    {
+      "path": "New-PassBManifest.ps1",
+      "size": 2242,
+      "sha256": "25EFD409590747508669597410F7FDAB9F3306EAFCDF358917174F5999DD47D0"
+    },
+    {
+      "path": "PASS-B-PROTOCOL.md",
+      "size": 3685,
+      "sha256": "312D019871F3D874D98410687A0A4D9863E629DE7045BAE55CF08542029D0D17"
+    },
+    {
+      "path": "PASS-B-RESULT.md",
+      "size": 8524,
+      "sha256": "53C1D51F4B99093E6835999BEB4A2755DEF72605FFD8EF8E6A8547F4AAFF2A29"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/call-sequence.csv",
+      "size": 366907,
+      "sha256": "D90BDABD193EA59AA1C577A27DFC5A46A026BE970709449133495D16D8DE596D"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/central-state.csv",
+      "size": 2604584,
+      "sha256": "F2F927513EBE521D94ABB568A73F3D3383914157D5532881EDF09458B2871AA8"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/derived/central-relations.csv",
+      "size": 408,
+      "sha256": "5BFD4F840B3DE8D7D6834785C1DE61C82DABBC2A4D0C1C8D0A4EEA13EFDEAEB8"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/derived/f268-mismatches.csv",
+      "size": 2138,
+      "sha256": "BA7E02BD3BF95B2A92D447A25EDA0FD11ED3CBFBFC09402EBBCE1B07416EF2B5"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/derived/summary.json",
+      "size": 6094,
+      "sha256": "0739E0B1425B4A2840D503238A02784D5D7A131635558436FD29876B9BA45D4E"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/hook-status.csv",
+      "size": 513,
+      "sha256": "4EAE03429D1F7CC3CC0A68AE7CD6889B567C894CB29C2819795FE8E529A1330E"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/modules-start.csv",
+      "size": 5244,
+      "sha256": "C7D1A34CC06F826D0F3C94C3B7937E27FC03F8511043A2F1EFD5CFCDD750DE18"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/modules-stop.csv",
+      "size": 9199,
+      "sha256": "4D3DD2359AEEFCA83E7003114AC3BEC15B48629054721F361176B037FDC3CEAF"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/override-transitions.csv",
+      "size": 188,
+      "sha256": "9E4444704E825015CA092C131AF88937556BB3CD0AF32BA006DA979F973734E7"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/present.csv",
+      "size": 116537,
+      "sha256": "7C96D22005CB5AF0DC25BCF4A72103D6049667F3E899460E4BAC683A06B08F7F"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/presentation-pacing.csv",
+      "size": 146058,
+      "sha256": "CF83DCB16114CE086D724F1103C6F7A6C1D5F332A1ED98B9E84BAF061E8A4AD4"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/selector.csv",
+      "size": 70,
+      "sha256": "D68F2FC1812BA1104C7994837D0412C8E3BB03EF733C37F068AC10E329198DCA"
+    },
+    {
+      "path": "sessions/20260919T092903Z-pid18800/session-info.txt",
+      "size": 388,
+      "sha256": "20C79272F1CF7B91D7D66C8C4A5BBEFCE89C78DAE71859251E03E1D0EDB5E6BF"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/call-sequence.csv",
+      "size": 537260,
+      "sha256": "B2D90177B001383C2352276DA91BFD666EB002D2E4CFC5C54C825BE517050BF5"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/central-state.csv",
+      "size": 3792081,
+      "sha256": "F37FB5E89EC2FF6A6C8364A76A7C0EC1CD31F655632BEE7C6DFBC301DFBD993C"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/derived/central-relations.csv",
+      "size": 442,
+      "sha256": "B961CB269A3533615AC1B03CE24C5FA53F5A48DB3D4203DB4B2600347CE54858"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/derived/f268-mismatches.csv",
+      "size": 3807,
+      "sha256": "23AE716FC470E370C850067085432550772BDB2E97345173D277929DB885FAF7"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/derived/summary.json",
+      "size": 6113,
+      "sha256": "501CD46C3412C8A81CAA8968F92BED9A4D7047916F709CB2FCFB7EF892022749"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/hook-status.csv",
+      "size": 513,
+      "sha256": "4EAE03429D1F7CC3CC0A68AE7CD6889B567C894CB29C2819795FE8E529A1330E"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/modules-start.csv",
+      "size": 5244,
+      "sha256": "E9B591646C88C05A24EC04A0CC654CB7FB0E7C4BDFE8EADA729D52B466302A2C"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/modules-stop.csv",
+      "size": 9278,
+      "sha256": "56677F57EC5CE110B26262CE01286229ABC7CD59D0705009892E9BC54A5546F9"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/override-transitions.csv",
+      "size": 188,
+      "sha256": "9D3A16DFF05DCB279936636864CA6332A1C701DAE71961B26F4B84DEDEB04B23"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/present.csv",
+      "size": 170370,
+      "sha256": "2C5381EEBC4321CDDAEB994D8B0069E9A9A1F8F3B7897EB644E7200325350F3A"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/presentation-pacing.csv",
+      "size": 213352,
+      "sha256": "40568A22414178E978E14D340D520E7C76873822BE59A1C794B2F7E27FB89383"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/selector.csv",
+      "size": 70,
+      "sha256": "D68F2FC1812BA1104C7994837D0412C8E3BB03EF733C37F068AC10E329198DCA"
+    },
+    {
+      "path": "sessions/20260919T093011Z-pid10632/session-info.txt",
+      "size": 380,
+      "sha256": "98498FBEE77EAD4D94B85DC01E5BBD41F0D24BB42B9DD91437DF8C72ACD676D9"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/call-sequence.csv",
+      "size": 728515,
+      "sha256": "C005F016F7222463F64C766BB17337ED449D64D8A792D557C9826D260401B093"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/central-state.csv",
+      "size": 5367983,
+      "sha256": "4E7E41DA64B96C17D6B5FD7EDA700DA0AA616C5923C789BC1A460C1CF6F6FBC4"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/derived/central-relations.csv",
+      "size": 396,
+      "sha256": "282563F74400BC202A3807AF12CD22E0DB689D80EF798C7CB573237A3388833C"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/derived/f268-mismatches.csv",
+      "size": 5695,
+      "sha256": "EEFB60683C34A9236CDB1105071CCB5988D7CAE9D32DC65BBFA42DAD0F86EDFB"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/derived/summary.json",
+      "size": 6091,
+      "sha256": "9C3812D54B2D06CB44EEDF4A5FC965EDB91B9917C7D42990F2F26B38E9F92325"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/hook-status.csv",
+      "size": 513,
+      "sha256": "4EAE03429D1F7CC3CC0A68AE7CD6889B567C894CB29C2819795FE8E529A1330E"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/modules-start.csv",
+      "size": 5244,
+      "sha256": "F20156D2D6794CEF12693E695AD76C66D9C9C580DEF37AEE5866F51666692133"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/modules-stop.csv",
+      "size": 9199,
+      "sha256": "E06C17FF9794BD2975A3FCAE2BCC449A3235EC29A750F9CC4436BFEBCB260868"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/override-transitions.csv",
+      "size": 190,
+      "sha256": "0B48B85CE0ED854694A013856572FF4EA20A0D58939005B4AB1F77B34ED7AEAD"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/present.csv",
+      "size": 228205,
+      "sha256": "4B4D1E18773FF25366AA5C1898FCA6FFD6EB25EC01B7373C11F84032818DD1D9"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/presentation-pacing.csv",
+      "size": 285646,
+      "sha256": "3DD657016FEA5211BD3D465BFEE6047FB221074CE1F23B7C398C245D51E8C1F4"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/selector.csv",
+      "size": 70,
+      "sha256": "D68F2FC1812BA1104C7994837D0412C8E3BB03EF733C37F068AC10E329198DCA"
+    },
+    {
+      "path": "sessions/20260919T093108Z-pid25696/session-info.txt",
+      "size": 382,
+      "sha256": "5C83D9183F15C51F8C3E1ACD2C98A4C139EF925165CF91FE55E160BA3FAF0AC6"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/call-sequence.csv",
+      "size": 2750308,
+      "sha256": "B19541CC829FF7D09A3660E8A9E4BF29D971A4EDD6FF33ACFCAD82C9F6DDE559"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/callbacks.csv",
+      "size": 39320633,
+      "sha256": "2E661AE755067577F2A09CD1990C9A772C2EE25C30E1976130311498C0E1E377"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/central-state.csv",
+      "size": 20024655,
+      "sha256": "9881CA60C9A8782EF9A39ABAAECC47D23AB12232EB16C39B024B05331BA027F2"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/derived/callback-targets.csv",
+      "size": 222,
+      "sha256": "AC9C66BB029730F56F72C16EB097812C2D89111BE2709BDAF56CD510066BFBCF"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/derived/central-relations.csv",
+      "size": 420,
+      "sha256": "E40DFFA18DF8930CB76E1D35DBA0BC666C6B78DD28449F28AB0D4739D4DA1CDF"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/derived/f268-mismatches.csv",
+      "size": 13714,
+      "sha256": "0DCD8494E0D50CA7F833F59ADBB48E445CEAF41E091FEB92B589FC47971C4195"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/derived/summary.json",
+      "size": 6862,
+      "sha256": "6A6E0970E608DDAD837EEDAD5480BE648DD9083CDF43611C9B3AF1FE9D1A545E"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/hook-status.csv",
+      "size": 513,
+      "sha256": "4EAE03429D1F7CC3CC0A68AE7CD6889B567C894CB29C2819795FE8E529A1330E"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/modules-start.csv",
+      "size": 5244,
+      "sha256": "73A2C3E107ACDB86595EE802592D8D1A595C7BA8299B3FEFB31B50D87ECB8A88"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/modules-stop.csv",
+      "size": 9278,
+      "sha256": "ABFB6518DE2FB11FF90D3E5AFC2C6C1B67A16E641F4AC5B03DF7218D26B78EBC"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/override-transitions.csv",
+      "size": 190,
+      "sha256": "31C7E496BCFB53130569A5468C92CAA35F113E59E3D838B6E7BEB7815B412C69"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/present.csv",
+      "size": 855276,
+      "sha256": "489E447BDF02CAED640C4AEDAC68BC0E8E6E95FF9373B922811E9B1BD97406F4"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/presentation-pacing.csv",
+      "size": 1069437,
+      "sha256": "51BC63C3A0058BC93BB3A7CA61B68C38DF7E9D2B5C1B36908A43806B362BA511"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/selector.csv",
+      "size": 926350,
+      "sha256": "467B177471AFD7CB04F778D1989AA70F31F047027915A85862853F3175B4137B"
+    },
+    {
+      "path": "sessions/20260919T093215Z-pid13708/session-info.txt",
+      "size": 392,
+      "sha256": "7A381F9287F303C998AB48464EB68DCF913E22C6778DAF1548FC950D2BFF2F0A"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/call-sequence.csv",
+      "size": 1257133,
+      "sha256": "4D55EBDAC986FEEEA1881AC1145768E711A3BF1D66365E0CDD8E5A81C2DB5607"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/central-state.csv",
+      "size": 8706853,
+      "sha256": "BE4A960C59FD8057F2381573857394D9918202BA6B63BD0CE6203B6AC159287D"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/consumer-summary.csv",
+      "size": 19488,
+      "sha256": "D6F84072984575314E8252AE41B92EEBD0D355F686CB6D5013BB6453B02BA161"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/derived/central-relations.csv",
+      "size": 397,
+      "sha256": "E9248549839F0FEFFE933144E4C7697259E2E05990D2F31F5A2CD41F5E973914"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/derived/f268-mismatches.csv",
+      "size": 4305,
+      "sha256": "A4BE8F4F5B474400A38BFF880F8850214F17B367CE5BA055AB948CCF4D81833B"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/derived/summary.json",
+      "size": 6676,
+      "sha256": "A1B4F8CED9BCAA92CEA00DCF7095C8635F15FFAAD569CAA57726CA294A5A0058"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/hook-status.csv",
+      "size": 662,
+      "sha256": "43640C86AF907E80E5657E93A9B698618024F025E472246A4FD3C5AE4DB9FB30"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/modules-start.csv",
+      "size": 9199,
+      "sha256": "BD73D18E38590D54C20A125B8C1AE984F2EDA6BB885AB8F2537BF9612974132F"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/modules-stop.csv",
+      "size": 9278,
+      "sha256": "FEA7D0EC9D0F96F16C29F834E65435C14D76DED1CA06D98288D562201A6176F6"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/override-transitions.csv",
+      "size": 190,
+      "sha256": "1427C1F3F609A6F8658006C615E24FEB6D0B11D0F5F4EEAC110BED3EF4F6D2C6"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/present.csv",
+      "size": 393852,
+      "sha256": "EFAE3E35F7731616B3390DDC0FB860CF5AB43027DC7B595007996C8CE4A7DE2D"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/presentation-pacing.csv",
+      "size": 492983,
+      "sha256": "F8AB8A616AE41F4FED241BBA0D8A1F1A12EF2B05B06963A5500234786ADB2B0F"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/selector.csv",
+      "size": 250982,
+      "sha256": "7C71D03398EBC752E614363DD7A261F2478687850CAA8867CE3C91E012673D0B"
+    },
+    {
+      "path": "sessions/20260919T094057Z-pid12600/session-info.txt",
+      "size": 400,
+      "sha256": "60921DC5A0F2014289231212471A7378A5493B302E541378320DB51054839A0B"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/call-sequence.csv",
+      "size": 1444154,
+      "sha256": "91DB1BE2F83A531B45FD7C36D6D011C32FC1EA48CD23427EDE172188D04AF8AD"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/central-state.csv",
+      "size": 10000787,
+      "sha256": "C8CA742A194501D0805D4D5B9DDC007C39F7D45F81F13BB15C757A69E1C73E6C"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/consumer-summary.csv",
+      "size": 20616,
+      "sha256": "B68DFEC8B6DADCE0A84902EB9A0C6EAB3498A6325001F109E6440CCBFCE73E33"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/derived/central-relations.csv",
+      "size": 432,
+      "sha256": "85E165C959124DE74B7BFF51EC4B831FB512C675FBC6E7E443A31E0C805BA2F6"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/derived/f268-mismatches.csv",
+      "size": 5961,
+      "sha256": "920CD487EAE20508A0FC041EF7EB71EF26EE7854125F603015F5ED1E4CFCAF4F"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/derived/summary.json",
+      "size": 6684,
+      "sha256": "CAD733762124E8C578ECE81F25290DD786C567C97EBF5BF6A59224747581647D"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/hook-status.csv",
+      "size": 662,
+      "sha256": "43640C86AF907E80E5657E93A9B698618024F025E472246A4FD3C5AE4DB9FB30"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/modules-start.csv",
+      "size": 9278,
+      "sha256": "DF41747A3A5CA26519BFE8F2D56135A677A989D012BEE12483A3F855CEF3375A"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/modules-stop.csv",
+      "size": 9278,
+      "sha256": "DF41747A3A5CA26519BFE8F2D56135A677A989D012BEE12483A3F855CEF3375A"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/override-transitions.csv",
+      "size": 190,
+      "sha256": "3BCAEA3A10202B4D2146C10B9BD7E7435AC9921F48FF99E71D4769F3C9D1CF1F"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/present.csv",
+      "size": 452621,
+      "sha256": "BC01FF0C3CB5B1C330FF8265B48AC4467038B956DE6BBA801FA85C6643F6B3EC"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/presentation-pacing.csv",
+      "size": 566336,
+      "sha256": "E35A9F123D8D2B5C0A47A92A9F065186A92AB2060FA7A773263E355D082FAF3B"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/selector.csv",
+      "size": 308352,
+      "sha256": "DF7BA23C716A01089B5D2FB5C1FCD5692105214C2CB7A2ECF0BC8B1E031CC1E9"
+    },
+    {
+      "path": "sessions/20260919T094304Z-pid19080/session-info.txt",
+      "size": 400,
+      "sha256": "8650B73E5D9BA645A7355E6E89DCC97698F1C1579A29F83DECBC4D5D6FA0FDFB"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/call-sequence.csv",
+      "size": 2760611,
+      "sha256": "CC1CFBF9A9ECCBDAB251EE919002E7F42415D601E1AC22745655E8D2CE9AA351"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/callbacks.csv",
+      "size": 68,
+      "sha256": "A2E734D4BE719594D23576AA9B697F564F7BE4B867A39F99BDBC6089DD0A5EF4"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/central-state.csv",
+      "size": 20023499,
+      "sha256": "822512E107091460AED60F9A4E35BF3484374D0729104D91E3D0E4DD0E8F2B5D"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/COMPLETE",
+      "size": 32,
+      "sha256": "A44C6C51810C8D60265E462584603089F18E36095E2036F610EAE76EB7E49744"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/consumer-summary.csv",
+      "size": 19391,
+      "sha256": "B257CA141AB1E9D215FF6BAE4AF761D4047041A3429420C6BD4727979D79E476"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/derived/callback-targets.csv",
+      "size": 79,
+      "sha256": "E27CA59900A8D2AC0D9AEAB37EE6E5BFD3B889FBFB5773456B77341A92B39BF8"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/derived/central-relations.csv",
+      "size": 412,
+      "sha256": "67ABB5DD17F8FF2AB88111CCE45A10F85AAAE459C92A3DC5D45645BB1553A8E1"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/derived/f268-mismatches.csv",
+      "size": 13322,
+      "sha256": "FF622022DBBD65DC1AA2AA2B676A1EC198B3E1F244C6765B992016A35126DC93"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/derived/summary.json",
+      "size": 6714,
+      "sha256": "8CC7FCE620104277248C23DF7517854CCDD4EA18A59909A8CB24AF4CC3295E58"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/hook-status.csv",
+      "size": 662,
+      "sha256": "43640C86AF907E80E5657E93A9B698618024F025E472246A4FD3C5AE4DB9FB30"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/modules-start.csv",
+      "size": 9199,
+      "sha256": "B39169247BC23DD1B060E092EFFB0F25655DB11302A4A3BE61A0B4C71C70E6F5"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/modules-stop.csv",
+      "size": 9278,
+      "sha256": "2B4778B94A46343F20853A740CEF01851F87B9EFF0DF6FF4C6565E496E694567"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/override-transitions.csv",
+      "size": 192,
+      "sha256": "B652E034B0A2FD6CE24763714F2D61DC65A4F65AB0BEB0ECA8DDD47E504AA040"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/present.csv",
+      "size": 855526,
+      "sha256": "CEA265F5098A3D9D57E45157901C237764DF42718DC6CDAAC3746D89658A2B15"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/presentation-pacing.csv",
+      "size": 1070078,
+      "sha256": "9138DEB70992F4EACFAB8E31352B1C8C8FF19605772E702A205C74C3E6B72445"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/READY",
+      "size": 18,
+      "sha256": "A820AF89D574FC69392531664B480A5674B0C51E8C14384F2B57CCA35DEBA962"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/selector.csv",
+      "size": 511109,
+      "sha256": "3FB2508BF6E84181AD5CFAACC7D618CEA8E6BF28733F934255270B5A56698EA9"
+    },
+    {
+      "path": "sessions/20260919T094516Z-pid27388/session-info.txt",
+      "size": 402,
+      "sha256": "10082EC02D8F3F170A48E7FB0E34E397E7A7CEC3247A549DE9F50C24DB76CCED"
+    }
+  ]
+}

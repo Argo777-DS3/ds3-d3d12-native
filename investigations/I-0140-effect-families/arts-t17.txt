@@ -1,0 +1,588 @@
+# I-0140 tranche 17: the casts of Run-I140Spells.ps1's tranche-17 families, on the stats-99 copy (« family word … », its comment).
+# Ids: EquipParamWeapon rows (evidence/I-0140/e84/weapon-param.tsv, +0x194 the art) and the engUS weapon FMG for the names.
+arts-shields give w20180000 w20280000 w21220000 w21140000 w21130000 w22050000 w20150000 w22130000 w21310000 w16120000 w20130000 w20310000 w21070000
+arts-shields R1000000 L20180000
+arts-shields cast art   # Warrior's Round Shield in the left hand, the Dagger in the right
+arts-shields R20180000
+arts-shields cast art   # Warrior's Round Shield in the right hand, the left bare
+arts-shields R1000000 L20280000
+arts-shields cast art   # Sacred Bloom Shield in the left hand, the Dagger in the right
+arts-shields R20280000
+arts-shields cast art   # Sacred Bloom Shield in the right hand, the left bare
+arts-shields R1000000 L21220000
+arts-shields cast art   # Golden Wing Crest Shield in the left hand, the Dagger in the right
+arts-shields R21220000
+arts-shields cast art   # Golden Wing Crest Shield in the right hand, the left bare
+arts-shields R1000000 L21140000
+arts-shields cast art   # Pierce Shield in the left hand, the Dagger in the right
+arts-shields R21140000
+arts-shields cast art   # Pierce Shield in the right hand, the left bare
+arts-shields R1000000 L21130000
+arts-shields cast art   # Spiked Shield in the left hand, the Dagger in the right
+arts-shields R21130000
+arts-shields cast art   # Spiked Shield in the right hand, the left bare
+arts-shields R1000000 L22050000
+arts-shields cast art   # Moaning Shield in the left hand, the Dagger in the right
+arts-shields R22050000
+arts-shields cast art   # Moaning Shield in the right hand, the left bare
+arts-shields R1000000 L20150000
+arts-shields cast art   # Havel's Greatshield in the left hand, the Dagger in the right
+arts-shields R20150000
+arts-shields cast art   # Havel's Greatshield in the right hand, the left bare
+arts-shields R1000000 L22130000
+arts-shields cast art   # Bonewheel Shield in the left hand, the Dagger in the right
+arts-shields R22130000
+arts-shields cast art   # Bonewheel Shield in the right hand, the left bare
+arts-shields R1000000 L21310000
+arts-shields cast art   # Dragonhead Greatshield in the left hand, the Dagger in the right
+arts-shields R21310000
+arts-shields cast art   # Dragonhead Greatshield in the right hand, the left bare
+arts-shields R1000000 L16120000
+arts-shields cast art   # Giant Door Shield in the left hand, the Dagger in the right
+arts-shields R16120000
+arts-shields cast art   # Giant Door Shield in the right hand, the left bare
+arts-shields R1000000 L20130000
+arts-shields cast art   # Ghru Rotshield in the left hand, the Dagger in the right
+arts-shields R20130000
+arts-shields cast art   # Ghru Rotshield in the right hand, the left bare
+arts-shields R1000000 L20310000
+arts-shields cast art   # Dragonhead Shield in the left hand, the Dagger in the right
+arts-shields R20310000
+arts-shields cast art   # Dragonhead Shield in the right hand, the left bare
+arts-shields R1000000 L21070000
+arts-shields cast art   # Carthus Shield in the left hand, the Dagger in the right
+arts-shields R21070000
+arts-shields cast art   # Carthus Shield in the right hand, the left bare
+arts-catalysts give w13160000 w13070000 w13180000 w13420000 w13440000 w13060000 w13300000 w13290000 w13260000 w13430000 w13050000 w13400000 w13410000 w23000000 w23010000
+arts-catalysts R13160000
+arts-catalysts cast art   # Sage's Crystal Staff
+arts-catalysts R13070000
+arts-catalysts cast art   # Storyteller's Staff
+arts-catalysts R13180000
+arts-catalysts cast art   # Court Sorcerer's Staff
+arts-catalysts R13420000
+arts-catalysts cast art   # Murky Longstaff
+arts-catalysts R13440000
+arts-catalysts cast art   # Preacher's Right Arm
+arts-catalysts R13060000
+arts-catalysts cast art   # Sorcerer's Staff
+arts-catalysts R13300000
+arts-catalysts cast art   # White Hair Talisman
+arts-catalysts R13290000
+arts-catalysts cast art   # Saint's Talisman
+arts-catalysts R13260000
+arts-catalysts cast art   # Sunlight Talisman
+arts-catalysts R13430000
+arts-catalysts cast art   # Sacred Chime of Filianore
+arts-catalysts R13050000
+arts-catalysts cast art   # Talisman
+arts-catalysts R13400000
+arts-catalysts cast art   # Pyromancy Flame
+arts-catalysts R13410000
+arts-catalysts cast art   # Pyromancer's Parting Flame
+arts-catalysts R23000000
+arts-catalysts cast art   # Torch
+arts-catalysts R23010000
+arts-catalysts cast art   # Follower Torch
+# The ammunition the copy holds (its slot read 2026-11-16: 400000, 400100, 400500, 400600, 402000 to 402400, 404000, 404100,
+# 404200, 404400, 404600) is not given (the final review's L9: an excess lands in a bag on the ground; see goods-thrown).
+arts-bows give w14010000 w14060000 w14150000 w14130000 w14120000 w13600000 w14140000 w14180000 w14190000 w14040000
+arts-bows R14010000 A400000
+arts-bows cast stance 700   # Short Bow
+arts-bows R14060000
+arts-bows cast stance 700   # Longbow
+arts-bows R14150000
+arts-bows cast stance 700   # Black Bow of Pharis
+arts-bows R14130000
+arts-bows cast stance 700   # Darkmoon Longbow
+arts-bows R14120000
+arts-bows cast stance 700   # White Birch Bow
+arts-bows R13600000 A402000
+arts-bows cast stance 700   # Dragonslayer Greatbow
+arts-bows R14140000
+arts-bows cast stance 700   # Onislayer Greatbow
+arts-bows R14180000
+arts-bows cast stance 700   # Millwood Greatbow
+arts-bows R14190000 B404000
+arts-bows cast stance 700   # Repeating Crossbow
+arts-bows R14040000
+arts-bows cast stance 700   # Light Crossbow
+arrows give w14060000 w13600000 w14040000 w400200x20 w400300x20 w400400x20 w400700x20 w404300x20 w404500x20
+arrows R14060000 A400000
+arrows cast shot   # Standard Arrow from the Longbow
+arrows A400100
+arrows cast shot   # Fire Arrow from the Longbow
+arrows A400200
+arrows cast shot   # Poison Arrow from the Longbow
+arrows A400300
+arrows cast shot   # Large Arrow from the Longbow
+arrows A400400
+arrows cast shot   # Feather Arrow from the Longbow
+arrows A400500
+arrows cast shot   # Moonlight Arrow from the Longbow
+arrows A400600
+arrows cast shot   # Wood Arrow from the Longbow
+arrows A400700
+arrows cast shot   # Dark Arrow from the Longbow
+arrows R13600000 A402000
+arrows cast shot   # Dragonslayer Greatarrow from the Dragonslayer Greatbow
+arrows A402200
+arrows cast shot   # Dragonslayer Lightning Arrow from the Dragonslayer Greatbow
+arrows A402300
+arrows cast shot   # Onislayer Greatarrow from the Dragonslayer Greatbow
+arrows A402400
+arrows cast shot   # Millwood Greatarrow from the Dragonslayer Greatbow
+arrows R14040000 B404000
+arrows cast shot   # Standard Bolt from the Light Crossbow
+arrows B404100
+arrows cast shot   # Heavy Bolt from the Light Crossbow
+arrows B404200
+arrows cast shot   # Sniper Bolt from the Light Crossbow
+arrows B404300
+arrows cast shot   # Wood Bolt from the Light Crossbow
+arrows B404400
+arrows cast shot   # Lightning Bolt from the Light Crossbow
+arrows B404500
+arrows cast shot   # Splintering Bolt from the Light Crossbow
+arrows B404600
+arrows cast shot   # Exploding Bolt from the Light Crossbow
+arts-stance give w1140000 w6280000 w2140000 w16140000 w2250000 w6170000 w6270000 w6300000 w6370000 w6200000 w3020000 w5010000 w5060000 w10170000 w9260000 w10180000 w16100000
+arts-stance R1140000
+arts-stance cast stance 800   # Aquamarine Dagger
+arts-stance R6280000
+arts-stance cast stance 800   # Lothric's Holy Sword
+arts-stance R2140000
+arts-stance cast stance 800   # Irithyll Straight Sword
+arts-stance R16140000
+arts-stance cast stance 800   # Valorheart
+arts-stance R2250000
+arts-stance cast stance 800   # Ringed Knight Straight Sword
+arts-stance R6170000
+arts-stance cast stance 800   # Greatsword of Judgment
+arts-stance R6270000
+arts-stance cast stance 800   # Twin Princes' Greatsword
+arts-stance R6300000
+arts-stance cast stance 800   # Wolf Knight's Greatsword
+arts-stance R6370000
+arts-stance cast stance 3000   # Storm Ruler
+arts-stance R6200000
+arts-stance cast stance 800   # Farron Greatsword
+arts-stance R3020000
+arts-stance cast stance 800   # Rapier
+arts-stance R5010000
+arts-stance cast stance 800   # Washing Pole
+arts-stance R5060000
+arts-stance cast stance 800   # Frayed Blade
+arts-stance R10170000
+arts-stance cast stance 800   # Splitleaf Greatsword
+arts-stance R9260000
+arts-stance cast stance 800   # Crucifix of the Mad King
+arts-stance R10180000
+arts-stance cast stance 800   # Friede's Great Scythe
+arts-stance R16100000
+arts-stance cast stance 800   # Drang Twinspears
+# goods-thrown and goods-use (tranche 17): EquipParamGoods ids (evidence/I-0140/e84/goods-param.tsv, +0x3B refCategory: 1 a bullet,
+# 2 a SpEffect) and the engUS item FMG for the names; each used once from quick slot 0 (R), the Dagger in the right hand. The dragon
+# stones end goods-thrown (a form may block what follows: the torso's use then shows it); Homeward Bone ends goods-use (its prompt
+# confirmed with E, then its warp).
+# Not here: the Estus Flasks (the copy's own flask, whose id follows its level, not read); the souls 401 to 419 (the same use as
+# 400 and 420, INFERRED); 262 (a second Budding Green Blossom row); Binoculars (a view, no effect); the Twinkling dragon stones
+# (the same forms, INFERRED: a third and fourth form in a row would only stack the risk above).
+# The gives (i140-t17b: a goods given beyond what the copy holds, or above its maximum, went to a bag on the ground, which the
+# give's later E presses opened over the picture; the uses still happened): only the goods the copy's inventory lacks, one each (the slot's
+# inventory read 2026-11-16: entries {handle 0xB0xxxxxx, 0x40000000 | id, count}; the 5 below and goods-use's 2; the others held, 1 to 99).
+goods-thrown give g299 g302 g311 g377 g378
+goods-thrown R1000000 Q290
+goods-thrown cast use   # Kukri
+goods-thrown Q292
+goods-thrown cast use   # Firebomb
+goods-thrown Q297
+goods-thrown cast use   # Black Firebomb
+goods-thrown Q299
+goods-thrown cast use   # Rope Firebomb
+goods-thrown Q302
+goods-thrown cast use   # Rope Black Firebomb
+goods-thrown Q300
+goods-thrown cast use   # Lightning Urn
+goods-thrown Q310
+goods-thrown cast use   # Throwing Knife
+goods-thrown Q311
+goods-thrown cast use   # Poison Throwing Knife
+goods-thrown Q315
+goods-thrown cast use   # Church Guardian Shiv
+goods-thrown Q293
+goods-thrown cast use   # Dung Pie
+goods-thrown Q303
+goods-thrown cast use   # Stalk Dung Pie
+goods-thrown Q294
+goods-thrown cast use   # Alluring Skull
+goods-thrown Q296
+goods-thrown cast use   # Undead Hunter Charm
+goods-thrown Q370
+goods-thrown cast use   # Prism Stone
+goods-thrown Q304
+goods-thrown cast use   # Duel Charm
+goods-thrown Q377
+goods-thrown cast use   # Dragon Head Stone
+goods-thrown Q378
+goods-thrown cast use   # Dragon Torso Stone
+goods-use give g400 g420
+goods-use R1000000 Q330
+goods-use cast use   # Charcoal Pine Resin
+goods-use Q340
+goods-use cast use   # Charcoal Pine Bundle
+goods-use Q331
+goods-use cast use   # Gold Pine Resin
+goods-use Q341
+goods-use cast use   # Gold Pine Bundle
+goods-use Q343
+goods-use cast use   # Rotten Pine Resin
+goods-use Q334
+goods-use cast use   # Human Pine Resin
+goods-use Q335
+goods-use cast use   # Carthus Rouge
+goods-use Q336
+goods-use cast use   # Pale Pine Resin
+goods-use Q274
+goods-use cast use   # Purging Stone
+goods-use Q280
+goods-use cast use   # Repair Powder
+goods-use Q240
+goods-use cast use   # Divine Blessing
+goods-use Q241
+goods-use cast use   # Hidden Blessing
+goods-use Q260
+goods-use cast use   # Green Blossom
+goods-use Q261
+goods-use cast use   # Budding Green Blossom
+goods-use Q270
+goods-use cast use   # Bloodred Moss Clump
+goods-use Q271
+goods-use cast use   # Purple Moss Clump
+goods-use Q272
+goods-use cast use   # Blooming Purple Moss Clump
+goods-use Q276
+goods-use cast use   # Rime-blue Moss Clump
+goods-use Q458
+goods-use cast use   # Blue Bug Pellet
+goods-use Q459
+goods-use cast use   # Red Bug Pellet
+goods-use Q460
+goods-use cast use   # Yellow Bug Pellet
+goods-use Q461
+goods-use cast use   # Black Bug Pellet
+goods-use Q455
+goods-use cast use   # Rusted Coin
+goods-use Q457
+goods-use cast use   # Rusted Gold Coin
+goods-use Q456
+goods-use cast use   # Siegbräu
+goods-use Q400
+goods-use cast use   # Fading Soul
+goods-use Q420
+goods-use cast use   # Soul of a Great Champion
+goods-use Q500
+goods-use cast use   # Ember
+goods-use Q350
+goods-use cast use after 69   # Homeward Bone
+
+# Tranche 18 (the three leads of tranche 17): each moment again in both renderers, F9 at the effect (« capture <ms> »: ffx_ps_image
+# rows in both, native_ffx_draw_dump natively with -NativeFlags ffx-record).
+lead-crucifix give w9260000
+lead-crucifix R9260000
+lead-crucifix cast stance 800 capture 2000   # Crucifix of the Mad King: the violet swirl from about 1.6 s
+lead-havel give w20150000
+lead-havel R1000000 L20150000
+lead-havel cast art   # Havel's Greatshield in the left hand: Stone Flesh on
+lead-havel R20150000
+lead-havel cast art capture 1800   # in the right hand, Stone Flesh still on: the dust natively at 1.5 to 2.4 s
+lead-rope give g302
+lead-rope R1000000 Q302
+lead-rope cast use capture 1300   # Rope Black Firebomb: the blast, the smoke over the fire natively
+# Tranche 19 (step 5's left list, I-0140 RESULT « Tranche 19 »). lead-crucifix2: the Crucifix of the Mad King's stance held 800,
+# 1600 and 2500 ms before the attack, twice each (BehaviorParam_PC 103814740 makes bullet 100092640, a 5 s follower with FFX
+# 442331, whose hit bullets 100092641 and 100092642 carry 442332 and 442333; 103814745 makes 100092643 in the same limit group:
+# whether the stance's length decides the swirl is what these casts show). lead-rope2: the Rope Firebomb (g299), tranche 17's
+# other rope cast, used twice. arts-farron: Farron Greatsword's art (SwordArtsParam 401: type 22 as the Moonlight Greatsword's,
+# no FP cost in any slot, so its use is judged on the film) by Shift and the right button, twice; Splitleaf Greatsword's stance
+# (1408: type 4, R1 17 and R2 20 FP) held 1600 and 2500 ms, its 800 ms one having spent no FP in tranche 17.
+lead-crucifix2 give w9260000
+lead-crucifix2 R9260000
+lead-crucifix2 cast stance 800
+lead-crucifix2 cast stance 800
+lead-crucifix2 cast stance 1600
+lead-crucifix2 cast stance 1600
+lead-crucifix2 cast stance 2500
+lead-crucifix2 cast stance 2500
+lead-rope2 give g299x2
+lead-rope2 R1000000 Q299
+lead-rope2 cast use   # Rope Firebomb
+lead-rope2 cast use   # Rope Firebomb again
+arts-farron give w6200000 w10170000
+arts-farron R6200000
+arts-farron cast art   # Farron Greatsword
+arts-farron cast art   # Farron Greatsword again
+arts-farron R10170000
+arts-farron cast stance 1600   # Splitleaf Greatsword
+arts-farron cast stance 2500   # Splitleaf Greatsword
+# bows2 (tranche 19): a bow held in two hands (tranche 17's one-handed bows were swung as clubs): « grip » first, then a shot, the
+# bow's art as a stance with its shot at 700 ms, then a Fire Arrow (its light on the impact); the Longbow and arrows the copy holds.
+bows2 give w14060000
+bows2 R14060000 A400000
+bows2 cast grip   # E held with the left click: two hands (OBSERVED in i140-t19)
+bows2 cast shot   # Standard Arrow from the Longbow in two hands
+bows2 cast stance 700   # the Longbow's art in two hands
+bows2 A400100
+bows2 cast shot   # Fire Arrow from the Longbow in two hands
+# keeper-infusions (tranche 19, step 5's « infusions on a hit »): the Longsword in each infusion (EquipParamWeapon 2010000 + 100 x
+# the infusion: Crystal 500, Fire 600, Chaos 700, Lightning 800, Deep 900, Dark 1000, Poison 1100, Blood 1200, Blessed 1400), each
+# swung once toward -AimAt, where the Fire Keeper is expected (the runner's -HitKeeper walk), F1's P1 probe before each swing and before a last swing: the
+# nearest living character's HP and position in each row: a drop between two probes of the same character (its maximum, a position
+# within about 1 m) is a hit, unless the Poison or Blood swing's status took HP meanwhile; then, on a hit, its sparks, flash and buildup.
+keeper-infusions give w2010500 w2010600 w2010700 w2010800 w2010900 w2011000 w2011100 w2011200 w2011400
+keeper-infusions R2010500 P1
+keeper-infusions cast shot   # Crystal Longsword
+keeper-infusions R2010600 P1
+keeper-infusions cast shot   # Fire Longsword
+keeper-infusions R2010700 P1
+keeper-infusions cast shot   # Chaos Longsword
+keeper-infusions R2010800 P1
+keeper-infusions cast shot   # Lightning Longsword
+keeper-infusions R2010900 P1
+keeper-infusions cast shot   # Deep Longsword
+keeper-infusions R2011000 P1
+keeper-infusions cast shot   # Dark Longsword
+keeper-infusions R2011100 P1
+keeper-infusions cast shot   # Poison Longsword
+keeper-infusions R2011200 P1
+keeper-infusions cast shot   # Blood Longsword
+keeper-infusions R2011400 P1
+keeper-infusions cast shot   # Blessed Longsword
+keeper-infusions P1
+keeper-infusions cast shot   # Blessed Longsword again, after the last probe
+# keeper-status (tranche 19, step 5's « statuses on NPCs »): F1's N<id> puts a status row on the nearest other living character
+# (INFERRED the Fire Keeper after the -HitKeeper walk; the row's HP, maximum and position say which): poison 20019, toxic 21019, frost 24019, bleed 22019 (its buildup row: the burst when
+# it fills, INFERRED), each followed by a swing of the Dagger toward her.
+keeper-status R1000000 N20019
+keeper-status cast shot   # poison on the nearest character (the row says which)
+keeper-status N21019
+keeper-status cast shot   # toxic on the nearest character
+keeper-status N24019
+keeper-status cast shot   # frost on the nearest character
+keeper-status N22019
+keeper-status cast shot   # bleed on the nearest character
+keeper-status N22019
+keeper-status cast shot   # bleed again
+# lead-rope3 (tranche 19): the Rope Firebomb (g299) used twice, F9 asked 600 ms after the second use (it lands 0.5 to 1 s later: about
+# the blast's second swell, which the original draws and the native did not in i140-t19's two casts): the effects' draw rows.
+lead-rope3 give g299x2
+lead-rope3 R1000000 Q299
+lead-rope3 cast use   # Rope Firebomb
+lead-rope3 cast use capture 600   # Rope Firebomb, F9 near its second swell
+# Tranche 20: F1's F1 turns the player toward the nearest living character (its heading held 1.5 s), M1 is a middle click (the
+# lock-on when she is in view, else the camera put behind the player, facing her): F1 before each swing, M1 before the first only
+# (a second click would release a lock), so the swing goes at her and the film shows her (whether a lock was taken: plan-*.png);
+# keeper-infusions2's last swing and bows3's casts 3 and 4 follow no F1 of their own (the heading kept from the one before). keeper-status2: poison, frost, bleed, then toxic last (tranche 19's toxic took her life).
+keeper-status2 R1000000 F1 M1 N20019
+keeper-status2 cast shot   # poison on the nearest character (the row says which)
+keeper-status2 F1 N24019
+keeper-status2 cast shot   # frost
+keeper-status2 F1 N22019
+keeper-status2 cast shot   # bleed
+keeper-status2 F1 N22019
+keeper-status2 cast shot   # bleed again (its burst when the buildup fills, INFERRED)
+keeper-status2 F1 N21019
+keeper-status2 cast shot   # toxic last
+# keeper-infusions2: tranche 19's infused Longswords, each turned toward the nearest character and probed before its swing.
+keeper-infusions2 give w2010600 w2010700 w2010800 w2011000 w2011100 w2011200 w2011400
+keeper-infusions2 R2010600 F1 M1 P1
+keeper-infusions2 cast shot   # Fire Longsword
+keeper-infusions2 R2010700 F1 P1
+keeper-infusions2 cast shot   # Chaos Longsword
+keeper-infusions2 R2010800 F1 P1
+keeper-infusions2 cast shot   # Lightning Longsword
+keeper-infusions2 R2011000 F1 P1
+keeper-infusions2 cast shot   # Dark Longsword
+keeper-infusions2 R2011100 F1 P1
+keeper-infusions2 cast shot   # Poison Longsword
+keeper-infusions2 R2011200 F1 P1
+keeper-infusions2 cast shot   # Blood Longsword
+keeper-infusions2 R2011400 F1 P1
+keeper-infusions2 cast shot   # Blessed Longsword
+keeper-infusions2 P1
+keeper-infusions2 cast shot   # a last swing after the last probe
+# bows3: the Longbow in two hands turned toward the nearest character: a shot, the art by Shift and the right button (« art »),
+# a shot right after it, the art as a stance of 1500 ms.
+bows3 give w14060000
+bows3 R14060000 A400000
+bows3 cast grip   # two hands
+bows3 F1 M1
+bows3 cast shot   # a Standard Arrow at her
+bows3 cast art   # the Longbow's art
+bows3 cast shot   # a shot after the art
+bows3 F1
+bows3 cast stance 1500   # the art held 1500 ms, its shot inside
+# lead-rope4: the Rope Firebomb three more times (tranche 19: its late swell in 4 of 4 original casts, 2 of 4 native ones).
+lead-rope4 give g299x3
+lead-rope4 R1000000 Q299
+lead-rope4 cast use   # Rope Firebomb
+lead-rope4 cast use   # Rope Firebomb
+lead-rope4 cast use   # Rope Firebomb
+# maggots2 (tranche 21, Thomas 2026-11-17 05:22-05:27: « refilmer en 1080p, caméra normale, personnage vu de l'avant puis
+# arrière », « au moment où le personnage s'équipe d'une torche », « juste des screen », « dans un endroit éclairé, dehors », « S
+# (quand il est de dos) et Z (quand il est de face), sans toucher à la caméra »): teleported by the Cemetery of Ash's bonfire, the
+# 1080p full screen (the runner's -GraphicsLevels), F4 and SpEffect 5100 (the Corpse-grubs' maggots), the character seen from
+# behind (Z) then from the front (S) (the teleport was released at the start: it ran in Firelink Shrine), the Torch put in the left hand (its F1 press's own shot), from behind then the front again;
+# the casts' shots at 400 to 3,000 ms.
+maggots2 give w23000000
+maggots2 I1 R1000000 S5100
+maggots2 cast away   # the maggots on, from behind
+maggots2 cast face   # from the front
+maggots2 L23000000
+maggots2 cast away   # the Torch in hand, from behind
+maggots2 cast face   # from the front, after the Torch
+# Tranche 22 (step 5's left list, after the pause): a target that lives (F1's new H<id>, the nearest character's HP back to its
+# maximum, after the P1 that judges the swing before it), the statuses seen from beside, the five infused hits left, the bolts
+# on a target, the Crucifix again.
+# crucifix3: the Crucifix of the Mad King's stance, meant outdoors (the teleport by the Cemetery of Ash's bonfire, as maggots2, was
+# released at the start: it ran in Firelink Shrine, the runner's teleport since removed), so the camera faces no wall (tranche 19: the original's white ring at the stance's attack in two casts, the native's view then on a
+# wall); F4 first.
+crucifix3 give w9260000
+crucifix3 I1 R9260000
+crucifix3 cast stance 1600
+crucifix3 cast stance 1600
+crucifix3 cast stance 2500
+crucifix3 cast stance 2500
+crucifix3 cast stance 1600
+# keeper-status3: the statuses on the nearest character seen from beside her, without a lock (a middle click locks on only when
+# she is in view, else it puts the camera behind the player, and a mouse look under a lock may change the target: its step
+# review's M3): the walk ends facing her (its look and step), F1 turns the player to her, then T500 turns the camera about an
+# eighth of a turn (LIVE-RUN-NOTES: about 4,000 units a turn; Run-AlphaCast's look comes after the cast's F1 presses), so she
+# stands beside the player in the picture (look-1.png says whether she does); cast 1 a Dagger swing only, so every status is
+# added after the turn. H1 before each status keeps her alive (tranche 20: a 135 HP drop after a bleed row, the poison 57 in a
+# cast's time: its step review's M1).
+keeper-status3 R1000000 F1 T500
+keeper-status3 cast shot   # the turn, no status yet
+keeper-status3 F1 H1 N20019
+keeper-status3 cast shot   # poison
+keeper-status3 F1 H1 N24019
+keeper-status3 cast shot   # frost
+keeper-status3 F1 H1 N22019
+keeper-status3 cast shot   # bleed (22019, the status row itself: tranche 20's 135 HP drop after it)
+keeper-status3 F1 H1 N22019
+keeper-status3 cast shot   # bleed again, in view
+keeper-status3 F1 H1 N21019
+keeper-status3 cast shot   # toxic last
+# keeper-infusions3: the five infused Longswords tranche 20 did not reach on a target (Fire, Dark, Blessed, Poison, Blood: the
+# two with a status last, Blood the last, so a swing whose burst kills her ends the series; its step review's M2), two
+# swings each after two Dagger swings that close the distance (tranche 20: a miss at 3.57 m, the player nearer at each swing);
+# P1 before each swing judges the one before it (an HP drop of the same character), then H1 refills her.
+keeper-infusions3 give w2010600 w2011000 w2011100 w2011200 w2011400
+keeper-infusions3 R1000000 F1 M1 H1
+keeper-infusions3 cast shot   # Dagger, closing in
+keeper-infusions3 F1
+keeper-infusions3 cast shot   # Dagger, closing in
+keeper-infusions3 R2010600 F1 P1 H1
+keeper-infusions3 cast shot   # Fire Longsword
+keeper-infusions3 F1 P1 H1
+keeper-infusions3 cast shot   # Fire Longsword again
+keeper-infusions3 R2011000 F1 P1 H1
+keeper-infusions3 cast shot   # Dark Longsword
+keeper-infusions3 F1 P1 H1
+keeper-infusions3 cast shot   # Dark Longsword again
+keeper-infusions3 R2011400 F1 P1 H1
+keeper-infusions3 cast shot   # Blessed Longsword
+keeper-infusions3 F1 P1 H1
+keeper-infusions3 cast shot   # Blessed Longsword again
+keeper-infusions3 R2011100 F1 P1 H1
+keeper-infusions3 cast shot   # Poison Longsword
+keeper-infusions3 F1 P1 H1
+keeper-infusions3 cast shot   # Poison Longsword again
+keeper-infusions3 R2011200 F1 P1 H1
+keeper-infusions3 cast shot   # Blood Longsword
+keeper-infusions3 F1 P1 H1
+keeper-infusions3 cast shot   # Blood Longsword again
+keeper-infusions3 F1 P1
+keeper-infusions3 cast shot   # a last swing after the last probe
+# bolts2: the Light Crossbow's bolts at the nearest character, locked on (tranche 17: no flight seen in a crop around the
+# character; the whole window now), P1 before each shot judging the one before, H1 after it.
+bolts2 give w14040000 w404500x20
+bolts2 R14040000 B404000 F1 M1 P1 H1
+bolts2 cast shot   # Standard Bolt
+bolts2 B404400 F1 P1 H1
+bolts2 cast shot   # Lightning Bolt
+bolts2 B404600 F1 P1 H1
+bolts2 cast shot   # Exploding Bolt
+bolts2 B404500 F1 P1 H1
+bolts2 cast shot   # Splintering Bolt
+bolts2 B404100 F1 P1 H1
+bolts2 cast shot   # Heavy Bolt
+bolts2 F1 P1
+bolts2 cast shot   # a last Heavy Bolt after the last probe
+# bows4: the Longbow's art 1901 costs nothing to enter (L2) and 9 FP on R1 or R2 inside it (READ in SwordArtsParam, tranche 19):
+# the stance (Shift and the right button held, the left click with Shift: R2) was tried at 700 ms only with a cast after it
+# (bows2) and at 1500 ms as the last cast (bows3, no FP row); here 1500 and 2500 ms, each followed by a cast, so the FP line
+# judges them; two hands by grip first.
+bows4 give w14060000
+bows4 R14060000 A400000
+bows4 cast grip   # two hands
+bows4 cast stance 1500   # the art, a shot 1500 ms into it
+bows4 cast stance 2500   # the art, a shot 2500 ms into it
+bows4 cast shot   # a plain shot (judges cast 3 by FP)
+
+# Tranche 23 (Thomas 2026-11-17 09:16-09:18: « J'ai l'impression que les effets de braise manquent en natif sur les vêtements »,
+# « Normalement ça fait des traces oranges sur les vêtements », « Oui c'est le statut embrasé du jeu »): ember2, an Ember used on the
+# current module, then the character from behind and from the front (tranche 17b's goods-use showed the traces natively on
+# build-t17e: a regression since, or a difference of strength, is the question). Not run: closed by Thomas 09:45 (his character had died).
+ember2 R1000000 Q500
+ember2 cast use   # Ember
+ember2 cast away   # from behind
+ember2 cast face   # from the front
+ember2 cast away   # from behind again
+# andre-infusions (tranche 23; tranche 22's final review's M2; Thomas 2026-11-17 09:46: « Gel aussi avec la straight sword
+# d'Irithyll mais faut plutôt taper André, la firekeeper meurt trop vite »): Crystal (2010500), Deep (2010900) and the Irithyll
+# Straight Sword's frost (2140000) on Blacksmith Andre, the player placed by -AimAt beside him (the runner); F1's f faces the
+# nearest character, P1 before each swing judges the one before it, H1 refills him before each new weapon (not before the last three Irithyll
+# swings: they killed him in both runs), I1 (F4) toggles the player's invincibility (on, off, on, off as written; Andre fights back).
+# A rerun: H1 before every swing and I1 once at the start (tranche 23's final review M3).
+andre-infusions give w2010500 w2010900 w2140000
+andre-infusions R1000000 F1 H1
+andre-infusions cast shot   # Dagger, closing in
+andre-infusions F1
+andre-infusions cast shot   # Dagger, closing in
+andre-infusions R2010500 F1 P1 H1 I1
+andre-infusions cast shot   # Crystal Longsword
+andre-infusions F1 P1 H1
+andre-infusions cast shot   # Crystal Longsword again
+andre-infusions R2010900 F1 P1 H1 I1
+andre-infusions cast shot   # Deep Longsword
+andre-infusions F1 P1 H1
+andre-infusions cast shot   # Deep Longsword again
+andre-infusions R2140000 F1 P1 H1 I1
+andre-infusions cast shot   # Irithyll Straight Sword: frost builds
+andre-infusions F1 P1
+andre-infusions cast shot   # Irithyll Straight Sword
+andre-infusions F1 P1 I1
+andre-infusions cast shot   # Irithyll Straight Sword
+andre-infusions F1 P1
+andre-infusions cast shot   # Irithyll Straight Sword: frostbite in view
+andre-infusions F1 P1
+andre-infusions cast shot   # a last swing, so the one before it is judged
+# andre-paint (tranche 24, ROADMAP workstream 5 step 2): the character paint (DECALS-PAINT-READY D2, the struck character's
+# blood on his body) seen beside the original. The Dagger's slashes on Blacksmith Andre, I1 (F4) once, H1 before every swing so
+# he lives (tranche 23's M3); F1 faces him, P1 judges the swing before. The pictures are taken on the game's clock (D-0299):
+# Get-EffectFrames.py from each hit's own effect creation (ffx_create, -NativeFlags ffx-record, -ReferenceFlags ffx-draw-observe).
+andre-paint R1000000 I1 F1 H1
+andre-paint cast shot   # Dagger 1
+andre-paint F1 P1 H1
+andre-paint cast shot   # Dagger 2
+andre-paint F1 P1 H1
+andre-paint cast shot   # Dagger 3
+andre-paint F1 P1 H1
+andre-paint cast shot   # Dagger 4
+andre-paint F1 P1 H1
+andre-paint cast shot   # Dagger 5
+andre-paint F1 P1 H1
+andre-paint cast shot   # Dagger 6
+andre-paint F1 P1
+andre-paint cast shot   # Dagger 7, so the sixth is judged

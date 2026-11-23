@@ -1,0 +1,36 @@
+# Local and generated noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.log
+
+# Local game inputs: DarkSoulsIII.exe and the Ghidra project (see decompiled/README.md)
+game/
+
+# External Evidence Store; evidence is a local junction, never Git content.
+/evidence
+/evidence/
+
+# Build outputs
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+native/**/build/
+native/**/bin/
+native/**/obj/
+
+# Tool-local state
+.vs/
+.vscode/
+__pycache__/
+
+# clangd compilation database (machine paths; scripts/New-CompileCommands.ps1)
+/compile_commands.json
+
+# Claude Code: the sessions' worktrees and the local settings stay out of Git; the project's skills and subagents are tracked
+/.claude/worktrees/
+/.claude/settings.json
+/.claude/settings.local.json

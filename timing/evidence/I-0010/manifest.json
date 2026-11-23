@@ -1,0 +1,171 @@
+﻿{
+    "schema_version":  1,
+    "investigation_id":  "I-0010",
+    "subject":  "Exact same locomotion correction at 240 FPS",
+    "game_build":  {
+        "label":  "Steam AppID 374320 / BuildID 10167187 / DarkSoulsIII.exe 1.15.2.0",
+        "executable_sha256":  "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+                   },
+    "artifacts":  [
+                      {
+                          "kind":  "display_preflight",
+                          "location":  "evidence/I-0010/DISPLAY-PREFLIGHT.md",
+                          "sha256":  "2270A8CC0C00DF89472B77782047DC8112417EFDFFAF1948A2AFA5AC9EC19491",
+                          "note":  "Read-only Windows native display-mode enumeration before implementation or any DS3 launch; primary 2560x1440@280 with >=240-Hz support."
+                      },
+                      {
+                          "kind":  "prototype_source",
+                          "location":  "evidence/I-0010/prototype/prototype.cpp",
+                          "sha256":  "0E5801F452436AFB524F41AB9DFF35DC7595F6C7D972EBA462C3095E299B2291",
+                          "size":  43031,
+                          "note":  "Exact allowlisted target/identity derivative of I-0009 runtime source."
+                      },
+                      {
+                          "kind":  "formula_guard_core",
+                          "location":  "evidence/I-0010/prototype/prototype_core.hpp",
+                          "sha256":  "8BAA4212C0FE3E093EC5F542B4E6F02CA95CBAD027605F244BEA38B054945FAC",
+                          "size":  4433,
+                          "note":  "Byte-identical to the checked-out I-0009 formula and guard core; content-identical to e81316e after newline normalization."
+                      },
+                      {
+                          "kind":  "prototype_binary",
+                          "location":  "evidence/I-0010/prototype/bin/I0010Locomotion240Prototype.dll",
+                          "sha256":  "D5F57CEE8265401539DA4648A545CFE4060E87605DE4AC0734EF34A7D4668124",
+                          "size":  193024,
+                          "note":  "Target-240 DLL; inert until explicit prepare and correction OFF until explicit enable."
+                      },
+                      {
+                          "kind":  "prototype_controller",
+                          "location":  "evidence/I-0010/prototype/bin/I0010PrototypeController.exe",
+                          "sha256":  "7C1F4AE36C99C97461EC07FB182733B24DBDD48F5C0AE13D9C0C5DF1E6E96406",
+                          "size":  163328
+                      },
+                      {
+                          "kind":  "derivation_validation",
+                          "location":  "evidence/I-0010/prototype/DERIVATION-VALIDATION.json",
+                          "sha256":  "89611336EA10D62899914321378B04FCCD9F827DE6D269A1E71DE2DEF3FEFA13",
+                          "size":  3513
+                      },
+                      {
+                          "kind":  "build_validation",
+                          "location":  "evidence/I-0010/prototype/BUILD-VALIDATION.json",
+                          "sha256":  "ACDEC3E4A542EBD17D4DBC50B12E1C0FC3BDCCD4DC342A87838F11F5D2934AB0",
+                          "size":  5132
+                      },
+                      {
+                          "kind":  "exact_build_validation",
+                          "location":  "evidence/I-0010/prototype/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "FC9D3978D221FED7BCC09034D698AC0E6757A64FC3409C402D9483A238BE035B",
+                          "size":  1598
+                      },
+                      {
+                          "kind":  "native_test_output",
+                          "location":  "evidence/I-0010/prototype/native-test-output.txt",
+                          "sha256":  "FB52805B75CC2D5D0D725FC8CD1CF4ECB5C51D87C92E251C3E98D61D74DA03BC",
+                          "size":  159
+                      },
+                      {
+                          "kind":  "native_restoration_stress",
+                          "location":  "evidence/I-0010/prototype/NATIVE-RESTORATION-STRESS.txt",
+                          "sha256":  "3DB278002C4CACE841820384F45AEAC5B8BCC30A27E01B2CDB124F0965E7EA79",
+                          "size":  354,
+                          "note":  "Ten consecutive passes of the final native self-test executable."
+                      },
+                      {
+                          "kind":  "prototype_guide",
+                          "location":  "evidence/I-0010/prototype/README.md",
+                          "sha256":  "48CD83ECD589A9E77AEED4F01F338BB5994AC177D15CBAF806ABBEDDF92577CD",
+                          "size":  2127
+                      },
+                      {
+                          "kind":  "live_protocol",
+                          "location":  "evidence/I-0010/prototype/LIVE-PROTOCOL.md",
+                          "sha256":  "5766C1A5D0067F443EB00ECB5A1CC9D06F7151DD73A0E2BD1170320A64624F75",
+                          "size":  3030
+                      },
+                      {
+                          "kind":  "prototype_wrapper",
+                          "location":  "evidence/I-0010/prototype/Invoke-Prototype.ps1",
+                          "sha256":  "5FD2230C795B8731E2CF21337CEFDC561DFFF419A6A71F11DE561E3F1CF71439",
+                          "size":  1881
+                      },
+                      {
+                          "kind":  "exact_build_validator",
+                          "location":  "evidence/I-0010/prototype/validate_exact_build.mjs",
+                          "sha256":  "E24964D417608C332558C2F2BF1086FCB55BA8BB671F78B2BDE9122A8DECD11C",
+                          "size":  4306
+                      },
+                      {
+                          "kind":  "live_result",
+                          "location":  "evidence/I-0010/LIVE-RESULT.md",
+                          "sha256":  "EBD2DC294F797E1F2D8FFEEF5E81C2CFE0184660ED7F311EB69997052A2646FE",
+                          "size":  3556
+                      },
+                      {
+                          "kind":  "live_summary",
+                          "location":  "evidence/I-0010/live-summary.json",
+                          "sha256":  "D1FFFB6936E47E27DB60F7D3EEE4012C6F121ACD1921B12F3AD87E2ABE2913AA",
+                          "size":  2697
+                      },
+                      {
+                          "kind":  "first_session_ready",
+                          "location":  "evidence/I-0010/sessions/20260920T133430Z-pid28388/READY",
+                          "sha256":  "BB4625AD0207621F4F73D40F3D05E829AB09CBD170E0A1C2B4859A7A9688DE0C",
+                          "size":  56
+                      },
+                      {
+                          "kind":  "first_session_info",
+                          "location":  "evidence/I-0010/sessions/20260920T133430Z-pid28388/session-info.txt",
+                          "sha256":  "F153C49E6D8BEFB96B5EA3F838775F719755E142A7585C363C219A4084CFBEA0",
+                          "size":  392
+                      },
+                      {
+                          "kind":  "first_session_events",
+                          "location":  "evidence/I-0010/sessions/20260920T133430Z-pid28388/events.csv",
+                          "sha256":  "A49489B01242ABDCFEE04BFDA2E6A752FF214430141507773680E1D0C0D66FCE",
+                          "size":  752
+                      },
+                      {
+                          "kind":  "first_session_override",
+                          "location":  "evidence/I-0010/sessions/20260920T133430Z-pid28388/override.csv",
+                          "sha256":  "964B694C392F7518E35D2A7D53E480F01FF2A44ADE70A9DA5DD437081C3A389E",
+                          "size":  180
+                      },
+                      {
+                          "kind":  "first_session_complete",
+                          "location":  "evidence/I-0010/sessions/20260920T133430Z-pid28388/COMPLETE",
+                          "sha256":  "CF9F1B56906C95D84EC8C4AEE489811ADCE8916C295DF7E3BE2CCDBDA328D465",
+                          "size":  68
+                      },
+                      {
+                          "kind":  "accepted_session_ready",
+                          "location":  "evidence/I-0010/sessions/20260920T134137Z-pid29232/READY",
+                          "sha256":  "BB4625AD0207621F4F73D40F3D05E829AB09CBD170E0A1C2B4859A7A9688DE0C",
+                          "size":  56
+                      },
+                      {
+                          "kind":  "accepted_session_info",
+                          "location":  "evidence/I-0010/sessions/20260920T134137Z-pid29232/session-info.txt",
+                          "sha256":  "F153C49E6D8BEFB96B5EA3F838775F719755E142A7585C363C219A4084CFBEA0",
+                          "size":  392
+                      },
+                      {
+                          "kind":  "accepted_session_events",
+                          "location":  "evidence/I-0010/sessions/20260920T134137Z-pid29232/events.csv",
+                          "sha256":  "709730AF68EBF2FF8A464F3A40EBD3DFDA287A11EF29B12F96E8CA98E1FEFB18",
+                          "size":  1317
+                      },
+                      {
+                          "kind":  "accepted_session_override",
+                          "location":  "evidence/I-0010/sessions/20260920T134137Z-pid29232/override.csv",
+                          "sha256":  "2917933F18F33E4DBD9EA550B49A4FF0FBCE1545E1E6007DC24B150EA044A8E6",
+                          "size":  180
+                      },
+                      {
+                          "kind":  "accepted_session_complete",
+                          "location":  "evidence/I-0010/sessions/20260920T134137Z-pid29232/COMPLETE",
+                          "sha256":  "CF9F1B56906C95D84EC8C4AEE489811ADCE8916C295DF7E3BE2CCDBDA328D465",
+                          "size":  68
+                      }
+                  ]
+}

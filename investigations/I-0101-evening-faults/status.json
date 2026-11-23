@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0101",
+  "title": "Les 3 plantages du 27 au soir",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "pilot (Opus 5.5)",
+  "created_at": "2026-10-28T00:26:25Z",
+  "updated_at": "2026-10-28T02:35:00Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 3
+  },
+  "stop_reason": "success: tranche 1 merged (the three evening faults and « skip the object and go on »), final review answered; second live run not run (D-0229)"
+}

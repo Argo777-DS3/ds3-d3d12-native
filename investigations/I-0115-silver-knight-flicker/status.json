@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0115",
+  "title": "Le Silver Knight qui clignote (near characters vanishing)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 (the open-gaps pilot)",
+  "created_at": "2026-11-01T01:56:24Z",
+  "updated_at": "2026-11-02T08:45:00Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 4
+  },
+  "stop_reason": "merged f0e8548c, start check passed"
+}

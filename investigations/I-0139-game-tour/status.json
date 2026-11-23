@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0139",
+  "title": "Le tour de tout le jeu en natif",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 high, the tour pilot (branch claude/jolly-cannon-b39e22)",
+  "created_at": "2026-11-12T10:14:33Z",
+  "updated_at": "2026-11-15T23:40:00Z",
+  "budget": {
+    "iterations_max": 20,
+    "iterations_used": 17
+  },
+  "stop_reason": "closed with the rows not reached named in RESULT \u00ab Suggested next step \u00bb (what each needs), carried by ROADMAP workstream 16; every other row of the closed list visited with its three answers"
+}

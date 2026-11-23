@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0108",
+  "title": "Les réglages graphiques",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 (2nd pilot)",
+  "created_at": "2026-10-29T22:54:41Z",
+  "updated_at": "2026-10-30T01:37:22Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 3
+  },
+  "stop_reason": "paused on Thomas's change of course (ray tracing, DLSS); open points in RESULT"
+}

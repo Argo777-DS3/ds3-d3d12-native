@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "investigation_id": "I-0011",
+  "subject": "Runtime FPS Control & Overlay",
+  "game_build": {
+    "label": "Steam AppID 374320 / BuildID 10167187 / DarkSoulsIII.exe 1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "live_state": "complete after two stopped/restored sessions; runtime inert; project paused",
+  "artifacts": [
+    {
+      "kind": "runtime_source",
+      "location": "evidence/I-0011/prototype/runtime.cpp",
+      "sha256": "2F4EAE794485EBD8A708B89308D7248E508D762B68AF4AF1433BA45E58BFE9DA",
+      "size": 54328
+    },
+    {
+      "kind": "runtime_core",
+      "location": "evidence/I-0011/prototype/runtime_core.hpp",
+      "sha256": "896EC903A7004DEBD15FFC83C4CC23E99DC3B6AF5F9336BB4953C2384918FB16",
+      "size": 7613
+    },
+    {
+      "kind": "native_test_source",
+      "location": "evidence/I-0011/prototype/runtime_self_test.cpp",
+      "sha256": "159D03E4DCB93D5E25BDD430015C48B2210F0EB4E14EB03E771623433EC6D4AF",
+      "size": 7592
+    },
+    {
+      "kind": "controller_source",
+      "location": "evidence/I-0011/prototype/controller.cpp",
+      "sha256": "F652BC1EEF316B5FB58392FCB89EBBFB03E1CDCFFB3F76FEFD96B2C8745DEDEA",
+      "size": 8684
+    },
+    {
+      "kind": "accepted_formula_guard_core",
+      "location": "evidence/I-0010/prototype/prototype_core.hpp",
+      "sha256": "8BAA4212C0FE3E093EC5F542B4E6F02CA95CBAD027605F244BEA38B054945FAC",
+      "note": "Included directly by I-0011; no modified copy exists."
+    },
+    {
+      "kind": "accepted_debug_restoration_core",
+      "location": "evidence/I-0010/prototype/debug_config.hpp",
+      "sha256": "D75442460620D9759B87A0C0903A54F06C04B81BACBF104D1A055A3AE15E0EB7",
+      "note": "Included directly by I-0011; no modified copy exists."
+    },
+    {
+      "kind": "runtime_binary",
+      "location": "evidence/I-0011/prototype/bin/I0011RuntimeFpsOverlay.dll",
+      "sha256": "782C2007C5AC62EE1B3CF12E3F16976E55B607ACFFD5F8C0C0AAF1A8D09DFECE",
+      "size": 204288,
+      "note": "Starts inert in STANDBY; no game-file write."
+    },
+    {
+      "kind": "controller_binary",
+      "location": "evidence/I-0011/prototype/bin/I0011RuntimeController.exe",
+      "sha256": "541E90C6D555F6C0AA14E64E8B82395827C15A8355024A713BF965FEF7D84B0C",
+      "size": 164352
+    },
+    {
+      "kind": "build_validation",
+      "location": "evidence/I-0011/prototype/BUILD-VALIDATION.json",
+      "sha256": "5E4902D6DA20E9128ECE57CE8BBA328240F56E0E4DF406DDB5983ED71A1B869E",
+      "size": 4865
+    },
+    {
+      "kind": "derivation_validation",
+      "location": "evidence/I-0011/prototype/DERIVATION-VALIDATION.json",
+      "sha256": "BDFC91D74F2AE8E674529E1B771FCB05ABBDDF3A4D7E4194CAC88B61CF1B9214",
+      "size": 939
+    },
+    {
+      "kind": "exact_build_validation",
+      "location": "evidence/I-0011/prototype/EXACT-BUILD-VALIDATION.json",
+      "sha256": "4591C5EABD59F272D4682C2D75767A2C2FFD4FAA9A27A2C4D38A9360CF280A67",
+      "size": 1406
+    },
+    {
+      "kind": "native_restoration_stress",
+      "location": "evidence/I-0011/prototype/NATIVE-RESTORATION-STRESS.txt",
+      "sha256": "79C4A230807720F4AE9DE468FCEBB715B7111853EF184926304490DEB184B980",
+      "size": 2044,
+      "note": "Ten consecutive passes."
+    },
+    {
+      "kind": "unlimited_architecture_assessment",
+      "location": "evidence/I-0011/prototype/UNLIMITED-ASSESSMENT.md",
+      "sha256": "31CDE4CB4ABEC865D3665381907FA8142E470FC4515BFB3D53F5F8D6E2F4A2FE",
+      "size": 2053
+    },
+    {
+      "kind": "prototype_guide",
+      "location": "evidence/I-0011/prototype/README.md",
+      "sha256": "0316CA35730ADBF42B4D26125B9DE7A8505839FD14B3FBBB8350152A6EB1E02A",
+      "size": 3229
+    },
+    {
+      "kind": "overlay_mockup",
+      "location": "evidence/I-0011/prototype/OVERLAY-MOCKUP.svg",
+      "sha256": "0979A3649FAE804A5D18DBBCC368CB229F4EA7EC35B86D11E88920E6C141D3C4",
+      "size": 2784
+    },
+    {
+      "kind": "live_protocol",
+      "location": "evidence/I-0011/prototype/LIVE-PROTOCOL.md",
+      "sha256": "0FB775BCEBDAAF76873D6882C8F79F4135BAD321AF20FE60837F43BDF8D7CBDF",
+      "size": 2786,
+      "note": "Historical protocol concluded after two cleanly restored sessions."
+    },
+    {
+      "kind": "live_partial_result",
+      "location": "evidence/I-0011/LIVE-PARTIAL-RESULT.md",
+      "sha256": "244933ACB640B52C83D3528DCA7871D1959D0F92A0CF5D3BF8462E7F710B62EE",
+      "size": 2545
+    },
+    {
+      "kind": "live_session_ready",
+      "location": "evidence/I-0011/sessions/20260920T142829Z-pid27872/READY",
+      "sha256": "F6ABFDB6C9AE110B07E12679720684DED0BCD22FF4C71DDA7E27BC130ADBA077",
+      "size": 65
+    },
+    {
+      "kind": "live_session_complete",
+      "location": "evidence/I-0011/sessions/20260920T142829Z-pid27872/COMPLETE",
+      "sha256": "A0C830200ADD5CFABD29156A692D16BE4B3D49204B8DC0326E6AAA0DB0FB5980",
+      "size": 55,
+      "note": "Timing, correction, hooks and debug registers restored."
+    },
+    {
+      "kind": "live_event_log",
+      "location": "evidence/I-0011/sessions/20260920T142829Z-pid27872/events.csv",
+      "sha256": "5EF6FF932CC29D55E176F0A34379E9DF17FF642C9A741E58AA5B3FB4ED56E13D",
+      "size": 16631
+    },
+    {
+      "kind": "live_transition_log",
+      "location": "evidence/I-0011/sessions/20260920T142829Z-pid27872/transitions.csv",
+      "sha256": "239CC2E146778A2751D567F625415C6494449DCD80EA23AA97EA34E56166381D",
+      "size": 11642,
+      "note": "All 215 rows succeeded; the 213 numeric rows expose the initial slider commit-on-move defect."
+    },
+    {
+      "kind": "live_result",
+      "location": "evidence/I-0011/LIVE-RESULT.md",
+      "sha256": "82BF8A7270F49FD4DD0DC64ECCDFE6D86D133145EA187F22ECAF55906A00AB73",
+      "size": 3115
+    },
+    {
+      "kind": "operator_screenshot",
+      "location": "evidence/I-0011/artifacts/20260920T164413-overlay-menu.png",
+      "sha256": "D0CE7A69C4B377E87E78972FF93CF4B28F621F3ABBDCA12EB4D717A9F4488B1A",
+      "size": 4733409,
+      "note": "Target 165, measured 165.0 FPS, correction ON; supplied by Thomas."
+    },
+    {
+      "kind": "live_session_ready",
+      "location": "evidence/I-0011/sessions/20260920T144258Z-pid24832/READY",
+      "sha256": "F6ABFDB6C9AE110B07E12679720684DED0BCD22FF4C71DDA7E27BC130ADBA077",
+      "size": 65
+    },
+    {
+      "kind": "live_session_complete",
+      "location": "evidence/I-0011/sessions/20260920T144258Z-pid24832/COMPLETE",
+      "sha256": "A0C830200ADD5CFABD29156A692D16BE4B3D49204B8DC0326E6AAA0DB0FB5980",
+      "size": 55,
+      "note": "Timing, correction, hooks and debug registers restored."
+    },
+    {
+      "kind": "live_event_log",
+      "location": "evidence/I-0011/sessions/20260920T144258Z-pid24832/events.csv",
+      "sha256": "B62B7BF191D766F4CFF560FE49E577A5EC929D1C91DF8E78A361E56D5330029C",
+      "size": 3124,
+      "note": "21,478 corrected comparisons, zero guard failures, exact complete state."
+    },
+    {
+      "kind": "live_transition_log",
+      "location": "evidence/I-0011/sessions/20260920T144258Z-pid24832/transitions.csv",
+      "sha256": "C1D47266AD982EEEE271E2F1CCB781E494B0D6C8D6A24CF9B47AF2CF345AA3D1",
+      "size": 551,
+      "note": "All nine rows succeeded; six numeric selections demonstrate commit-on-release behavior."
+    }
+  ]
+}

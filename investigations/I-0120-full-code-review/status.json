@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0120",
+  "title": "La revue du code entier",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "review thread",
+  "created_at": "2026-11-02T20:41:11Z",
+  "updated_at": "2026-11-02T20:41:11Z",
+  "budget": {
+    "iterations_max": 1,
+    "iterations_used": 0
+  },
+  "stop_reason": null
+}

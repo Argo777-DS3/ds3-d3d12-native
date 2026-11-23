@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0081",
+  "title": "V2 : saccades, tranche 2",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-21T07:34:31Z",
+  "updated_at": "2026-10-21T10:40:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 8
+  },
+  "stop_reason": "success: the slow frames classed (once per walk cycle at an area crossing), the native share reduced (registry locks), the instrumentation lead refuted, no video memory leak over zone travels"
+}

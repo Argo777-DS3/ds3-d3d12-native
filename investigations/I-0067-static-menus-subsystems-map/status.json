@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0067",
+  "title": "Static map of menus, save loading, menu sound, transitions, effects and phantoms",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-10T04:25:44Z",
+  "updated_at": "2026-10-11T06:19:29Z",
+  "budget": {
+    "iterations_max": 48,
+    "iterations_used": 45
+  },
+  "stop_reason": null
+}

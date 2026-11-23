@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "investigation_id": "I-0012",
+  "subject": "Enemy & Boss Timing Validation",
+  "game_build": {
+    "label": "Steam AppID 374320 / BuildID 10167187 / DarkSoulsIII.exe 1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "live_state": "independent functional test complete; ReShade API-20 load/exit corroborated; add-on uninstalled after DS3 closed; bounded visual panel accepted at cycle 6/14",
+  "artifacts": [
+    {
+      "kind": "offline_host_inventory",
+      "location": "evidence/I-0012/RESHade-INVENTORY.md",
+      "sha256": "FA6440A13CA1B3F6BBAD4B49896277F61DB80D4316C2A8B950C962B786438C58",
+      "size": 3452
+    },
+    {
+      "kind": "runtime_core_source",
+      "location": "evidence/I-0012/prototype/timing_core.cpp",
+      "sha256": "CF3C2CC0E8C277F7BE3FD344956F7E687733A3530DC1EB2A85F941EA5D84821E",
+      "size": 36461,
+      "note": "Contains no ReShade dependency; includes accepted I-0010 cores directly."
+    },
+    {
+      "kind": "reshade_host_source",
+      "location": "evidence/I-0012/prototype/reshade_addon.cpp",
+      "sha256": "F4B854659BCB5A571F983BF2D19ED6B6E8792A6199E154062F73B86FD262CBEE",
+      "size": 4701,
+      "note": "Settings UI only; no ReShade render or Present event."
+    },
+    {
+      "kind": "accepted_formula_guard_core",
+      "location": "evidence/I-0010/prototype/prototype_core.hpp",
+      "sha256": "8BAA4212C0FE3E093EC5F542B4E6F02CA95CBAD027605F244BEA38B054945FAC",
+      "note": "Included directly; no I-0012 copy or altered formula exists."
+    },
+    {
+      "kind": "accepted_debug_restoration_core",
+      "location": "evidence/I-0010/prototype/debug_config.hpp",
+      "sha256": "D75442460620D9759B87A0C0903A54F06C04B81BACBF104D1A055A3AE15E0EB7",
+      "note": "Included directly; restoration predicates unchanged."
+    },
+    {
+      "kind": "reshade_addon_binary",
+      "location": "evidence/I-0012/prototype/bin/DS3TimingValidation.addon64",
+      "sha256": "325C57AAD1A93C20C0D44E1F5F3B91E8C7ABB9A181FF6108B4421EEE15218910",
+      "size": 177664,
+      "note": "Starts inert; not installed in the game directory."
+    },
+    {
+      "kind": "build_validation",
+      "location": "evidence/I-0012/prototype/BUILD-VALIDATION.json",
+      "sha256": "441EA08615B6E3B6590E07381CEC6747E89B2C9FED6FDDC7268A048DB2283E0D",
+      "size": 5825
+    },
+    {
+      "kind": "derivation_validation",
+      "location": "evidence/I-0012/prototype/DERIVATION-VALIDATION.json",
+      "sha256": "CC3F812F097F278DDDE01A1BD4D3E571077D7F5002E5D43A101564F36FB269EE",
+      "size": 1188
+    },
+    {
+      "kind": "exact_build_validation",
+      "location": "evidence/I-0012/prototype/EXACT-BUILD-VALIDATION.json",
+      "sha256": "81907C23E91F34434944E8C49A5E9E2F40D53957581CC604D097E6B1C0BBF5BF",
+      "size": 1369
+    },
+    {
+      "kind": "pe_validation",
+      "location": "evidence/I-0012/prototype/PE-VALIDATION.json",
+      "sha256": "16616247F3F7AC93F0030BECCD3D8115C74F06807464C42F7B318348F92F0E0C",
+      "size": 582
+    },
+    {
+      "kind": "native_restoration_stress",
+      "location": "evidence/I-0012/prototype/NATIVE-RESTORATION-STRESS.txt",
+      "sha256": "705BE9F95E7C934341854BEC57D3C023FA52E4051C067306793792FB5B4B723D",
+      "size": 1104,
+      "note": "Ten consecutive offline passes."
+    },
+    {
+      "kind": "prototype_guide",
+      "location": "evidence/I-0012/prototype/README.md",
+      "sha256": "3445F75BD00F73E2731F8196106E9B603A26396CD7C2DE7A994F3EADAE377FA0",
+      "size": 2772
+    },
+    {
+      "kind": "independent_test_result",
+      "location": "evidence/I-0012/INDEPENDENT-TEST-RESULT.md",
+      "sha256": "39C70868B438BB6344DB5F267F0DEB0FA06FB109BD864F01259D1DEA069B2DD1",
+      "size": 3151,
+      "note": "Thomas's OBSERVED Hollow/dog/Gundyr pass, exclusive-fullscreen limitation, newly discovered slope/stair hopping, and exact cleanup boundary."
+    },
+    {
+      "kind": "reshade_runtime_log_normalized",
+      "location": "evidence/I-0012/sessions/20260921-independent-test/ReShade.log",
+      "sha256": "7E9A0B126D6D736839A52F27C410B4E3309E8A106BC4316FDBFE241568199BBF",
+      "size": 32743,
+      "source_sha256": "25C409A370F0BDF708E7BA5408531CCA399BC658D2A2C1A4967FA855499AA49C",
+      "source_size": 32940,
+      "note": "Repository copy normalizes line endings. It corroborates API-20 registration, fullscreen/windowed runtime recreation, normal unregistration and exit; it contains no core timing telemetry."
+    }
+  ]
+}

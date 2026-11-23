@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0090",
+  "title": "Mémoire de trame du fil de rendu",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T07:27:33Z",
+  "updated_at": "2026-10-22T17:07:53Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: the render worker's job at m45 8.07 to 6.55 ms (persistent draw state, holders released off the worker); the frame now bound by the engine thread"
+}

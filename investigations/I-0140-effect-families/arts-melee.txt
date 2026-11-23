@@ -1,0 +1,121 @@
+# I-0140 tranche 16: one right-hand weapon per weapon art of its own (EquipParamWeapon +0x194 shared by at most two base weapons,
+# evidence/I-0140/e84/arts-unique.tsv), the Moonlight Greatsword (thomas-arts) left out; « art id name ». Shields, bows, staffs,
+# talismans, flames and torches are not here (their arts are another hand's or need ammunition).
+101 1090000 Corvian Greatknife
+102 1080000 Tailbone Short Sword
+103 1070000 Scholar's Candlestick
+105 3010000 Mail Breaker
+107 1140000 Aquamarine Dagger
+108 1150000 Murky Hand Scythe
+201 6240000 Dark Sword
+202 2160000 Cleric's Candlestick
+203 2110000 Sunlight Straight Sword
+204 6280000 Lothric's Holy Sword
+205 2140000 Irithyll Straight Sword
+206 16140000 Valorheart
+207 2250000 Ringed Knight Straight Sword
+301 6290000 Wolnir's Holy Sword
+302 6340000 Firelink Greatsword
+304 6170000 Greatsword of Judgment
+305 6270000 Twin Princes' Greatsword
+306 6300000 Wolf Knight's Greatsword
+307 2220000 Executioner's Greatsword
+308 6000000 Bastard Sword
+309 6370000 Storm Ruler
+310 6250000 Black Knight Sword
+311 2240000 Onyx Blade
+312 2260000 Gael's Greatsword
+400 6040000 Zweihander
+401 6200000 Farron Greatsword
+402 6070000 Astora Greatsword
+403 6180000 Profaned Greatsword
+404 6260000 Lorian's Greatsword
+405 6050000 Greatsword
+406 6130000 Black Knight Greatsword
+407 6350000 Fume Ultra Greatsword
+410 16160000 Ringed Knight Paired Greatswords
+500 3020000 Rapier
+501 3000000 Estoc
+502 3030000 Ricard's Rapier
+503 16150000 Crow Quills
+601 4100000 Crescent Moon Sword
+602 4080000 Storm Curved Sword
+603 4070000 Pontiff Knight Curved Sword
+604 4010000 Shotel
+605 4030000 Scimitar
+606 4090000 Painting Guardian's Curved Sword
+607 4120000 Follower Sabre
+608 4130000 Demon's Scar
+700 6080000 Murakumo
+701 6360000 Old Wolf Curved Sword
+702 4060000 Carthus Curved Greatsword
+703 6150000 Exile Greatsword
+704 6380000 Harald Curved Greatsword
+801 5040000 Bloodlust
+802 5010000 Washing Pole
+803 5050000 Darkdrift
+804 5060000 Frayed Blade
+901 7070000 Butcher Knife
+902 7130000 Eleonora
+903 7100000 Thrall Axe
+904 7170000 Millwood Battle Axe
+1000 7050000 Greataxe
+1002 7120000 Demon's Greataxe
+1003 7110000 Dragonslayer Greataxe
+1004 6230000 Yhorm's Great Machete
+1005 16050000 Great Machete
+1006 7180000 Earth Seeker
+1101 8000000 Club
+1102 8220000 Heysel Pick
+1103 8240000 Warpick
+1201 8190000 Old King's Great Hammer
+1202 8170000 Gargoyle Flame Hammer
+1203 8060000 Large Club
+1204 8290000 Morne's Great Hammer
+1205 8160000 Great Wooden Hammer
+1206 8250000 Pickaxe
+1207 8310000 Quakestone Hammer
+1208 8320000 Ledo's Great Hammer
+1301 9160000 Dragonslayer Swordspear
+1302 9190000 Yorshka's Spear
+1303 9000000 Spear
+1304 13120000 Golden Ritual Spear
+1305 9130000 Tailbone Spear
+1306 9080000 Greatlance
+1307 9100000 Four-Pronged Plow
+1308 9220000 Dragonslayer Spear
+1309 9110000 Gargoyle Flame Spear
+1310 9180000 Saint Bident
+1311 9030000 Partizan
+1312 9230000 Follower Javelin
+1313 9240000 Ringed Knight Spear
+1314 9250000 Lothric War Banner
+1401 10090000 Winged Knight Halberd
+1402 10100000 Gundyr's Halberd
+1404 10160000 Immolation Tinder
+1405 7040000 Crescent Axe
+1406 10030000 Halberd
+1407 10140000 Red Hilted Halberd
+1408 10170000 Splitleaf Greatsword
+1409 9260000 Crucifix of the Mad King
+1500 10000000 Great Scythe
+1502 10070000 Pontiff Knight Great Scythe
+1504 10180000 Friede's Great Scythe
+1601 12040000 Witch's Locks
+1701 11030000 Demon's Fist
+1702 11040000 Dark Hand
+1703 11010000 Caestus
+1800 11000000 Claw
+1802 11020000 Manikin Claws
+1803 11050000 Crow Talons
+2305 12070000 Rose of Ariandel
+2500 16060000 Brigand Twindaggers
+2600 16070000 Gotthard Twinswords
+2700 16000000 Sellsword Twinblades
+2701 16020000 Warden Twinblades
+2720 16040000 Dancer's Enchanted Swords
+2800 16090000 Onikiri and Ubadachi
+2900 16100000 Drang Twinspears
+3000 16030000 Winged Knight Twinaxes
+3100 16130000 Drang Hammers
+3330 16120000 Giant Door Shield

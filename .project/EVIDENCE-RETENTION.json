@@ -1,0 +1,41 @@
+{
+  "first_retained_investigation": 50,
+  "authorized_by": "Thomas",
+  "date": "2026-10-09",
+  "external_store": "C:/Users/User/Desktop/DS3_evidences",
+  "policy": "Only I-0050 and later evidence is retained locally, including retired worktree evidence. Identical archived copies are removed after SHA-256 comparison; unique files are consolidated and different versions retained. Historical references remain for provenance and do not imply local availability.",
+  "audit": "_maintenance/cleanup-20261008.jsonl",
+  "raw_capture_cleanup": {
+    "authorized_by": "Thomas, C: disk cleanup and explicit objection to 300 GB of evidence, 2026-10-09",
+    "investigations": "I-0050 through I-0065 only; I-0066 excluded",
+    "removed_extensions": [".bin", ".dds", ".tpf", ".flver", ".dcx", ".cso", ".dxbc", ".dmp", ".raw"],
+    "preserved": "Reports, manifests, measurements, logs, comparison images, scripts and source files. I-0065/artifacts/capture-host-test retained as a source-referenced regression fixture.",
+    "limitation": "Historical raw captures are no longer fully replayable. Existing provenance describes the original observations, not present artifact availability. Do not recreate removed captures automatically.",
+    "audit_directory": "C:/Users/User/Desktop/C-cleanup-20261009"
+  },
+  "build_intermediate_cleanup": {
+    "authorized_by": "Thomas, the repository audit (« J'approuve tout », 2026-10-25 21:29 Paris)",
+    "date": "2026-10-25",
+    "removed": "13,155 compiler object files (.obj, 33.2 GB) in 121 build folders whose newest object was older than 48 hours (D-0142: build intermediates are disposable). The modules (.dll), symbols (.pdb) and logs of those folders stay.",
+    "audit": "_maintenance/cleanup-20261025-obj.jsonl (one line per removed file: path, bytes, last write)",
+    "protected": "I-0066/artifacts/game-bootstrap-build is the launcher's build (tools/Launch-DS3-DX12.ps1 copies it): never cleaned. A build folder younger than 48 hours belongs to a thread at work: never cleaned."
+  },
+  "wave1_raw_image_cleanup": {
+    "authorized_by": "Thomas (« oui images », 2026-10-25 21:58 Paris)",
+    "date": "2026-10-25",
+    "removed": "The raw images (.rgba, .rgba16f, .r16, .raw; 34.5 GB) of the 643 wave-1 native runs of I-0066 dated 2026-10-09 to 2026-10-19, the wave-1 cycle being closed (D-0194, D-0142). Their PNG comparison pictures, logs and measures stay; the 48 original Reference runs and every wave-2 run were not touched.",
+    "list": "_maintenance/Remove-Wave1RawImages-20261025.csv (the runs) and Remove-Wave1RawImages-20261025.ps1 (the script)",
+    "audit": "_maintenance/cleanup-20261025-raw-images.jsonl (one line per removed file; two runs of the script overlapped, so a few lines are interleaved)"
+  },
+  "disk_cleanup_20261108": {
+    "authorized_by": "Thomas, the C: disk diagnosis (he ran the command himself, 2026-11-08 23:4x Paris)",
+    "date": "2026-11-08",
+    "removed": "Tiers A, A2, B, C and D of _maintenance/Remove-DiskCache-20261108.csv: every compiler object (.obj) of the build folders, the whole build folders older than 48 hours, and the raw frames of the runs (complete investigations, then those still active, older than 48 hours; about 394 GB, 181,504 files). Thomas also deleted, by his own command, the 3,435 run save backups of ~/.ds3-i0039-backups older than 7 days (55.5 GB; witness, Alpha, thomas-*, original-* and i65-* saves kept). The launcher's build, the i66-* reference runs, i100-tr7-night, runs named original or reference, PNG, MP4, JSONL and logs were not listed.",
+    "audit": "_maintenance/cleanup-20261108.jsonl (one line per removed file: tier, path, bytes, last write)"
+  },
+  "rotation": {
+    "authorized_by": "Thomas (« oui » to the four disk guards, 2026-11-08 23:37 Paris), D-0260",
+    "rule": "scripts/Clear-DiskCache.ps1 -Apply at each merge into main and whenever C: has under 100 GB free: build folders (ds3-build.marker, or an older Build-GameBootstrap build.cmd naming game_bootstrap_ctl; never one holding a REPORT, manifest, provenance, baseline or startup.jsonl at any depth) whose newest file is older than 48 hours, Run-StartupTrace's last-used.txt counting as a use, never one the repository's Markdown links into, one holding keep.txt or listed in _maintenance/rotation-keep.txt (the launcher's I-0066/artifacts/game-bootstrap-build excepted; a whole folder goes, its .pdb with it, so older crash dumps of that build lose their symbols) and the runs' raw frames older than 7 days (i66-* references, i100-tr7-night and runs named original or reference excepted). Run save backups beyond the newest 100 move to D:/DS3-save-backups-archive, hash-checked, never deleted.",
+    "audit": "_maintenance/cleanup-rotation.jsonl"
+  }
+}

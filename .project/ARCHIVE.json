@@ -1,0 +1,56 @@
+{
+  "authorized_by": "Thomas",
+  "date": "2026-10-13",
+  "request": "Keep only wave 1 and wave 2, their preparations and the decompiled code; the older investigations no longer matter.",
+  "tag": "archive/pre-cleanup-2026-10-13",
+  "commit": "823437f303705edf3602df0e51c68ac622388546",
+  "removed_from_main": {
+    "investigations": "I-0001 through I-0065 (directories, contracts, results, scripts)",
+    "control_plane": "the long STATE, ROADMAP and decisions/LOG texts (summarised in place)"
+  },
+  "kept": "I-0066 (« DS3 DX12 Vague 1 ») and its static preparations I-0067, I-0068 and I-0069; native/, decompiled/, scripts/, knowledge/ and the external Evidence Store",
+  "first_kept_investigation": 66,
+  "rule": "Links from kept files into removed investigations are historical: they resolve in the tag, not in main. Never restore removed directories into main automatically; read them with `git show <tag>:<path>` when a question needs them.",
+  "later_archives": [
+    {
+      "tag": "archive/pre-cleanup-2026-10-02",
+      "date": "2026-10-02",
+      "scope": "History before the 2026-10-02 compaction of STATE, ROADMAP, WORKFLOW and the ledger (also holds D-0029 to D-0083 in full)."
+    },
+    {
+      "tag": "archive/pre-cleanup-2026-10-19",
+      "commit": "f4b82b7031a71e210aed760565278abc03f5cf5e",
+      "date": "2026-10-19",
+      "authorized_by": "Thomas (D-0191)",
+      "scope": "Documentation cleanup: the long .project/STATE.md (resume rows, image-regression and m45 narrative) replaced by a short state; the m45 narrative kept in investigations/I-0066-independent-native-startup/M45-COLLECT-AND-IMAGE-REGRESSION.md. No investigation, decision, claim or evidence removed."
+    },
+    {
+      "tag": "archive/pre-cleanup-2026-10-21",
+      "commit": "4741f6f2a82ca1efd85e3c32033a431892b533c5",
+      "date": "2026-10-21",
+      "authorized_by": "Thomas (the documentation cleanup thread of 2026-10-21)",
+      "scope": "Documentation cleanup after an audit: STATE's « Last workstream » chain (I-0070 to I-0079 and the wave-1 steps before them) shortened to the last workstream, the investigations index carrying one row each; the ROADMAP wave-2 narrative shortened to its direction and a list of done workstreams; the I-0066 historical log moved to investigations/I-0066-independent-native-startup/RESULT-HISTORY.md and the I-0068 part-by-part log to investigations/I-0068-static-yebis-ffx-lights-spec/PARTS-LOG.md (both kept in main). No investigation, decision, claim or evidence removed."
+    },
+    {
+      "tag": "archive/pre-cleanup-2026-10-25",
+      "commit": "3da115e6",
+      "date": "2026-10-25",
+      "authorized_by": "Thomas (« J'approuve tout », 21:29 Paris, on the repository audit AUDIT-DEPOT.md)",
+      "scope": "Repository audit cleanup: STATE's resume rows (the chain of I-0091 to I-0097's tranches in « Active workstream », « Last workstream » and « Next action ») replaced by a short checkpoint, the history being in each investigation's RESULT and the investigations index; WORKFLOW's rules rewritten in the present tense, their dated wording and quotations kept in this tag. No investigation, decision, claim or evidence removed."
+    },
+    {
+      "tag": "archive/pre-roadmap-2026-11-12",
+      "commit": "8062341aec0f27f5a7f698450671858f2f40dcdb",
+      "date": "2026-11-12",
+      "authorized_by": "Thomas (D-0273)",
+      "scope": "The capability roadmap (C1 to C5, the waves, the history of the orders and the wave-2 narrative) replaced by the general plan of phases and numbered workstreams. No investigation, decision, claim or evidence removed."
+    },
+    {
+      "tag": "archive/pre-cleanup-2026-11-15",
+      "commit": "ad15b002abc6ead820a9361dfe288935f7d23e88",
+      "date": "2026-11-15",
+      "authorized_by": "Thomas (« Je valide d'avance », 05:55 Paris, D-0291)",
+      "scope": "The documentation diet: STATE, WORKFLOW, ROADMAP, the investigations index and CLAUDE.md shortened; their earlier texts also kept in main under .project/archive/2026-11-15/ (verbatim but for the rewritten links and STATE's checkpoint line split one entry per line); the tools' rows moved to .project/TOOLS.md, three method sections to .project/METHOD.md; decisions/IN-FORCE.md added. No investigation, decision, claim or evidence removed."
+    }
+  ]
+}

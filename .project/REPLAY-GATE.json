@@ -1,0 +1,491 @@
+{
+  "schema": 2,
+  "rule": "I-0083 (Thomas, D-0200), I-0098 (Thomas, 2026-10-24): the replayed path's blocking gate, one base per screen (« <width>x<height>@<hz> », scripts/Get-Screens.ps1), never mixed. scripts/Invoke-ReplayGate.ps1 writes this file; scripts/Test-Project.ps1 requires each required base's last_pass.native_tree to be the native/ tree of main (and of a branch checked with -MergeGate). Thresholds only go down unless Thomas decides (calibration.raise_decision).",
+  "metrics": "I-0098: relative to the run's frame period P (the median of its 120-frame windows' mean interval): period_ms (P itself), frame_end_over204 and frame_end_over150 (frames over 2.04 P and 1.5 P at the native frame end: 34 and 25 ms at 60 frames/s), game_step_over204 (game steps over 2.04 P of their own period), display_late (the display's refreshes beyond the screen's cadence, in frame periods: the display repeats at 60 Hz); measured with frame-dump.flag (scripts/Get-ReplayMeasure.ps1).",
+  "path": "scripts/replay/firelink.path.json",
+  "path_object": "b97181e78ad965ce694569a317375492cd8988a1",
+  "required_bases": [
+    "1920x1080@60"
+  ],
+  "required_bases_note": "D-0218 (Thomas, 2026-10-26): the gate runs on one screen, the ASUS (1920x1080@60), required; the OLED base (2560x1440@280) is kept, not required, and added (never instead of the ASUS) when the pilot justifies it. Its memory leg runs only when the branch touches the memory, the loadings or the streaming (Invoke-ReplayGate -Memory); the final review by a fresh Opus at xhigh stays required.",
+  "display_source": "presentmon",
+  "display_source_note": "I-0098 (2026-10-24): DXGI's frame statistics proved unreliable with two screens (i98-c1); the display count is PresentMon's (Intel PresentMon 2.6.0 unelevated, Thomas in Performance Log Users, 2026-10-24 06:20; Thomas's choice 06:09-06:25). Each base's display_late is calibrated anew from PresentMon: the 60 Hz base's former 20 (DXGI repeats on a single primary screen) is kept under retired_thresholds, not compared.",
+  "memory_mb_per_visit": 40,
+  "memory_threshold_source": "I-0085 (Thomas, 2026-10-22), measured since D-0206 as the Theil-Sen slope of the title's private memory over the visits after the first (eight visits of Beta m31). Filed, not calibrated: the leak it guards against was 151 MB a visit (i85-long-2, about 1,100 model layouts a load never retired); with it fixed, the title levels of a zone rose 6-25 MB a loop after the second (i85-fix-1, i85-long-fix). Its first gate measure is in the record.",
+  "bases": {
+    "1920x1080@60": {
+      "screen": "ASUS VA24E, 1920x1080 at 60 Hz (the secondary screen since 2026-10-24, left of the OLED; the primary and only screen of every gate before I-0098: pictures 1920x1080)",
+      "thresholds": {
+        "period_ms": 16.76,
+        "frame_end_over204": 4,
+        "frame_end_over150": 27,
+        "display_late": 12,
+        "game_step_over204": 6,
+        "picture_mean_diff": 1.5,
+        "picture_cells_over": 0.005
+      },
+      "calibration": {
+        "date": "2026-11-16 11:07",
+        "native_tree": "e51db5efff2179110d42ab445aee29948a53f183",
+        "commit": "a88924807",
+        "path_object": "b97181e78ad965ce694569a317375492cd8988a1",
+        "runs": [
+          "ref-1116b-1920x1080-60-m1",
+          "ref-1116b-1920x1080-60-m2",
+          "ref-1116b-1920x1080-60-m3"
+        ],
+        "values": {
+          "period_ms": [
+            16.67,
+            16.67,
+            16.67,
+            16.67
+          ],
+          "frame_end_over204": [
+            1,
+            2,
+            1
+          ],
+          "frame_end_over150": [
+            18,
+            19,
+            16,
+            18
+          ],
+          "display_late": [
+            6.0,
+            6.0,
+            7.0
+          ],
+          "game_step_over204": [
+            4,
+            0,
+            1,
+            2
+          ]
+        },
+        "picture_diffs": [
+          [
+            0.49,
+            0.0003
+          ],
+          [
+            0.41,
+            0.0001
+          ]
+        ],
+        "raise_decision": "",
+        "formula": "per count: max(mean + 3 sd / sqrt(2), mean + 3 sqrt(max(mean,1) / 2), highest run), rounded up; period: max(mean + 3 sd / sqrt(2), highest run) x 1.005, to the hundredth above; against the mean of two measure runs; pictures: three times the largest difference to the reference (at least 1.5 and 0.005)",
+        "sources": {
+          "period_ms": {
+            "date": "2026-10-23 23:00",
+            "runs": [
+              "i97-maincal-m1",
+              "i97-maincal-m2",
+              "i97-maincal-m3",
+              "i97-maincal-m4"
+            ],
+            "note": "I-0098: the period of the same runs, read from their windows' mean interval"
+          },
+          "frame_end_over204": {
+            "date": "2026-11-16 11:07",
+            "runs": [
+              "ref-1116b-1920x1080-60-m1",
+              "ref-1116b-1920x1080-60-m2",
+              "ref-1116b-1920x1080-60-m3"
+            ]
+          },
+          "frame_end_over150": {
+            "date": "2026-10-25 05:15",
+            "runs": [
+              "i97-t5-maincal-1920x1080-60-m1",
+              "i97-t5-maincal-1920x1080-60-m2",
+              "i97-t5-maincal-1920x1080-60-m3",
+              "i97-t5-maincal-1920x1080-60-m4"
+            ]
+          },
+          "display_late": {
+            "date": "2026-11-16 01:37",
+            "runs": [
+              "full-1116-gate-1920x1080-60-m1",
+              "full-1116-gate-1920x1080-60-m2",
+              "full-1116-gate-1920x1080-60-m3"
+            ]
+          },
+          "game_step_over204": {
+            "date": "2026-10-21 19:03",
+            "runs": [
+              "i83-cal-m1",
+              "i83-cal-m2",
+              "i83-cal-m3",
+              "i83-cal-m4"
+            ]
+          }
+        }
+      },
+      "reference_picture": {
+        "path": "evidence/I-0083/reference/firelink-start-56F3497A02DB.png",
+        "sha256": "56F3497A02DB6C2F4241A14DBE3F8BEA0B487B1A42C4D32980DED1F5648682F8",
+        "from_run": "ref-1116b-1920x1080-60-m1",
+        "native_tree": "e51db5efff2179110d42ab445aee29948a53f183"
+      },
+      "original": {
+        "run": "i98-c2-o60",
+        "date": "2026-10-24 08:16",
+        "path_object": "8fce97eab48c18a335206eb8f3bbcde592b610b9",
+        "segments": [
+          {
+            "name": "walk",
+            "frame_end_17_25_34": [
+              622,
+              12,
+              4
+            ],
+            "game_step_17_25_34": [
+              532,
+              11,
+              4
+            ],
+            "frame_end_rel": [
+              12,
+              4
+            ],
+            "display_late": 22.99,
+            "display_late_dxgi": null
+          },
+          {
+            "name": "sprint",
+            "frame_end_17_25_34": [
+              298,
+              6,
+              0
+            ],
+            "game_step_17_25_34": [
+              260,
+              6,
+              0
+            ],
+            "frame_end_rel": [
+              6,
+              0
+            ],
+            "display_late": 5.0,
+            "display_late_dxgi": null
+          },
+          {
+            "name": "turn",
+            "frame_end_17_25_34": [
+              21,
+              0,
+              0
+            ],
+            "game_step_17_25_34": [
+              14,
+              0,
+              0
+            ],
+            "frame_end_rel": [
+              0,
+              0
+            ],
+            "display_late": 0.0,
+            "display_late_dxgi": null
+          }
+        ],
+        "total": {
+          "period_ms": 16.67,
+          "frame_end_17_25_34": [
+            941.0,
+            18.0,
+            4.0
+          ],
+          "game_step_17_25_34": [
+            806.0,
+            17.0,
+            4.0
+          ],
+          "frame_end_rel": [
+            18.0,
+            4.0
+          ],
+          "game_step_rel": [
+            17.0,
+            4.0
+          ],
+          "display_repeats": null,
+          "display_late": 27.99,
+          "display_late_dxgi": null,
+          "display_hitches": null,
+          "pm_modes": {
+            "Composed: Flip": 11702
+          }
+        }
+      },
+      "last_pass": {
+        "date": "2026-11-21 17:02",
+        "native_tree": "9b95e7a44183ba73b708d72f93a44fc1737ca226",
+        "commit": "f0f007040",
+        "path_object": "b97181e78ad965ce694569a317375492cd8988a1",
+        "runs": [
+          "full-1121-gate-1920x1080-60-m1",
+          "full-1121-gate-1920x1080-60-m2",
+          "full-1121-gate-v1",
+          "full-1121-gate-z1"
+        ],
+        "means": {
+          "period_ms": 16.6675,
+          "frame_end_over204": 3.5,
+          "frame_end_over150": 17.0,
+          "display_late": 5.0,
+          "game_step_over204": 1.0,
+          "picture full-1121-gate-1920x1080-60-m1": [
+            0.51,
+            0.0004
+          ],
+          "picture full-1121-gate-1920x1080-60-m2": [
+            0.48,
+            0.0001
+          ]
+        },
+        "memory_mb_per_visit": -1.0
+      },
+      "retired_thresholds": {
+        "display_repeats_dxgi": 20,
+        "note": "DXGI repeats, the ASUS as the only (primary) screen, I-0097 (i97-maincal); another instrument and configuration than PresentMon on the secondary screen"
+      }
+    },
+    "2560x1440@280": {
+      "screen": "MO27Q28G OLED, 2560x1440 at 279.96 Hz (the primary screen since 2026-10-24); device names (\\\\.\\DISPLAYn) change across restarts, the key does not",
+      "reference_picture": {
+        "path": "evidence/I-0083/reference/firelink-start-F982DF961B92.png",
+        "sha256": "F982DF961B9252CFBB648F32C3650AB52F9318C211FBC44C0F8AF246DE5D5D85",
+        "from_run": "i98-cal-2560x1440-280-m1",
+        "native_tree": "fbfe10b17071860576c12cb1c0fb1a9fced0429c"
+      },
+      "thresholds": {
+        "period_ms": 16.76,
+        "frame_end_over204": 7,
+        "frame_end_over150": 30,
+        "display_late": 16,
+        "game_step_over204": 7,
+        "picture_mean_diff": 1.8,
+        "picture_cells_over": 0.005
+      },
+      "calibration": {
+        "date": "2026-10-25 18:51",
+        "native_tree": "1dab402351d11035e3cb57a92553bb0afc7ed107",
+        "commit": "2be083d4",
+        "path_object": "b97181e78ad965ce694569a317375492cd8988a1",
+        "runs": [
+          "i97-t5-turncal-2560x1440-280-m1",
+          "i97-t5-turncal-2560x1440-280-m2",
+          "i97-t5-turncal-2560x1440-280-m3",
+          "i97-t5-turncal-2560x1440-280-m4"
+        ],
+        "values": {
+          "period_ms": [
+            16.667,
+            16.667,
+            16.667,
+            16.667
+          ],
+          "frame_end_over204": [
+            4,
+            3,
+            3,
+            2
+          ],
+          "frame_end_over150": [
+            21,
+            20,
+            20,
+            18
+          ],
+          "display_late": [
+            11.97,
+            7.4,
+            8.81,
+            7.07
+          ],
+          "game_step_over204": [
+            4,
+            4,
+            1,
+            3
+          ]
+        },
+        "picture_diffs": [],
+        "raise_decision": "D-0216",
+        "formula": "per count: max(mean + 3 sd / sqrt(2), mean + 3 sqrt(max(mean,1) / 2), highest run), rounded up; period: max(mean + 3 sd / sqrt(2), highest run) x 1.005, to the hundredth above; against the mean of two measure runs; pictures: three times the largest difference to the reference (at least 1.5 and 0.005)",
+        "sources": {
+          "period_ms": {
+            "date": "2026-10-24 08:01",
+            "runs": [
+              "i98-cal-2560x1440-280-m1",
+              "i98-cal-2560x1440-280-m2",
+              "i98-cal-2560x1440-280-m3",
+              "i98-cal-2560x1440-280-m4"
+            ]
+          },
+          "frame_end_over204": {
+            "date": "2026-10-25 18:51",
+            "runs": [
+              "i97-t5-turncal-2560x1440-280-m1",
+              "i97-t5-turncal-2560x1440-280-m2",
+              "i97-t5-turncal-2560x1440-280-m3",
+              "i97-t5-turncal-2560x1440-280-m4"
+            ]
+          },
+          "frame_end_over150": {
+            "date": "2026-10-25 18:51",
+            "runs": [
+              "i97-t5-turncal-2560x1440-280-m1",
+              "i97-t5-turncal-2560x1440-280-m2",
+              "i97-t5-turncal-2560x1440-280-m3",
+              "i97-t5-turncal-2560x1440-280-m4"
+            ]
+          },
+          "display_late": {
+            "date": "2026-10-25 18:51",
+            "runs": [
+              "i97-t5-turncal-2560x1440-280-m1",
+              "i97-t5-turncal-2560x1440-280-m2",
+              "i97-t5-turncal-2560x1440-280-m3",
+              "i97-t5-turncal-2560x1440-280-m4"
+            ]
+          },
+          "game_step_over204": {
+            "date": "2026-10-24 08:01",
+            "runs": [
+              "i98-cal-2560x1440-280-m1",
+              "i98-cal-2560x1440-280-m2",
+              "i98-cal-2560x1440-280-m3",
+              "i98-cal-2560x1440-280-m4"
+            ]
+          }
+        }
+      },
+      "original": {
+        "run": "i98-c2-o280",
+        "date": "2026-10-24 08:16",
+        "path_object": "8fce97eab48c18a335206eb8f3bbcde592b610b9",
+        "segments": [
+          {
+            "name": "walk",
+            "frame_end_17_25_34": [
+              575,
+              14,
+              4
+            ],
+            "game_step_17_25_34": [
+              517,
+              13,
+              1
+            ],
+            "frame_end_rel": [
+              14,
+              4
+            ],
+            "display_late": 24.17,
+            "display_late_dxgi": null
+          },
+          {
+            "name": "sprint",
+            "frame_end_17_25_34": [
+              315,
+              5,
+              2
+            ],
+            "game_step_17_25_34": [
+              266,
+              5,
+              1
+            ],
+            "frame_end_rel": [
+              5,
+              2
+            ],
+            "display_late": 10.71,
+            "display_late_dxgi": null
+          },
+          {
+            "name": "turn",
+            "frame_end_17_25_34": [
+              6,
+              0,
+              0
+            ],
+            "game_step_17_25_34": [
+              3,
+              0,
+              0
+            ],
+            "frame_end_rel": [
+              0,
+              0
+            ],
+            "display_late": 0.0,
+            "display_late_dxgi": null
+          }
+        ],
+        "total": {
+          "period_ms": 16.667,
+          "frame_end_17_25_34": [
+            896.0,
+            19.0,
+            6.0
+          ],
+          "game_step_17_25_34": [
+            786.0,
+            18.0,
+            2.0
+          ],
+          "frame_end_rel": [
+            19.0,
+            6.0
+          ],
+          "game_step_rel": [
+            18.0,
+            2.0
+          ],
+          "display_repeats": null,
+          "display_late": 34.88,
+          "display_late_dxgi": null,
+          "display_hitches": null,
+          "pm_modes": {
+            "Composed: Flip": 2,
+            "Hardware Composed: Independent Flip": 11661
+          }
+        }
+      },
+      "last_pass": {
+        "date": "2026-10-25 19:29",
+        "native_tree": "1dab402351d11035e3cb57a92553bb0afc7ed107",
+        "commit": "537db6a2",
+        "path_object": "b97181e78ad965ce694569a317375492cd8988a1",
+        "runs": [
+          "i97-t5-step3-2560x1440-280-m1",
+          "i97-t5-step3-2560x1440-280-m2",
+          "i97-t5-step3-v1",
+          "i97-t5-step3-z1"
+        ],
+        "means": {
+          "period_ms": 16.669,
+          "frame_end_over204": 1.5,
+          "frame_end_over150": 17.0,
+          "display_late": 8.21,
+          "game_step_over204": 1.0,
+          "picture i97-t5-step3-2560x1440-280-m1": [
+            0.59,
+            0.0001
+          ],
+          "picture i97-t5-step3-2560x1440-280-m2": [
+            0.6,
+            0.0001
+          ]
+        },
+        "memory_mb_per_visit": 15.7
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0123",
+  "title": "DS3 DX12 Vague 2: R5's other half, Ray Reconstruction and the traced shadows' penumbrae (La reconstruction des rayons)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "R pilot (Opus 5.5)",
+  "created_at": "2026-11-03T17:18:39Z",
+  "updated_at": "2026-11-03T20:15:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 5
+  },
+  "stop_reason": "success: merged 4a1ac742, start check passed"
+}

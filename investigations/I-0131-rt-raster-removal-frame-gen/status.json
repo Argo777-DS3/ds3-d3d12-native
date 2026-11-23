@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0131",
+  "title": "Le retrait du raster et la génération d'images",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "R pilot (Opus 5.5)",
+  "created_at": "2026-11-08T15:35:38Z",
+  "updated_at": "2026-11-08T18:45:00Z",
+  "budget": {
+    "iterations_max": 8,
+    "iterations_used": 3
+  },
+  "stop_reason": null
+}

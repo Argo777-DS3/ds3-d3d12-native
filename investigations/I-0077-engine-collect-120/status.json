@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0077",
+  "title": "V2 : collecte du fil moteur vers 120 images/s",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-20T15:48:00Z",
+  "updated_at": "2026-10-20T19:20:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 9
+  },
+  "stop_reason": null
+}

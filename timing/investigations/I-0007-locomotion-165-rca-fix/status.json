@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0007",
+  "title": "RCA-to-fix locomotion at 165 FPS",
+  "capability": "C4",
+  "state": "complete",
+  "owner": "ChatGPT Work",
+  "created_at": "2026-09-19T16:28:37Z",
+  "updated_at": "2026-09-20T14:05:00Z",
+  "budget": {
+    "iterations_max": 90,
+    "iterations_used": 90
+  },
+  "stop_reason": "The defined causal locomotion chain succeeded: the reversible correction passes bounded sprint and roll-motion validation, and cycles58-90 preserve the remaining spatial map through K-0048 with explicit rejected165 limits. Thomas authorized integration on 2026-09-20 and the branch was fast-forwarded into main at e924104. Broader C4, full spatial equivalence and deferred i-frames remain separate work."
+}

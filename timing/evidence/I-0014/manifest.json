@@ -1,0 +1,95 @@
+﻿{
+    "schema_version":  1,
+    "investigation_id":  "I-0014",
+    "subject":  "Unified Timing Fix Test Add-on",
+    "game_build":  {
+                       "label":  "Dark Souls III 1.15.2.0 / BuildID 10167187",
+                       "executable_sha256":  "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+                   },
+    "live_state":  "phase-1 offline pass; DS3 not launched and remains closed; exact add-on installed for Thomas's manual windowed/exclusive-fullscreen 60/240 test; I-0014 remains active",
+    "artifacts":  [
+                      {
+                          "kind":  "offline_validation",
+                          "location":  "evidence/I-0014/OFFLINE-VALIDATION.md",
+                          "sha256":  "41EF49F7B0BB54D688D07CEA892DD16EF274A7DDEFC326390301ACC4A1CD012C",
+                          "size":  3410
+                      },
+                      {
+                          "kind":  "installation_validation",
+                          "location":  "evidence/I-0014/INSTALL-VALIDATION.md",
+                          "sha256":  "F9B018632F6C5E700694AB46FF5971425044215FDE4DD14FACEF954ADD921103",
+                          "size":  1075
+                      },
+                      {
+                          "kind":  "runtime_core_source",
+                          "location":  "evidence/I-0014/prototype/timing_core.cpp",
+                          "sha256":  "BF3D830EDA3B8BF244A1DE0E4B98C69FAAD45FAC6DBDFD5CF88F78EF1D71AE54",
+                          "size":  48148,
+                          "note":  "ReShade-free cadence/lifecycle runtime with distinct LTF and TRTF state, hooks, controls and restoration."
+                      },
+                      {
+                          "kind":  "trtf_formula_core",
+                          "location":  "evidence/I-0014/prototype/trtf_core.hpp",
+                          "sha256":  "17CA42046A1B6F17396A5F561C12B7F238CEE34C45D18BFFB86E591C29E37147",
+                          "size":  2785,
+                          "note":  "Host-independent I-0013 time-law implementation; contains no cadence-specific empirical constant."
+                      },
+                      {
+                          "kind":  "reshade_host_source",
+                          "location":  "evidence/I-0014/prototype/reshade_addon.cpp",
+                          "sha256":  "DF1297910B89FCD80E5DEAD8422089372AD0DA74A3A3ACCB1B8D452208AD0462",
+                          "size":  5756,
+                          "note":  "Settings UI only; no correction formula or render/Present event."
+                      },
+                      {
+                          "kind":  "reshade_addon_binary",
+                          "location":  "evidence/I-0014/prototype/bin/DS3UnifiedTimingFixTest.addon64",
+                          "sha256":  "6341A19F0C2FBE5C9461BF960F1DC006C08E710CDBED82ED252D783DFF281904",
+                          "size":  195584,
+                          "note":  "Starts Native/LTF OFF/TRTF OFF; final identical copy installed for the manual test."
+                      },
+                      {
+                          "kind":  "build_validation",
+                          "location":  "evidence/I-0014/prototype/BUILD-VALIDATION.json",
+                          "sha256":  "1DA7E8891CADF16A1B34E9E7ED024C78247DF90E5A668AFD90EC630E8F4A286C",
+                          "size":  6915
+                      },
+                      {
+                          "kind":  "derivation_validation",
+                          "location":  "evidence/I-0014/prototype/DERIVATION-VALIDATION.json",
+                          "sha256":  "5D959B811864CF3F6CEF79AA1F215206B6D71450EC855CF43DB99FB096F3DD35",
+                          "size":  1554
+                      },
+                      {
+                          "kind":  "exact_build_validation",
+                          "location":  "evidence/I-0014/prototype/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "572A9B3BD46003CF6045981770421C01367692617EEFEF091264B3A7221A5C85",
+                          "size":  1818
+                      },
+                      {
+                          "kind":  "pe_validation",
+                          "location":  "evidence/I-0014/prototype/PE-VALIDATION.json",
+                          "sha256":  "3ADC3344CD176D480BE15B78E89A3265201CB18349A673D39618654D89520FBF",
+                          "size":  622
+                      },
+                      {
+                          "kind":  "lifecycle_restoration_stress",
+                          "location":  "evidence/I-0014/prototype/NATIVE-RESTORATION-STRESS.txt",
+                          "sha256":  "C947BCC88EB1D546F324020871DD4B2D46A91E571E95D0CCCEE55C5A15D4ECEB",
+                          "size":  1234,
+                          "note":  "Ten deterministic passes of separate OFF/ON/OFF/ON, coexistence and restoration planning."
+                      },
+                      {
+                          "kind":  "accepted_ltf_core",
+                          "location":  "evidence/I-0010/prototype/prototype_core.hpp",
+                          "sha256":  "8BAA4212C0FE3E093EC5F542B4E6F02CA95CBAD027605F244BEA38B054945FAC",
+                          "note":  "Included directly without an I-0014 formula copy."
+                      },
+                      {
+                          "kind":  "accepted_trtf_source",
+                          "location":  "evidence/I-0013/producer-time-fix-prototype/producer_time_fix.cpp",
+                          "sha256":  "C614CAEC101876E325028C80FC3CFACB49B8C0DCC39F60CD5E6D1073BDD37D2C",
+                          "note":  "Canonical implementation source used for branch/arithmetic identity validation."
+                      }
+                  ]
+}

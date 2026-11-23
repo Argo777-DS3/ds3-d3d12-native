@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0093",
+  "title": "Vue du reflet",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-23T00:39:43Z",
+  "updated_at": "2026-10-23T01:59:05Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 2
+  },
+  "stop_reason": "success: the reflection collect 8.0 to 4.9 % of the engine thread at m45, 140 to 144 frames/s; gate i93-final PASS"
+}

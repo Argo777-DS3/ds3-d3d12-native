@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0109",
+  "title": "Le socle DX12 moderne (R0)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 (second pilot)",
+  "created_at": "2026-10-30T02:56:03Z",
+  "updated_at": "2026-10-30T04:45:00Z",
+  "budget": {
+    "iterations_max": 3,
+    "iterations_used": 1
+  },
+  "stop_reason": "R0 done: merged 4b99b292, start check passed"
+}

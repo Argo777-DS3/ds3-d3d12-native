@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0083",
+  "title": "Parcours rejoué et seuil bloquant",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-21T16:13:06Z",
+  "updated_at": "2026-10-21T17:55:00Z",
+  "budget": {
+    "iterations_max": 10,
+    "iterations_used": 5
+  },
+  "stop_reason": "success: the path replayed from one process, the gate calibrated, a slowed build refused, the final tree passed and recorded, Test-Project enforcing the record"
+}

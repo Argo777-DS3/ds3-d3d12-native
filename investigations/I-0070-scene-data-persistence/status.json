@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0070",
+  "title": "DS3 DX12 Vague 2: scene data persistence (model records kept across texture arrivals and camera turns)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-19T20:31:31Z",
+  "updated_at": "2026-10-19T23:10:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 6
+  },
+  "stop_reason": "Success: the global-epoch invalidation found and replaced by per-record checks; merged (Thomas, 2026-10-20 00:39 Paris); the next tranche follows ER (D-0195, I-0071)."
+}

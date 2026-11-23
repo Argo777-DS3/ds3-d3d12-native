@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "I-0066",
+  "title": "DS3 DX12 Vague 1",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Claude Opus 5.5",
+  "created_at": "2026-10-07T19:35:09Z",
+  "updated_at": "2026-10-19T20:30:00Z",
+  "budget": {
+    "iterations_used": 1831,
+    "iterations_max": 2400
+  },
+  "stop_reason": "Wave 1 closed: Thomas validated the first milestone (D-0194, 2026-10-19 22:22 Paris); wave 2 continues in a new investigation.",
+  "resumed": "Thomas resumed technical work in chat 2026-10-09 (~15:50 Paris); Claude Opus 5.5 continues from the STATE checkpoint."
+}

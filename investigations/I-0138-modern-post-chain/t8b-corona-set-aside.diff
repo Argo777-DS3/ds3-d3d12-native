@@ -1,0 +1,411 @@
+diff --git a/native/frame/game_bootstrap/06_pass_programmes.inc b/native/frame/game_bootstrap/06_pass_programmes.inc
+index 6fb9cbace..47223fcf7 100644
+--- a/native/frame/game_bootstrap/06_pass_programmes.inc
++++ b/native/frame/game_bootstrap/06_pass_programmes.inc
+@@ -250,6 +250,16 @@ std::shared_ptr<const std::vector<std::vector<uint8_t>>> NativeFilmGrain() {
+         return std::make_shared<const std::vector<std::vector<uint8_t>>>(std::move(all));}();
+     return levels;
+ }
++// I-0138 tranche 8b: the corona's spectral ramp (yebis::SpectralRampLevels) from the image's words, built once; null when a word
++// cannot be read.
++std::shared_ptr<const std::vector<std::vector<uint8_t>>> NativeSpectralRamp() {
++    static const auto levels=[]()->std::shared_ptr<const std::vector<std::vector<uint8_t>>>{
++        ds3native::yebis::SpectralRampData d;
++        if(!image || !ds3native::yebis::LoadSpectralRampData(d,[](uint32_t rva,void* out,size_t bytes){return Read(image+rva,out,bytes);}))return nullptr;
++        auto all=ds3native::yebis::SpectralRampLevels(d);if(all.size()!=9)return nullptr;
++        return std::make_shared<const std::vector<std::vector<uint8_t>>>(std::move(all));}();
++    return levels;
++}
+ // W10 LS-1..LS-3 (W10-NATIVE-PASSES 8): Alpha_R and one light shaft computed natively and appended to the glare plan: E69A0's
+ // shaft section (DriverSlot) on the camera record rebuilt from the scene camera ([engine+0x210]'s layout: pose, fov, near, far,
+ // size, aspect, flags, tiles 1, tile 0, offset 0 over the size), the globals block and E4700's colours; the record's depth and
+@@ -258,7 +268,7 @@ std::shared_ptr<const std::vector<std::vector<uint8_t>>> NativeFilmGrain() {
+ // served): no witness without depth of field, with another lens, or without E4700's colours; with a slot colour of 0
+ // (the library keeps no record: Reference1670, m45) the shafts are drawn with a zero last weight: the same image, a stable layout.
+ std::string AppendNativeShafts(ds3native::yebis::GlarePlan& plan,const std::array<uint8_t,0x370>& block,const NativeSelectedScene& scene,
+-    std::shared_ptr<const std::vector<std::vector<uint8_t>>>& film_grain) {
++    std::shared_ptr<const std::vector<std::vector<uint8_t>>>& film_grain,std::shared_ptr<const std::vector<std::vector<uint8_t>>>& spectral_ramp) {
+     namespace y=ds3native::yebis;
+     const auto word=[&](size_t at){float f;std::memcpy(&f,block.data()+at,4);return f;};
+     if(!scene.yebis || !scene.yebis->shaft_post_ready)return "post colours";
+@@ -315,7 +325,10 @@ std::string AppendNativeShafts(ds3native::yebis::GlarePlan& plan,const std::arra
+     in.mask_source={plan.surfaces[size_t(bright)].width,plan.surfaces[size_t(bright)].height};
+     in.shaft=in.output=in.pingpong[0]=in.pingpong[1]={plan.base_width,plan.base_height};
+     film_grain=NativeFilmGrain();if(!film_grain)return "film grain";
+-    std::string refused;if(!y::AppendShafts(plan,in,y::BuildShaft(in),refused))return refused;
++    const auto shaft=y::BuildShaft(in);
++    if(shaft.refused.empty() && std::any_of(shaft.draws.begin(),shaft.draws.end(),[](const y::ShaftDraw& d){return d.technique=="tech_Corona";})){
++        spectral_ramp=NativeSpectralRamp();if(!spectral_ramp)return "spectral ramp";}
++    std::string refused;if(!y::AppendShafts(plan,in,shaft,refused))return refused;
+     return "";
+ }
+ // I-0138 tranches 2 and 4 (ROADMAP workstream 11): the programmes of a post plan (the glare family's, the depth of field's, the
+diff --git a/native/frame/game_bootstrap/13b_prepare_model_frame.inc b/native/frame/game_bootstrap/13b_prepare_model_frame.inc
+index 4e253d22c..128975b1a 100644
+--- a/native/frame/game_bootstrap/13b_prepare_model_frame.inc
++++ b/native/frame/game_bootstrap/13b_prepare_model_frame.inc
+@@ -1546,8 +1546,8 @@ std::shared_ptr<NativeModelFrameInput> PrepareNativeModelFrame(    const std::sh
+             ds3native::yebis::GlarePlan plan;
+             if(!data.ok)plan.refused="executable data";else if(!read)plan.refused="globals";else if(integer(0xD8)!=1)plan.refused="glare shape";
+             else plan=ds3native::yebis::BuildGlare(data.data,in);
+-            std::string shafts_refused="off";std::shared_ptr<const std::vector<std::vector<uint8_t>>> film_grain;
+-            if(shafts_flag && plan.refused.empty())shafts_refused=AppendNativeShafts(plan,block,*scene,film_grain);
++            std::string shafts_refused="off";std::shared_ptr<const std::vector<std::vector<uint8_t>>> film_grain,spectral_ramp;
++            if(shafts_flag && plan.refused.empty())shafts_refused=AppendNativeShafts(plan,block,*scene,film_grain,spectral_ramp);
+             if(shafts_flag){static std::string last="unset";const std::string now=shafts_refused+"/"+std::to_string(plan.pre.size())+"/"+std::to_string(plan.shafts);
+                 if(now!=last){last=now;char row[256]{};sprintf_s(row,"{\"event\":\"native_yebis_shafts\",\"refused\":\"%.60s\",\"alpha\":%zu,\"shafts\":%d,\"draws\":%zu}\n",
+                     shafts_refused.c_str(),plan.pre.size(),plan.shafts,plan.draws.size());Log(row);}}
+@@ -1564,7 +1564,7 @@ std::shared_ptr<NativeModelFrameInput> PrepareNativeModelFrame(    const std::sh
+                     "\"levels\":%d,\"radius_scale\":%g,\"luminance\":%g,\"threshold\":%g,\"gamma\":[%g,%g],\"remap\":%g,\"base\":[%u,%u],\"draws\":%zu,\"L\":%.9g}\n",
+                     "ours","false",plan.refused.empty()?"true":"false",plan.refused.c_str(),in.width,in.height,in.quality,in.levels,in.radius_scale,in.luminance,in.threshold,
+                     in.composite_gamma,in.bloom_gamma,in.remap,plan.base_width,plan.base_height,plan.draws.size(),plan.luminance);Log(row);}}
+-            if(plan.refused.empty()){auto input=std::make_shared<NativeGlareInput>();input->plan=std::move(plan);input->programs=std::move(programs);input->film_grain=std::move(film_grain);cached=input;frame->yebis_glare=std::move(input);}}}}
++            if(plan.refused.empty()){auto input=std::make_shared<NativeGlareInput>();input->plan=std::move(plan);input->programs=std::move(programs);input->film_grain=std::move(film_grain);input->spectral_ramp=std::move(spectral_ramp);cached=input;frame->yebis_glare=std::move(input);}}}}
+     // W10 DF-4 (on by default; with the glare): the depth of field natively (W10-NATIVE-PASSES 9): the holder's creation from the
+     // DoF quality (globals word 0x4C) and the render extent (cached), the lens from the scene camera (E69A0's record: fov, near,
+     // far, aspect) and the globals block's DoF words (+0x1AC enable, +0x1B0 focus, +0x1B4 f-number, +0x1B8, +0x1BC, +0x1C0 the film
+diff --git a/native/renderer/glare_stage.cpp b/native/renderer/glare_stage.cpp
+index 0976fe8f5..81420da87 100644
+--- a/native/renderer/glare_stage.cpp
++++ b/native/renderer/glare_stage.cpp
+@@ -1,5 +1,6 @@
+ #include "glare_stage.h"
+ #include "backend.h"
++#include "../world/yebis_shafts.h"
+ #include <algorithm>
+ #include <array>
+ #include <cstring>
+@@ -34,7 +35,8 @@ yebis::GlareDraw Shape(const yebis::GlareDraw& g){yebis::GlareDraw s;s.technique
+     s.texcoord1=g.texcoord1;s.texcoords=g.texcoords;s.film_grain=g.film_grain;s.write_mask=g.write_mask;s.address=g.address;
+     s.vertices.assign(g.vertices.empty()?0u:1u,0.0f);   // a marker: whether the draw brings its own vertices (Texcoords reads it)
+     return s;}
+-bool ReadsFilmGrain(const yebis::GlarePlan& plan){for(const auto& g:plan.draws)for(const auto in:g.inputs)if(in==-3)return true;return false;}
++bool ReadsInput(const yebis::GlarePlan& plan,int8_t input){for(const auto& g:plan.draws)for(const auto in:g.inputs)if(in==input)return true;return false;}
++bool ReadsFilmGrain(const yebis::GlarePlan& plan){return ReadsInput(plan,-3);}
+ bool ReadsTable(const yebis::GlarePlan& plan){for(const auto* list:{&plan.draws,&plan.pre})for(const auto& g:*list)for(const auto in:g.inputs)if(in==-5)return true;return false;}
+ }
+ bool GlareStage::Open(ID3D12Device* device,std::string& reason){
+@@ -67,25 +69,30 @@ bool GlareStage::Layout(ID3D12GraphicsCommandList* list,const yebis::GlarePlan&
+     reset();scene_view_=nullptr;depth_view_=nullptr;velocity_view_=nullptr;pre_scene_=nullptr;pre_depth_=nullptr;++generation_;
+     post_.RenewTables();
+     // LS-3: the film grain, once for the session: nine levels of R8G8B8A8 256x256 through one upload buffer, copied in this list.
+-    if(ReadsFilmGrain(plan) && !film_grain_){
+-        if(!film_grain || film_grain->size()!=9 || (*film_grain)[0].size()!=256u*256u*4u){reason="film grain levels";return false;}
++    // Tranche 8b: the corona's spectral ramp the same way, nine levels from 256x1.
++    const auto upload_levels=[&](const std::vector<std::vector<uint8_t>>* levels,UINT width,UINT height,ComPtr<ID3D12Resource>& texture,
++            ComPtr<ID3D12Resource>& staging,const char* name){
++        if(!levels || levels->size()!=9 || (*levels)[0].size()!=size_t(width)*height*4u){reason=std::string(name)+" levels";return false;}
+         D3D12_HEAP_PROPERTIES heap{};heap.Type=D3D12_HEAP_TYPE_DEFAULT;D3D12_RESOURCE_DESC desc{};desc.Dimension=D3D12_RESOURCE_DIMENSION_TEXTURE2D;
+-        desc.Width=desc.Height=256;desc.DepthOrArraySize=1;desc.MipLevels=9;desc.SampleDesc.Count=1;desc.Format=DXGI_FORMAT_R8G8B8A8_UNORM;
+-        if(FAILED(CountedResource(device_.Get())->CreateCommittedResource(&heap,D3D12_HEAP_FLAG_NONE,&desc,D3D12_RESOURCE_STATE_COPY_DEST,nullptr,IID_PPV_ARGS(&film_grain_)))){
+-            reason="film grain texture";return false;}
++        desc.Width=width;desc.Height=height;desc.DepthOrArraySize=1;desc.MipLevels=9;desc.SampleDesc.Count=1;desc.Format=DXGI_FORMAT_R8G8B8A8_UNORM;
++        if(FAILED(CountedResource(device_.Get())->CreateCommittedResource(&heap,D3D12_HEAP_FLAG_NONE,&desc,D3D12_RESOURCE_STATE_COPY_DEST,nullptr,IID_PPV_ARGS(&texture)))){
++            reason=std::string(name)+" texture";return false;}
+         std::array<D3D12_PLACED_SUBRESOURCE_FOOTPRINT,9> footprints{};std::array<UINT,9> rows{};std::array<UINT64,9> row_bytes{};UINT64 total{};
+         device_->GetCopyableFootprints(&desc,0,9,0,footprints.data(),rows.data(),row_bytes.data(),&total);
+         D3D12_HEAP_PROPERTIES upload{};upload.Type=D3D12_HEAP_TYPE_UPLOAD;D3D12_RESOURCE_DESC buffer{};buffer.Dimension=D3D12_RESOURCE_DIMENSION_BUFFER;
+         buffer.Width=total;buffer.Height=buffer.DepthOrArraySize=buffer.MipLevels=1;buffer.SampleDesc.Count=1;buffer.Layout=D3D12_TEXTURE_LAYOUT_ROW_MAJOR;
+-        if(FAILED(CountedResource(device_.Get())->CreateCommittedResource(&upload,D3D12_HEAP_FLAG_NONE,&buffer,D3D12_RESOURCE_STATE_GENERIC_READ,nullptr,IID_PPV_ARGS(&film_grain_upload_)))){
+-            film_grain_.Reset();reason="film grain upload";return false;}
+-        uint8_t* memory{};const D3D12_RANGE none{};if(FAILED(film_grain_upload_->Map(0,&none,reinterpret_cast<void**>(&memory)))){film_grain_.Reset();film_grain_upload_.Reset();reason="film grain map";return false;}
+-        for(UINT m=0;m<9;++m){const UINT w=std::max(256u>>m,1u);for(UINT y=0;y<rows[m];++y)
+-            std::memcpy(memory+footprints[m].Offset+UINT64(y)*footprints[m].Footprint.RowPitch,(*film_grain)[m].data()+size_t(y)*w*4,size_t(w)*4);}
+-        film_grain_upload_->Unmap(0,nullptr);
+-        for(UINT m=0;m<9;++m){D3D12_TEXTURE_COPY_LOCATION to{film_grain_.Get(),D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX},from{film_grain_upload_.Get(),D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT};
++        if(FAILED(CountedResource(device_.Get())->CreateCommittedResource(&upload,D3D12_HEAP_FLAG_NONE,&buffer,D3D12_RESOURCE_STATE_GENERIC_READ,nullptr,IID_PPV_ARGS(&staging)))){
++            texture.Reset();reason=std::string(name)+" upload";return false;}
++        uint8_t* memory{};const D3D12_RANGE none{};if(FAILED(staging->Map(0,&none,reinterpret_cast<void**>(&memory)))){texture.Reset();staging.Reset();reason=std::string(name)+" map";return false;}
++        for(UINT m=0;m<9;++m){const UINT w=std::max(width>>m,1u);if((*levels)[m].size()!=size_t(w)*rows[m]*4u){staging->Unmap(0,nullptr);texture.Reset();staging.Reset();
++                reason=std::string(name)+" level size";return false;}
++            for(UINT y=0;y<rows[m];++y)std::memcpy(memory+footprints[m].Offset+UINT64(y)*footprints[m].Footprint.RowPitch,(*levels)[m].data()+size_t(y)*w*4,size_t(w)*4);}
++        staging->Unmap(0,nullptr);
++        for(UINT m=0;m<9;++m){D3D12_TEXTURE_COPY_LOCATION to{texture.Get(),D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX},from{staging.Get(),D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT};
+             to.SubresourceIndex=m;from.PlacedFootprint=footprints[m];list->CopyTextureRegion(&to,0,0,0,&from,nullptr);}
+-        Transition(list,film_grain_.Get(),D3D12_RESOURCE_STATE_COPY_DEST,D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);}
++        Transition(list,texture.Get(),D3D12_RESOURCE_STATE_COPY_DEST,D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);return true;};
++    if(ReadsFilmGrain(plan) && !film_grain_ && !upload_levels(film_grain,256,256,film_grain_,film_grain_upload_,"film grain"))return false;
++    if(ReadsInput(plan,-7) && !ramp_ && !upload_levels(spectral_ramp_levels_.get(),yebis::spectral_ramp_width,1,ramp_,ramp_upload_,"spectral ramp"))return false;
+     // DF-1: the DoF table (R32_FLOAT at the plan's extent, the depth factor's t2), kept while its extent holds; its values are copied
+     // in each frame by RecordPre through a ring of upload buffers (more than the frames in flight).
+     if(ReadsTable(plan) && (!table_ || table_width_!=plan.table_width || table_height_!=plan.table_height)){
+@@ -129,6 +136,7 @@ void GlareStage::WriteDrawInputs(const yebis::GlarePlan& plan,ID3D12Resource* sc
+         for(uint32_t s=0;s<PostDraws::Inputs;++s){const int8_t in=g.inputs[s];
+             if(in>=0)post_.SetInput(table,s,surfaces_[size_t(in)].Get(),Format(plan.surfaces[size_t(in)]));
+             else if(in==-3)post_.SetInput(table,s,film_grain_.Get(),DXGI_FORMAT_R8G8B8A8_UNORM);
++            else if(in==-7)post_.SetInput(table,s,ramp_.Get(),DXGI_FORMAT_R8G8B8A8_UNORM);
+             else if(in==-5)post_.SetInput(table,s,table_.Get(),DXGI_FORMAT_R32_FLOAT);
+             else post_.SetInput(table,s,nullptr,DXGI_FORMAT_R16G16B16A16_FLOAT);}};
+     for(size_t k=0;k<plan.draws.size();++k)write(plan.draws[k],uint32_t(k));
+@@ -225,12 +233,12 @@ ID3D12Resource* GlareStage::Record(ID3D12GraphicsCommandList* list,ID3D12Resourc
+ }
+ void GlareStage::Close() noexcept {
+     post_.Close();surfaces_.clear();layout_.clear();techniques_.clear();inputs_.clear();pipelines_.clear();samplers_.clear();shape_.clear();rtv_.Reset();device_.Reset();
+-    pre_pipelines_.clear();pre_samplers_.clear();pre_shape_.clear();film_grain_.Reset();film_grain_upload_.Reset();
++    pre_pipelines_.clear();pre_samplers_.clear();pre_shape_.clear();film_grain_.Reset();film_grain_upload_.Reset();ramp_.Reset();ramp_upload_.Reset();
+     table_.Reset();for(auto& u:table_uploads_)u.Reset();table_width_=table_height_=0;
+     scene_view_=nullptr;scene_view_generation_=0;pre_scene_=nullptr;pre_depth_=nullptr;pre_generation_=0;depth_view_=nullptr;velocity_view_=nullptr;
+ }
+ void GlareStage::QuarantineToProcessExit() noexcept {
+     post_.QuarantineToProcessExit();for(auto& s:surfaces_)(void)s.Detach();(void)rtv_.Detach();(void)device_.Detach();(void)film_grain_.Detach();(void)film_grain_upload_.Detach();
+-    (void)table_.Detach();for(auto& u:table_uploads_)(void)u.Detach();
++    (void)ramp_.Detach();(void)ramp_upload_.Detach();(void)table_.Detach();for(auto& u:table_uploads_)(void)u.Detach();
+ }
+ }
+diff --git a/native/renderer/glare_stage.h b/native/renderer/glare_stage.h
+index 4a71b0a6b..a0c3ac3b3 100644
+--- a/native/renderer/glare_stage.h
++++ b/native/renderer/glare_stage.h
+@@ -38,6 +38,9 @@ public:
+     bool RecordPre(ID3D12GraphicsCommandList* list,ID3D12Resource* scene,ID3D12Resource* depth,uint64_t scene_generation,const yebis::GlarePlan& plan,
+         const GlarePrograms& programs,const GlareConstantSink& constants,std::string& reason,const std::vector<std::vector<uint8_t>>* film_grain=nullptr,
+         const std::vector<float>* table=nullptr);   // DF-1: the DoF table (input -5) of this frame, table_width x table_height values
++    // I-0138 tranche 8b: the shafts' corona's spectral ramp (input -7: yebis::SpectralRampLevels, nine RGBA8 levels from 256x1),
++    // given before a plan that reads it and uploaded on the first layout that does (a layout of such a plan without it is refused).
++    void SetSpectralRamp(std::shared_ptr<const std::vector<std::vector<uint8_t>>> levels) noexcept {spectral_ramp_levels_=std::move(levels);}
+     // Whether this plan needs new surfaces (Record renews them; the former ones are retired by ticket).
+     bool NeedsLayout(const yebis::GlarePlan& plan) const;
+     uint64_t Frames() const noexcept {return frames_;}
+@@ -65,6 +68,7 @@ private:
+     ID3D12Resource* depth_view_{};ID3D12Resource* velocity_view_{};   // MB-2: the views of inputs -4 and -6 Record wrote
+     ID3D12Resource* pre_scene_{};ID3D12Resource* pre_depth_{};uint64_t pre_generation_{};   // LS-1: the views the pre draws were written for
+     Microsoft::WRL::ComPtr<ID3D12Resource> film_grain_,film_grain_upload_;   // LS-3: the film grain and its upload (kept for the session)
++    Microsoft::WRL::ComPtr<ID3D12Resource> ramp_,ramp_upload_;std::shared_ptr<const std::vector<std::vector<uint8_t>>> spectral_ramp_levels_;   // tranche 8b: the corona's ramp
+     Microsoft::WRL::ComPtr<ID3D12Resource> table_;std::array<Microsoft::WRL::ComPtr<ID3D12Resource>,8> table_uploads_;   // DF-1: the DoF table, its uploads
+     uint32_t table_width_{},table_height_{};uint64_t table_next_{};
+     std::vector<uint32_t> pre_pipelines_,pre_samplers_;std::vector<yebis::GlareDraw> pre_shape_;
+diff --git a/native/renderer/model_frame.h b/native/renderer/model_frame.h
+index 9c7c79900..949d2e271 100644
+--- a/native/renderer/model_frame.h
++++ b/native/renderer/model_frame.h
+@@ -131,7 +131,8 @@ struct NativeTonemapInput {std::array<uint8_t,64> dither{};
+ // the tone map, which takes its output as t1.
+ // LS-1/LS-3: the plan may carry Alpha_R (pre) and the light shafts; film_grain, the executable's film grain with its CPU mips.
+ // I-0138 tranche 2: programs are our own (post_glare_programs.h).
+-struct NativeGlareInput {yebis::GlarePlan plan;std::shared_ptr<const GlarePrograms> programs;std::shared_ptr<const std::vector<std::vector<uint8_t>>> film_grain;};
++struct NativeGlareInput {yebis::GlarePlan plan;std::shared_ptr<const GlarePrograms> programs;std::shared_ptr<const std::vector<std::vector<uint8_t>>> film_grain;
++    std::shared_ptr<const std::vector<std::vector<uint8_t>>> spectral_ramp;};   // I-0138 tranche 8b: the corona's ramp (null when no draw reads it)
+ // W10 DF-4 (W10-NATIVE-PASSES 9): the main view's depth of field (on by default, with the glare): the native plan (yebis::BuildDof from the
+ // native holder), its programmes (our own) and the DoF table it draws with (the previous frame's, as the original's CustomDofLutCopy
+ // writes it at the end of a frame for the next). Present: the renderer draws it from the lit HDR before Alpha_R and the glare.
+diff --git a/native/renderer/scene_pass_frame.cpp b/native/renderer/scene_pass_frame.cpp
+index adca6623b..17db03516 100644
+--- a/native/renderer/scene_pass_frame.cpp
++++ b/native/renderer/scene_pass_frame.cpp
+@@ -1217,7 +1217,7 @@ FrameReceipt SceneRenderer::RenderModels(const NativeModelFrameInput& input,cons
+             DepthPlaneTransition(list,post_depth,D3D12_RESOURCE_STATE_DEPTH_WRITE,depth_read);
+             if(graph){graph->Pass("alpha_r",PassKind::PostProcess);graph->Use(source,ResourceAccess::ReadWrite,D3D12_RESOURCE_STATE_RENDER_TARGET);
+                 graph->Use(post_depth,ResourceAccess::Read,depth_read,{0,1});}
+-            std::string reason;
++            std::string reason;glare_family_.SetSpectralRamp(input.yebis_glare->spectral_ramp);
+             if(!glare_family_.RecordPre(list,source,post_depth,post_generation,input.yebis_glare->plan,*input.yebis_glare->programs,[this](uint64_t bytes){
+                     const auto range=frame_uploads_.Allocate(gpu_.device.Get(),bytes);return GlareConstantMemory{range.cpu,range.gpu};},reason,input.yebis_glare->film_grain.get())){
+                 glare_family_failed_=true;}
+@@ -1277,7 +1277,7 @@ FrameReceipt SceneRenderer::RenderModels(const NativeModelFrameInput& input,cons
+             ID3D12Resource* glare_t1=nullptr;
+             if(glare_matches()){
+                 std::string reason;
+-                if(open_glare()){
++                if(open_glare()){glare_family_.SetSpectralRamp(input.yebis_glare->spectral_ramp);
+                     glare_t1=glare_family_.Record(list,source,post_generation,input.yebis_glare->plan,*input.yebis_glare->programs,[this](uint64_t bytes){
+                         const auto range=frame_uploads_.Allocate(gpu_.device.Get(),bytes);return GlareConstantMemory{range.cpu,range.gpu};},reason,
+                         input.yebis_glare->film_grain.get());
+diff --git a/native/world/yebis_shafts.cpp b/native/world/yebis_shafts.cpp
+index 993ec6f27..dc75cc4f5 100644
+--- a/native/world/yebis_shafts.cpp
++++ b/native/world/yebis_shafts.cpp
+@@ -58,7 +58,9 @@ const ShaftSurface& Surface(const ShaftInputs& in,ShaftSlot s){
+ }
+ ShaftPlan BuildShaft(const ShaftInputs& in){
+     ShaftPlan plan;const auto& r=in.record;
+-    if(r[9]!=0.0f){plan.refused="record +0x24 (the FUN_141737480 composite): no witness";return plan;}
++    // I-0138 tranche 8b: record +0x24 non-zero, the corona (FUN_141737480): the last radial blur stays in its ping-pong surface,
++    // untinted, and tech_Corona draws it into the output (below).
++    const bool corona=r[9]!=0.0f;
+     if(!in.float_surface){plan.refused="an 8-bit shaft surface (the 1/255 base): no witness";return plan;}
+     for(const auto* s:{&in.mask_source,&in.shaft,&in.output,&in.pingpong[0],&in.pingpong[1]})
+         if(!s->width || !s->height){plan.refused="a shaft surface without an extent";return plan;}
+@@ -95,7 +97,7 @@ ShaftPlan BuildShaft(const ShaftInputs& in){
+     const float scale=std::pow(in.tan_half*quarter,one/float(passes));
+     const float factor=((((in.factor*0.035f)*in.shape_bloom)*in.luminance)*quarter)*four;   // [142899374] 0.035
+     std::array<float,4> colour{r[0],r[1],r[2],r[3]};
+-    if(r[13]!=one || r[14]!=one || r[15]!=one){colour[0]=colour[0]*r[13];colour[1]=colour[1]*r[14];colour[2]=colour[2]*r[15];}
++    if(!corona && (r[13]!=one || r[14]!=one || r[15]!=one)){colour[0]=colour[0]*r[13];colour[1]=colour[1]*r[14];colour[2]=colour[2]*r[15];}
+     ShaftSlot source=ShaftSlot::Shaft;int ping=0;
+     for(int pass=0;pass<passes;++pass){
+         const bool final_pass=pass==passes-1;
+@@ -104,7 +106,7 @@ ShaftPlan BuildShaft(const ShaftInputs& in){
+         const int taps=std::min(final_pass?last:4,4);
+         const bool into_output=final_pass || taps<4;
+         ShaftDraw d;d.technique="tech_TexCoordMadT1_S"+std::to_string(taps);d.inputs={source,ShaftSlot::None};
+-        d.target=into_output?ShaftSlot::Output:(ping==0?ShaftSlot::Ping0:ShaftSlot::Ping1);
++        d.target=into_output && !corona?ShaftSlot::Output:(ping==0?ShaftSlot::Ping0:ShaftSlot::Ping1);
+         Put(d,20,1.0f);Put(d,21,-1.0f);
+         const auto& src=Surface(in,source);const auto& dst=Surface(in,d.target);
+         const float end_x=float(src.width)*(one/float(src.width))+0.0f,end_y=float(src.height)*(one/float(src.height))+0.0f;
+@@ -122,6 +124,25 @@ ShaftPlan BuildShaft(const ShaftInputs& in){
+         plan.draws.push_back(std::move(d));
+         source=plan.draws.back().target;ping^=1;spacing=spacing*four;
+         if(taps<4)break;}
++    // The corona (FUN_141737480 -> FUN_141729470 -> FUN_14171C180): t0 the last blur, t1 the spectral ramp, t2 the film grain;
++    // c154 the record's +0x34..+0x40, c155 (1.5, 1.5, 1.5, [143D7EE38] x 0), c156 (1, 1, 1, 0); c15 (+0x24, +0x28, +0x2C, 0), c10
++    // (2, 4, 0, 1); TEXCOORD0 the source's rectangle, TEXCOORD1 the sun's rectangle at tan(fov / 2) x pi / +0x30 over the output.
++    if(corona){
++        ShaftDraw d;d.technique="tech_Corona";d.inputs={source,ShaftSlot::SpectralRamp,ShaftSlot::FilmGrain};d.target=ShaftSlot::Output;
++        Put(d,20,1.0f);Put(d,21,-1.0f);
++        for(uint32_t c=0;c<4;++c)Put(d,616+c,r[13+c]);
++        Put(d,620,1.5f);Put(d,621,1.5f);Put(d,622,1.5f);Put(d,623,1.5f*0.0f);Put(d,624,1.0f);Put(d,625,1.0f);Put(d,626,1.0f);Put(d,627,0.0f);
++        Put(d,60,r[9]);Put(d,61,r[10]);Put(d,62,r[11]);Put(d,63,0.0f);Put(d,40,two);Put(d,41,four);Put(d,42,0.0f);Put(d,43,1.0f);
++        Positions(d,in.output);
++        const auto& src=Surface(in,source);
++        Texcoords(d,0.0f,0.0f,float(src.width)*(one/float(src.width))+0.0f,float(src.height)*(one/float(src.height))+0.0f);
++        constexpr float pi=3.14159274f;                                                    // [143D7EEC0]
++        float size=std::tan(in.fov*half);size=(pi/r[12])*size;
++        float sx_scale=size*(float(in.output.width)/float(in.output.height));float sx_bias=-sx_scale;
++        const float sy_scale=(size-(-size))/(one-0.0f);sx_scale=(sx_scale-sx_bias)/(one-0.0f);sx_bias=sx_bias-sx_scale*0.0f;const float sy_bias=-size-sy_scale*0.0f;
++        Texcoords(d,sx_scale*((0.0f-sun_x)+half)+sx_bias,sy_scale*((0.0f-sun_y)+half)+sy_bias,
++            sx_scale*((one-sun_x)+half)+sx_bias,sy_scale*((one-sun_y)+half)+sy_bias);
++        plan.draws.push_back(std::move(d));}
+     return plan;
+ }
+ }
+@@ -217,10 +238,12 @@ std::array<float,22> DriverSlot(const ShaftDriverInputs& in) noexcept {
+ }
+ }
+ namespace ds3native::yebis {
+-std::vector<std::vector<uint8_t>> FilmGrainLevels(const std::vector<uint8_t>& level0){
+-    std::vector<std::vector<uint8_t>> levels;if(level0.size()!=size_t(film_grain_size)*film_grain_size*4)return levels;
++namespace {
++// FUN_141711350's CPU mip chain (both dither flags) of an RGBA8 level 0 of w x h, down to 1x1.
++std::vector<std::vector<uint8_t>> CpuMips(const std::vector<uint8_t>& level0,uint32_t w,uint32_t h){
++    std::vector<std::vector<uint8_t>> levels;
+     static constexpr float dither[16]{0.0f,2.0f,0.5f,2.5f,3.0f,1.0f,3.5f,1.5f,0.75f,2.75f,0.25f,2.25f,3.75f,1.75f,3.25f,1.25f};
+-    levels.push_back(level0);uint32_t w=film_grain_size,h=film_grain_size;
++    levels.push_back(level0);
+     while(w>1 || h>1){
+         const uint32_t dw=std::max(w>>1,1u),dh=std::max(h>>1,1u);const bool dithered=std::max(dw,dh)>=4;
+         const auto& src=levels.back();std::vector<uint8_t> dst(size_t(dw)*dh*4);
+@@ -234,6 +257,56 @@ std::vector<std::vector<uint8_t>> FilmGrainLevels(const std::vector<uint8_t>& le
+     return levels;
+ }
+ }
++std::vector<std::vector<uint8_t>> FilmGrainLevels(const std::vector<uint8_t>& level0){
++    if(level0.size()!=size_t(film_grain_size)*film_grain_size*4)return {};
++    return CpuMips(level0,film_grain_size,film_grain_size);
++}
++bool LoadSpectralRampData(SpectralRampData& d,const std::function<bool(uint32_t,void*,size_t)>& read){
++    static constexpr uint32_t matrix[9]{0x2B4D140,0x2B4D190,0x2B4D17C,0x2B4D188,0x2B4D0F0,0x2B4CFF8,0x2B4CFFC,0x2B4D170,0x2B4D088};
++    static constexpr uint32_t top[9]{0x2B4D140,0x2B4D0AC,0x2B4D064,0x2B4D084,0x2B4D0F0,0x2B4CFF8,0x2B4CFFC,0x2B4D034,0x2B4D088};
++    bool ok=read(0x469AE7C,&d.cie_first,4) && read(0x469B47C,&d.cie_last,4) && read(0x469ABD4,&d.alpha_first,4) && read(0x469AE64,&d.alpha_last,4) &&
++        read(0x3D7EEE0,&d.row_step,4) && read(0x2B4D038,&d.luminance[0],4) && read(0x2B4D074,&d.luminance[1],4) && read(0x2B4D010,&d.luminance[2],4) &&
++        read(0x3D7EE10,&d.one,4) && read(0x3D7ED94,&d.soft,4) && read(0x2B4D060,&d.power,4) && read(0x2B60CE4,&d.quantum,4) && read(0x2B60CEC,&d.span,4) &&
++        read(0x3D7EFF4,&d.last_texel,4) && read(0x2B60CE8,&d.first_nm,4);
++    for(size_t i=0;i<9 && ok;++i)ok=read(matrix[i],&d.matrix[i],4) && read(top[i],&d.top_matrix[i],4);
++    for(size_t i=0;i<d.cie.size() && ok;++i)ok=read(0x469AE70+16*uint32_t(i),d.cie[i].data(),12);
++    for(size_t i=0;i<d.alpha.size() && ok;++i)ok=read(0x469ABD0+8*uint32_t(i),&d.alpha[i],4);
++    return ok;
++}
++std::vector<std::vector<uint8_t>> SpectralRampLevels(const SpectralRampData& d){
++    // FUN_1416DC870: the largest component of the matrix over the table (from -FLT_MAX, [143D7F144]).
++    float mr=-3.40282347e+38f,mg=mr,mb=mr;
++    for(const auto& c:d.cie){const auto& t=d.top_matrix;
++        const float r=((c[0]*t[0]-c[1]*t[1])-c[2]*t[2])+0.0f,g=((c[1]*t[4]-c[0]*t[3])+c[2]*t[5])+0.0f,b=((c[0]*t[6]-c[1]*t[7])+c[2]*t[8])+0.0f;
++        mr=r<=mr?mr:r;mg=g<=mg?mg:g;mb=b<=mb?mb:b;}
++    float top=mr<=mg?mg:mr;top=top<=mb?mb:top;
++    // FUN_1416CF230 and FUN_1416CF160: the clamped wavelength's row (the integer part of (nm - first) / 5) and the next one.
++    const auto row=[&](float nm,float first,float last,int rows,int& i,int& j){
++        const float v=(first<=nm && nm<=last)?nm:(first<=nm?last:first);const float t=(v-first)/d.row_step;
++        i=int(std::floor(t));j=std::min(i+1,rows-1);return t-float(i);};
++    const auto colour=[&](float nm){
++        int i{},j{};const float f=row(nm,d.cie_first,d.cie_last,int(d.cie.size()),i,j);
++        std::array<float,3> xyz{};for(size_t k=0;k<3;++k)xyz[k]=d.cie[size_t(i)][k]+(d.cie[size_t(j)][k]-d.cie[size_t(i)][k])*f;
++        const auto& m=d.matrix;const float X=xyz[0],Y=xyz[1],Z=xyz[2];
++        std::array<float,4> o{((Y*m[1]+X*m[0])+Z*m[2])+0.0f,((X*m[3]+Y*m[4])+Z*m[5])+0.0f,((X*m[6]+Y*m[7])+Z*m[8])+0.0f,0.0f};
++        const float k=d.one/top;for(auto& v:o)v=k*v;
++        const auto pos=[](float v){return 0.0f<v?v:0.0f;};
++        const float s=((pos(o[1])*d.luminance[1]+pos(o[0])*d.luminance[0])+pos(o[2])*d.luminance[2])*d.soft;
++        if(s<=0.0f){for(auto& v:o)v=pos(v);}
++        else{const float e0=std::exp(0.0f/s);
++            for(size_t c=0;c<3;++c){const float x=o[c];float y=std::log(std::exp(x/s)+e0)*s;if(y<x || top<y)y=pos(x);o[c]=y;}}
++        int a{},b{};const float g=row(nm,d.alpha_first,d.alpha_last,int(d.alpha.size()),a,b);
++        o[3]=(d.alpha[size_t(b)]-d.alpha[size_t(a)])*g+d.alpha[size_t(a)];
++        for(auto& v:o)if(0.0f<v)v=std::pow(v,d.power);
++        return o;};
++    std::vector<uint8_t> level0(size_t(spectral_ramp_width)*4);
++    const float step=d.span/(d.last_texel-0.0f),base=d.first_nm-step*0.0f;
++    for(uint32_t i=0;i<spectral_ramp_width;++i){
++        auto o=colour(float(i)*step+base);if(i==0 || i==spectral_ramp_width-1)o={};
++        for(size_t c=0;c<4;++c)level0[4*size_t(i)+c]=o[c]<d.one?(0.0f<o[c]?uint8_t(int64_t(o[c]*d.quantum)):uint8_t(0)):uint8_t(255);}
++    return CpuMips(level0,spectral_ramp_width,1);
++}
++}
+ namespace ds3native::yebis {
+ namespace {
+ void PutWord(GlareDraw& g,uint32_t word,float value){PutGlareWord(g,word,value);}
+@@ -253,10 +326,11 @@ bool AppendShafts(GlarePlan& plan,const ShaftInputs& in,const ShaftPlan& shafts,
+     const int8_t shaft=add(in.shaft),ping0=add(in.pingpong[0]),ping1=add(in.pingpong[1]),output=add(in.output);
+     const int8_t madt2=add({plan.surfaces[size_t(composite)].width,plan.surfaces[size_t(composite)].height});
+     const auto slot=[&](ShaftSlot s)->int8_t{switch(s){case ShaftSlot::MaskSource:return int8_t(bright);case ShaftSlot::FilmGrain:return -3;case ShaftSlot::Shaft:return shaft;
+-        case ShaftSlot::Ping0:return ping0;case ShaftSlot::Ping1:return ping1;case ShaftSlot::Output:return output;default:return -2;}};
++        case ShaftSlot::Ping0:return ping0;case ShaftSlot::Ping1:return ping1;case ShaftSlot::Output:return output;case ShaftSlot::SpectralRamp:return -7;
++        default:return -2;}};
+     std::vector<GlareDraw> added;
+     for(const auto& d:shafts.draws){GlareDraw g;g.kind=GlareKind::Blur;g.technique=d.technique;g.border=true;g.target=slot(d.target);
+-        for(size_t i=0;i<d.inputs.size();++i){g.inputs[i]=slot(d.inputs[i]);g.film_grain[i]=d.inputs[i]==ShaftSlot::FilmGrain;}
++        for(size_t i=0;i<d.inputs.size();++i){g.inputs[i]=slot(d.inputs[i]);g.film_grain[i]=d.inputs[i]==ShaftSlot::FilmGrain || d.inputs[i]==ShaftSlot::SpectralRamp;}
+         for(const auto& [w,v]:d.words)PutWord(g,w,v);
+         g.texcoords=uint8_t(d.texcoords);
+         for(const auto& v:d.vertices)g.vertices.insert(g.vertices.end(),v.begin(),v.end());
+diff --git a/native/world/yebis_shafts.h b/native/world/yebis_shafts.h
+index c0af36677..090b50194 100644
+--- a/native/world/yebis_shafts.h
++++ b/native/world/yebis_shafts.h
+@@ -7,6 +7,7 @@
+ #pragma once
+ #include <array>
+ #include <cstdint>
++#include <functional>
+ #include <string>
+ #include <utility>
+ #include <vector>
+@@ -44,10 +45,11 @@ struct ShaftInputs {
+     bool float_surface{true};           // the shaft surface's format is a float format (the 0.001 base; 8-bit UNORM takes 1/255)
+     ShaftSurface mask_source,shaft,output;std::array<ShaftSurface,2> pingpong{};
+ };
+-enum class ShaftSlot : int8_t {None=-1,MaskSource,FilmGrain,Shaft,Ping0,Ping1,Output};
++// SpectralRamp (I-0138 tranche 8b): the corona's ramp (SpectralRampLevels), sampled as the film grain is.
++enum class ShaftSlot : int8_t {None=-1,MaskSource,FilmGrain,Shaft,Ping0,Ping1,Output,SpectralRamp};
+ struct ShaftDraw {
+     std::string technique;
+-    std::array<ShaftSlot,2> inputs{ShaftSlot::None,ShaftSlot::None};
++    std::array<ShaftSlot,3> inputs{ShaftSlot::None,ShaftSlot::None,ShaftSlot::None};
+     ShaftSlot target{ShaftSlot::None};
+     std::vector<std::pair<uint32_t,float>> words;   // the `$Globals` words the programmes read (word index, value)
+     uint32_t texcoords{};               // texture-coordinate pairs per vertex after the position
+@@ -89,6 +91,26 @@ std::array<float,22> DriverSlot(const ShaftDriverInputs& in) noexcept;
+ inline constexpr uint32_t film_grain_rva=0x2B68A40,film_grain_size=256;
+ inline constexpr const char* film_grain_sha256="11C7FAD64F41EB04E249BEE63F37C2F7CBCBD340AED9D0EAC8EC3713C031354C";
+ std::vector<std::vector<uint8_t>> FilmGrainLevels(const std::vector<uint8_t>& level0);
++// I-0138 tranche 8b: the corona's spectral ramp (ctx +0x216F0, tech_Corona's t1), built once by FUN_141719770: 256x1 RGBA8,
++// texel i the colour of wavelength 350 + i x 380 / 255 nm (FUN_1416CF510 with its third argument 1, its fourth [143D7EE90] 2.2,
++// soft clip [143D7ED94] 0.2): FUN_1416CF230's CIE row (14469AE70, 97 rows of X, Y, Z, nm from 355 by 5, interpolated), the
++// second matrix set (XYZ to linear sRGB), times 1 / FUN_1416DC870's largest component of that matrix over the table, the soft
++// clip f log(exp(c / f) + exp(0)) with f = 0.2 x the luminance of the positive parts (kept where it is not between c and the
++// largest), the alpha from FUN_1416CF160 (14469ABD0, 83 rows of value, nm from 375 by 5), each positive channel to the power
++// [142B4D060] 1/2.2, packed by FUN_141744290 (x 255.9999 truncated, 255 from 1 up); texels 0 and 255 zero. Its mips: the film
++// grain's CPU chain (FUN_141711350 with both dither flags) over 256x1. The executable's words, read through `read` (an RVA).
++struct SpectralRampData {
++    std::array<std::array<float,3>,97> cie{};std::array<float,83> alpha{};
++    float cie_first{},cie_last{},alpha_first{},alpha_last{},row_step{};   // [14469AE7C] 355, [14469B47C] 835, [14469ABD4] 375, [14469AE64] 785, [143D7EEE0] 5
++    std::array<float,9> matrix{};       // [142B4D140, D190, D17C] red (X, Y, Z), [D188, D0F0, CFF8] green, [CFFC, D170, D088] blue
++    std::array<float,9> top_matrix{};   // FUN_1416DC870's words: [D140, D0AC, D064], [D084, D0F0, CFF8], [CFFC, D034, D088]
++    std::array<float,3> luminance{};    // [142B4D038] 0.2126, [142B4D074] 0.7152, [142B4D010] 0.0722
++    float one{},soft{},power{},quantum{},span{},last_texel{},first_nm{};   // [143D7EE10], [143D7ED94], [142B4D060], [142B60CE4], [142B60CEC] 380, [143D7EFF4] 255, [142B60CE8] 350
++};
++inline constexpr uint32_t spectral_ramp_width=256;
++bool LoadSpectralRampData(SpectralRampData& d,const std::function<bool(uint32_t,void*,size_t)>& read);
++// Level 0 then its eight mips (256 down to 1 texel), RGBA8.
++std::vector<std::vector<uint8_t>> SpectralRampLevels(const SpectralRampData& d);
+ }
+ namespace ds3native::yebis {
+ // LS-3: Alpha_R as the glare plan's pre draw (target -1, the scene's alpha; input -4, the scene depth; samplers as Reference1667:

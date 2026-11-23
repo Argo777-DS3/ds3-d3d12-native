@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0141",
+  "title": "L'éclairage des cinématiques et du joueur en RT/PT (ROADMAP chantier 7 étape 7)",
+  "capability": "C3",
+  "state": "active",
+  "owner": "the R pilot (Fable 5.2 for tranches 1 and 2; Opus 5.5 from tranche 3, fresh threads, D-0281)",
+  "created_at": "2026-11-14T16:32:10Z",
+  "updated_at": "2026-11-20T11:00:00Z",
+  "budget": {
+    "iterations_max": 16,
+    "iterations_used": 13
+  },
+  "stop_reason": null
+}

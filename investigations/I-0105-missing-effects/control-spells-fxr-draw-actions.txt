@@ -1,0 +1,273 @@
+== 525500
+   1 x 603 BillboardEx texture=1000 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   3 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525501
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11401 orientation=2=LocalSouth
+   2 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525502
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 606 LegacyTracer texture=10003 orientation=4=Cross
+   1 x 606 LegacyTracer texture=2012 orientation=4=Cross
+   1 x 609 PointLight 
+== 525503
+   2 x 602 QuadLine blendMode=4=Add
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   1 x 609 PointLight 
+== 525504
+   2 x 602 QuadLine blendMode=4=Add
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 609 PointLight 
+== 525510
+   1 x 603 BillboardEx texture=1000 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   3 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 606 LegacyTracer texture=10003 orientation=4=Cross
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525511
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11401 orientation=2=LocalSouth
+   2 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   4 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525512
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 606 LegacyTracer texture=10003 orientation=4=Cross
+   1 x 606 LegacyTracer texture=2012 orientation=4=Cross
+   1 x 609 PointLight 
+== 525513
+   2 x 602 QuadLine blendMode=4=Add
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11444 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=2=Normal
+   1 x 609 PointLight 
+== 525514
+   2 x 602 QuadLine blendMode=4=Add
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 609 PointLight 
+== 525520
+   1 x 603 BillboardEx texture=1000 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   3 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 606 LegacyTracer texture=10003 orientation=4=Cross
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525521
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11401 orientation=2=LocalSouth
+   2 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   4 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525522
+   2 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 605 Model model=3000 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 606 LegacyTracer texture=10003 orientation=4=Cross
+   1 x 606 LegacyTracer texture=2012 orientation=4=Cross
+   1 x 609 PointLight 
+== 525523
+   2 x 602 QuadLine blendMode=4=Add
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11444 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=2=Normal
+   1 x 609 PointLight 
+== 525524
+   2 x 602 QuadLine blendMode=4=Add
+   2 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 609 PointLight 
+== 525530
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11411 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525531
+== 525532
+   1 x 10000 GPUStandardParticle texture=1002
+   3 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=1003 orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11660 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=50065 blendMode=4=Add orientation=4=GlobalYaw
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525533
+   2 x 602 QuadLine blendMode=4=Add
+   1 x 603 BillboardEx texture=1000 blendMode=7=Unk7 orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=7=Unk7 orientation=1=CameraPlane
+   1 x 609 PointLight 
+== 525540
+   1 x 603 BillboardEx texture=11411 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11633 blendMode=2=Normal orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=13030 blendMode=2=Normal orientation=1=CameraPlane
+   1 x 604 MultiTextureBillboardEx blendMode=4=Add orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 525541
+   1 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11636 blendMode=4=Add orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=2=Normal
+   1 x 609 PointLight 
+== 525542
+   1 x 603 BillboardEx texture=1001 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=13030 blendMode=2=Normal orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=3002 blendMode=6=Unk6 orientation=7=LocalYaw
+   1 x 606 LegacyTracer texture=11618 blendMode=5=Subtract orientation=4=Cross
+   1 x 609 PointLight 
+== 525543
+   2 x 603 BillboardEx texture=1001 blendMode=4=Add orientation=1=CameraPlane
+   3 x 603 BillboardEx texture=10019 blendMode=2=Normal orientation=1=CameraPlane
+   3 x 603 BillboardEx texture=11603 blendMode=2=Normal orientation=7=LocalYaw
+   3 x 603 BillboardEx texture=11606 blendMode=2=Normal orientation=7=LocalYaw
+   2 x 603 BillboardEx texture=13030 blendMode=2=Normal orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=3002 blendMode=6=Unk6 orientation=7=LocalYaw
+   2 x 606 LegacyTracer texture=11618 blendMode=5=Subtract orientation=4=Cross
+   1 x 609 PointLight 
+== 525550
+== 525551
+   1 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11636 blendMode=4=Add orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=2=Normal
+   1 x 609 PointLight 
+== 525552
+   4 x 603 BillboardEx texture=1001 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=13030 blendMode=2=Normal orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=3002 blendMode=6=Unk6 orientation=7=LocalYaw
+   4 x 606 LegacyTracer texture=11618 blendMode=5=Subtract orientation=4=Cross
+   1 x 609 PointLight 
+== 525553
+   4 x 603 BillboardEx texture=1001 blendMode=4=Add orientation=1=CameraPlane
+   3 x 603 BillboardEx texture=10019 blendMode=2=Normal orientation=1=CameraPlane
+   3 x 603 BillboardEx texture=11603 blendMode=2=Normal orientation=7=LocalYaw
+   3 x 603 BillboardEx texture=11606 blendMode=2=Normal orientation=7=LocalYaw
+   2 x 603 BillboardEx texture=13030 blendMode=2=Normal orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=3002 blendMode=6=Unk6 orientation=7=LocalYaw
+   4 x 606 LegacyTracer texture=11618 blendMode=5=Subtract orientation=4=Cross
+   1 x 609 PointLight 
+== 527100
+== 527101
+== 527102
+== 527103
+   1 x 10000 GPUStandardParticle texture=1002
+   3 x 603 BillboardEx texture=1002 blendMode=7=Unk7 orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1002 blendMode=7=Unk7 orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=1003 blendMode=7=Unk7 orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11403 blendMode=7=Unk7 orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11414 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11438 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11660 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=13009
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=50065 blendMode=4=Add orientation=4=GlobalYaw
+   3 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 607 Distortion normalMap=11434 mask=11434 blendMode=2=Normal orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   1 x 609 PointLight 
+== 528600
+== 528601
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   2 x 609 PointLight 
+== 528602
+   1 x 603 BillboardEx texture=1001 orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=1003 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=11401 orientation=2=LocalSouth
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   3 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 605 Model model=11603 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 605 Model model=8040 blendMode=4=Add orientation=2=ParticleDirection
+   2 x 606 LegacyTracer texture=2012 orientation=4=Cross
+   1 x 608 RadialBlur mask=50065 blendMode=4=Add
+   2 x 609 PointLight 
+== 528603
+   2 x 602 QuadLine blendMode=4=Add
+   1 x 603 BillboardEx texture=1002 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=1004 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11403 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11426 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=11444 blendMode=4=Add orientation=1=CameraPlane
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=1=CameraPlane
+   2 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 603 BillboardEx texture=16001 orientation=1=CameraPlane
+   2 x 605 Model model=10002 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 605 Model model=8040 blendMode=4=Add orientation=2=ParticleDirection
+   1 x 608 RadialBlur mask=50065 blendMode=2=Normal
+   1 x 609 PointLight 
+== 528604
+   1 x 603 BillboardEx texture=16001 blendMode=4=Add orientation=7=LocalYaw
+   1 x 605 Model model=8040 blendMode=4=Add orientation=2=ParticleDirection
+== 528605
+== 528606
+   1 x 605 Model model=8290 orientation=2=ParticleDirection
+== 528607
+   1 x 605 Model model=8290 orientation=2=ParticleDirection
+== 528608
+   1 x 605 Model model=8290 orientation=2=ParticleDirection

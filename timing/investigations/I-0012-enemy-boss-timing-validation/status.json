@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0012",
+  "title": "Enemy & Boss Timing Validation",
+  "capability": "C4",
+  "state": "complete",
+  "owner": "ChatGPT Work",
+  "created_at": "2026-09-21T00:36:31Z",
+  "updated_at": "2026-09-21T01:27:31Z",
+  "budget": {
+    "iterations_max": 14,
+    "iterations_used": 6
+  },
+  "stop_reason": "Thomas accepted the independently exercised ReShade tool and bounded Hollow/dog/Gundyr visual panel as successful, with no instrumented generality claim; the newly observed terrain-collision issue transfers to I-0013."
+}

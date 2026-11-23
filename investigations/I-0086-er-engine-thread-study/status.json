@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0086",
+  "title": "DS3 DX12 Vague 2: ER study of the engine thread and the frame preparation (third tranche preparation)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T00:18:00Z",
+  "updated_at": "2026-10-22T02:30:00Z",
+  "budget": {
+    "iterations_max": 10,
+    "iterations_used": 4
+  },
+  "stop_reason": "Study complete: ER-STUDY written with the third tranche plan; the scene render located in the AdhocDraw row."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0124",
+  "title": "The game's exit fault in 141A3B670 at a close, and the endurance tour's quit not opened (La faute \u00e0 la fermeture)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "R pilot (Opus 5.5)",
+  "created_at": "2026-11-03T21:31:32Z",
+  "updated_at": "2026-11-04T01:10:00Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: merged ac958d0c, start check and night endurance clean"
+}

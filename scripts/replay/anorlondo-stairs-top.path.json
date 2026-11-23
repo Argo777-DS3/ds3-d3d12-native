@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "name": "anorlondo-stairs-top",
+ "description": "I-0114 tranche 8 (Thomas, 2026-11-02 05:00: « il faudrait qu'il monte jusqu'en haut de l'escalier », « jusqu'à la dernière marche »): Gamma at the Anor Londo bonfire, facing the great stairs up to the cathedral (as anorlondo-stairs): walked straight up (Z held 20 s; the last step at about 18.5 s at 60, series 39), then still 5 s (series 39 held Z 30 s: a leech enemy at the top caught Gamma after the stairs). Run with the enemies frozen. Read with locomotion-observe.flag (the player's position and terrain response [+0x2DC]: unlock_player_position, unlock_terrain); Times in ms from the motion start.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-gamma-m37-anorlondo-20261026-123818/DS30000.sl2",
+  "sha256": "E96236897D815D1B1339FD49D3AA8D7308C185AA64AC9224A6F72A4638703411"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "climb",
+   "cycles": 1,
+   "cycle_ms": 25000,
+   "events": [
+    {"t": 0, "key": "Z", "down": true},
+    {"t": 20000, "key": "Z", "down": false}
+   ]
+  }
+ ]
+}

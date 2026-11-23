@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0092",
+  "title": "Mise à jour des effets en parallèle",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T21:16:28Z",
+  "updated_at": "2026-10-23T00:13:29Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 3
+  },
+  "stop_reason": "success: the effects update 6.1 to 3.8 % of the engine thread at m45, 136.7 to 139.0 frames/s; gate i92-final-b PASS"
+}

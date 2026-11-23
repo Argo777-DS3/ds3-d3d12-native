@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0114",
+  "title": "Le framerate débloqué",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "RT pilot (Opus 5.5)",
+  "created_at": "2026-10-30T19:40:34Z",
+  "updated_at": "2026-11-09T01:10:00Z",
+  "budget": {
+    "iterations_max": 20,
+    "iterations_used": 20
+  },
+  "stop_reason": "closed with Thomas's yes (2026-11-09); open points carried to I-0132 R11-PLAN §6"
+}

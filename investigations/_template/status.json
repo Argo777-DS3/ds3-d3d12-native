@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-NNNN",
+  "title": "Investigation title",
+  "capability": "C?",
+  "state": "planned",
+  "owner": "unassigned",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "budget": {
+    "iterations_max": 3,
+    "iterations_used": 0
+  },
+  "stop_reason": null
+}

@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0011",
+    "title":  "Runtime FPS Control \u0026 Overlay",
+    "capability":  "C4",
+    "state":  "complete",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-20T13:55:00Z",
+    "updated_at":  "2026-09-20T15:05:00Z",
+    "budget":  {
+                   "iterations_max":  12,
+                   "iterations_used":  12
+               },
+    "stop_reason":  "Bounded success as a reversible exact-build test tool: live cadence/correction control and exact cleanup passed; broad player-animation behavior received positive operator support. Genuine Unlimited is unsupported, and overlay jitter/menu-required mouse interaction are accepted test-tool limitations rather than product UI."
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0099",
+  "title": "Plantage à la fermeture",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "pilot (Opus 5.5)",
+  "created_at": "2026-10-23T21:22:47Z",
+  "updated_at": "2026-10-29T07:20:00Z",
+  "budget": {
+    "iterations_max": 5,
+    "iterations_used": 3
+  },
+  "stop_reason": "success: the fix merged (DS3's stop of its network thread at ~DLNRD::SocketManager), reviewed (step, final, step), VERIFIED at five quits in a row (K-0484, the last start-4f15f9f7)"
+}

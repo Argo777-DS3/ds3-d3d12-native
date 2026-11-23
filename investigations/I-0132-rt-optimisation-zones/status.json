@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0132",
+  "title": "R11 and R12 of the RT/PT plan: the optimisation and the zones' tour in PT, then the settings pages and the title screen (L'optimisation et le tour des zones en PT)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "the R pilot (R11, R12)",
+  "created_at": "2026-11-09T00:58:48Z",
+  "updated_at": "2026-11-21T10:01:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 3
+  },
+  "stop_reason": "closed with ROADMAP workstream 2 after R12h step 2 (the native passes\u2019 programmes compiled at build time); leftovers carried by ROADMAP workstreams 7 and 8"
+}

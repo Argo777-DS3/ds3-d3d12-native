@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "investigation_id": "I-0005",
+  "subject": "Temporal Architecture and Framerate Independence — sprint final-writer algebra closed, neutral 60/165 mirror designed",
+  "game_build": {
+    "label": "Steam AppID 374320 / BuildID 10167187 / executable 1.15.2.0",
+    "executable_sha256": "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+  },
+  "runtime": {
+    "game_launched": true,
+    "installation_modified": false,
+    "state": "Pass A stock observation and reversible Pass B 60/90/120 complete; Pass C cadence and bounded sentinels reached real 165 after Windows was set to 280 Hz; deterministic sprint measurement confirmed approximately half-rate distance per delta at 165 and localized it to the protected A1429C-to-DE50EC transition; target-60 Pass 1 confirmed final writer 009DC580, and read-only exact-build tracing closed its local algebra, candidate selection/provenance, scalar provenance, and inhibition gate; one neutral pre-commit 60/165 mirror is designed but unrun; budget is 20/20 and semantic Pass 2, roll, correction, and 240 remain closed",
+    "sessions": ["20260919T083240Z-pid12832", "20260919T094057Z-pid12600", "20260919T094304Z-pid19080", "20260919T094516Z-pid27388", "20260919T104934Z-pid17512", "20260919T110038Z-pid27016", "20260919T110920Z-pid27016", "20260919T112723Z-pid11508", "20260919T113730Z-pid23528", "20260919T114725Z-pid27100", "20260919T115655Z-pid10108", "20260919T121245Z-pid6348", "20260919T124303Z-pid23772", "20260919T124922Z-pid23772", "20260919T125533Z-pid17940", "20260919T125904Z-pid26776", "20260919T130701Z-pid2540", "20260919T134755Z-pid14960", "20260919T135054Z-pid1296", "20260919T135729Z-pid25824", "20260919T140436Z-pid29496", "20260919T141032Z-pid26664", "20260919T144001Z-pid18536"],
+    "probe_mode": "Pass A observation-only; Pass B and Pass C use reversible central +0x354/+0x358 memory override with exact restoration in every accepted session; Pass C records semantic sentinels, deterministic sprint windows, and bounded phase/caller transitions without a gameplay correction; the checkpoint-disabled writer-watch extension uses three per-thread write-only debug-register breakpoints on the qualified final-position fields and refuses non-60 discovery configuration",
+    "display_context": "G-Sync enabled per operator; primary matched sessions also loaded system NVIDIA module nvspcap64.dll; the failed 165 cadence gate used a Windows 2560x1440 119-Hz active mode, while the successful unchanged retry used 2560x1440 280 Hz"
+  },
+  "artifacts": [
+    {
+      "kind": "ghidra_project",
+      "location": "evidence/I-0002/artifacts/ghidra/DS3_1_15_2_10167187_I0002_FINAL",
+      "tool": "Ghidra 12.1.3",
+      "note": "Canonical generated analysis database inherited unchanged; all I-0005 headless work was read-only"
+    },
+    {"kind":"observations","location":"evidence/I-0005/OBSERVATIONS.md","sha256":"9E1460A50C6DA0B717A250BE166BEF25776071019AAB7391F0B5C3AACEBA7BF0"},
+    {"kind":"hypotheses","location":"evidence/I-0005/HYPOTHESES.md","sha256":"5CE02B7BAF7535C8A197AFDA8AFD8B0E3F78779587DC998ED6963B097FCF595C"},
+    {"kind":"conclusions","location":"evidence/I-0005/CONCLUSIONS.md","sha256":"EFBE02B5A98CCA448646C63EABA8A2838D3602CF95DDAC4A36A0D4D0607EEDFA"},
+    {"kind":"toolchain","location":"evidence/I-0005/TOOLCHAIN.md","sha256":"29C08D76EB39B8461888681F8B21ECEA473E04DDB964D9E078D12368D18BCB92"},
+    {"kind":"runtime_gate","location":"evidence/I-0005/RUNTIME-VALIDATION-PLAN.md","sha256":"20602844CCA03FC1B16B3A7B372262502CAB293448D0B9E87E282EC222B0F2D0"},
+    {"kind":"clock_imports","location":"evidence/I-0005/clock-imports.csv","sha256":"9070CD9F62731A6974E885E1A2448C529A721794CD4ABFA0208F3D55D7C5325E"},
+    {"kind":"time_flow","location":"evidence/I-0005/static/time-flow.csv","sha256":"5B8CB755D4E3DDEFD50778E096A3A6AAE091432DCF2B0D673EC817558EF648D8"},
+    {"kind":"central_timing_state","location":"evidence/I-0005/static/central-timing-state.csv","sha256":"71B863799E2FF14F324F4C86725F5A33304BDBB7E9A9D0CA0A0AD14EA4E0B316"},
+    {"kind":"function_catalog","location":"evidence/I-0005/static/function-catalog.csv","sha256":"F197B8117218241EA06F99EE125D86284D7F6F3260849B942EA85497433FB560"},
+    {"kind":"coupling_matrix","location":"evidence/I-0005/static/coupling-matrix.csv","sha256":"BEF2494F7B0E56D007BCDFEEA41AF9E5AEA305E21AFDD4F168DA3616C76DB0D5"},
+    {"kind":"sixtieth_classification","location":"evidence/I-0005/static/sixtieth-classification.csv","sha256":"D56CA42A419278209C6DDD7433E9A76831BB0A4608F8027BA02CF414EC152C5F"},
+    {"kind":"selector_global_references","location":"evidence/I-0005/static/selector-global-references.csv","sha256":"3622856557B59114D4352F3B57C4A46F49EE13F7C21CFEDAB7D89FCB68CC2D70"},
+    {"kind":"constant_immediates","location":"evidence/I-0005/static/temporal-constants/constant-immediates.csv","sha256":"80F9064EFA2BFD6E7CFFB739BA96CE635770FE949ADEF88C790B09AC03428AEB"},
+    {"kind":"constant_references","location":"evidence/I-0005/static/temporal-constants/constant-references.csv","sha256":"FC474847B4A276F55DFEFD2EEF76B4A3AE773FD2B720C68A8DA864EEE5A4DE02"},
+    {
+      "kind": "bounded_static_exports",
+      "location": "evidence/I-0005/static",
+      "file_count": 549,
+      "size": 46788144,
+      "writer_algebra_sha256": "17D3AFD056E24847934CB6619B9D65199CD442847E9159FFA0A7B7C649CB4FA4",
+      "writer_candidate_provenance_sha256": "4112C010325940FE156FB9B422F4CA681C9E7A0F2F66EDD105840557DC152CA1",
+      "writer_scalar_provenance_sha256": "22E83142369157BAF63304DE11A17F09761A1ADDCE91576E9D669DCE1361DD99",
+      "writer_field_scan_script_sha256": "55D3363DC6D1B760C0CF1128BD2CE4C951993A4FA2868CBF3B181C7430D7E9D2",
+      "note": "Selected assembly/decompilation, references, protected-boundary capture, bounded candidates, exact final-writer algebra, and separately curated candidate/scalar provenance; instruction listings govern conclusions"
+    },
+    {
+      "kind": "runtime_pass_a_result",
+      "location": "evidence/I-0005/runtime/pass-a/PASS-A-RESULT.md",
+      "sha256": "621906F04B818D20A8BBF53F078218B25E5B923866EC0EEDFD451C5F616531EC"
+    },
+    {
+      "kind": "runtime_pass_a_checksums",
+      "location": "evidence/I-0005/runtime/pass-a/SHA256SUMS.txt",
+      "sha256": "5E6D13DE1B91D756EA0E3C377E4D19C2E0CEACE9961CC88DBD80DD6785EC5DFB",
+      "covered_files": 47
+    },
+    {
+      "kind": "runtime_preflight",
+      "location": "evidence/I-0005/runtime/pass-a/PREFLIGHT.md",
+      "sha256": "81FC1F5A3B043EB0AA48535BCC0D647EA922A375DF05ACCC400FB4366603FB53"
+    },
+    {
+      "kind": "runtime_raw_session",
+      "location": "evidence/I-0005/runtime/pass-a/sessions/20260919T083240Z-pid12832",
+      "file_count": 20,
+      "size": 78074385,
+      "note": "Raw observation logs, start/stop module inventories, hook status, completion markers, and deterministic derived tables"
+    },
+    {
+      "kind": "runtime_derived_summary",
+      "location": "evidence/I-0005/runtime/pass-a/sessions/20260919T083240Z-pid12832/derived/summary.json",
+      "sha256": "E31CD5A22397EED3A6666BA916DF11D9D32D3AFCC70BA0121365C42BECF87C37"
+    },
+    {
+      "kind": "runtime_instrumentation",
+      "location": "evidence/I-0005/runtime/pass-a/instrumentation",
+      "file_count": 7,
+      "size": 369825,
+      "probe_sha256": "8B089520DB5D07BEC8D4A5AB1B0FA0BE700B5BBDF96137FFA3FAA012C1A4C8EC",
+      "injector_sha256": "B8CCCBD99300450C250D0D4CFC2C4530E8B7762E691CB8AAE141B549258524C1",
+      "note": "Source, pinned build script, and exact binaries; object files and PDBs excluded"
+    },
+    {
+      "kind": "runtime_callback_static_exports",
+      "location": "evidence/I-0005/runtime/pass-a/static-callback-targets",
+      "file_count": 15,
+      "size": 70673,
+      "note": "Read-only exact-build assembly/decompilation and pointer/reference evidence for dynamically observed targets and direct delta consumers"
+    },
+    {
+      "kind": "runtime_pass_b_result",
+      "location": "evidence/I-0005/runtime/pass-b/PASS-B-RESULT.md",
+      "sha256": "53C1D51F4B99093E6835999BEB4A2755DEF72605FFD8EF8E6A8547F4AAFF2A29"
+    },
+    {
+      "kind": "runtime_pass_b_protocol",
+      "location": "evidence/I-0005/runtime/pass-b/PASS-B-PROTOCOL.md",
+      "sha256": "312D019871F3D874D98410687A0A4D9863E629DE7045BAE55CF08542029D0D17"
+    },
+    {
+      "kind": "runtime_pass_b_manifest",
+      "location": "evidence/I-0005/runtime/pass-b/manifest.json",
+      "sha256": "BBA0D3CAC4AAEDDFD43A76C311224BCCDE0D1083ED03E7C8872673132305D726",
+      "covered_files": 139
+    },
+    {
+      "kind": "runtime_pass_b_checksums",
+      "location": "evidence/I-0005/runtime/pass-b/SHA256SUMS.txt",
+      "sha256": "38FB92FC46A72081F275F792C9F1D335CBC0BC788D852AE401C0BC18FDA1ABE6"
+    },
+    {
+      "kind": "runtime_pass_b_sessions",
+      "location": "evidence/I-0005/runtime/pass-b/sessions",
+      "file_count": 122,
+      "size": 128878825,
+      "note": "Seven bounded sessions: three initial causal checks, one detailed 120 callback capture, and three primary 60/90/120 consumer comparisons; all complete markers and restoration logs retained"
+    },
+    {
+      "kind": "runtime_pass_b_instrumentation",
+      "location": "evidence/I-0005/runtime/pass-b/instrumentation",
+      "probe_sha256": "7F394A1214205337400BADA433106311D1914A3A34FF7D0FE88B5580F40145FE",
+      "injector_sha256": "876B14B11A280280B24726A5AF679046DBF6ECE2058E3C124864865BEAB4B8FC",
+      "note": "Source, pinned build script, exact binaries, and memory-only configuration; object files and PDBs excluded"
+    },
+    {
+      "kind": "runtime_pass_b_analysis",
+      "location": "evidence/I-0005/runtime/pass-b/comparison",
+      "analyzer_sha256": "4F7CAA2939D1AB3F93D4C59C886D32802DE346321E92B882E18A1A18B4C1FA19",
+      "comparator_sha256": "A1383B7577B05FD03A76E0CAE4EEB6BA8FF09D04346DCCBB3EFB0D90B9926AD8"
+    },
+    {
+      "kind": "runtime_pass_c_control",
+      "location": "evidence/I-0005/runtime/pass-c",
+      "file_count": 448,
+      "size": 592121507,
+      "protocol_sha256": "3BCECB20D8A5175AD1C128FC0747B166875ABE922959ED5FDD00EA2D6D405BC8",
+      "control_result_sha256": "8FF68572462AED50B6DFB18DD25C1341B92EBC11644BEC07A809D8FCD169229C",
+      "worldchrman_verifier_sha256": "37E8D9965D972D1788E4B4B4F80BD197DB222A6225CC16E6793D2417C7CA9FF6",
+      "pass_c_90_result_sha256": "8FA5BA23FC2BCA30C6A9FC7408E46E9DE42EAFA257AB3A817536CDB45127E3A3",
+      "pass_c_120_result_sha256": "FFC57F9DB1D0D0DFD94641FC8E69BBCCFB9D9CB74BE980E431A5CC142727AF8D",
+      "pass_c_165_rca_sha256": "BAE1B4BDB0147AFE0D936E91355B638B4727AFFE2ED37C4DBB9C25585ADE305A",
+      "pass_c_165_analysis_sha256": "F2181C8DD2910BC6B8CF6AE7240668B811D48D80EE586925D8B338434DDF3661",
+      "pass_c_165_matched_result_sha256": "5CE920DD7C04ABFCAB2D142D382D7FD68E054B75AA8422A075FFFBE8A10128C3",
+      "pass_c_165_matched_analysis_sha256": "00C9608251BC9278432524E0C48569D5575989F1E4CA2F62E41A9041FAC872A9",
+      "pass_c_165_locomotion_rca_sha256": "8C1858BFFDDED9731642E68528EEFB7990C03127033441D000DD9214CDD30E54",
+      "analysis_sha256": "684D5AAA05DE03A1B346D5B23090C881621D1D47A6E20DE79DF5787C5D1C210C",
+      "comparator_sha256": "72ABAC2BF7E4CB63B28FA9B7F1DD37AF18076FC855C13F9FD537889B2363BE1C",
+      "condition_summary_sha256": "4181F20AB05B546C19205FFA8698B8076DAD99B9AD0B10CF459E00FD288FC303",
+      "marker_comparison_sha256": "DAA86135380BA541162F182DA164A7CFE4F947FED483D97D333377DABC592D12",
+      "comparison_summary_sha256": "8D132BB2EB07A2A7D876B04CABB39DB847608016732E02CC11ECD9C7FF2F399C",
+      "probe_source_sha256": "D477AE2E449610C2C492A22495EB8C6FB9C1F5C031ED634AB561DD9955ABC666",
+      "overhead_probe_sha256": "84AB1B525C75D7BD195214D9F7EBCDEA812E19145B2F25B836AC908B9E177D5A",
+      "overhead_injector_sha256": "CB5C523BBAF6E90D0C67C8065B2CAEDA576CCAFCC66516C732B11625867D1DC3",
+      "comparison_probe_sha256": "E5664F661BE8656409B068B1070D52EA04EFA290BB5BC17FA43BCCD497E6EF24",
+      "locomotion_probe_sha256": "E5AB1DEE8A9F0C8228447EA7AE24A3096BF4B3A67A09725BFB68932D8515FF42",
+      "locomotion_injector_sha256": "A6CDFAA03E06444C2DAA66596FFFD6C1D22A718AB9590377697376906D58DB37",
+      "locomotion_analyzer_sha256": "69959388363EB46F7B9338030A755ADF278EF57D43621F581CE829934DFE31B0",
+      "locomotion_comparator_sha256": "80290824689C758D7A93F9E89A72AD69F0F20206A2EB74996DB50E7DB0909AFA",
+      "locomotion_test_sha256": "7E1C1C8CE7E6D68EA5E0E937F22644C3EEB153D292E6A81513A8597F61A85217",
+      "writer_watch_design_sha256": "4903AC134BF9B73EE91E1DC47C131CC2058D7DFBA540366893DAFF90299FAAF8",
+      "writer_watch_result_sha256": "907D9D03E537E701CF54F583B7E6A22E82FD47746006C8DE5B1BF16CB716647A",
+      "writer_algebra_bridge_sha256": "C77B3411928CCA3E5BFA01E50007896E3A4F7F1CEE6B4A5AE97949A6CB12F147",
+      "writer_watch_analyzer_sha256": "87EF15BB2B873CC3CA3229C3E1F3C5EFE974FEBC29790BDFC71AA085DBE1520C",
+      "writer_watch_summary_sha256": "F292369325E4C887C77BAC396D0923CAD966C27F57FEF8713BED4067C00F0B47",
+      "writer_watch_probe_sha256": "AB1B14070DA245348FB76D159B2B31977F352006B810EC714B5C3E4CB14A0326",
+      "writer_watch_injector_sha256": "40A2F9DFCCCD789C554F56CFBABA2C795AD2C82BA08D5A77C97DF464FBB2EDBB",
+      "writer_watch_self_test_source_sha256": "E4B4A1534A99EBF1A9EAB260714FDB271B85F09B97083B1EF0A91BFA392F3D09",
+      "writer_watch_self_test_script_sha256": "842693B6BBD1A4C09282238DEB04EEC4CCBDEB3F535F5C543E6A0E761EA038C2",
+      "checksum_normalization_note_sha256": "AEB6289D07697AF7781379554C12BE1779F4A7520E690F410787EF34E07356B2",
+      "checksums_sha256": "1028E68EE0C3DCB2DA2B8901C1B46B063C5063C0B1F255CE7923753BD9D6B3D5",
+      "session_file_count": 348,
+      "session_size": 553400325,
+      "note": "Nineteen preserved Pass C session directories cover semantic controls, cadence comparisons, deterministic sprint acquisition, phase localization, the matched dispatcher boundary pair, and exact target-60 final-writer discovery. Every accepted intervention restored 30.0/0 exactly. Offline exact-build tracing now closes the writer algebra and neutral inputs; the designed 60/165 mirror has not run, and semantic stage names and roll remain unresolved."
+    },
+    {
+      "kind": "historical_secondary_source",
+      "location": "https://github.com/The-Grand-Archives/Dark-Souls-III-CT-TGA/blob/6f6a1e0f726f313b43814c6fa939cf60f9d8b05b/DS3_The-Grand-Archives.CT",
+      "revision": "6f6a1e0f726f313b43814c6fa939cf60f9d8b05b",
+      "retrieved": "2026-09-19",
+      "source_sha256": "6960CB9CBD52C50A7AE4E3AB1183AC9470675DE5DE3EF4261C8FACF5F942F536",
+      "note": "Version-matched player and animation field leads; downstream semantics remain hypotheses until current-build runtime validation"
+    },
+    {
+      "kind": "historical_secondary_source",
+      "location": "https://github.com/0dm/DS3DebugFPS/blob/b9e5a8ca8390ed0fd545b33944103c53926b7720/src/dll/dllmain.c#L118-L148",
+      "revision": "b9e5a8ca8390ed0fd545b33944103c53926b7720",
+      "retrieved": "2026-09-19",
+      "note": "Lead for +0x354 requested-FPS and +0x358 enable offsets; not canonical proof for current-build runtime behavior"
+    }
+  ]
+}

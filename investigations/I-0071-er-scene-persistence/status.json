@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0071",
+  "title": "Elden Ring architecture for scene persistence, texture binding and distant fades (D-0195), adapted to DS3",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-19T22:57:04Z",
+  "updated_at": "2026-10-20T03:45:00Z",
+  "budget": {
+    "iterations_max": 10,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: points 1 to 3b implemented, measured and reviewed; point 3c and loading follow as the next workstream"
+}

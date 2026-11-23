@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0137",
+  "title": "La robustesse",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "the E pilot (robustness)",
+  "created_at": "2026-11-12T07:47:25Z",
+  "updated_at": "2026-11-13T15:30:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 9
+  },
+  "stop_reason": "success: ROADMAP workstream 4 closed, its left items carried to workstream 16 (RESULT \u00ab Closing \u00bb)"
+}

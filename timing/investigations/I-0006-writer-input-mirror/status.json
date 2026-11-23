@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0006",
+    "title":  "Final-writer input mirror at 60 and 165 FPS",
+    "capability":  "C4",
+    "state":  "complete",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-19T15:32:06Z",
+    "updated_at":  "2026-09-19T16:12:03Z",
+    "budget":  {
+                   "iterations_max":  4,
+                   "iterations_used":  4
+               },
+    "stop_reason":  "success: effective candidate offset is the first confirmed input explaining the target-165 amplitude loss"
+}

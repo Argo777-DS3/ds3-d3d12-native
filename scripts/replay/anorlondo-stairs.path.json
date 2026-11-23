@@ -1,0 +1,38 @@
+{
+ "schema": 1,
+ "name": "anorlondo-stairs",
+ "description": "I-0114 tranche 3 (UNLOCK-READY §5, slopes and stairs): Gamma at the Anor Londo bonfire, facing the great stairs up to the cathedral (LIVE-RUN-NOTES): walked up the stairs (Z 8 s) and back down (S 8 s) twice, then sprinted up (Space held with Z, 5 s) and down (Space with S, 5 s) twice. Read with locomotion-observe.flag and mechanics-observe.flag (the player's position and terrain response [+0x2DC] every 1/30 s of the logic's time: unlock_player_position, unlock_terrain) and Get-Stairs.py. Times in ms from the motion start; each segment's events in time order.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-gamma-m37-anorlondo-20261026-123818/DS30000.sl2",
+  "sha256": "E96236897D815D1B1339FD49D3AA8D7308C185AA64AC9224A6F72A4638703411"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "walk",
+   "cycles": 2,
+   "cycle_ms": 20000,
+   "events": [
+    {"t": 0, "key": "Z", "down": true},
+    {"t": 8000, "key": "Z", "down": false},
+    {"t": 10000, "key": "S", "down": true},
+    {"t": 18000, "key": "S", "down": false}
+   ]
+  },
+  {
+   "name": "sprint",
+   "cycles": 2,
+   "cycle_ms": 14000,
+   "events": [
+    {"t": 0, "key": "Space", "down": true},
+    {"t": 50, "key": "Z", "down": true},
+    {"t": 5050, "key": "Z", "down": false},
+    {"t": 5100, "key": "Space", "down": false},
+    {"t": 7000, "key": "Space", "down": true},
+    {"t": 7050, "key": "S", "down": true},
+    {"t": 12050, "key": "S", "down": false},
+    {"t": 12100, "key": "Space", "down": false}
+   ]
+  }
+ ]
+}

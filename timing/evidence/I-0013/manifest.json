@@ -1,0 +1,1114 @@
+﻿{
+    "schema_version":  1,
+    "investigation_id":  "I-0013",
+    "subject":  "Terrain Hopping/Jitter High-Framerate RCA",
+    "game_build":  {
+                       "label":  "Steam AppID 374320 / BuildID 10167187 / DarkSoulsIII.exe 1.15.2.0",
+                       "executable_sha256":  "EF5E07C55222F14FFDDECF2C724A0C2A95CEF0D4DA0E075B0DE0BB108B69498C"
+                   },
+    "live_state":  "I-0013 complete under D-0026; DS3 closed after accepted live validation and exact cleanup; target60 correction-ON preserved 181/181 native results with zero writes; target240 correction-ON matched the general live-delta formula in 712/712 rows and Thomas reported the familiar hopping disappeared; no hook, correction or persistent game modification remains active",
+    "artifacts":  [
+                      {
+                          "kind":  "capture_design",
+                          "location":  "evidence/I-0013/CAPTURE-DESIGN.md",
+                          "sha256":  "9220D0DC2521C4E67E03E25C19AB64B263B1E613F96BDCD528A4FA74083A4BFA",
+                          "size":  2891
+                      },
+                      {
+                          "kind":  "terrain_capture_addon",
+                          "location":  "evidence/I-0013/prototype/bin/DS3TerrainCapture.addon64",
+                          "sha256":  "AF5C755A9840D71EF4682F1FCAB51954E3C4B431A98CCA77069DEE821967F691",
+                          "size":  208384,
+                          "note":  "Starts inert; absent from the game directory after exact hash-matched cleanup."
+                      },
+                      {
+                          "kind":  "build_validation",
+                          "location":  "evidence/I-0013/prototype/BUILD-VALIDATION.json",
+                          "sha256":  "287DDA084C2A02F93A5CD0AC75317AEC0EAA733F24F329A9612C1FE1268BC598",
+                          "size":  7082
+                      },
+                      {
+                          "kind":  "derivation_validation",
+                          "location":  "evidence/I-0013/prototype/DERIVATION-VALIDATION.json",
+                          "sha256":  "8C42302C833D270DBA5689C05A2C443EC1A2AA73E7976381F4A75F47609A5BDA",
+                          "size":  1364,
+                          "note":  "Accepted I-0010 correction and debug-restoration cores are included unchanged; the I-0012 control model is byte-identical."
+                      },
+                      {
+                          "kind":  "exact_build_validation",
+                          "location":  "evidence/I-0013/prototype/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "097192E4FFAF71EFCF60F12B1F3A9E8AE3BB91623AE5A883F4BC2CC62C6F9B2F",
+                          "size":  1497
+                      },
+                      {
+                          "kind":  "pe_validation",
+                          "location":  "evidence/I-0013/prototype/PE-VALIDATION.json",
+                          "sha256":  "B0A28B32C7ACA4ADB14D0ACEC18C9800BE9D05658D0513F448FFB6D365A102EE",
+                          "size":  582
+                      },
+                      {
+                          "kind":  "analyzer_test",
+                          "location":  "evidence/I-0013/prototype/ANALYZER-TEST.json",
+                          "sha256":  "7B7FFA57C39FE26EEB5E5AAC6F416C73C4238C2CE16F15517D983156A918DF66",
+                          "size":  443,
+                          "note":  "Covers smooth-grade cadence invariance, monotonic stairs, alternating jitter, invalid rows, zero-length routes and CSV schema."
+                      },
+                      {
+                          "kind":  "prototype_guide",
+                          "location":  "evidence/I-0013/prototype/README.md",
+                          "sha256":  "EE6633B051BA1B34C374DF55D31ECB28C6F52009364B4FCCBC3C1EEE089CA99D",
+                          "size":  2013
+                      },
+                      {
+                          "kind":  "live_protocol",
+                          "location":  "evidence/I-0013/prototype/LIVE-PROTOCOL.md",
+                          "sha256":  "EC7D75F9A526E6F6625499E1891BAA76AA9DAB5BAF503C4EF80281FE32320619",
+                          "size":  1564,
+                          "note":  "Protocol executed through the complete first four-cell matrix; cleanup remains pending."
+                      },
+                      {
+                          "kind":  "live_preflight",
+                          "location":  "evidence/I-0013/LIVE-PREFLIGHT.md",
+                          "sha256":  "D486C53251429DF7FF232469539B406104A91CAEDD7A7DB6CC1FDA55F5A987B4",
+                          "size":  830,
+                          "note":  "Exact hash-matched one-file installation with DS3 closed; no live capture."
+                      },
+                      {
+                          "kind":  "reference_result",
+                          "location":  "evidence/I-0013/REFERENCE-RESULT.md",
+                          "sha256":  "F2E8EAD0D6304E0401FC0F183F1E26A3C84955A592905593CC2B48BA8BF6A99F",
+                          "size":  1301,
+                          "note":  "Thomas reported normal behavior in the valid 60-off native reference."
+                      },
+                      {
+                          "kind":  "live_session_info",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/session-info.txt",
+                          "sha256":  "AE58E6443D0A79F91CCB70F2728ED6A923FBE55F110AA3F384563DD1D0BA08FE",
+                          "size":  323
+                      },
+                      {
+                          "kind":  "raw_60_off_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/60-off-attempt-1.csv",
+                          "sha256":  "20DC3E8BE969A994626B9E10CF466E53F394C0BCA237E300286E9A4D1BA5998D",
+                          "size":  100922,
+                          "note":  "994/994 valid rows; measured 60.000510 updates/s."
+                      },
+                      {
+                          "kind":  "reference_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/reference-analysis.json",
+                          "sha256":  "7CD6DC793232AC8F737E6DB9F1E4B6FE6A51BF5791312D800123478A67915E48",
+                          "size":  901
+                      },
+                      {
+                          "kind":  "off_240_result",
+                          "location":  "evidence/I-0013/OFF-240-RESULT.md",
+                          "sha256":  "B20092A418CAE9943D59AC38A58CF285F1C3916741BF9A28DD11AF9178C6DDDB",
+                          "size":  1916,
+                          "note":  "Requested 240 / measured 239.511 FPS, correction OFF; hopping observed; unintended attack confounds speed comparison."
+                      },
+                      {
+                          "kind":  "raw_240_off_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/240-off-attempt-2.csv",
+                          "sha256":  "22496AF2BD7115619867DDC6E02DAF7CA177709B786A7AD4A778512B88D63AF1",
+                          "size":  426069,
+                          "note":  "4109/4109 valid rows; measured 239.511036 updates/s; correction false."
+                      },
+                      {
+                          "kind":  "two_cell_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/two-cell-analysis.json",
+                          "sha256":  "4282685EAADE02EDFCF03749BF9F84BA31B67141F2F6E2511B04E8E02372E76B",
+                          "size":  1987
+                      },
+                      {
+                          "kind":  "on_240_result",
+                          "location":  "evidence/I-0013/ON-240-RESULT.md",
+                          "sha256":  "833F2B033EE3DA050FCF54116491AA6663B9DFF965857A2D64621A41DB91C32A",
+                          "size":  1810,
+                          "note":  "Same visible hopping as 240-off; provisional H1 classification without subsystem ownership."
+                      },
+                      {
+                          "kind":  "raw_240_on_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/240-on-attempt-3.csv",
+                          "sha256":  "35C54E1585E065860B4E56CB93E33F445AEB9AD81A7684C0CA0F6F3D00778B11",
+                          "size":  434366,
+                          "note":  "4203/4203 valid rows; measured 239.034783 updates/s; correction true."
+                      },
+                      {
+                          "kind":  "three_cell_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/three-cell-analysis.json",
+                          "sha256":  "7EFBE23773D2C90A068042F7330CEBBF50B4F02CE9C5BA5CFF7BE01607C8BE2A",
+                          "size":  3063
+                      },
+                      {
+                          "kind":  "raw_60_on_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/60-on-attempt-4.csv",
+                          "sha256":  "DD24D00628F2E5F38F7C4A3CCC57304D43D6FC07CEC4B782B41F0B2FD27E9127",
+                          "size":  109643,
+                          "note":  "1066/1066 valid rows; measured 60.000510 updates/s; correction true; normal operator observation."
+                      },
+                      {
+                          "kind":  "four_cell_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/four-cell-analysis.json",
+                          "sha256":  "8F0EFA2DDA2C43EBDC01C0338C4788EBA67D8AEF3869BED435FF6E35B3FCADAF",
+                          "size":  4141
+                      },
+                      {
+                          "kind":  "matrix_result",
+                          "location":  "evidence/I-0013/MATRIX-RESULT.md",
+                          "sha256":  "0A76BEDC8E430844BC400567F9577DB68B66791E7024C2A82E0C44EEF573136D",
+                          "size":  1900,
+                          "note":  "First ordered matrix supports H1 for the bounded visible hopping relationship; no subsystem owner assigned."
+                      },
+                      {
+                          "kind":  "distance_analysis_tool",
+                          "location":  "evidence/I-0013/analysis/compare_distance.mjs",
+                          "sha256":  "E36B9234E938A8DA8AE7BEB9D264FE438BDBF163B932287DEECC18B319EB35EA",
+                          "size":  5481
+                      },
+                      {
+                          "kind":  "distance_comparison",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/distance-comparison.json",
+                          "sha256":  "6D0CD31D05093DF627E24D31846830C6F8B8F2DE8C7EF7C599906F42371F8B9D",
+                          "size":  17660,
+                          "note":  "Active-window threshold sensitivity; apparent 3.7-5.3% high-frequency slowdown remains unpromoted; no speed-specific repeat is scheduled."
+                      },
+                      {
+                          "kind":  "distance_result",
+                          "location":  "evidence/I-0013/DISTANCE-COMPARISON.md",
+                          "sha256":  "CAAD5AD07FDA704992645A8A37CFC965F72BB17C4AC5DEFD24152EB1DCCF46E8",
+                          "size":  2273
+                      },
+                      {
+                          "kind":  "first_matrix_cleanup",
+                          "location":  "evidence/I-0013/FIRST-MATRIX-CLEANUP.md",
+                          "sha256":  "3395BB299EB77440891501844FFBDEB8EE2FE790A80031D032C2E9A33C3E2D32",
+                          "size":  1164,
+                          "note":  "External raw files hash-match the Evidence Store; DS3 closed; exact add-on absent."
+                      },
+                      {
+                          "kind":  "terrain_event_analysis_tool",
+                          "location":  "evidence/I-0013/analysis/analyze_terrain_events.mjs",
+                          "sha256":  "FD02FB4778791A246BF6E13D8FDA722E90DF310307CC4E61BE7F58A656E830C2",
+                          "size":  7127
+                      },
+                      {
+                          "kind":  "terrain_event_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T020252Z-pid8916/terrain-event-analysis.json",
+                          "sha256":  "43FE7DD4243D5FAFC3BDCFD0CB560010309FE6DBC151ABA65EA9840AE0DFD182",
+                          "size":  17284,
+                          "note":  "Route-normalized final-root profiles remain highly correlated; this does not locate the visible hopping owner."
+                      },
+                      {
+                          "kind":  "retrospective_proxy_analysis_tool",
+                          "location":  "evidence/I-0013/analysis/analyze_proxy_vertical_gap.mjs",
+                          "sha256":  "9492019FEBDF4300AF86B88D5CE91ACF5B2995B7AEAA266BED5FECA07099FC6B",
+                          "size":  5516
+                      },
+                      {
+                          "kind":  "retrospective_proxy_analysis",
+                          "location":  "evidence/I-0013/proxy-vertical-gap-existing.json",
+                          "sha256":  "F4F64FE9B47B12302EEE29CEC0BA2A1560EAF13237F9E2517FAFAE54399B3604",
+                          "size":  3971,
+                          "note":  "I-0007 target60 control plus row-level target165 rejected-prefix lead; no cross-route causal claim."
+                      },
+                      {
+                          "kind":  "proxy_boundary_assessment",
+                          "location":  "evidence/I-0013/PROXY-BOUNDARY-ASSESSMENT.md",
+                          "sha256":  "089A14819971D31A7BDF1048B6E152876A109FD782B08755C12C28A6054A7EC7",
+                          "size":  6657
+                      },
+                      {
+                          "kind":  "bounded_engine_map",
+                          "location":  "evidence/I-0013/static/proxy-boundary/ENGINE-MAP.md",
+                          "sha256":  "000C0A42FBBFDF6F6241130F62CFF7356D51605ED3814EAD36C0800235082A77",
+                          "size":  7497,
+                          "note":  "Derived from the exact canonical Ghidra project; now includes the cleared base-transform boundary and carried local-transform state downstream of it."
+                      },
+                      {
+                          "kind":  "ghidra_reference_scan",
+                          "location":  "evidence/I-0013/static/proxy-boundary/references.csv",
+                          "sha256":  "FAD8B19B775834D63652863A51B82E9278410C88753FC923620DED43121C4936",
+                          "size":  17417
+                      },
+                      {
+                          "kind":  "ghidra_field_120_scan",
+                          "location":  "evidence/I-0013/static/proxy-boundary/field-120-005c.csv",
+                          "sha256":  "4AB42EF0D3EDDC7D02679F5BB3AAB390FD549E71B38835AC5FD2248E7864BF80",
+                          "size":  1740
+                      },
+                      {
+                          "kind":  "ghidra_field_3cc_scan",
+                          "location":  "evidence/I-0013/static/proxy-boundary/field-3cc-009d.csv",
+                          "sha256":  "439C1680EDCA70486E4D471BF683AE082FA32F32C21BFFAE0ECBB027AC3E7DD2",
+                          "size":  837
+                      },
+                      {
+                          "kind":  "ghidra_bounded_field_scan_script",
+                          "location":  "investigations/I-0013-terrain-collision-high-framerate-rca/I0013FindFieldUses.java",
+                          "sha256":  "35D490E2EBEE609106D051E311863CE3AD971A329F3810051FD243854D9079A1",
+                          "size":  2967
+                      },
+                      {
+                          "kind":  "proxy_observer_build_recipe",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/build.ps1",
+                          "sha256":  "4DD88CE770C2D2B5502C82754FA33BB6A2A0D38A185060CBE733A63D4337FCF6",
+                          "size":  9749,
+                          "note":  "Derives from hash-gated I-0007 sources without editing them."
+                      },
+                      {
+                          "kind":  "proxy_observer_build_validation",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/BUILD-VALIDATION.json",
+                          "sha256":  "9E563E63874A560ED6F29C1A020DAB1825AA9C7AAFA4363614E986F627DF792E",
+                          "size":  967
+                      },
+                      {
+                          "kind":  "player_proxy_boundary_observer",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/bin/I0013PlayerProxyBoundaryObserver.dll",
+                          "sha256":  "99089B11DDF3CD61F2258D964566A6F2842BBED81777BDC067C78EC2DE621358",
+                          "size":  260608,
+                          "note":  "Observation-only, current-player filtered; imports only KERNEL32 and USER32; no live run yet."
+                      },
+                      {
+                          "kind":  "player_proxy_boundary_injector",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/bin/I0013PlayerProxyBoundaryObserverInjector.exe",
+                          "sha256":  "4635C5B9D7FD09E6E2E7C3E5BF54A14F545E5D591B6F04D038DFDF45AFAA8D68",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "proxy_observation_schema",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/observation-schema.json",
+                          "sha256":  "5ECCE960F3DBD9E3E2A67289D4C1E301BAEAADAD7741097B05788E07A5814559",
+                          "size":  1338
+                      },
+                      {
+                          "kind":  "proxy_boundary_analysis_tool",
+                          "location":  "evidence/I-0013/analysis/analyze_proxy_boundary.mjs",
+                          "sha256":  "2BCC8A385EBE1079593D885432A486BC020BCD331501EE952218823F28A6D40C",
+                          "size":  12651,
+                          "note":  "Valid, duplicate, incomplete, reordered and invalid-read self-tests pass; live acceptance still requires READY/COMPLETE and restoration audit."
+                      },
+                      {
+                          "kind":  "proxy_observer_protocol",
+                          "location":  "evidence/I-0013/proxy-boundary-observer/LIVE-PROTOCOL.md",
+                          "sha256":  "DA138D46EB2694ACE0A8824C14E4909C2B617A8DD03DC2356CF4BC436B29305A",
+                          "size":  2227,
+                          "note":  "Prepared only; not yet executed."
+                      },
+                      {
+                          "kind":  "proxy_boundary_live_rows",
+                          "location":  "evidence/I-0013/sessions/20260921T030537Z-pid24632/spatial-exchange.csv",
+                          "sha256":  "0E4766C6043619FCA10764943B2DD3EAB667FA06904335D19B4DDDB83CFE085A",
+                          "size":  455251,
+                          "note":  "Trial 1 contains 180 accepted target-60 groups; trial 2 is a rejected 27-group target-240 crash prefix."
+                      },
+                      {
+                          "kind":  "proxy_boundary_60_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T030537Z-pid24632/proxy-boundary-60.json",
+                          "sha256":  "2E55B3F4CE4C2C899092B48B6871CEB47D074E7E0CBB3ACAD072D0F5B6C30FAC",
+                          "size":  6970,
+                          "note":  "Structural pass: 180 complete ordered groups and zero invalid or overflow rows."
+                      },
+                      {
+                          "kind":  "proxy_observer_crash_audit",
+                          "location":  "evidence/I-0013/sessions/20260921T030537Z-pid24632/CRASH-AUDIT.md",
+                          "sha256":  "9E0EFF38CD9AC1FF5F6CC89A28AC4CA472C6781A708D0DB8055722BEEFA72AEE",
+                          "size":  4336
+                      },
+                      {
+                          "kind":  "proxy_observer_crash_summary",
+                          "location":  "evidence/I-0013/sessions/20260921T030537Z-pid24632/crash-summary.json",
+                          "sha256":  "96B664A6F5152521E6ADB0C532687105525ADDA8A6593AC409DBC51C0B9EF518",
+                          "size":  3237,
+                          "note":  "Target 240 rejected; WER/minidump signature matches the historical I-0007 high-rate spatial-observer crash exactly."
+                      },
+                      {
+                          "kind":  "archived_windows_error_report",
+                          "location":  "evidence/I-0013/sessions/20260921T030537Z-pid24632/Report.wer",
+                          "sha256":  "06EF44C131849CE2D84716C24EA344991177ADA68BD17AD2AA6B75B2BDB3F518",
+                          "size":  88068
+                      },
+                      {
+                          "kind":  "crash_boundary_static_assessment",
+                          "location":  "evidence/I-0013/static/crash-boundary/ASSESSMENT.md",
+                          "sha256":  "9D65275D140D77B24463FBBF126B219822E041BBF8AE0A9444CADA4289384DE2",
+                          "size":  1287,
+                          "note":  "Exact-build evidence proves 0x40DDB120 retains bit 0x40000000 over valid protected-stub RVA 0x00DDB120; tag semantics remain unknown."
+                      },
+                      {
+                          "kind":  "bounded_minidump_reader",
+                          "location":  "evidence/I-0013/static/crash-boundary/bin/I0013InspectMinidump.exe",
+                          "sha256":  "0EB77F20244E5C18DA5083CDD35BB3CA6856ADBBEFD2AF89CAB18F78099499DB",
+                          "size":  172544
+                      },
+                      {
+                          "kind":  "safe_boundary_redesign",
+                          "location":  "evidence/I-0013/SAFE-BOUNDARY-REDESIGN.md",
+                          "sha256":  "217EBA96E2746BA56681893AC70A131FC326EE2749839CDB3455B0FD41A8C2AB",
+                          "size":  2223
+                      },
+                      {
+                          "kind":  "safe_stage_observer_build_validation",
+                          "location":  "evidence/I-0013/stage-boundary-observer/BUILD-VALIDATION.json",
+                          "sha256":  "8F6B6E89ADA587425309447C9343B98C57AFDDF7FF719ABD70CA9868955E544C",
+                          "size":  1295,
+                          "note":  "One broad-update hook; no VEH, debug registers or protected-exchange call; offline-only pass."
+                      },
+                      {
+                          "kind":  "safe_stage_observer",
+                          "location":  "evidence/I-0013/stage-boundary-observer/bin/I0013StageBoundaryObserver.dll",
+                          "sha256":  "C5BCF0ECE4312C594ED4F999F24C36393E46D5CE591A22673701F3AEEF4BEBDF",
+                          "size":  195584,
+                          "note":  "Post-session offline rebuild; qualified but never injected. The exact live binary is retained separately."
+                      },
+                      {
+                          "kind":  "safe_stage_observer_injector",
+                          "location":  "evidence/I-0013/stage-boundary-observer/bin/I0013StageBoundaryObserverInjector.exe",
+                          "sha256":  "19EBCD79BB18C83A01244107BA622E875C51D6BB9F6D29BB47175120285769F0",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "safe_stage_observer_protocol",
+                          "location":  "evidence/I-0013/stage-boundary-observer/LIVE-PROTOCOL.md",
+                          "sha256":  "A9AED1F9E18ED740BD3FB0ADC3368D21CD9A2E99D0EDC2729356CC74FAB7B69A",
+                          "size":  1156,
+                          "note":  "Executed successfully through target 60 and target 240 with exact restoration."
+                      },
+                      {
+                          "kind":  "safe_stage_boundary_result",
+                          "location":  "evidence/I-0013/STAGE-BOUNDARY-RESULT.md",
+                          "sha256":  "731ED19D2E827845C5FBC1FCD0A96B2AB2412BD7C8DFE1165D5BF4AE70BDB6B1",
+                          "size":  3862
+                      },
+                      {
+                          "kind":  "stage_boundary_comparison_tool",
+                          "location":  "evidence/I-0013/analysis/compare_stage_boundary.mjs",
+                          "sha256":  "D01E7469A27A895318161420AA283DAA36B127D115F39B72F96A4A2D641DADF9",
+                          "size":  9961
+                      },
+                      {
+                          "kind":  "stage_boundary_comparison_test",
+                          "location":  "evidence/I-0013/stage-boundary-observer/COMPARE-TEST.json",
+                          "sha256":  "71200DD08D42DD03C48FED81586F9578DFA2B5116CE2A67BD7F9BD2858019C7E",
+                          "size":  281
+                      },
+                      {
+                          "kind":  "safe_stage_60_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T033747Z-pid1624/target-60-trial-1.csv",
+                          "sha256":  "FA13614136591C5326558FC971C342809DDF9662DDE51E8F847C679BA8AC8E7F",
+                          "size":  56295,
+                          "note":  "181/181 valid consecutive rows; measured 60.000168 Hz."
+                      },
+                      {
+                          "kind":  "safe_stage_240_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T033747Z-pid1624/target-240-trial-2.csv",
+                          "sha256":  "4297F1E8FFF07952FDE2A95228862432E09152BF8B4E94E9280D696F686FE965",
+                          "size":  224314,
+                          "note":  "719/719 valid consecutive rows; measured 239.647031 Hz; Thomas reported normal behavior."
+                      },
+                      {
+                          "kind":  "safe_stage_cross_rate_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T033747Z-pid1624/stage-boundary-comparison.json",
+                          "sha256":  "160A3277C2EB6934F2F29256A45CA97E715EED4A1EE60AA1CD03233F6A434CBF",
+                          "size":  5793,
+                          "note":  "Source/root identity is exact; cache-gap RMS ratio is 1.045333; full route equivalence is rejected because active extents differ."
+                      },
+                      {
+                          "kind":  "safe_stage_live_binary",
+                          "location":  "evidence/I-0013/sessions/20260921T033747Z-pid1624/I0013StageBoundaryObserver-live.dll",
+                          "sha256":  "75D577948967DADAB54CFDC6F6ED6019D9C3272F36FF4F5073B306493D505DD8",
+                          "size":  195072,
+                          "note":  "Exact DLL used for the accepted live session; pre-label-correction source behavior, with all 12 cache lanes preserved."
+                      },
+                      {
+                          "kind":  "safe_stage_live_control",
+                          "location":  "evidence/I-0013/sessions/20260921T033747Z-pid1624/CONTROL",
+                          "sha256":  "AC8076C22CD1458FBE4A06A58C49D1D553C3D23C88585561B2A0597305D988F8",
+                          "size":  315,
+                          "note":  "Ready, both captures, target change and exact restoration all report success."
+                      },
+                      {
+                          "kind":  "cache_recurrence_discriminator_result",
+                          "location":  "evidence/I-0013/CACHE-RECURRENCE-DISCRIMINATOR-RESULT.md",
+                          "sha256":  "75B72546BF34EC33FB4AA8023A43DACE53F4D07A966B51B08A5510835560017D",
+                          "size":  4149,
+                          "note":  "Reproduced normal 60 versus hopping 239.770; refutes the inactive vertical override and localizes divergence to cache production/consumption."
+                      },
+                      {
+                          "kind":  "vertical_recurrence_assessment",
+                          "location":  "evidence/I-0013/static/cache-writer-state/ASSESSMENT.md",
+                          "sha256":  "4B61366F4F59467C508E70371844FF537C68E3C272661E4FFE2794977BC9CD13",
+                          "size":  5013,
+                          "note":  "Exact recurrence retained; latest runtime discriminator refutes it as active for the reproduced symptom."
+                      },
+                      {
+                          "kind":  "cache_cadence_analysis_tool",
+                          "location":  "evidence/I-0013/stage-boundary-observer/analyze_cache_cadence.mjs",
+                          "sha256":  "FBC456AB2DCB061AAE29C3980800E683E42A7A52A8575974799188A878FC4F94",
+                          "size":  5300
+                      },
+                      {
+                          "kind":  "cache_cadence_analyzer_test",
+                          "location":  "evidence/I-0013/stage-boundary-observer/CACHE-CADENCE-ANALYZER-TEST.json",
+                          "sha256":  "843264FBDB32D7996868A53DF0185EADBCAEE2FB2D93798C9FE8CD2C2A3DA935",
+                          "size":  273,
+                          "note":  "Synthetic pass including source and cache opposing-step classification."
+                      },
+                      {
+                          "kind":  "reproduced_60_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/target-60-trial-1.csv",
+                          "sha256":  "AF38CFE44D833A854D0EDA10CF26E5E35F87C6411BEE68A8B5EBEB98A43C8D27",
+                          "size":  60955,
+                          "note":  "181/181 valid consecutive rows; measured 60.001762 Hz; Thomas reported normal behavior."
+                      },
+                      {
+                          "kind":  "reproduced_240_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/target-240-trial-2.csv",
+                          "sha256":  "7023459CF7A3FF856A423F2D9CC89802AB0590694CA435DCD56107FE2EDC3A4B",
+                          "size":  243724,
+                          "note":  "720/720 valid consecutive rows; measured 239.770143 Hz; Thomas reported visible hopping."
+                      },
+                      {
+                          "kind":  "reproduced_60_cache_cadence",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/target-60-cache-cadence.json",
+                          "sha256":  "DAF2414979119EAF88F625473A9712014A7438D0A3CD1689914BDC77DD5F7B62",
+                          "size":  2046
+                      },
+                      {
+                          "kind":  "reproduced_240_cache_cadence",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/target-240-cache-cadence.json",
+                          "sha256":  "B97A1402C1B5D2F15A1BA72374B2D860A0B61CE97E928A5C66FED3AA59B125D2",
+                          "size":  2033
+                      },
+                      {
+                          "kind":  "reproduced_live_binary",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/I0013StageBoundaryObserver-live.dll",
+                          "sha256":  "7AFB521A7D6218DDD08FECCC2CF7BC241596D217274E1EBC4B41D4EDBF8DCDDA",
+                          "size":  195584,
+                          "note":  "Exact DLL used for the reproduced live pair, copied before any later rebuild."
+                      },
+                      {
+                          "kind":  "reproduced_live_injector",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/I0013StageBoundaryObserverInjector-live.exe",
+                          "sha256":  "30676E8392B4208F5F5B8A43E5FF43AF7E9562C83128A13368AB8E170EDD546C",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "reproduced_live_control",
+                          "location":  "evidence/I-0013/sessions/20260921T043926Z-pid5160/CONTROL",
+                          "sha256":  "D5A2C0CB37AC06A47E2A67AE13BBA7141E4C0F8969A5240AC797916A3E141255",
+                          "size":  315,
+                          "note":  "Ready, both captures, target change and exact timing restoration all report success; DS3 subsequently closed."
+                      },
+                      {
+                          "kind":  "base_transform_observer_source",
+                          "location":  "evidence/I-0013/base-transform-observer/base_transform_observer.cpp",
+                          "sha256":  "4A7362959D9F548A1E4A9314C5FE93CC62FE6D3A02FC38BCD6C3CA9E2A72E615",
+                          "size":  23074,
+                          "note":  "One hook at 009D97B0, exact current-player/callsite filter, no protected-operation call."
+                      },
+                      {
+                          "kind":  "base_transform_observer_build_recipe",
+                          "location":  "evidence/I-0013/base-transform-observer/build.ps1",
+                          "sha256":  "356EA899CCB75214F37277CEC705BA4F332F4B4805951CA00B6E539F95E1F111",
+                          "size":  6967
+                      },
+                      {
+                          "kind":  "base_transform_exact_build_validation",
+                          "location":  "evidence/I-0013/base-transform-observer/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "F276D99C4CCC66F8E9C55E12F3BAEDBC0222883FEA73ABEADBA724F008E36F14",
+                          "size":  597
+                      },
+                      {
+                          "kind":  "base_transform_build_validation",
+                          "location":  "evidence/I-0013/base-transform-observer/BUILD-VALIDATION.json",
+                          "sha256":  "AAA3B2269C6C5D5078584B1BE16FA010444A9BB0C636039E9EA3D286AB0B1F21",
+                          "size":  1465,
+                          "note":  "Offline-only pass: one hook, exact signatures, bounded QPC capture, accepted reversible cadence writes only."
+                      },
+                      {
+                          "kind":  "base_transform_analyzer",
+                          "location":  "evidence/I-0013/base-transform-observer/analyze_base_transform.mjs",
+                          "sha256":  "3038095DC969D6C531B90CEEEF0325D23074ADCA2F0952554C65A268582830DA",
+                          "size":  6687
+                      },
+                      {
+                          "kind":  "base_transform_analyzer_test",
+                          "location":  "evidence/I-0013/base-transform-observer/ANALYZER-TEST.json",
+                          "sha256":  "144C0D4FF77F57D127184D540BA83C5B39C1543EBFF7CCBC00E6A5DDDEC50EEE",
+                          "size":  396,
+                          "note":  "Synthetic pass for caller, identity, timing/sequence, vertical reconstruction, opposing-step and rejection cases."
+                      },
+                      {
+                          "kind":  "base_transform_observer_guide",
+                          "location":  "evidence/I-0013/base-transform-observer/README.md",
+                          "sha256":  "336667D8246C348DDA93DE85E3C79ECF95C27A5A8B01F4234E3872E069EE634B",
+                          "size":  1879
+                      },
+                      {
+                          "kind":  "base_transform_live_protocol",
+                          "location":  "evidence/I-0013/base-transform-observer/LIVE-PROTOCOL.md",
+                          "sha256":  "9F447D9A38737F5AC0680041C9539E5CE8AAFBEADE54764A70A9D9ADE10B86D8",
+                          "size":  1341,
+                          "note":  "Executed once in the accepted cycle-16 session; exact restoration and shutdown confirmed."
+                      },
+                      {
+                          "kind":  "base_transform_observer_binary",
+                          "location":  "evidence/I-0013/base-transform-observer/bin/I0013BaseTransformObserver.dll",
+                          "sha256":  "03EBEF293B7921D10294D60D814543269F0029403C04D7B18F5E0491734A14E2",
+                          "size":  195584,
+                          "note":  "Offline-qualified and uninjected."
+                      },
+                      {
+                          "kind":  "base_transform_observer_injector",
+                          "location":  "evidence/I-0013/base-transform-observer/bin/I0013BaseTransformObserverInjector.exe",
+                          "sha256":  "98B035C05C275AB9BC0663D6C79DC193F141C6D0C477F1FB9A33448C89B4F980",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "base_transform_discriminator_result",
+                          "location":  "evidence/I-0013/BASE-TRANSFORM-DISCRIMINATOR-RESULT.md",
+                          "sha256":  "9E51A19BB920B110FED2400BE2A812786F9486109C773032F7D3ED79932D5B6D",
+                          "size":  4294,
+                          "note":  "Clears the base builder and selects downstream aggregator/cache operations."
+                      },
+                      {
+                          "kind":  "base_transform_60_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/target-60-trial-1.csv",
+                          "sha256":  "242F8A7C608E7B68EAB24D3CB4B83038CE7545993E56DB904E2BCBEA5CF73DE9",
+                          "size":  74492,
+                          "note":  "181/181 valid consecutive rows; 60.002266 calls/s; normal operator report."
+                      },
+                      {
+                          "kind":  "base_transform_240_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/target-240-trial-2.csv",
+                          "sha256":  "EC3C522664B22A653FB1F7891B761ADA8F4DF3648E7DB6418D3D88704DE0A107",
+                          "size":  295801,
+                          "note":  "721/721 valid consecutive rows; 239.940159 calls/s; visible hopping reported."
+                      },
+                      {
+                          "kind":  "base_transform_60_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/target-60-analysis.json",
+                          "sha256":  "2DB8155EADE204AEC9B472D3D14C554CBE411C33E23954A5A8FE33D94449D8DE",
+                          "size":  1194
+                      },
+                      {
+                          "kind":  "base_transform_240_analysis",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/target-240-analysis.json",
+                          "sha256":  "5E55756EE2B007AC8902895037E307B1C11337D56138AC68C133513922BA2EE2",
+                          "size":  1193
+                      },
+                      {
+                          "kind":  "base_transform_live_control",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/CONTROL",
+                          "sha256":  "F5BF8A2257BFFAB0548F577DFE55A94AF6DFAB3316C87D622C930FD85AE48D75",
+                          "size":  550,
+                          "note":  "Ready, both captures, target change and exact restoration all report success; DS3 subsequently closed."
+                      },
+                      {
+                          "kind":  "base_transform_live_binary",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/I0013BaseTransformObserver-live.dll",
+                          "sha256":  "03EBEF293B7921D10294D60D814543269F0029403C04D7B18F5E0491734A14E2",
+                          "size":  195584
+                      },
+                      {
+                          "kind":  "base_transform_live_injector",
+                          "location":  "evidence/I-0013/sessions/20260921T054031Z-pid27432/I0013BaseTransformObserverInjector-live.exe",
+                          "sha256":  "98B035C05C275AB9BC0663D6C79DC193F141C6D0C477F1FB9A33448C89B4F980",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "post_base_aggregator_decompilation",
+                          "location":  "evidence/I-0013/static/post-base-boundary/DS3-1152-F-005C8100.c",
+                          "sha256":  "23715ADEED19D72E51C9A8C1B37D465E9729B91BDABC74ADEA33EA6A93E38A41",
+                          "size":  2738
+                      },
+                      {
+                          "kind":  "post_base_carried_state_decompilation",
+                          "location":  "evidence/I-0013/static/post-base-boundary/DS3-1152-F-005C75F0.c",
+                          "sha256":  "7894DC26903BEEF63ADA3A542980B03C7D9B92040C99D196D3094890C34B0C5A",
+                          "size":  2271
+                      },
+                      {
+                          "kind":  "post_base_local_predicate_decompilation",
+                          "location":  "evidence/I-0013/static/post-base-boundary/DS3-1152-F-009F8FE0.c",
+                          "sha256":  "AC3EC748DCBC5069A4D2599547DBB89C790E1B4F49535FDC9F07F66496781CB0",
+                          "size":  484
+                      },
+                      {
+                          "kind":  "post_base_reference_export",
+                          "location":  "evidence/I-0013/static/post-base-boundary/references.csv",
+                          "sha256":  "1C0104407F5A6033EB142C935255594E6D0CD58EE46805B6783588871965F07F",
+                          "size":  809,
+                          "note":  "Exact-build read-only references for the selected downstream boundary."
+                      },
+                      {
+                          "kind":  "aggregator_output_observer_source",
+                          "location":  "evidence/I-0013/aggregator-output-observer/aggregator_output_observer.cpp",
+                          "sha256":  "6CFD8BDDBB0E57620E2B98CA0E9C55A5AF00A9272AA01C4F9B93B50A525A1DAA",
+                          "size":  24184,
+                          "note":  "One hook at 005C8100; current-player and three-static-caller filtering; no correction or observer-added protected call."
+                      },
+                      {
+                          "kind":  "aggregator_output_build_recipe",
+                          "location":  "evidence/I-0013/aggregator-output-observer/build.ps1",
+                          "sha256":  "C6644C243A5AC79727A0B04574C446CD9FCBDD66909782428E803A7B725A52AA",
+                          "size":  7208
+                      },
+                      {
+                          "kind":  "aggregator_output_exact_build_validation",
+                          "location":  "evidence/I-0013/aggregator-output-observer/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "0626A92A75B9D2D1ECDE99280E2F440059F0E920D91093795CE4722D5D0544D8",
+                          "size":  548
+                      },
+                      {
+                          "kind":  "aggregator_output_build_validation",
+                          "location":  "evidence/I-0013/aggregator-output-observer/BUILD-VALIDATION.json",
+                          "sha256":  "64CC5C91969413F23C6B9AB886A315193FE5B8CCCB591ADF95F332E3180E8794",
+                          "size":  1746,
+                          "note":  "Offline-only pass: exact prolog, one hook, 4,096-row bound, safe imports and reversible cadence writes only."
+                      },
+                      {
+                          "kind":  "aggregator_output_analyzer",
+                          "location":  "evidence/I-0013/aggregator-output-observer/analyze_aggregator_output.mjs",
+                          "sha256":  "754518A7308F0B0A15474F6B529AEF878DC4A3C024FC745A7C94E1FEDDDD7132",
+                          "size":  5320
+                      },
+                      {
+                          "kind":  "aggregator_output_analyzer_test",
+                          "location":  "evidence/I-0013/aggregator-output-observer/ANALYZER-TEST.json",
+                          "sha256":  "0599AFF033D56EBE5CF043C78B75B91E010D7E9655FE868E43DDB913328244FF",
+                          "size":  349,
+                          "note":  "Synthetic pass for all three callers, identity/sequence, predicate reconstruction, opposing steps and rejection cases."
+                      },
+                      {
+                          "kind":  "aggregator_output_observer_guide",
+                          "location":  "evidence/I-0013/aggregator-output-observer/README.md",
+                          "sha256":  "36FF4DA3959A8D5637EC0CE797FDBDD5385A4BE265F73213A2865A1DAA1A86DF",
+                          "size":  1350
+                      },
+                      {
+                          "kind":  "aggregator_output_live_protocol",
+                          "location":  "evidence/I-0013/aggregator-output-observer/LIVE-PROTOCOL.md",
+                          "sha256":  "92D0455B85207C5795D93296E73EED78F6D9B7B6E13459B6B91539FAADB66F7E",
+                          "size":  780,
+                          "note":  "Prepared only; no live execution yet."
+                      },
+                      {
+                          "kind":  "aggregator_output_observer_binary",
+                          "location":  "evidence/I-0013/aggregator-output-observer/bin/I0013AggregatorOutputObserver.dll",
+                          "sha256":  "6B2BE80BEB9067C027ACDE366174B5201012B04BC492685D289C0B0F5BA6F3AA",
+                          "size":  196608,
+                          "note":  "Offline-qualified and uninjected."
+                      },
+                      {
+                          "kind":  "aggregator_output_observer_injector",
+                          "location":  "evidence/I-0013/aggregator-output-observer/bin/I0013AggregatorOutputObserverInjector.exe",
+                          "sha256":  "6A643AC9C0470C58AA494FAD5CE4B0745C09C53849EE62A9153BD4D6E9B26799",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "aggregator_output_discriminator_result",
+                          "location":  "evidence/I-0013/AGGREGATOR-OUTPUT-DISCRIMINATOR-RESULT.md",
+                          "sha256":  "D4300305958FF5497FE97A349205D3AC600BC6C6CB62FF23D7EA9775D26AAA2A",
+                          "size":  3410,
+                          "note":  "Bit-exactly selects carried +0x250 and clears later cache transport on the sampled path."
+                      },
+                      {
+                          "kind":  "aggregator_live_control",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/CONTROL",
+                          "sha256":  "AAD9BE9A3BD306E8D00342D7AF188D1363D8AF06B6C25860945318EE6DE1E212",
+                          "size":  548,
+                          "note":  "Ready, both captures, target change and exact restoration succeed with zero invalid row."
+                      },
+                      {
+                          "kind":  "aggregator_60_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/target-60-trial-1.csv",
+                          "sha256":  "3A82EF2F2C51023D55467057D07E4C3E65E429974A0C986DCA592A681371A22A",
+                          "size":  83015
+                      },
+                      {
+                          "kind":  "aggregator_240_capture",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/target-240-trial-2.csv",
+                          "sha256":  "31AA03FFB03F0CB57C5987649F0E221BFB38BA9D50F1B039044267BB11C2947C",
+                          "size":  329341
+                      },
+                      {
+                          "kind":  "aggregator_60_causality",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/target-60-causality.json",
+                          "sha256":  "281E58480D8F1AD3BADAC37ABD33AC2E1743244268B57105131B47665F9833A9",
+                          "size":  1121
+                      },
+                      {
+                          "kind":  "aggregator_240_causality",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/target-240-causality.json",
+                          "sha256":  "B30F2D3D0292A05487E78FE61EBF3017870BD331087095C69CBBE69214E1526B",
+                          "size":  1124
+                      },
+                      {
+                          "kind":  "aggregator_causality_analyzer",
+                          "location":  "evidence/I-0013/aggregator-output-observer/analyze_aggregator_causality.mjs",
+                          "sha256":  "F237BF61C74CB2985CE950B50B78543AB53812B76DD42A024588F7EE96372F7B",
+                          "size":  5313
+                      },
+                      {
+                          "kind":  "aggregator_causality_test",
+                          "location":  "evidence/I-0013/aggregator-output-observer/CAUSALITY-TEST.json",
+                          "sha256":  "3D3922BDB84CDDA5035B736F1B6C5892CFE4F62EE8BF7A27E8E84DDC42F80767",
+                          "size":  294
+                      },
+                      {
+                          "kind":  "aggregator_live_binary",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/I0013AggregatorOutputObserver-live.dll",
+                          "sha256":  "6B2BE80BEB9067C027ACDE366174B5201012B04BC492685D289C0B0F5BA6F3AA",
+                          "size":  196608
+                      },
+                      {
+                          "kind":  "aggregator_live_injector",
+                          "location":  "evidence/I-0013/sessions/20260921T061259Z-pid23660/I0013AggregatorOutputObserverInjector-live.exe",
+                          "sha256":  "6A643AC9C0470C58AA494FAD5CE4B0745C09C53849EE62A9153BD4D6E9B26799",
+                          "size":  153600
+                      },
+                      {
+                          "kind":  "carried_producer_references",
+                          "location":  "evidence/I-0013/static/carried-producer/references.csv",
+                          "sha256":  "91EFE6D0F99595A7B15B0FB8F9D1738A163B4AE2299D7ECC32CC23FA3442E450",
+                          "size":  754,
+                          "note":  "Read-only exact-build reference export for the selected carried producer."
+                      },
+                      {
+                          "kind":  "producer_provenance_source",
+                          "location":  "evidence/I-0013/producer-provenance-observer/producer_provenance_observer.cpp",
+                          "sha256":  "AB6231EE3E9C18682D1B4B24B2341E69658D76EF9A0C086635A2384FDDCB7A0C",
+                          "size":  25556,
+                          "note":  "One 005C8100 hook; records two concrete virtual target RVAs through memory reads only."
+                      },
+                      {
+                          "kind":  "producer_provenance_build_validation",
+                          "location":  "evidence/I-0013/producer-provenance-observer/BUILD-VALIDATION.json",
+                          "sha256":  "991FD9CD0BBD737414B2B709A18AD75562B0B5FAFB7F0AFBEDAF6132201E93F6",
+                          "size":  1727
+                      },
+                      {
+                          "kind":  "producer_provenance_exact_build_validation",
+                          "location":  "evidence/I-0013/producer-provenance-observer/EXACT-BUILD-VALIDATION.json",
+                          "sha256":  "4FE08830697E9E52F9139E0D5DE2AD25A961D11BDFAF12AE9A239C658783EAE5",
+                          "size":  304
+                      },
+                      {
+                          "kind":  "producer_provenance_analyzer",
+                          "location":  "evidence/I-0013/producer-provenance-observer/analyze_provenance.mjs",
+                          "sha256":  "973BC29DD2D622DD69A033AEB3694F493D37DA107756D6FCBBA14D74781E7C1A",
+                          "size":  2056
+                      },
+                      {
+                          "kind":  "producer_provenance_analyzer_test",
+                          "location":  "evidence/I-0013/producer-provenance-observer/ANALYZER-TEST.json",
+                          "sha256":  "C73C7655EA47C4DFE4ADA8A9729D0CCDE0BDDDCD60E2DA50ADD22CCACE4BF122",
+                          "size":  237
+                      },
+                      {
+                          "kind":  "producer_provenance_guide",
+                          "location":  "evidence/I-0013/producer-provenance-observer/README.md",
+                          "sha256":  "9F82E8C5453CDD220E52C4C20EE72C9D59E0C97668F5B2682838A41D9628A7CF",
+                          "size":  715
+                      },
+                      {
+                          "kind":  "producer_provenance_binary",
+                          "location":  "evidence/I-0013/producer-provenance-observer/bin/I0013ProducerProvenanceObserver.dll",
+                          "sha256":  "F7A3B8AD400582332500747DECF51C30BC726025A5B4AFE0A7B02A662B3CADC6",
+                          "size":  197632,
+                          "note":  "Offline-qualified and uninjected."
+                      },
+                      {
+                          "kind":  "producer_provenance_injector",
+                          "location":  "evidence/I-0013/producer-provenance-observer/bin/I0013ProducerProvenanceObserverInjector.exe",
+                          "sha256":  "0A13EF02C7D49CABABB8F8A9A1624A210A495650963EC4D74C712D0EA5861C50",
+                          "size":  153600
+                      },
+                      {
+                          "kind": "carried_producer_provenance_result",
+                          "location": "evidence/I-0013/CARRIED-PRODUCER-PROVENANCE-RESULT.md",
+                          "sha256": "0412311DDDC6C0121B106B4E076901A03F67C5D14B7E1841178E7492F4B44F89",
+                          "size": 2072
+                      },
+                      {
+                          "kind": "producer_provenance_live_control",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/CONTROL",
+                          "sha256": "042358706793100C74BE0CBDE993CA04099D52509B8862E07A3F46BE87DB0E0E",
+                          "size": 304,
+                          "note": "Accepted target-60 capture, exact restoration and clean shutdown."
+                      },
+                      {
+                          "kind": "producer_provenance_live_capture",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/target-60-trial-1.csv",
+                          "sha256": "F508C92F4C96A760844E73A061EC36A2859B1F00C0B39780F38819750803D9A8",
+                          "size": 92797,
+                          "note": "181/181 valid rows; Thomas reported normal behavior."
+                      },
+                      {
+                          "kind": "producer_provenance_live_analysis",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/provenance-analysis.json",
+                          "sha256": "36AED01C85ACA9334B8B41974347D5C1DBD6A3EE0F0924143702BF22D4CD47AF",
+                          "size": 588
+                      },
+                      {
+                          "kind": "producer_provenance_target60_analysis",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/target-60-analysis.json",
+                          "sha256": "DC5167FE4A980692D4EAA976633E659FD29F710578C225B69CEBB453245DF6EE",
+                          "size": 1196
+                      },
+                      {
+                          "kind": "producer_provenance_target60_causality",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/target-60-causality.json",
+                          "sha256": "3BFBDB3DA7AB9AE3F4314F5D0A7281E30D2326079BBBF51E721898003B563E2C",
+                          "size": 1123
+                      },
+                      {
+                          "kind": "producer_provenance_live_binary",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/I0013ProducerProvenanceObserver-live.dll",
+                          "sha256": "F7A3B8AD400582332500747DECF51C30BC726025A5B4AFE0A7B02A662B3CADC6",
+                          "size": 197632
+                      },
+                      {
+                          "kind": "producer_provenance_live_injector",
+                          "location": "evidence/I-0013/sessions/20260921T063407Z-pid28408/I0013ProducerProvenanceObserverInjector-live.exe",
+                          "sha256": "0A13EF02C7D49CABABB8F8A9A1624A210A495650963EC4D74C712D0EA5861C50",
+                          "size": 153600
+                      },
+                      {
+                          "kind": "resolved_producer_constants",
+                          "location": "evidence/I-0013/static/resolved-carried-producers/constants.csv",
+                          "sha256": "9D854FBDE58774783AC14B78D3D59C6D6A7B352E2405F1C058893C60BDB66795",
+                          "size": 221
+                      },
+                      {
+                          "kind": "resolved_stateful_producer_decompilation",
+                          "location": "evidence/I-0013/static/resolved-carried-producers/DS3-1152-F-005E6580.c",
+                          "sha256": "5FAA90693E74DD650AA740CF52CD260FDF937A6A9FDB6B0EBF95D15C0C482AB2",
+                          "size": 5929
+                      },
+                      {
+                          "kind": "resolved_actor_getter_decompilation",
+                          "location": "evidence/I-0013/static/resolved-carried-producers/DS3-1152-F-008BC9A0.c",
+                          "sha256": "3B4B7FA553616931E6A4866A23AC4F021074CA6E3337A16103371C73DDEB46E0",
+                          "size": 198
+                      },
+                      {
+                          "kind": "producer_state_source",
+                          "location": "evidence/I-0013/producer-state-observer/producer_state_observer.cpp",
+                          "sha256": "14A56AF8039D6EC9A0B64F683FB49D2BAC720AFDC335BECF5E13DACA31329602",
+                          "size": 26297
+                      },
+                      {
+                          "kind": "producer_state_build_validation",
+                          "location": "evidence/I-0013/producer-state-observer/BUILD-VALIDATION.json",
+                          "sha256": "EBF28EE248BD2BC0EFDEE7A2AF21EF362AF7C76811309BD84E65778E436D402C",
+                          "size": 1730
+                      },
+                      {
+                          "kind": "producer_state_exact_build_validation",
+                          "location": "evidence/I-0013/producer-state-observer/EXACT-BUILD-VALIDATION.json",
+                          "sha256": "4FE08830697E9E52F9139E0D5DE2AD25A961D11BDFAF12AE9A239C658783EAE5",
+                          "size": 304
+                      },
+                      {
+                          "kind": "producer_state_analyzer",
+                          "location": "evidence/I-0013/producer-state-observer/analyze_producer_state.mjs",
+                          "sha256": "B96BC50448793E3506FD6D11CA0E0231E31E28919512529906EE1F2C148C7CE4",
+                          "size": 4699
+                      },
+                      {
+                          "kind": "producer_state_analyzer_test",
+                          "location": "evidence/I-0013/producer-state-observer/ANALYZER-TEST.json",
+                          "sha256": "C8A821742326FD2C6C6EDEA770C9059992F11610D934D8E762232FD4FE6E682C",
+                          "size": 283
+                      },
+                      {
+                          "kind": "producer_state_guide",
+                          "location": "evidence/I-0013/producer-state-observer/README.md",
+                          "sha256": "E34DBBD650D235E2AEE0A0FB2C64B4D8B1E5384FBC0B9738FF7B662635CCE222",
+                          "size": 911
+                      },
+                      {
+                          "kind": "producer_state_live_protocol",
+                          "location": "evidence/I-0013/producer-state-observer/LIVE-PROTOCOL.md",
+                          "sha256": "47A5FBDCBF4E861E559930BA6D24D8F9BD5DB953386D9A3AB7BE31135DE44EF0",
+                          "size": 795
+                      },
+                      {
+                          "kind": "producer_state_binary",
+                          "location": "evidence/I-0013/producer-state-observer/bin/I0013ProducerStateObserver.dll",
+                          "sha256": "A814F2EE23D9DAB201839A9E61259FB5FC857685579855CD583A0CB4DE90B54C",
+                          "size": 198144,
+                          "note": "Offline-qualified and uninjected."
+                      },
+                      {
+                          "kind": "producer_state_injector",
+                          "location": "evidence/I-0013/producer-state-observer/bin/I0013ProducerStateObserverInjector.exe",
+                          "sha256": "31D48657E5414EDCE8AA57B178C5B878364EB9F4DB9B0F2266DD3A0182BC6EC8",
+                          "size": 153600
+                      },
+                      {
+                          "kind": "producer_state_result",
+                          "location": "evidence/I-0013/PRODUCER-STATE-DISCRIMINATOR-RESULT.md",
+                          "sha256": "562DC8C02D1FD754DDA319B7F8C890A70126A566B19909CE94348DA9DDEE5E40",
+                          "size": 2010
+                      },
+                      {
+                          "kind": "producer_time_law",
+                          "location": "evidence/I-0013/TIME-LAW-DERIVATION.md",
+                          "sha256": "0AADCAE0BF2DDC2B4BD6440AE6DE7CB6ADF1A14E1075402D9A4F073BD6B33DEB",
+                          "size": 1564
+                      },
+                      {
+                          "kind": "producer_state_comparison_tool",
+                          "location": "evidence/I-0013/producer-state-observer/compare_producer_state.mjs",
+                          "sha256": "972860DF16F434198D00010E715BAB555759157CD8387AB9C81D8E19ADEF7F3F",
+                          "size": 4646
+                      },
+                      {
+                          "kind": "producer_state_live_control",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/CONTROL",
+                          "sha256": "3AE24F841D967DF1E06FB55E6BFA1A7307AF81435F390E4BDC142EB644C00B77",
+                          "size": 626,
+                          "note": "Accepted 60/240 pair with exact restoration and clean shutdown."
+                      },
+                      {
+                          "kind": "producer_state_60_capture",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/target-60-trial-1.csv",
+                          "sha256": "5FCD278F96F4D8020353A0EB0EB2665FCC5EC9C5E62D6296237169ECC5B80E01",
+                          "size": 100293
+                      },
+                      {
+                          "kind": "producer_state_240_capture",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/target-240-trial-2.csv",
+                          "sha256": "544C57D7B6BA8F54FF10FF672363AF73B7FA007232A38A38A312E725E1B6B211",
+                          "size": 397276,
+                          "note": "719/719 valid rows at 239.597 sampled calls/s; Thomas reported familiar hopping."
+                      },
+                      {
+                          "kind": "producer_state_cross_rate_analysis",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/producer-state-comparison.json",
+                          "sha256": "3430F5E0B86EF651D19B4AC8FF18444A1976DBD7B13FFC017FDDE20BC2238F3C",
+                          "size": 2686
+                      },
+                      {
+                          "kind": "producer_state_live_binary",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/I0013ProducerStateObserver-live.dll",
+                          "sha256": "A814F2EE23D9DAB201839A9E61259FB5FC857685579855CD583A0CB4DE90B54C",
+                          "size": 198144
+                      },
+                      {
+                          "kind": "producer_state_live_injector",
+                          "location": "evidence/I-0013/sessions/20260921T065209Z-pid15448/I0013ProducerStateObserverInjector-live.exe",
+                          "sha256": "31D48657E5414EDCE8AA57B178C5B878364EB9F4DB9B0F2266DD3A0182BC6EC8",
+                          "size": 153600
+                      },
+                      {
+                          "kind": "producer_time_fix_source",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/producer_time_fix.cpp",
+                          "sha256": "952422B05AEB5EBC641B0CF889DC566E2ECF9D02471D35DBD6A06A062FCC803E",
+                          "size": 19696
+                      },
+                      {
+                          "kind": "producer_time_fix_build_validation",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/BUILD-VALIDATION.json",
+                          "sha256": "BA5FCCC2C949BE339CE0B32D054C90F28AE5AD073864A17746D65184B561FF9E",
+                          "size": 1714
+                      },
+                      {
+                          "kind": "producer_time_fix_exact_build_validation",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/EXACT-BUILD-VALIDATION.json",
+                          "sha256": "0B254E31DEDE24DFE78147B25F4CB20451BC1E24F27D68963E5F96F8C7BB35AF",
+                          "size": 300
+                      },
+                      {
+                          "kind": "producer_time_fix_analyzer",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/analyze_fix_capture.mjs",
+                          "sha256": "81534A0A1BB8297539AC3F32C5CBA36CBE714D0FAC61CB7CABAF9681AD1BDB2A",
+                          "size": 2782
+                      },
+                      {
+                          "kind": "producer_time_fix_analyzer_test",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/ANALYZER-TEST.json",
+                          "sha256": "8687535637413B332D1D684873354F7E4038270A241686D907B821AF4E70F29D",
+                          "size": 209
+                      },
+                      {
+                          "kind": "producer_time_fix_guide",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/README.md",
+                          "sha256": "CE984EC2EB9E749BA5133E3B07B63342285F1A5982F56A5D18D341544D3C0170",
+                          "size": 982
+                      },
+                      {
+                          "kind": "producer_time_fix_protocol",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/LIVE-PROTOCOL.md",
+                          "sha256": "D6EA0EC702276BDF4EA0EA686D6BA7F0618B256861A02B3800BAB80C3F633BF7",
+                          "size": 861
+                      },
+                      {
+                          "kind": "producer_time_fix_binary",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/bin/I0013ProducerTimeFix.dll",
+                          "sha256": "44F8C19B1EB799A38A82E8B829E5BAB53D3E4FD3671B56599A1E80414196A04F",
+                          "size": 207360,
+                          "note": "Offline-qualified, starts disabled and remains uninjected."
+                      },
+                      {
+                          "kind": "producer_time_fix_injector",
+                          "location": "evidence/I-0013/producer-time-fix-prototype/bin/I0013ProducerTimeFixInjector.exe",
+                          "sha256": "7FF6BF7ECE4854FDEB2BE9AA85C5D0149CD93CE55B21F0BCF45D611705F3A577",
+                          "size": 153600
+                      },
+                      {
+                          "kind": "producer_time_fix_live_result",
+                          "location": "evidence/I-0013/LIVE-TIME-FIX-VALIDATION.md",
+                          "sha256": "1E699D5BE274B14E33A1B095A060F74A543CA2612C9C8963157216076CCF1828",
+                          "size": 1791
+                      },
+                      {
+                          "kind": "producer_time_fix_live_control",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/CONTROL",
+                          "sha256": "F391ACBAA89E77569AEAEE2BBFD4731396BD52A9287183EB7077A48606724CF9",
+                          "size": 914,
+                          "note": "Correction disabled on stop; hook removal and exact timing restoration succeeded before DS3 closed."
+                      },
+                      {
+                          "kind": "producer_time_fix_60_on_capture",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/target-60-on-trial-1.csv",
+                          "sha256": "BD74324237BB44E188619F3084162898B866EFF6FE6FC320535DD9A95861DD4E",
+                          "size": 21778,
+                          "note": "181/181 valid, zero writes, exact native passthrough; Thomas reported RAS."
+                      },
+                      {
+                          "kind": "producer_time_fix_240_on_capture",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/target-240-on-trial-2.csv",
+                          "sha256": "12C288ECC59151A9089F9D831A98FFE5CA17D98F6D5E27B34F049C1F31AF5BF1",
+                          "size": 94183,
+                          "note": "712/712 valid exact formula rows at 237.084 sampled calls/s; Thomas reported hopping disappeared."
+                      },
+                      {
+                          "kind": "producer_time_fix_60_on_analysis",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/target-60-on-analysis.json",
+                          "sha256": "CA271A568D6B82D35782B0AFF67675772FF4A3EDDE0403F084BC0C545A77A673",
+                          "size": 521
+                      },
+                      {
+                          "kind": "producer_time_fix_240_on_analysis",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/target-240-on-analysis.json",
+                          "sha256": "D3ACB9BA230B772AB03D3F426C78F325906E1799A5A2FE28B4BA5A655A6E97DF",
+                          "size": 525
+                      },
+                      {
+                          "kind": "producer_time_fix_live_binary",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/I0013ProducerTimeFix-live.dll",
+                          "sha256": "44F8C19B1EB799A38A82E8B829E5BAB53D3E4FD3671B56599A1E80414196A04F",
+                          "size": 207360
+                      },
+                      {
+                          "kind": "producer_time_fix_live_injector",
+                          "location": "evidence/I-0013/sessions/20260921T071100Z-pid10584/I0013ProducerTimeFixInjector-live.exe",
+                          "sha256": "7FF6BF7ECE4854FDEB2BE9AA85C5D0149CD93CE55B21F0BCF45D611705F3A577",
+                          "size": 153600
+                      }
+                  ]
+}

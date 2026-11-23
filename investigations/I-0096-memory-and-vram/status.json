@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0096",
+  "title": "Mémoire et VRAM",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-23T06:20:00Z",
+  "updated_at": "2026-10-23T12:50:00Z",
+  "budget": {
+    "iterations_max": 6,
+    "iterations_used": 5
+  },
+  "stop_reason": "success: title after a visit 0.92-0.98 GB VRAM like the original, the zone at the original's private bytes; texture CPU images dropped, kept draws released when no world is drawn; gate i96-final-d PASS"
+}

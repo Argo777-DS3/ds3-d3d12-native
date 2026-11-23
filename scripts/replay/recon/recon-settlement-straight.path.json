@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "name": "recon-settlement-straight",
+  "description": "I-0100 (Thomas, 2026-10-26 03:49: « une fois Beta chargé, t'as juste à avancer tout droit, tu verras plusieurs éléments victimes de pop in, comme des barrières en bois, des buissons, des cadavres suspendus »): reconnaissance of a straight walk from Beta's Undead Settlement bonfire (m31): Z held 25 s, then 5 s still. Enemies without AI (test-no-ai). To be checked on its pictures before it becomes a measured path.",
+  "save": {
+    "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-beta-m31-20261013-044305/DS30000.sl2",
+    "sha256": "93D3A76E8C8CC4EA5D6CB4FE76EBFBF23AA30F2A114422EF355968F651CEB0C0"
+  },
+  "settle_seconds": 40,
+  "segments": [
+    {
+      "name": "straight",
+      "cycles": 1,
+      "cycle_ms": 30000,
+      "events": [
+        { "t": 0, "key": "Z", "down": true },
+        { "t": 25000, "key": "Z", "down": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0082",
+  "title": "Minidumps automatiques et pertes du GPU",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-21T10:49:54Z",
+  "updated_at": "2026-10-21T12:15:00Z",
+  "budget": {
+    "iterations_max": 10,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: every injected fault left a dump and a named report, the debug layer opt-in, DRED cost not measurable"
+}

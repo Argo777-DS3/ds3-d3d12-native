@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0128",
+  "title": "Le path tracing complet",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "R pilot (Opus 5.5)",
+  "created_at": "2026-11-07T14:27:27Z",
+  "updated_at": "2026-11-08T06:00:00Z",
+  "budget": {
+    "iterations_max": 10,
+    "iterations_used": 6
+  },
+  "stop_reason": "success: R8a to R8d merged"
+}

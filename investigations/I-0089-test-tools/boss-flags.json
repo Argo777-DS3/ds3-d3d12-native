@@ -1,0 +1,31 @@
+{
+  "source": "game archive Data1: event/common.emevd.dcx, event 970 init rows (2000[0] <slot>,970,<flag>,...): the 26 boss-defeated event flags; 22 of them are also the first argument of the map events that call template 20005500 (the boss fight). Extracted read-only with I-0068/Recover-NamedGameData.ps1 and dumped with I-0067/Get-EmevdDump.ps1 (2026-10-22). The flag ids are STATIC; the English names (Thomas: the game's own English names, no translations) are INFERRED from the map and the order of the ids; where the id order does not tell which of two bosses of a map it is, the entry says so and stays 'unknown' until the boss is seen in its arena after the revive.",
+  "bosses": [
+    { "flag": 13000800, "map": "m30_00", "key": "vordt",        "zone": "High Wall of Lothric", "name": "Vordt of the Boreal Valley", "confidence": "inferred" },
+    { "flag": 13000830, "map": "m30_00", "key": "oceiros",      "zone": "Consumed King's Garden", "name": "Oceiros, the Consumed King", "confidence": "inferred" },
+    { "flag": 13000890, "map": "m30_00", "key": "dancer",       "zone": "High Wall of Lothric", "name": "Dancer of the Boreal Valley", "confidence": "inferred" },
+    { "flag": 13010800, "map": "m30_01", "key": "dragonslayer", "zone": "Lothric Castle", "name": "Dragonslayer Armour", "confidence": "inferred" },
+    { "flag": 13100800, "map": "m31_00", "key": "greatwood",    "zone": "Undead Settlement", "name": "Curse-Rotted Greatwood", "confidence": "inferred" },
+    { "flag": 13200800, "map": "m32_00", "key": "wyvern",       "zone": "Archdragon Peak", "name": "Ancient Wyvern", "confidence": "static", "note": "its boss c3141 entity 3200800; no bonfire after it (I-0139 sheets/bosses.md)" },
+    {"flag": 13200850, "map": "m32_00", "key": "namelessking", "zone": "Archdragon Peak", "name": "Nameless King", "confidence": "static", "note": "template 20005500 with the Nameless King bonfire 3201951 (I-0139 sheets/bosses.md)"},
+    { "flag": 13300800, "map": "m33_00", "key": "watchers",     "zone": "Farron Keep", "name": "Abyss Watchers", "confidence": "inferred" },
+    { "flag": 13300850, "map": "m33_00", "key": "sage",         "zone": "Road of Sacrifices", "name": "Crystal Sage", "confidence": "inferred" },
+    { "flag": 13410830, "map": "m34_01", "key": "princes",      "zone": "Grand Archives", "name": "Twin Princes", "confidence": "inferred" },
+    { "flag": 13410860, "map": "m34_01", "key": "princes2",     "zone": "Grand Archives", "name": "second flag of the Grand Archives boss map (Twin Princes: Lorian / Lothric)", "confidence": "unknown" },
+    { "flag": 13500800, "map": "m35_00", "key": "deacons",      "zone": "Cathedral of the Deep", "name": "Deacons of the Deep", "confidence": "inferred" },
+    { "flag": 13700800, "map": "m37_00", "key": "aldrich",      "zone": "Anor Londo", "name": "Aldrich, Devourer of Gods", "confidence": "inferred" },
+    { "flag": 13700850, "map": "m37_00", "key": "sulyvahn",     "zone": "Irithyll of the Boreal Valley", "name": "Pontiff Sulyvahn", "confidence": "inferred" },
+    {"flag": 13800800, "map": "m38_00", "key": "wolnir", "zone": "Catacombs of Carthus", "name": "High Lord Wolnir", "confidence": "static", "note": "template 20005500 with the High Lord Wolnir bonfire 3801950 (I-0139 sheets/bosses.md)"},
+    {"flag": 13800830, "map": "m38_00", "key": "olddemonking", "zone": "Smouldering Lake", "name": "Old Demon King", "confidence": "static", "note": "template 20005500 with the Old Demon King bonfire 3801954 (I-0139 sheets/bosses.md)"},
+    { "flag": 13900800, "map": "m39_00", "key": "yhorm",        "zone": "Profaned Capital", "name": "Yhorm the Giant", "confidence": "inferred" },
+    { "flag": 14000800, "map": "m40_00", "key": "iudex",        "zone": "Cemetery of Ash", "name": "Iudex Gundyr", "confidence": "inferred" },
+    { "flag": 14000830, "map": "m40_00", "key": "champion",     "zone": "Untended Graves", "name": "Champion Gundyr", "confidence": "inferred" },
+    { "flag": 14100800, "map": "m41_00", "key": "cinder",       "zone": "Kiln of the First Flame", "name": "Soul of Cinder", "confidence": "inferred" },
+    {"flag": 14500800, "map": "m45_00", "key": "friede", "zone": "Painted World of Ariandel", "name": "Sister Friede", "confidence": "static", "note": "template 20005500 with the Sister Friede bonfire 4501950 (I-0139 sheets/bosses.md)"},
+    {"flag": 14500860, "map": "m45_00", "key": "gravetender", "zone": "Painted World of Ariandel", "name": "Champion's Gravetender", "confidence": "static", "note": "template 20005500 with the Champion's Gravetender bonfire 4501956 (I-0139 sheets/bosses.md)"},
+    {"flag": 15000800, "map": "m50_00", "key": "demonprince", "zone": "Dreg Heap", "name": "Demon Prince", "confidence": "static", "note": "the m50 boss read in the EMEVD, MSB and NPC FMG (I-0139 sheets/bosses.md)"},
+    {"flag": 15100800, "map": "m51_00", "key": "halflight", "zone": "The Ringed City", "name": "Halflight, Spear of the Church", "confidence": "static", "note": "entity 5100800 a c0000 (human) character; Midir the other flag (I-0139 sheets/bosses.md)"},
+    {"flag": 15100850, "map": "m51_00", "key": "midir", "zone": "The Ringed City", "name": "Darkeater Midir", "confidence": "static", "note": "template 20005500 with the Darkeater Midir bonfire 5101951, its boss c6211 entity 5100850 (I-0139 sheets/bosses.md)"},
+    { "flag": 15110800, "map": "m51_01", "key": "gael",         "zone": "The Ringed City", "name": "Slave Knight Gael", "confidence": "inferred" }
+  ]
+}

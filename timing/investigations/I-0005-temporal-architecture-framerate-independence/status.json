@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0005",
+    "title":  "Temporal Architecture and Framerate Independence",
+    "capability":  "C4",
+    "state":  "active",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-19T07:20:14Z",
+    "updated_at":  "2026-09-19T15:15:44Z",
+    "budget":  {
+                   "iterations_max":  20,
+                   "iterations_used":  20
+               },
+    "stop_reason":  "Budget reached after closing the exact final-writer algebra and separately tracing candidate selection/provenance and direct +0x1C0 producers. One neutral pre-commit 60/165 mirror acquisition is designed at RVA 009DC559 but has not run. Replan or extend the budget before implementation/runtime work; Pass 2 semantics, roll, correction, and 240 remain closed."
+}

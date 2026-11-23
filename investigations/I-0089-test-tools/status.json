@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0089",
+  "title": "Outils de test : boss ranimés et invincibilité",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5",
+  "created_at": "2026-10-22T01:50:00Z",
+  "updated_at": "2026-10-22T05:40:00Z",
+  "budget": {
+    "iterations_max": 4,
+    "iterations_used": 4
+  },
+  "stop_reason": "success: 26 flags read statically, F4 and the boss revival witnessed in game (Iudex Gundyr back), sandboxed test launcher, step and final reviews, gate i89-final PASS"
+}

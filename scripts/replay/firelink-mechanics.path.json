@@ -1,0 +1,234 @@
+{
+ "schema": 1,
+ "name": "firelink-mechanics",
+ "description": "I-0114 (UNLOCK-READY §5): the mechanics other than the walk and the sprint, at Firelink with Eta (the firelink path's save): rolls while walking (Space tapped), stops after a 2 s sprint, turns of 90 degrees from a standstill (Z, D, S, Q in a square), light attacks (left button), backsteps (Space tapped at a standstill), and the camera's recentre (the middle button, lock-on without a target) after a sideways walk. Read with mechanics-observe.flag (rows every 1/30 s of the logic's time) and Get-Mechanics.py. Times in ms from the motion start; each segment's events in time order.",
+ "save": {
+  "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-eta-m40-20261014-095203/DS30000.sl2",
+  "sha256": "1E905EF8842655C605E175F574BCA5D2B46D1011E8E473142E1577A09FE24EB4"
+ },
+ "settle_seconds": 40,
+ "segments": [
+  {
+   "name": "roll",
+   "cycles": 4,
+   "cycle_ms": 5000,
+   "events": [
+    {
+     "t": 0,
+     "key": "Z",
+     "down": true
+    },
+    {
+     "t": 800,
+     "key": "Space",
+     "down": true
+    },
+    {
+     "t": 880,
+     "key": "Space",
+     "down": false
+    },
+    {
+     "t": 2000,
+     "key": "Z",
+     "down": false
+    },
+    {
+     "t": 2500,
+     "key": "S",
+     "down": true
+    },
+    {
+     "t": 3300,
+     "key": "Space",
+     "down": true
+    },
+    {
+     "t": 3380,
+     "key": "Space",
+     "down": false
+    },
+    {
+     "t": 4500,
+     "key": "S",
+     "down": false
+    }
+   ]
+  },
+  {
+   "name": "stop",
+   "cycles": 4,
+   "cycle_ms": 5000,
+   "events": [
+    {
+     "t": 0,
+     "key": "Space",
+     "down": true
+    },
+    {
+     "t": 50,
+     "key": "Z",
+     "down": true
+    },
+    {
+     "t": 2050,
+     "key": "Z",
+     "down": false
+    },
+    {
+     "t": 2100,
+     "key": "Space",
+     "down": false
+    },
+    {
+     "t": 2500,
+     "key": "Space",
+     "down": true
+    },
+    {
+     "t": 2550,
+     "key": "S",
+     "down": true
+    },
+    {
+     "t": 4550,
+     "key": "S",
+     "down": false
+    },
+    {
+     "t": 4600,
+     "key": "Space",
+     "down": false
+    }
+   ]
+  },
+  {
+   "name": "turn",
+   "cycles": 4,
+   "cycle_ms": 4000,
+   "events": [
+    {
+     "t": 0,
+     "key": "Z",
+     "down": true
+    },
+    {
+     "t": 600,
+     "key": "Z",
+     "down": false
+    },
+    {
+     "t": 1000,
+     "key": "D",
+     "down": true
+    },
+    {
+     "t": 1600,
+     "key": "D",
+     "down": false
+    },
+    {
+     "t": 2000,
+     "key": "S",
+     "down": true
+    },
+    {
+     "t": 2600,
+     "key": "S",
+     "down": false
+    },
+    {
+     "t": 3000,
+     "key": "Q",
+     "down": true
+    },
+    {
+     "t": 3600,
+     "key": "Q",
+     "down": false
+    }
+   ]
+  },
+  {
+   "name": "attack",
+   "cycles": 4,
+   "cycle_ms": 3000,
+   "events": [
+    {
+     "t": 0,
+     "button": 1,
+     "down": true
+    },
+    {
+     "t": 80,
+     "button": 1,
+     "down": false
+    }
+   ]
+  },
+  {
+   "name": "backstep",
+   "cycles": 2,
+   "cycle_ms": 2500,
+   "events": [
+    {
+     "t": 0,
+     "key": "Space",
+     "down": true
+    },
+    {
+     "t": 80,
+     "key": "Space",
+     "down": false
+    }
+   ]
+  },
+  {
+   "name": "recentre",
+   "cycles": 2,
+   "cycle_ms": 6000,
+   "events": [
+    {
+     "t": 0,
+     "key": "D",
+     "down": true
+    },
+    {
+     "t": 900,
+     "key": "D",
+     "down": false
+    },
+    {
+     "t": 1300,
+     "button": 3,
+     "down": true
+    },
+    {
+     "t": 1380,
+     "button": 3,
+     "down": false
+    },
+    {
+     "t": 3000,
+     "key": "Q",
+     "down": true
+    },
+    {
+     "t": 3900,
+     "key": "Q",
+     "down": false
+    },
+    {
+     "t": 4300,
+     "button": 3,
+     "down": true
+    },
+    {
+     "t": 4380,
+     "button": 3,
+     "down": false
+    }
+   ]
+  }
+ ]
+}

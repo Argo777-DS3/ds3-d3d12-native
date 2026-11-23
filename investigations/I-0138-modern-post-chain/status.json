@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0138",
+  "title": "La chaîne de post-traitement moderne à la place de YEBIS (ROADMAP chantier 11)",
+  "capability": "C3",
+  "state": "active",
+  "owner": "Fable 5.2 high (workstream 11 pilot; tranches 1 to 3, tranche 4's part 4a, tranche 5, tranche 6); parts 4b and 4c by an Opus 5.5 thread (Thomas, 2026-11-13)",
+  "created_at": "2026-11-12T10:14:32Z",
+  "updated_at": "2026-11-14T22:10:00Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 11
+  },
+  "stop_reason": null
+}

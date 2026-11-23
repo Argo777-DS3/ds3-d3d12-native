@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0119",
+  "title": "DS3 DX12 Vague 2: R3 of the RT/PT plan, the materials for the rays (Les matériaux pour les rayons)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "RT pilot",
+  "created_at": "2026-11-02T17:18:13Z",
+  "updated_at": "2026-11-09T01:10:00Z",
+  "budget": {
+    "iterations_max": 4,
+    "iterations_used": 3
+  },
+  "stop_reason": "closed with Thomas's yes (2026-11-09); open points carried to I-0132 R11-PLAN §6"
+}

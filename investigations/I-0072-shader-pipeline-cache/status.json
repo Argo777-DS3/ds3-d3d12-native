@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0072",
+  "title": "Shader and pipeline cache (wave 2, D-0172, D-0195)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus",
+  "created_at": "2026-10-19T23:03:20Z",
+  "updated_at": "2026-10-20T01:11:33Z",
+  "budget": {
+    "iterations_max": 12,
+    "iterations_used": 5
+  },
+  "stop_reason": null
+}

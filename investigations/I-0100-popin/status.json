@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "I-0100",
+  "title": "DS3 DX12 Vague 2: no pop-in (Pas de pop-in)",
+  "capability": "C3",
+  "state": "complete",
+  "owner": "Opus 5.5 (pilot)",
+  "created_at": "2026-10-26T00:03:42Z",
+  "updated_at": "2026-10-28T00:45:00Z",
+  "budget": {
+    "iterations_max": 18,
+    "iterations_used": 16
+  },
+  "stop_reason": "closed under D-0227 (full production, Thomas 2026-10-28): tranche 8 measured the load; what is left goes to the ROADMAP"
+}

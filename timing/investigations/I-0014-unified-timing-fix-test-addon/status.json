@@ -1,0 +1,15 @@
+﻿{
+    "schema_version":  1,
+    "id":  "I-0014",
+    "title":  "Unified Timing Fix Test Add-on",
+    "capability":  "C4",
+    "state":  "active",
+    "owner":  "ChatGPT Work",
+    "created_at":  "2026-09-22T17:46:54Z",
+    "updated_at":  "2026-09-22T18:14:10Z",
+    "budget":  {
+                   "iterations_max":  8,
+                   "iterations_used":  3
+               },
+    "stop_reason":  null
+}

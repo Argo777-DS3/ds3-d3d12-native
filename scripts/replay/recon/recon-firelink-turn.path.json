@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "name": "recon-firelink-turn",
+  "description": "I-0097 tranche 5: does the Firelink path's turn (L held 5 s) turn the camera? Its turn segment alone, pictures before, during and after each turn (on the ASUS, where the capture follows the game). Not a measured path.",
+  "save": {
+    "path": "C:/Users/User/.ds3-i0039-backups/shebang-zones-eta-m40-20261014-095203/DS30000.sl2",
+    "sha256": "1E905EF8842655C605E175F574BCA5D2B46D1011E8E473142E1577A09FE24EB4"
+  },
+  "settle_seconds": 40,
+  "segments": [
+    {
+      "name": "turn",
+      "cycles": 2,
+      "cycle_ms": 6000,
+      "events": [
+        {
+          "t": 0,
+          "shot": "before"
+        },
+        {
+          "t": 200,
+          "key": "L",
+          "down": true
+        },
+        {
+          "t": 2700,
+          "shot": "during"
+        },
+        {
+          "t": 5200,
+          "key": "L",
+          "down": false
+        },
+        {
+          "t": 5500,
+          "shot": "after"
+        }
+      ]
+    }
+  ]
+}
